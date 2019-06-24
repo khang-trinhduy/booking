@@ -2760,3 +2760,74 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    EXEC sp_rename N'[Catalog].[Code]', N'LocalCode', N'COLUMN';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    ALTER TABLE [Catalog] ADD [DepartmentDetailsId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    ALTER TABLE [Catalog] ADD [GlobalCode] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    CREATE TABLE [Details] (
+        [Id] int NOT NULL IDENTITY,
+        [DepartmentType] nvarchar(max) NULL,
+        [AreaIncludeWall] nvarchar(max) NULL,
+        [AreaWithoutWall] nvarchar(max) NULL,
+        CONSTRAINT [PK_Details] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    CREATE INDEX [IX_Catalog_DepartmentDetailsId] ON [Catalog] ([DepartmentDetailsId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    ALTER TABLE [Catalog] ADD CONSTRAINT [FK_Catalog_Details_DepartmentDetailsId] FOREIGN KEY ([DepartmentDetailsId]) REFERENCES [Details] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624074918_add department details')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190624074918_add department details', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624081056_add illutration')
+BEGIN
+    ALTER TABLE [Details] ADD [ImagePath] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624081056_add illutration')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190624081056_add illutration', N'2.1.8-servicing-32085');
+END;
+
+GO
+

@@ -354,6 +354,8 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("DepartmentType");
 
+                    b.Property<string>("ImagePath");
+
                     b.HasKey("Id");
 
                     b.ToTable("Details");

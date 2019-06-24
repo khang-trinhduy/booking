@@ -26,7 +26,16 @@ namespace BookingForm.Controllers
         // GET: Catalogs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Catalog.ToListAsync());
+            return View(await _context.Catalog.Include(c => c.DepartmentDetails).ToListAsync());
+        }
+        public async Task<IActionResult> Details(int id)
+        {
+            var detail = await _context.Details.FindAsync(id);
+            if (detail == null)
+            {
+                return NotFound();
+            }
+            return View("DepartmentDetails", detail);
         }
         public IActionResult Import()
         {
@@ -149,22 +158,6 @@ namespace BookingForm.Controllers
             return File(memory, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", filePath);
         }
         // GET: Catalogs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var catalog = await _context.Catalog
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (catalog == null)
-            {
-                return NotFound();
-            }
-
-            return View(catalog);
-        }
 
         // GET: Catalogs/Create
         

@@ -3174,6 +3174,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Catalogs\\Index.cshtml",
+      "TargetPath": "Views\\Catalogs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Appoinments\\Index.cshtml",
       "TargetPath": "Views\\Appoinments\\Index.cshtml",
       "FileKind": "mvc"
@@ -3461,6 +3466,11 @@
     {
       "FilePath": "Areas\\Identity\\Pages\\Account\\Manage\\DeletePersonalData.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\DeletePersonalData.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Catalogs\\DepartmentDetails.cshtml",
+      "TargetPath": "Views\\Catalogs\\DepartmentDetails.cshtml",
       "FileKind": "mvc"
     },
     {

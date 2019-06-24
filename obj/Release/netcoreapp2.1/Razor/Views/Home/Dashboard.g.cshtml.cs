@@ -338,7 +338,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                                        <p>");
             EndContext();
             BeginContext(7001, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53962b923b47413f8526371708b422c7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3311299035a4cddb430e1c6e98f8465", async() => {
                 BeginContext(7047, 9, true);
                 WriteLiteral("Mặt trước");
                 EndContext();
@@ -373,7 +373,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("</p><p>");
             EndContext();
             BeginContext(7067, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6a8700f62c847ff8da9f3643e01b037", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73533d53d2254b21bb4e32c3ebfb77d7", async() => {
                 BeginContext(7112, 7, true);
                 WriteLiteral("Mặt sau");
                 EndContext();
@@ -448,7 +448,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                                <td>Thiếu");
             EndContext();
             BeginContext(7713, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1d6939c996a40118f8dd0e86bf83379", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4120493f9ca3498fbf61641c764a4c06", async() => {
                 BeginContext(7760, 22, true);
                 WriteLiteral("(click vào để bổ sung)");
                 EndContext();
@@ -744,7 +744,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(17006, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19b384beda94430c997c01fb750b67cb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9c167d34cdd4e018b868939f6fa2caa", async() => {
                 BeginContext(17052, 2, true);
                 WriteLiteral("HĐ");
                 EndContext();
@@ -779,7 +779,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral(" | ");
             EndContext();
             BeginContext(17061, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "993e8668e86f42aeb80cffa06f1e49ad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6db73a71b47f48b1914b79c484c2c76c", async() => {
                 BeginContext(17110, 17, true);
                 WriteLiteral("Cập nhật ảnh CMND");
                 EndContext();
@@ -814,7 +814,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("\r\n                                | ");
             EndContext();
             BeginContext(17167, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e934821418e9468c9a2ff349b7cd38a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b810b20aa3242ea9d9665b3c03d0445", async() => {
                 BeginContext(17220, 23, true);
                 WriteLiteral("Cập nhật thông tin CMND");
                 EndContext();

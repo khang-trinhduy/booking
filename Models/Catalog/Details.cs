@@ -11,6 +11,8 @@ namespace BookingForm.Models
         public string AreaIncludeWall { get; set; }
         [DisplayName("Diện tích thông thủy")]
         public string AreaWithoutWall { get; set; }
+        [DisplayName("Hình minh họa")]
+        public string ImagePath { get; set; }
 
     }
 }

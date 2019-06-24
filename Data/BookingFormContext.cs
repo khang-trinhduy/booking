@@ -79,6 +79,7 @@ namespace BookingForm.Models
         public DbSet<Question> Question { get; set; }
         public DbSet<Answer> Answer { get; set; }
         public DbSet<BookingForm.Models.Catalog> Catalog { get; set; }
+        public DbSet<BookingForm.Models.Details> Details { get; set; }
     }
 
     public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>

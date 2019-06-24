@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Import";
+}
+
+<h1>Import</h1>
+<a asp-action="Export">Xuất file excel</a>
+<form asp-action="Import" enctype="multipart/form-data">
+    <partial name="_StatusMessage" model="@ViewBag.msg" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label">Tải lên File excel</label>
+        <div class="custom-file">
+            <input name="file" type="file" class="custom-file-input" id="file" required accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            <label class="custom-file-label" for="file">Chọn file...</label>
+        </div>
+    </div>
+
+    <p style="font-style: italic; color: #ee1818">Lưu ý: Hệ thống chỉ nhận file excel </p>
+    <hr />
+    <div class="form-group">
+        <button type="submit" class="btn btn-default" OnClientClick="return false;">Lưu lại</button>
+    </div>
+</form>

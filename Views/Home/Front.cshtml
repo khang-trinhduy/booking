@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "TT CMND -";
+    string[] paths = null;
+    if (ViewBag.paths != null)
+    {
+        paths = ViewBag.paths.Split(" ");
+    }
+}
+
+    <div class="form-group">
+        <label class="control-label">
+            Ảnh mặt trước
+        </label>
+        @{
+            if (paths == null)
+            {
+                <label class="control-label">
+                    Thiếu
+                </label>
+            }
+            else if (paths.Length == 2)
+            {
+                if (paths[0].ToLower().Contains(".png") || paths[0].ToLower().Contains(".jpg") || paths[0].ToLower().Contains(".jpeg")) {
+                    <img src="~/storage/@paths[0]" style="width: 400px; height:250px"/>
+                }
+                else {
+                    <label class="control-label">
+                        Sai định dạng
+                    </label>
+                }
+            }
+        }
+    </div>
+    <a asp-action="Dashboard">Quay lại</a>

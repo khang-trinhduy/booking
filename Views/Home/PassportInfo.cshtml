@@ -1,0 +1,83 @@
+﻿
+@model  BookingForm.Models.Appoinment
+@{
+    ViewData["Title"] = "TT CMND -";
+    string[] paths = null;
+    if (ViewBag.paths != null)
+    {
+        paths = ViewBag.paths.Split(" ");
+    }
+    
+}
+
+    <div class="form-group">
+        <label class="control-label">
+            Tên khách hàng
+        </label>
+        <input class="form-control" value="@Model.Customer" readonly />
+    </div>
+    <div class="form-group">
+        <label class="control-label">
+            Ảnh mặt trước & mặt sau
+        </label>
+        @{
+            if (paths == null)
+            {
+                <label class="control-label">
+                    Thiếu
+                </label>
+            }
+            else if (paths.Length == 2)
+            {
+                foreach (var path in paths)
+                {
+                    if (path.ToLower().Contains(".png") || path.ToLower().Contains(".jpg") || path.ToLower().Contains(".jpeg")) {
+                        <img src="~/storage/@path" style="width: 400px; height:250px"/>
+                    }
+                    else {
+                        <label class="control-label">
+                            Sai định dạng
+                        </label>
+                    }
+                }
+            }
+        }
+    </div>
+    <form asp-action="PassportInfo">
+        <partial name="_StatusMessage" model="@TempData["StatusMessage"]" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group" hidden>
+            @*<label asp-for="WorkPlace" class="control-label"></label>*@
+            <input asp-for="Id" class="form-control" hidden />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Cmnd" class="control-label"></label>
+            <input asp-for="Cmnd" class="form-control" required />
+            <span asp-validation-for="Cmnd" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Day" class="control-label"></label>
+            <input asp-for="Day" class="form-control" required />
+            <span asp-validation-for="Day" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Place" class="control-label"></label>
+            <input asp-for="Place" class="form-control" required />
+            <span asp-validation-for="Place" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="HKTT" class="control-label"></label>
+            <input asp-for="HKTT" class="form-control" required />
+            <span asp-validation-for="HKTT" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="control-label"></label>
+            <input asp-for="Address" class="form-control" required />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" OnClientClick="return false;">Lưu lại</button>
+        </div>
+    </form>

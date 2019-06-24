@@ -1,0 +1,1450 @@
+2019-06-24 10:51:15.356 +07:00 [Debug] Hosting starting
+2019-06-24 10:51:15.650 +07:00 [Information] User profile is available. Using '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-06-24 10:51:15.663 +07:00 [Debug] Reading data from file '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys\key-6de63f81-dbcb-47f9-afed-bf9bd50c2766.xml"'.
+2019-06-24 10:51:15.740 +07:00 [Debug] Found key {6de63f81-dbcb-47f9-afed-bf9bd50c2766}.
+2019-06-24 10:51:15.766 +07:00 [Debug] Considering key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} with expiration date 2019-08-03 18:43:52Z as default key.
+2019-06-24 10:51:15.778 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-06-24 10:51:15.779 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2019-06-24 10:51:15.781 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-06-24 10:51:15.782 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2019-06-24 10:51:15.787 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2019-06-24 10:51:15.793 +07:00 [Debug] Using key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} as the default key.
+2019-06-24 10:51:15.794 +07:00 [Debug] Key ring with default key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} was loaded during application startup.
+2019-06-24 10:51:15.832 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.847 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.848 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.848 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.848 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2019-06-24 10:51:15.848 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.870 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.870 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.921 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:51:15.962 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-06-24 10:51:16.342 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2019-06-24 10:51:16.403 +07:00 [Debug] Hosting started
+2019-06-24 10:51:16.403 +07:00 [Debug] Loaded hosting startup assembly "BookingForm"
+2019-06-24 10:51:16.403 +07:00 [Debug] Loaded hosting startup assembly "Microsoft.AspNetCore.Server.IISIntegration"
+2019-06-24 10:51:16.698 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" started.
+2019-06-24 10:51:16.862 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/  
+2019-06-24 10:51:16.868 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2019-06-24 10:51:16.903 +07:00 [Debug] The request path "/" does not match a supported file type
+2019-06-24 10:51:16.980 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 10:51:17.515 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 10:51:17.576 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.HomeController.Index (BookingForm)"
+2019-06-24 10:51:17.577 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 10:51:17.577 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:51:17.577 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 10:51:17.577 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 10:51:17.577 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:51:17.712 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2019-06-24 10:51:17.800 +07:00 [Information] Executing action method "BookingForm.Controllers.HomeController.Index (BookingForm)" - Validation state: Valid
+2019-06-24 10:51:18.415 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-06-24 10:51:18.418 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-06-24 10:51:18.453 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'LoginProvider', 'Name'}".
+2019-06-24 10:51:18.510 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'RoleId'}".
+2019-06-24 10:51:18.644 +07:00 [Debug] The property '"ResultId"' on entity type '"Answer"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.644 +07:00 [Debug] The property '"SaleId"' on entity type '"Appoinment"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.645 +07:00 [Debug] The property '"QuestionId"' on entity type '"Bait"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.645 +07:00 [Debug] The property '"ProviderId"' on entity type '"Contact"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.645 +07:00 [Debug] The property '"RoleId"' on entity type '"Grant"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.646 +07:00 [Debug] The property '"PlanId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.646 +07:00 [Debug] The property '"ProductId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:51:18.759 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 10:51:18.760 +07:00 [Debug] SaveChanges starting for '"BookingFormContext"'.
+2019-06-24 10:51:18.762 +07:00 [Debug] DetectChanges starting for '"BookingFormContext"'.
+2019-06-24 10:51:18.763 +07:00 [Debug] DetectChanges completed for '"BookingFormContext"'.
+2019-06-24 10:51:18.799 +07:00 [Debug] SaveChanges completed for '"BookingFormContext"' with 0 entities written to the database.
+2019-06-24 10:51:18.807 +07:00 [Information] Executed action method "BookingForm.Controllers.HomeController.Index (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 999.9215ms.
+2019-06-24 10:51:18.827 +07:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-06-24 10:51:18.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ChangePassword.cshtml"'.
+2019-06-24 10:51:18.835 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-06-24 10:51:18.836 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 10:51:18.914 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-06-24 10:51:18.914 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Additional.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Approve.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Cancelled.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Choose.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Confirm.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Dashboard.cshtml"'.
+2019-06-24 10:51:18.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Date.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Index.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/List.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Multi.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Passport.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Performance.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/PrintDocument.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Product.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Request.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Text.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Tutor.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Withdraw.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Dashboard.cshtml"'.
+2019-06-24 10:51:18.916 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Request.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_StatusMessage.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/AddDOB.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Confirm.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Create.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Delete.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Details.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Draft.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Edit.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Index.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Passport.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Plan.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Print.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Views.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_Draft.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_StatusMessage.cshtml"'.
+2019-06-24 10:51:18.917 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/__Edit.cshtml"'.
+2019-06-24 10:51:18.918 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Create.cshtml"'.
+2019-06-24 10:51:19.012 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Delete.cshtml"'.
+2019-06-24 10:51:19.012 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Details.cshtml"'.
+2019-06-24 10:51:19.012 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Edit.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Index.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalog/Import.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalog/_StatusMessage.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AddContact.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Answer.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AttendTest.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Chart.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/ConfirmRequest.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Contacts.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Dashboard.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Error.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Feedback.cshtml"'.
+2019-06-24 10:51:19.013 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Front.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Help.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Index.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Loan.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Manager.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/PassportInfo.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Question.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Quiz.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Rear.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Request.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestDetails.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Requests.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestsControl.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Reserve.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Result.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Secure.cshtml"'.
+2019-06-24 10:51:19.014 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/StatusMessage.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Template.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Test.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Tutor.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/WithdrawForm.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/_StatusMessage.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Approve.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Chart.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Collapse.cshtml"'.
+2019-06-24 10:51:19.015 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/CollapseQ.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Crawler.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Dashboard.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Employee.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Home.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Index.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Login.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Monthly.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Profit.cshtml"'.
+2019-06-24 10:51:19.030 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Request.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Target.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_Profit.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_StatusMessage.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Partial/TableContents.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Account.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Email.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Image.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Profile.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Setting.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/AccessDenied.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Error.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 10:51:19.031 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewStart.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-06-24 10:51:19.032 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-06-24 10:51:19.033 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-06-24 10:51:19.033 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-06-24 10:51:19.033 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-06-24 10:51:19.282 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-06-24 10:51:19.282 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-06-24 10:51:19.282 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewStart.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-06-24 10:51:19.283 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-06-24 10:51:19.284 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-06-24 10:51:19.284 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-06-24 10:51:19.284 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_Layout.cshtml"'.
+2019-06-24 10:51:19.284 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 10:51:19.284 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-06-24 10:51:19.284 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-06-24 10:51:19.326 +07:00 [Debug] Using precompiled view for '"/Views/Home/Index.cshtml"'.
+2019-06-24 10:51:19.331 +07:00 [Information] Executing ViewResult, running view "Index".
+2019-06-24 10:51:19.336 +07:00 [Debug] The view path '"/Views/Home/Index.cshtml"' was found in 507.8365ms.
+2019-06-24 10:51:19.390 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2019-06-24 10:51:19.495 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 10:51:19.625 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Home"'.
+2019-06-24 10:51:19.628 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 10:51:19.651 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Home"'.
+2019-06-24 10:51:19.664 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 10:51:19.759 +07:00 [Information] Executed ViewResult - view "Index" executed in 936.4343ms.
+2019-06-24 10:51:19.760 +07:00 [Information] Executed action "BookingForm.Controllers.HomeController.Index (BookingForm)" in 2182.4872ms
+2019-06-24 10:51:19.822 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" completed keep alive response.
+2019-06-24 10:51:19.832 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 10:51:19.834 +07:00 [Information] Request finished in 2973.1501ms 200 text/html; charset=utf-8
+2019-06-24 10:51:19.956 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/Ann_Logo.png  
+2019-06-24 10:51:20.004 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" started.
+2019-06-24 10:51:20.005 +07:00 [Debug] Connection id ""0HLNOASQRITRB"" started.
+2019-06-24 10:51:20.021 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.min.css?v=o58rbQrBnue0iUvODYSom2NdDcN5ac2Wx9aBfJjV0VI  
+2019-06-24 10:51:20.022 +07:00 [Information] Sending file. Request path: '"/css/site.min.css"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\css\site.min.css"'
+2019-06-24 10:51:20.023 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" completed keep alive response.
+2019-06-24 10:51:20.023 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.css  
+2019-06-24 10:51:20.023 +07:00 [Information] Request finished in 2.4106ms 200 text/css
+2019-06-24 10:51:20.033 +07:00 [Information] Sending file. Request path: '"/css/site.css"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\css\site.css"'
+2019-06-24 10:51:20.034 +07:00 [Information] Sending file. Request path: '"/images/Ann_Logo.png"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\images\Ann_Logo.png"'
+2019-06-24 10:51:20.037 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" completed keep alive response.
+2019-06-24 10:51:20.037 +07:00 [Debug] Connection id ""0HLNOASQRITRB"" completed keep alive response.
+2019-06-24 10:51:20.038 +07:00 [Information] Request finished in 81.7168ms 200 image/png
+2019-06-24 10:51:20.038 +07:00 [Information] Request finished in 14.9449ms 200 text/css
+2019-06-24 10:51:20.056 +07:00 [Debug] Connection id ""0HLNOASQRITRC"" started.
+2019-06-24 10:51:20.057 +07:00 [Debug] Connection id ""0HLNOASQRITRD"" started.
+2019-06-24 10:51:20.057 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/v1.jpg  
+2019-06-24 10:51:20.057 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" started.
+2019-06-24 10:51:20.059 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-06-24 10:51:20.060 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/v2.jpg  
+2019-06-24 10:51:20.062 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/v3.jpg  
+2019-06-24 10:51:20.066 +07:00 [Information] Sending file. Request path: '"/js/site.js"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\js\site.js"'
+2019-06-24 10:51:20.066 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" completed keep alive response.
+2019-06-24 10:51:20.067 +07:00 [Information] Request finished in 8.6342ms 200 application/javascript
+2019-06-24 10:51:20.093 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" started.
+2019-06-24 10:51:20.094 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery/dist/jquery.js  
+2019-06-24 10:51:20.095 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.min.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U  
+2019-06-24 10:51:20.098 +07:00 [Information] Sending file. Request path: '"/js/site.min.js"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\js\site.min.js"'
+2019-06-24 10:51:20.102 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" completed keep alive response.
+2019-06-24 10:51:20.102 +07:00 [Information] Request finished in 6.5277ms 200 application/javascript
+2019-06-24 10:51:20.109 +07:00 [Debug] Connection id ""0HLNOASQRITRG"" started.
+2019-06-24 10:51:20.124 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/v5.jpg  
+2019-06-24 10:51:20.153 +07:00 [Information] Sending file. Request path: '"/images/v2.jpg"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\images\v2.jpg"'
+2019-06-24 10:51:20.153 +07:00 [Debug] Connection id ""0HLNOASQRITRD"" completed keep alive response.
+2019-06-24 10:51:20.153 +07:00 [Information] Request finished in 93.3253ms 200 image/jpeg
+2019-06-24 10:51:20.167 +07:00 [Information] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\lib\jquery\dist\jquery.js"'
+2019-06-24 10:51:20.167 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" completed keep alive response.
+2019-06-24 10:51:20.167 +07:00 [Information] Request finished in 73.4489ms 200 application/javascript
+2019-06-24 10:51:20.180 +07:00 [Information] Sending file. Request path: '"/images/v3.jpg"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\images\v3.jpg"'
+2019-06-24 10:51:20.181 +07:00 [Debug] Connection id ""0HLNOASQRITRC"" completed keep alive response.
+2019-06-24 10:51:20.182 +07:00 [Information] Request finished in 119.0196ms 200 image/jpeg
+2019-06-24 10:51:20.259 +07:00 [Information] Sending file. Request path: '"/images/v5.jpg"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\images\v5.jpg"'
+2019-06-24 10:51:20.260 +07:00 [Debug] Connection id ""0HLNOASQRITRG"" completed keep alive response.
+2019-06-24 10:51:20.260 +07:00 [Information] Request finished in 135.7608ms 200 image/jpeg
+2019-06-24 10:51:20.426 +07:00 [Information] Sending file. Request path: '"/images/v1.jpg"'. Physical path: '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\wwwroot\images\v1.jpg"'
+2019-06-24 10:51:20.426 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" completed keep alive response.
+2019-06-24 10:51:20.427 +07:00 [Information] Request finished in 369.4735ms 200 image/jpeg
+2019-06-24 10:51:32.483 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/import  
+2019-06-24 10:51:32.483 +07:00 [Debug] The request path "/catalogs/import" does not match a supported file type
+2019-06-24 10:51:32.485 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 10:51:32.489 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 10:51:32.499 +07:00 [Debug] Action '"BookingForm.Controllers.CatalogsController.Import (BookingForm)"' with id '"fb31b3c0-6e53-49eb-9ca1-6595d3bba9d7"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2019-06-24 10:51:32.503 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 10:51:32.504 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 10:51:32.504 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:51:32.504 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 10:51:32.504 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 10:51:32.504 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:51:32.505 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" - Validation state: Valid
+2019-06-24 10:51:32.506 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.5467ms.
+2019-06-24 10:51:32.507 +07:00 [Debug] View lookup cache miss for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 10:51:32.508 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 10:51:32.508 +07:00 [Error] The view '"Import"' was not found. Searched locations: ["/Views/Catalogs/Import.cshtml", "/Views/Shared/Import.cshtml", "/Pages/Shared/Import.cshtml"]
+2019-06-24 10:51:32.519 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 14.4386ms
+2019-06-24 10:51:32.522 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Import' was not found. The following locations were searched:
+/Views/Catalogs/Import.cshtml
+/Views/Shared/Import.cshtml
+/Pages/Shared/Import.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResultExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-06-24 10:51:32.761 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" completed keep alive response.
+2019-06-24 10:51:32.761 +07:00 [Information] Request finished in 278.7586ms 500 text/html; charset=utf-8
+2019-06-24 10:52:35.363 +07:00 [Debug] Connection id ""0HLNOASQRITRB"" received FIN.
+2019-06-24 10:52:35.364 +07:00 [Debug] Connection id ""0HLNOASQRITRH"" started.
+2019-06-24 10:52:35.365 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITRD"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITRC"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITRG"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" received FIN.
+2019-06-24 10:52:35.369 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/import  
+2019-06-24 10:52:35.369 +07:00 [Debug] The request path "/catalogs/import" does not match a supported file type
+2019-06-24 10:52:35.369 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" disconnecting.
+2019-06-24 10:52:35.370 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 10:52:35.370 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 10:52:35.370 +07:00 [Debug] Action '"BookingForm.Controllers.CatalogsController.Import (BookingForm)"' with id '"fb31b3c0-6e53-49eb-9ca1-6595d3bba9d7"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2019-06-24 10:52:35.370 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 10:52:35.370 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 10:52:35.371 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:52:35.371 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 10:52:35.371 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 10:52:35.371 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:52:35.371 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" - Validation state: Valid
+2019-06-24 10:52:35.371 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0264ms.
+2019-06-24 10:52:35.372 +07:00 [Debug] View lookup cache miss for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 10:52:35.378 +07:00 [Debug] Connection id ""0HLNOASQRITRB"" disconnecting.
+2019-06-24 10:52:35.380 +07:00 [Debug] Connection id ""0HLNOASQRITRD"" disconnecting.
+2019-06-24 10:52:35.380 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" disconnecting.
+2019-06-24 10:52:35.380 +07:00 [Debug] Connection id ""0HLNOASQRITRC"" disconnecting.
+2019-06-24 10:52:35.380 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" disconnecting.
+2019-06-24 10:52:35.380 +07:00 [Debug] Connection id ""0HLNOASQRITRG"" disconnecting.
+2019-06-24 10:52:35.380 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" disconnecting.
+2019-06-24 10:52:35.383 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" sending FIN.
+2019-06-24 10:52:35.385 +07:00 [Debug] Connection id ""0HLNOASQRITRD"" sending FIN.
+2019-06-24 10:52:35.385 +07:00 [Debug] Connection id ""0HLNOASQRITRB"" sending FIN.
+2019-06-24 10:52:35.385 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" sending FIN.
+2019-06-24 10:52:35.385 +07:00 [Debug] Connection id ""0HLNOASQRITRC"" sending FIN.
+2019-06-24 10:52:35.386 +07:00 [Debug] Connection id ""0HLNOASQRITRG"" sending FIN.
+2019-06-24 10:52:35.386 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" sending FIN.
+2019-06-24 10:52:35.386 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" sending FIN.
+2019-06-24 10:52:35.391 +07:00 [Debug] Connection id ""0HLNOASQRITR9"" stopped.
+2019-06-24 10:52:35.394 +07:00 [Debug] Connection id ""0HLNOASQRITRD"" stopped.
+2019-06-24 10:52:35.394 +07:00 [Debug] Connection id ""0HLNOASQRITRB"" stopped.
+2019-06-24 10:52:35.394 +07:00 [Debug] Connection id ""0HLNOASQRITRF"" stopped.
+2019-06-24 10:52:35.394 +07:00 [Debug] Connection id ""0HLNOASQRITRC"" stopped.
+2019-06-24 10:52:35.395 +07:00 [Debug] Connection id ""0HLNOASQRITRG"" stopped.
+2019-06-24 10:52:35.395 +07:00 [Debug] Connection id ""0HLNOASQRITRE"" stopped.
+2019-06-24 10:52:35.395 +07:00 [Debug] Connection id ""0HLNOASQRITRA"" stopped.
+2019-06-24 10:52:38.118 +07:00 [Debug] Compilation of the generated code for the Razor file at '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\Views\Catalogs\Import.cshtml"' started.
+2019-06-24 10:52:39.752 +07:00 [Debug] Compilation of the generated code for the Razor file at '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\Views\Catalogs\Import.cshtml"' completed in 1633.6877ms.
+2019-06-24 10:52:39.754 +07:00 [Debug] Using precompiled view for '"/Views/Catalogs/Import.cshtml"'.
+2019-06-24 10:52:39.754 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 10:52:39.754 +07:00 [Debug] The view path '"/Views/Catalogs/Import.cshtml"' was found in 4382.8344ms.
+2019-06-24 10:52:39.769 +07:00 [Debug] A new antiforgery cookie token was created.
+2019-06-24 10:52:39.890 +07:00 [Debug] View lookup cache miss for view '"_StatusMessage"' in controller '"Catalogs"'.
+2019-06-24 10:52:40.306 +07:00 [Debug] Compilation of the generated code for the Razor file at '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\Views\Catalogs\_StatusMessage.cshtml"' started.
+2019-06-24 10:52:40.529 +07:00 [Debug] Compilation of the generated code for the Razor file at '"C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\Views\Catalogs\_StatusMessage.cshtml"' completed in 222.2353ms.
+2019-06-24 10:52:40.531 +07:00 [Debug] Using precompiled view for '"/Views/Catalogs/_StatusMessage.cshtml"'.
+2019-06-24 10:52:40.540 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Catalogs"'.
+2019-06-24 10:52:40.544 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 10:52:40.546 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Catalogs"'.
+2019-06-24 10:52:40.547 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 10:52:40.548 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Catalogs"'.
+2019-06-24 10:52:40.549 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 10:52:40.551 +07:00 [Information] Executed ViewResult - view "Import" executed in 5179.7297ms.
+2019-06-24 10:52:40.552 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 5180.5754ms
+2019-06-24 10:52:40.552 +07:00 [Debug] Connection id ""0HLNOASQRITRH"" completed keep alive response.
+2019-06-24 10:52:40.552 +07:00 [Information] Request finished in 5182.699ms 200 text/html; charset=utf-8
+2019-06-24 10:52:40.590 +07:00 [Debug] Connection id ""0HLNOASQRITRI"" started.
+2019-06-24 10:52:40.591 +07:00 [Debug] Connection id ""0HLNOASQRITRJ"" started.
+2019-06-24 10:52:40.592 +07:00 [Debug] Connection id ""0HLNOASQRITRK"" started.
+2019-06-24 10:52:40.592 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.css  
+2019-06-24 10:52:40.593 +07:00 [Debug] Connection id ""0HLNOASQRITRL"" started.
+2019-06-24 10:52:40.594 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/Ann_Logo.png  
+2019-06-24 10:52:40.597 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.min.css?v=o58rbQrBnue0iUvODYSom2NdDcN5ac2Wx9aBfJjV0VI  
+2019-06-24 10:52:40.597 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-06-24 10:52:40.598 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.min.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U  
+2019-06-24 10:52:40.598 +07:00 [Information] The file "/css/site.css" was not modified
+2019-06-24 10:52:40.598 +07:00 [Information] The file "/images/Ann_Logo.png" was not modified
+2019-06-24 10:52:40.600 +07:00 [Information] The file "/js/site.min.js" was not modified
+2019-06-24 10:52:40.600 +07:00 [Information] The file "/js/site.js" was not modified
+2019-06-24 10:52:40.601 +07:00 [Information] The file "/css/site.min.css" was not modified
+2019-06-24 10:52:40.602 +07:00 [Debug] Connection id ""0HLNOASQRITRM"" started.
+2019-06-24 10:52:40.603 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery/dist/jquery.js  
+2019-06-24 10:52:40.603 +07:00 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2019-06-24 10:52:40.603 +07:00 [Debug] Handled. Status code: 304 File: "/images/Ann_Logo.png"
+2019-06-24 10:52:40.603 +07:00 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2019-06-24 10:52:40.603 +07:00 [Debug] Handled. Status code: 304 File: "/css/site.min.css"
+2019-06-24 10:52:40.603 +07:00 [Debug] Handled. Status code: 304 File: "/js/site.min.js"
+2019-06-24 10:52:40.604 +07:00 [Information] The file "/lib/jquery/dist/jquery.js" was not modified
+2019-06-24 10:52:40.604 +07:00 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.js"
+2019-06-24 10:52:40.606 +07:00 [Debug] Connection id ""0HLNOASQRITRJ"" completed keep alive response.
+2019-06-24 10:52:40.606 +07:00 [Debug] Connection id ""0HLNOASQRITRH"" completed keep alive response.
+2019-06-24 10:52:40.606 +07:00 [Debug] Connection id ""0HLNOASQRITRI"" completed keep alive response.
+2019-06-24 10:52:40.606 +07:00 [Debug] Connection id ""0HLNOASQRITRK"" completed keep alive response.
+2019-06-24 10:52:40.606 +07:00 [Information] Request finished in 13.5332ms 304 text/css
+2019-06-24 10:52:40.606 +07:00 [Information] Request finished in 8.4534ms 304 application/javascript
+2019-06-24 10:52:40.606 +07:00 [Information] Request finished in 8.0103ms 304 application/javascript
+2019-06-24 10:52:40.606 +07:00 [Debug] Connection id ""0HLNOASQRITRM"" completed keep alive response.
+2019-06-24 10:52:40.606 +07:00 [Information] Request finished in 8.4356ms 304 text/css
+2019-06-24 10:52:40.606 +07:00 [Debug] Connection id ""0HLNOASQRITRL"" completed keep alive response.
+2019-06-24 10:52:40.606 +07:00 [Information] Request finished in 3.3155ms 304 application/javascript
+2019-06-24 10:52:40.606 +07:00 [Information] Request finished in 12.1259ms 304 image/png
+2019-06-24 10:55:37.357 +07:00 [Debug] Hosting starting
+2019-06-24 10:55:37.529 +07:00 [Information] User profile is available. Using '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-06-24 10:55:37.542 +07:00 [Debug] Reading data from file '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys\key-6de63f81-dbcb-47f9-afed-bf9bd50c2766.xml"'.
+2019-06-24 10:55:37.571 +07:00 [Debug] Found key {6de63f81-dbcb-47f9-afed-bf9bd50c2766}.
+2019-06-24 10:55:37.592 +07:00 [Debug] Considering key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} with expiration date 2019-08-03 18:43:52Z as default key.
+2019-06-24 10:55:37.606 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-06-24 10:55:37.606 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2019-06-24 10:55:37.609 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-06-24 10:55:37.610 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2019-06-24 10:55:37.614 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2019-06-24 10:55:37.620 +07:00 [Debug] Using key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} as the default key.
+2019-06-24 10:55:37.621 +07:00 [Debug] Key ring with default key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} was loaded during application startup.
+2019-06-24 10:55:37.651 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.666 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.666 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.666 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.667 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2019-06-24 10:55:37.667 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.687 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.688 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.726 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2019-06-24 10:55:37.772 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-06-24 10:55:37.871 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2019-06-24 10:55:37.929 +07:00 [Debug] Hosting started
+2019-06-24 10:55:37.929 +07:00 [Debug] Loaded hosting startup assembly "BookingForm"
+2019-06-24 10:55:37.929 +07:00 [Debug] Loaded hosting startup assembly "Microsoft.AspNetCore.Server.IISIntegration"
+2019-06-24 10:55:37.989 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" started.
+2019-06-24 10:55:38.095 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/import  
+2019-06-24 10:55:38.101 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2019-06-24 10:55:38.131 +07:00 [Debug] The request path "/catalogs/import" does not match a supported file type
+2019-06-24 10:55:38.194 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 10:55:38.535 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 10:55:38.557 +07:00 [Debug] Action '"BookingForm.Controllers.CatalogsController.Import (BookingForm)"' with id '"0213a4b5-685a-47a8-81c4-8a2f2793dce4"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2019-06-24 10:55:38.580 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 10:55:38.589 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 10:55:38.589 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:55:38.590 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 10:55:38.590 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 10:55:38.590 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:55:38.690 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2019-06-24 10:55:38.740 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" - Validation state: Valid
+2019-06-24 10:55:38.745 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.9026ms.
+2019-06-24 10:55:38.758 +07:00 [Debug] View lookup cache miss for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 10:55:38.761 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-06-24 10:55:38.761 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ChangePassword.cshtml"'.
+2019-06-24 10:55:38.762 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-06-24 10:55:38.763 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-06-24 10:55:38.763 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.763 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.763 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-06-24 10:55:38.763 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-06-24 10:55:38.763 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Additional.cshtml"'.
+2019-06-24 10:55:38.780 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Approve.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Cancelled.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Choose.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Confirm.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Dashboard.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Date.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Index.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/List.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Multi.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Passport.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Performance.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/PrintDocument.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Product.cshtml"'.
+2019-06-24 10:55:38.781 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Request.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Text.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Tutor.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Withdraw.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Dashboard.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Request.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/AddDOB.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Confirm.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Create.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Delete.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Details.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Draft.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Edit.cshtml"'.
+2019-06-24 10:55:38.782 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Index.cshtml"'.
+2019-06-24 10:55:38.783 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Passport.cshtml"'.
+2019-06-24 10:55:38.783 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Plan.cshtml"'.
+2019-06-24 10:55:38.783 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Print.cshtml"'.
+2019-06-24 10:55:38.783 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Views.cshtml"'.
+2019-06-24 10:55:38.783 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_Draft.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/__Edit.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Create.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Delete.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Details.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Edit.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Import.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Index.cshtml"'.
+2019-06-24 10:55:38.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AddContact.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Answer.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AttendTest.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Chart.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/ConfirmRequest.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Contacts.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Dashboard.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Error.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Feedback.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Front.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Help.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Index.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Loan.cshtml"'.
+2019-06-24 10:55:38.795 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Manager.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/PassportInfo.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Question.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Quiz.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Rear.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Request.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestDetails.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Requests.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestsControl.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Reserve.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Result.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Secure.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/StatusMessage.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Template.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Test.cshtml"'.
+2019-06-24 10:55:38.796 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Tutor.cshtml"'.
+2019-06-24 10:55:38.797 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/WithdrawForm.cshtml"'.
+2019-06-24 10:55:38.797 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.808 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Approve.cshtml"'.
+2019-06-24 10:55:38.808 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Chart.cshtml"'.
+2019-06-24 10:55:38.808 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Collapse.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/CollapseQ.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Crawler.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Dashboard.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Employee.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Home.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Index.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Login.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Monthly.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Profit.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Request.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Target.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_Profit.cshtml"'.
+2019-06-24 10:55:38.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Partial/TableContents.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Account.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Email.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Image.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Profile.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Setting.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/AccessDenied.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Error.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.810 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewStart.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-06-24 10:55:38.811 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-06-24 10:55:38.825 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-06-24 10:55:38.825 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-06-24 10:55:38.825 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-06-24 10:55:38.825 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-06-24 10:55:38.826 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewStart.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_Layout.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-06-24 10:55:38.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-06-24 10:55:38.853 +07:00 [Debug] Using precompiled view for '"/Views/Catalogs/Import.cshtml"'.
+2019-06-24 10:55:38.858 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 10:55:38.863 +07:00 [Debug] The view path '"/Views/Catalogs/Import.cshtml"' was found in 103.5729ms.
+2019-06-24 10:55:38.955 +07:00 [Debug] An antiforgery cookie token was reused.
+2019-06-24 10:55:39.033 +07:00 [Debug] View lookup cache miss for view '"_StatusMessage"' in controller '"Catalogs"'.
+2019-06-24 10:55:39.036 +07:00 [Debug] Using precompiled view for '"/Views/Catalogs/_StatusMessage.cshtml"'.
+2019-06-24 10:55:39.044 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Catalogs"'.
+2019-06-24 10:55:39.048 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 10:55:39.108 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Catalogs"'.
+2019-06-24 10:55:39.111 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 10:55:39.129 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Catalogs"'.
+2019-06-24 10:55:39.144 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 10:55:39.269 +07:00 [Information] Executed ViewResult - view "Import" executed in 514.2086ms.
+2019-06-24 10:55:39.270 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 679.3906ms
+2019-06-24 10:55:39.278 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" completed keep alive response.
+2019-06-24 10:55:39.320 +07:00 [Information] Request finished in 1225.7175ms 200 text/html; charset=utf-8
+2019-06-24 10:55:39.464 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6P"" started.
+2019-06-24 10:55:39.466 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6Q"" started.
+2019-06-24 10:55:39.468 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.min.css?v=o58rbQrBnue0iUvODYSom2NdDcN5ac2Wx9aBfJjV0VI  
+2019-06-24 10:55:39.470 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/Ann_Logo.png  
+2019-06-24 10:55:39.480 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.css  
+2019-06-24 10:55:39.485 +07:00 [Information] The file "/css/site.css" was not modified
+2019-06-24 10:55:39.486 +07:00 [Information] The file "/images/Ann_Logo.png" was not modified
+2019-06-24 10:55:39.487 +07:00 [Information] The file "/css/site.min.css" was not modified
+2019-06-24 10:55:39.496 +07:00 [Debug] Handled. Status code: 304 File: "/images/Ann_Logo.png"
+2019-06-24 10:55:39.496 +07:00 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2019-06-24 10:55:39.496 +07:00 [Debug] Handled. Status code: 304 File: "/css/site.min.css"
+2019-06-24 10:55:39.498 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6Q"" completed keep alive response.
+2019-06-24 10:55:39.498 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" completed keep alive response.
+2019-06-24 10:55:39.498 +07:00 [Information] Request finished in 17.7471ms 304 text/css
+2019-06-24 10:55:39.498 +07:00 [Information] Request finished in 27.9438ms 304 image/png
+2019-06-24 10:55:39.498 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6P"" completed keep alive response.
+2019-06-24 10:55:39.498 +07:00 [Information] Request finished in 30.011ms 304 text/css
+2019-06-24 10:55:39.528 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.min.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U  
+2019-06-24 10:55:39.529 +07:00 [Information] The file "/js/site.min.js" was not modified
+2019-06-24 10:55:39.529 +07:00 [Debug] Handled. Status code: 304 File: "/js/site.min.js"
+2019-06-24 10:55:39.529 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6P"" completed keep alive response.
+2019-06-24 10:55:39.530 +07:00 [Information] Request finished in 1.553ms 304 application/javascript
+2019-06-24 10:55:39.530 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-06-24 10:55:39.532 +07:00 [Information] The file "/js/site.js" was not modified
+2019-06-24 10:55:39.532 +07:00 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2019-06-24 10:55:39.532 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6Q"" completed keep alive response.
+2019-06-24 10:55:39.532 +07:00 [Information] Request finished in 2.3444ms 304 application/javascript
+2019-06-24 10:55:39.545 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery/dist/jquery.js  
+2019-06-24 10:55:39.546 +07:00 [Information] The file "/lib/jquery/dist/jquery.js" was not modified
+2019-06-24 10:55:39.546 +07:00 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.js"
+2019-06-24 10:55:39.546 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" completed keep alive response.
+2019-06-24 10:55:39.546 +07:00 [Information] Request finished in 0.8737ms 304 application/javascript
+2019-06-24 10:55:49.163 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44357/catalogs/Import multipart/form-data; boundary=---------------------------7e3873110244 8930
+2019-06-24 10:55:49.164 +07:00 [Debug] "POST" requests are not supported
+2019-06-24 10:55:49.165 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 10:55:49.165 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 10:55:49.192 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 10:55:49.192 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 10:55:49.192 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:55:49.192 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 10:55:49.193 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 10:55:49.193 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:55:49.222 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6Q"", Request id ""0HLNOAV8NEJ6Q:00000003"": started reading request body.
+2019-06-24 10:55:49.260 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6Q"", Request id ""0HLNOAV8NEJ6Q:00000003"": done reading request body.
+2019-06-24 10:55:49.273 +07:00 [Debug] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2019-06-24 10:55:49.279 +07:00 [Debug] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '""' in request data ...
+2019-06-24 10:55:49.284 +07:00 [Debug] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2019-06-24 10:55:49.285 +07:00 [Debug] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2019-06-24 10:55:49.285 +07:00 [Debug] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2019-06-24 10:55:49.295 +07:00 [Debug] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2019-06-24 10:55:49.304 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: Valid
+2019-06-24 10:55:50.392 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-06-24 10:55:50.393 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-06-24 10:55:50.416 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'LoginProvider', 'Name'}".
+2019-06-24 10:55:50.432 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'RoleId'}".
+2019-06-24 10:55:50.514 +07:00 [Debug] The property '"ResultId"' on entity type '"Answer"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.515 +07:00 [Debug] The property '"SaleId"' on entity type '"Appoinment"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.515 +07:00 [Debug] The property '"QuestionId"' on entity type '"Bait"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.516 +07:00 [Debug] The property '"ProviderId"' on entity type '"Contact"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.516 +07:00 [Debug] The property '"RoleId"' on entity type '"Grant"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.516 +07:00 [Debug] The property '"PlanId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.516 +07:00 [Debug] The property '"ProductId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 10:55:50.579 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 10:55:50.628 +07:00 [Debug] '"BookingFormContext"' generated a temporary value for the '"Id"' property of new '"Catalog"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.714 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.715 +07:00 [Debug] '"BookingFormContext"' generated a temporary value for the '"Id"' property of new '"Catalog"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.716 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.716 +07:00 [Debug] '"BookingFormContext"' generated a temporary value for the '"Id"' property of new '"Catalog"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.717 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.717 +07:00 [Debug] SaveChanges starting for '"BookingFormContext"'.
+2019-06-24 10:55:50.718 +07:00 [Debug] DetectChanges starting for '"BookingFormContext"'.
+2019-06-24 10:55:50.737 +07:00 [Debug] DetectChanges completed for '"BookingFormContext"'.
+2019-06-24 10:55:50.754 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:50.816 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:50.824 +07:00 [Debug] Beginning transaction with isolation level '"ReadCommitted"'.
+2019-06-24 10:55:50.849 +07:00 [Debug] Executing update commands individually as the number of batchable commands (3) is smaller than the minimum batch size (4).
+2019-06-24 10:55:50.864 +07:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Acreage], [Block], [Cmnd], [Code], [Customer], [Direction], [Floor], [PhoneNumber], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 10:55:50.882 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Acreage], [Block], [Cmnd], [Code], [Customer], [Direction], [Floor], [PhoneNumber], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 10:55:50.899 +07:00 [Debug] Foreign key property '"Catalog"."Id"' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2019-06-24 10:55:50.904 +07:00 [Debug] A data reader was disposed.
+2019-06-24 10:55:50.904 +07:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Acreage], [Block], [Cmnd], [Code], [Customer], [Direction], [Floor], [PhoneNumber], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 10:55:50.912 +07:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Acreage], [Block], [Cmnd], [Code], [Customer], [Direction], [Floor], [PhoneNumber], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 10:55:50.913 +07:00 [Debug] Foreign key property '"Catalog"."Id"' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2019-06-24 10:55:50.914 +07:00 [Debug] A data reader was disposed.
+2019-06-24 10:55:50.914 +07:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Acreage], [Block], [Cmnd], [Code], [Customer], [Direction], [Floor], [PhoneNumber], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 10:55:50.922 +07:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Acreage], [Block], [Cmnd], [Code], [Customer], [Direction], [Floor], [PhoneNumber], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 10:55:50.922 +07:00 [Debug] Foreign key property '"Catalog"."Id"' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2019-06-24 10:55:50.922 +07:00 [Debug] A data reader was disposed.
+2019-06-24 10:55:50.945 +07:00 [Debug] Committing transaction.
+2019-06-24 10:55:50.945 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:50.946 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:50.946 +07:00 [Debug] Disposing transaction.
+2019-06-24 10:55:50.953 +07:00 [Debug] An '"Catalog"' entity tracked by '"BookingFormContext"' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.954 +07:00 [Debug] An '"Catalog"' entity tracked by '"BookingFormContext"' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.954 +07:00 [Debug] An '"Catalog"' entity tracked by '"BookingFormContext"' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:50.958 +07:00 [Debug] SaveChanges completed for '"BookingFormContext"' with 3 entities written to the database.
+2019-06-24 10:55:50.990 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1685.5646ms.
+2019-06-24 10:55:50.997 +07:00 [Debug] View lookup cache hit for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 10:55:50.997 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 10:55:50.997 +07:00 [Debug] The view path '"/Views/Catalogs/Import.cshtml"' was found in 0.6463ms.
+2019-06-24 10:55:50.999 +07:00 [Debug] An antiforgery cookie token was reused.
+2019-06-24 10:55:50.999 +07:00 [Debug] View lookup cache hit for view '"_StatusMessage"' in controller '"Catalogs"'.
+2019-06-24 10:55:50.999 +07:00 [Debug] View lookup cache hit for view '"_Layout"' in controller '"Catalogs"'.
+2019-06-24 10:55:51.000 +07:00 [Debug] View lookup cache hit for view '"_LoginPartial"' in controller '"Catalogs"'.
+2019-06-24 10:55:51.001 +07:00 [Debug] View lookup cache hit for view '"_CookieConsentPartial"' in controller '"Catalogs"'.
+2019-06-24 10:55:51.002 +07:00 [Information] Executed ViewResult - view "Import" executed in 4.9597ms.
+2019-06-24 10:55:51.023 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 1830.8203ms
+2019-06-24 10:55:51.038 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6Q"" completed keep alive response.
+2019-06-24 10:55:51.039 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 10:55:51.039 +07:00 [Information] Request finished in 1876.1384ms 200 text/html; charset=utf-8
+2019-06-24 10:55:54.449 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/Export  
+2019-06-24 10:55:54.450 +07:00 [Debug] The request path "/catalogs/Export" does not match a supported file type
+2019-06-24 10:55:54.450 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 10:55:54.450 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 10:55:54.459 +07:00 [Information] Route matched with "{action = \"Export\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Export (BookingForm)"
+2019-06-24 10:55:54.459 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 10:55:54.460 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:55:54.460 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 10:55:54.460 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 10:55:54.460 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 10:55:54.460 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)" - Validation state: Valid
+2019-06-24 10:55:54.746 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 10:55:54.826 +07:00 [Debug] Compiling query model: "
+"'"from Catalog c in DbSet<Catalog>
+where True
+select [c]"'
+2019-06-24 10:55:54.848 +07:00 [Debug] Optimized query model: "
+"'"from Catalog c in DbSet<Catalog>
+where True
+select [c]"'
+2019-06-24 10:55:54.967 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Catalog> _InterceptExceptions(
+    source: IAsyncEnumerable<Catalog> _TrackEntities(
+        results: IAsyncEnumerable<Catalog> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [c].[Id], [c].[Acreage], [c].[Block], [c].[Cmnd], [c].[Code], [c].[Customer], [c].[Direction], [c].[Floor], [c].[PhoneNumber], [c].[View]
+                FROM [Catalog] AS [c], 
+            shaper: UnbufferedEntityShaper<Catalog>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Catalog }, 
+        entityAccessors: List<Func<Catalog, object>> 
+        { 
+            Func<Catalog, Catalog>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-06-24 10:55:55.005 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:55.006 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:55.050 +07:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Acreage], [c].[Block], [c].[Cmnd], [c].[Code], [c].[Customer], [c].[Direction], [c].[Floor], [c].[PhoneNumber], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 10:55:55.074 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Acreage], [c].[Block], [c].[Cmnd], [c].[Code], [c].[Customer], [c].[Direction], [c].[Floor], [c].[PhoneNumber], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 10:55:55.107 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:55.124 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:55.124 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 10:55:55.125 +07:00 [Debug] A data reader was disposed.
+2019-06-24 10:55:55.125 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:55.126 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 10:55:55.835 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.FileStreamResult" in 1375.0197ms.
+2019-06-24 10:55:55.840 +07:00 [Information] Executing "Microsoft.AspNetCore.Mvc.FileStreamResult", sending file with download name '"C:\Users\trinh\AppData\Local\Temp\catalog.xlsx"' ...
+2019-06-24 10:55:55.841 +07:00 [Debug] The file result has not been enabled for processing range requests. To enable it, set the property 'EnableRangeProcessing' on the result to 'true'.
+2019-06-24 10:55:55.848 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Export (BookingForm)" in 1388.1499ms
+2019-06-24 10:55:55.848 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6P"" completed keep alive response.
+2019-06-24 10:55:55.848 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 10:55:55.849 +07:00 [Information] Request finished in 1399.6131ms 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+2019-06-24 10:56:46.722 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" received FIN.
+2019-06-24 10:56:46.727 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" disconnecting.
+2019-06-24 10:56:46.736 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" sending FIN.
+2019-06-24 10:56:46.745 +07:00 [Debug] Connection id ""0HLNOAV8NEJ6O"" stopped.
+2019-06-24 11:16:28.293 +07:00 [Debug] Hosting starting
+2019-06-24 11:16:28.523 +07:00 [Information] User profile is available. Using '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-06-24 11:16:28.539 +07:00 [Debug] Reading data from file '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys\key-6de63f81-dbcb-47f9-afed-bf9bd50c2766.xml"'.
+2019-06-24 11:16:28.597 +07:00 [Debug] Found key {6de63f81-dbcb-47f9-afed-bf9bd50c2766}.
+2019-06-24 11:16:28.630 +07:00 [Debug] Considering key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} with expiration date 2019-08-03 18:43:52Z as default key.
+2019-06-24 11:16:28.649 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-06-24 11:16:28.650 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2019-06-24 11:16:28.654 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-06-24 11:16:28.655 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2019-06-24 11:16:28.660 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2019-06-24 11:16:28.666 +07:00 [Debug] Using key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} as the default key.
+2019-06-24 11:16:28.667 +07:00 [Debug] Key ring with default key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} was loaded during application startup.
+2019-06-24 11:16:28.727 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.748 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.748 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.749 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.749 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2019-06-24 11:16:28.749 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.774 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.774 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.842 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2019-06-24 11:16:28.882 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-06-24 11:16:29.027 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2019-06-24 11:16:29.108 +07:00 [Debug] Hosting started
+2019-06-24 11:16:29.108 +07:00 [Debug] Loaded hosting startup assembly "BookingForm"
+2019-06-24 11:16:29.108 +07:00 [Debug] Loaded hosting startup assembly "Microsoft.AspNetCore.Server.IISIntegration"
+2019-06-24 11:16:29.239 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" started.
+2019-06-24 11:16:29.464 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/  
+2019-06-24 11:16:29.474 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2019-06-24 11:16:29.516 +07:00 [Debug] The request path "/" does not match a supported file type
+2019-06-24 11:16:29.613 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:16:30.108 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:16:30.144 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.HomeController.Index (BookingForm)"
+2019-06-24 11:16:30.146 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:16:30.146 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:16:30.146 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:16:30.147 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:16:30.147 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:16:30.254 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2019-06-24 11:16:30.370 +07:00 [Information] Executing action method "BookingForm.Controllers.HomeController.Index (BookingForm)" - Validation state: Valid
+2019-06-24 11:16:31.006 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-06-24 11:16:31.007 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-06-24 11:16:31.045 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'LoginProvider', 'Name'}".
+2019-06-24 11:16:31.079 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'RoleId'}".
+2019-06-24 11:16:31.241 +07:00 [Debug] The property '"ResultId"' on entity type '"Answer"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.241 +07:00 [Debug] The property '"SaleId"' on entity type '"Appoinment"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.241 +07:00 [Debug] The property '"QuestionId"' on entity type '"Bait"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.242 +07:00 [Debug] The property '"ProviderId"' on entity type '"Contact"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.242 +07:00 [Debug] The property '"RoleId"' on entity type '"Grant"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.242 +07:00 [Debug] The property '"PlanId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.242 +07:00 [Debug] The property '"ProductId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-06-24 11:16:31.346 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 11:16:31.348 +07:00 [Debug] SaveChanges starting for '"BookingFormContext"'.
+2019-06-24 11:16:31.350 +07:00 [Debug] DetectChanges starting for '"BookingFormContext"'.
+2019-06-24 11:16:31.351 +07:00 [Debug] DetectChanges completed for '"BookingFormContext"'.
+2019-06-24 11:16:31.359 +07:00 [Debug] SaveChanges completed for '"BookingFormContext"' with 0 entities written to the database.
+2019-06-24 11:16:31.367 +07:00 [Information] Executed action method "BookingForm.Controllers.HomeController.Index (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 991.0239ms.
+2019-06-24 11:16:31.385 +07:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-06-24 11:16:31.391 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-06-24 11:16:31.392 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ChangePassword.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-06-24 11:16:31.393 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Additional.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Approve.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Cancelled.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Choose.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Confirm.cshtml"'.
+2019-06-24 11:16:31.394 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Dashboard.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Date.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Index.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/List.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Multi.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Passport.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Performance.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/PrintDocument.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Product.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Request.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Text.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Tutor.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Withdraw.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Dashboard.cshtml"'.
+2019-06-24 11:16:31.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Request.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/AddDOB.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Confirm.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Create.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Delete.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Details.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Draft.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Edit.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Index.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Passport.cshtml"'.
+2019-06-24 11:16:31.396 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Plan.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Print.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Views.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_Draft.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/__Edit.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Import.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AddContact.cshtml"'.
+2019-06-24 11:16:31.403 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Answer.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AttendTest.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Chart.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/ConfirmRequest.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Contacts.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Dashboard.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Error.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Feedback.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Front.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Help.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Index.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Loan.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Manager.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/PassportInfo.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Question.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Quiz.cshtml"'.
+2019-06-24 11:16:31.404 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Rear.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Request.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestDetails.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Requests.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestsControl.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Reserve.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Result.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Secure.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/StatusMessage.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Template.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Test.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Tutor.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/WithdrawForm.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Approve.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Chart.cshtml"'.
+2019-06-24 11:16:31.405 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Collapse.cshtml"'.
+2019-06-24 11:16:31.417 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/CollapseQ.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Crawler.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Dashboard.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Employee.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Home.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Index.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Login.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Monthly.cshtml"'.
+2019-06-24 11:16:31.418 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Profit.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Request.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Target.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_Profit.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Partial/TableContents.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Account.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Email.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Image.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Profile.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Setting.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/AccessDenied.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Error.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 11:16:31.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewStart.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-06-24 11:16:31.420 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-06-24 11:16:31.436 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-06-24 11:16:31.436 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-06-24 11:16:31.436 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewStart.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-06-24 11:16:31.437 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_Layout.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-06-24 11:16:31.438 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-06-24 11:16:31.492 +07:00 [Debug] Using precompiled view for '"/Views/Home/Index.cshtml"'.
+2019-06-24 11:16:31.498 +07:00 [Information] Executing ViewResult, running view "Index".
+2019-06-24 11:16:31.504 +07:00 [Debug] The view path '"/Views/Home/Index.cshtml"' was found in 117.6206ms.
+2019-06-24 11:16:31.559 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2019-06-24 11:16:31.564 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 11:16:31.697 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Home"'.
+2019-06-24 11:16:31.705 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 11:16:31.729 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Home"'.
+2019-06-24 11:16:31.738 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 11:16:31.824 +07:00 [Information] Executed ViewResult - view "Index" executed in 443.7347ms.
+2019-06-24 11:16:31.825 +07:00 [Information] Executed action "BookingForm.Controllers.HomeController.Index (BookingForm)" in 1678.0843ms
+2019-06-24 11:16:31.832 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" completed keep alive response.
+2019-06-24 11:16:31.846 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 11:16:31.849 +07:00 [Information] Request finished in 2384.8152ms 200 text/html; charset=utf-8
+2019-06-24 11:16:37.350 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/import  
+2019-06-24 11:16:37.351 +07:00 [Debug] The request path "/catalogs/import" does not match a supported file type
+2019-06-24 11:16:37.354 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:16:37.355 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:16:37.365 +07:00 [Debug] Action '"BookingForm.Controllers.CatalogsController.Import (BookingForm)"' with id '"435fd88f-7722-4cbd-a6a3-8cb7095794cc"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2019-06-24 11:16:37.371 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 11:16:37.372 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:16:37.372 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:16:37.372 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:16:37.372 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:16:37.372 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:16:37.374 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" - Validation state: Valid
+2019-06-24 11:16:37.374 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.4702ms.
+2019-06-24 11:16:37.375 +07:00 [Debug] View lookup cache miss for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 11:16:37.384 +07:00 [Debug] Using precompiled view for '"/Views/Catalogs/Import.cshtml"'.
+2019-06-24 11:16:37.385 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 11:16:37.385 +07:00 [Debug] The view path '"/Views/Catalogs/Import.cshtml"' was found in 9.4922ms.
+2019-06-24 11:16:37.409 +07:00 [Debug] An antiforgery cookie token was reused.
+2019-06-24 11:16:37.721 +07:00 [Debug] View lookup cache miss for view '"_StatusMessage"' in controller '"Catalogs"'.
+2019-06-24 11:16:37.735 +07:00 [Debug] Using precompiled view for '"/Views/Catalogs/_StatusMessage.cshtml"'.
+2019-06-24 11:16:37.745 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Catalogs"'.
+2019-06-24 11:16:37.746 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-06-24 11:16:37.748 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Catalogs"'.
+2019-06-24 11:16:37.754 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-06-24 11:16:37.754 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Catalogs"'.
+2019-06-24 11:16:37.755 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-06-24 11:16:37.756 +07:00 [Information] Executed ViewResult - view "Import" executed in 380.6732ms.
+2019-06-24 11:16:37.756 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 384.2635ms
+2019-06-24 11:16:37.757 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" completed keep alive response.
+2019-06-24 11:16:37.757 +07:00 [Information] Request finished in 406.7176ms 200 text/html; charset=utf-8
+2019-06-24 11:16:39.409 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/Export  
+2019-06-24 11:16:39.410 +07:00 [Debug] The request path "/catalogs/Export" does not match a supported file type
+2019-06-24 11:16:39.411 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:16:39.411 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:16:39.420 +07:00 [Information] Route matched with "{action = \"Export\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Export (BookingForm)"
+2019-06-24 11:16:39.420 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:16:39.421 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:16:39.422 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:16:39.422 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:16:39.422 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:16:39.423 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)" - Validation state: Valid
+2019-06-24 11:16:39.917 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 11:16:39.982 +07:00 [Debug] Compiling query model: "
+"'"from Catalog c in DbSet<Catalog>
+where True
+select [c]"'
+2019-06-24 11:16:40.013 +07:00 [Debug] Optimized query model: "
+"'"from Catalog c in DbSet<Catalog>
+where True
+select [c]"'
+2019-06-24 11:16:40.083 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Catalog> _InterceptExceptions(
+    source: IAsyncEnumerable<Catalog> _TrackEntities(
+        results: IAsyncEnumerable<Catalog> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+                FROM [Catalog] AS [c], 
+            shaper: UnbufferedEntityShaper<Catalog>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Catalog }, 
+        entityAccessors: List<Func<Catalog, object>> 
+        { 
+            Func<Catalog, Catalog>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-06-24 11:16:40.136 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:16:40.240 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:16:40.304 +07:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 11:16:40.355 +07:00 [Information] Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 11:16:40.500 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:16:40.530 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:16:40.531 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:16:40.531 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:16:40.531 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:16:40.532 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:16:40.533 +07:00 [Debug] A data reader was disposed.
+2019-06-24 11:16:40.533 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:16:40.534 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:16:41.153 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.FileStreamResult" in 1729.0819ms.
+2019-06-24 11:16:41.165 +07:00 [Information] Executing "Microsoft.AspNetCore.Mvc.FileStreamResult", sending file with download name '"C:\Users\trinh\AppData\Local\Temp\catalog.xlsx"' ...
+2019-06-24 11:16:41.170 +07:00 [Debug] The file result has not been enabled for processing range requests. To enable it, set the property 'EnableRangeProcessing' on the result to 'true'.
+2019-06-24 11:16:41.182 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Export (BookingForm)" in 1760.2275ms
+2019-06-24 11:16:41.203 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" completed keep alive response.
+2019-06-24 11:16:41.205 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 11:16:41.206 +07:00 [Information] Request finished in 1796.8775ms 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+2019-06-24 11:18:19.187 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" received FIN.
+2019-06-24 11:18:19.190 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" disconnecting.
+2019-06-24 11:18:19.199 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" sending FIN.
+2019-06-24 11:18:19.211 +07:00 [Debug] Connection id ""0HLNOBATK95GB"" stopped.
+2019-06-24 11:19:33.252 +07:00 [Debug] Connection id ""0HLNOBATK95GC"" started.
+2019-06-24 11:19:33.254 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/import  
+2019-06-24 11:19:33.254 +07:00 [Debug] The request path "/catalogs/import" does not match a supported file type
+2019-06-24 11:19:33.254 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:19:33.255 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:19:33.255 +07:00 [Debug] Action '"BookingForm.Controllers.CatalogsController.Import (BookingForm)"' with id '"435fd88f-7722-4cbd-a6a3-8cb7095794cc"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2019-06-24 11:19:33.256 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 11:19:33.256 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:19:33.257 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:33.257 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:19:33.257 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:19:33.257 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:33.258 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" - Validation state: Valid
+2019-06-24 11:19:33.258 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0355ms.
+2019-06-24 11:19:33.259 +07:00 [Debug] View lookup cache hit for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 11:19:33.259 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 11:19:33.259 +07:00 [Debug] The view path '"/Views/Catalogs/Import.cshtml"' was found in 0.9174ms.
+2019-06-24 11:19:33.261 +07:00 [Debug] An antiforgery cookie token was reused.
+2019-06-24 11:19:33.261 +07:00 [Debug] View lookup cache hit for view '"_StatusMessage"' in controller '"Catalogs"'.
+2019-06-24 11:19:33.262 +07:00 [Debug] View lookup cache hit for view '"_Layout"' in controller '"Catalogs"'.
+2019-06-24 11:19:33.263 +07:00 [Debug] View lookup cache hit for view '"_LoginPartial"' in controller '"Catalogs"'.
+2019-06-24 11:19:33.264 +07:00 [Debug] View lookup cache hit for view '"_CookieConsentPartial"' in controller '"Catalogs"'.
+2019-06-24 11:19:33.267 +07:00 [Information] Executed ViewResult - view "Import" executed in 8.7182ms.
+2019-06-24 11:19:33.267 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 9.8726ms
+2019-06-24 11:19:33.268 +07:00 [Debug] Connection id ""0HLNOBATK95GC"" completed keep alive response.
+2019-06-24 11:19:33.268 +07:00 [Information] Request finished in 14.6256ms 200 text/html; charset=utf-8
+2019-06-24 11:19:33.318 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.min.css?v=o58rbQrBnue0iUvODYSom2NdDcN5ac2Wx9aBfJjV0VI  
+2019-06-24 11:19:33.320 +07:00 [Debug] Connection id ""0HLNOBATK95GD"" started.
+2019-06-24 11:19:33.321 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/images/Ann_Logo.png  
+2019-06-24 11:19:33.321 +07:00 [Debug] Connection id ""0HLNOBATK95GE"" started.
+2019-06-24 11:19:33.322 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.min.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U  
+2019-06-24 11:19:33.322 +07:00 [Debug] Connection id ""0HLNOBATK95GF"" started.
+2019-06-24 11:19:33.328 +07:00 [Debug] Connection id ""0HLNOBATK95GG"" started.
+2019-06-24 11:19:33.329 +07:00 [Debug] Connection id ""0HLNOBATK95GH"" started.
+2019-06-24 11:19:33.331 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/css/site.css  
+2019-06-24 11:19:33.333 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-06-24 11:19:33.334 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/lib/jquery/dist/jquery.js  
+2019-06-24 11:19:33.334 +07:00 [Information] The file "/images/Ann_Logo.png" was not modified
+2019-06-24 11:19:33.334 +07:00 [Information] The file "/lib/jquery/dist/jquery.js" was not modified
+2019-06-24 11:19:33.334 +07:00 [Information] The file "/css/site.min.css" was not modified
+2019-06-24 11:19:33.334 +07:00 [Information] The file "/css/site.css" was not modified
+2019-06-24 11:19:33.334 +07:00 [Information] The file "/js/site.js" was not modified
+2019-06-24 11:19:33.334 +07:00 [Information] The file "/js/site.min.js" was not modified
+2019-06-24 11:19:33.341 +07:00 [Debug] Handled. Status code: 304 File: "/css/site.min.css"
+2019-06-24 11:19:33.342 +07:00 [Debug] Handled. Status code: 304 File: "/images/Ann_Logo.png"
+2019-06-24 11:19:33.341 +07:00 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2019-06-24 11:19:33.342 +07:00 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2019-06-24 11:19:33.342 +07:00 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.js"
+2019-06-24 11:19:33.342 +07:00 [Debug] Handled. Status code: 304 File: "/js/site.min.js"
+2019-06-24 11:19:33.346 +07:00 [Debug] Connection id ""0HLNOBATK95GF"" completed keep alive response.
+2019-06-24 11:19:33.346 +07:00 [Debug] Connection id ""0HLNOBATK95GE"" completed keep alive response.
+2019-06-24 11:19:33.346 +07:00 [Debug] Connection id ""0HLNOBATK95GC"" completed keep alive response.
+2019-06-24 11:19:33.346 +07:00 [Information] Request finished in 24.2107ms 304 application/javascript
+2019-06-24 11:19:33.346 +07:00 [Information] Request finished in 27.589ms 304 text/css
+2019-06-24 11:19:33.346 +07:00 [Debug] Connection id ""0HLNOBATK95GG"" completed keep alive response.
+2019-06-24 11:19:33.346 +07:00 [Information] Request finished in 12.1836ms 304 application/javascript
+2019-06-24 11:19:33.346 +07:00 [Debug] Connection id ""0HLNOBATK95GH"" completed keep alive response.
+2019-06-24 11:19:33.346 +07:00 [Information] Request finished in 15.0114ms 304 text/css
+2019-06-24 11:19:33.346 +07:00 [Information] Request finished in 13.7611ms 304 application/javascript
+2019-06-24 11:19:33.346 +07:00 [Debug] Connection id ""0HLNOBATK95GD"" completed keep alive response.
+2019-06-24 11:19:33.346 +07:00 [Information] Request finished in 25.6714ms 304 image/png
+2019-06-24 11:19:35.392 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/Export  
+2019-06-24 11:19:35.392 +07:00 [Debug] The request path "/catalogs/Export" does not match a supported file type
+2019-06-24 11:19:35.393 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:19:35.393 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:19:35.393 +07:00 [Information] Route matched with "{action = \"Export\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Export (BookingForm)"
+2019-06-24 11:19:35.393 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:19:35.394 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:35.394 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:19:35.394 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:19:35.394 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:35.394 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)" - Validation state: Valid
+2019-06-24 11:19:35.396 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 11:19:35.398 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:35.399 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:35.400 +07:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 11:19:35.446 +07:00 [Information] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 11:19:35.446 +07:00 [Debug] A data reader was disposed.
+2019-06-24 11:19:35.446 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:35.446 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:35.452 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.FileStreamResult" in 57.6887ms.
+2019-06-24 11:19:35.452 +07:00 [Information] Executing "Microsoft.AspNetCore.Mvc.FileStreamResult", sending file with download name '"C:\Users\trinh\AppData\Local\Temp\catalog.xlsx"' ...
+2019-06-24 11:19:35.453 +07:00 [Debug] The file result has not been enabled for processing range requests. To enable it, set the property 'EnableRangeProcessing' on the result to 'true'.
+2019-06-24 11:19:35.453 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Export (BookingForm)" in 59.1261ms
+2019-06-24 11:19:35.453 +07:00 [Debug] Connection id ""0HLNOBATK95GG"" completed keep alive response.
+2019-06-24 11:19:35.453 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 11:19:35.454 +07:00 [Information] Request finished in 61.6514ms 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+2019-06-24 11:19:47.866 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:44357/catalogs/Import multipart/form-data; boundary=---------------------------7e334b2f10244 9586
+2019-06-24 11:19:47.867 +07:00 [Debug] "POST" requests are not supported
+2019-06-24 11:19:47.867 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:19:47.868 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:19:47.890 +07:00 [Information] Route matched with "{action = \"Import\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Import (BookingForm)"
+2019-06-24 11:19:47.890 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:19:47.890 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:47.890 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:19:47.890 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:19:47.890 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:47.912 +07:00 [Debug] Connection id ""0HLNOBATK95GH"", Request id ""0HLNOBATK95GH:00000002"": started reading request body.
+2019-06-24 11:19:47.940 +07:00 [Debug] Connection id ""0HLNOBATK95GH"", Request id ""0HLNOBATK95GH:00000002"": done reading request body.
+2019-06-24 11:19:47.954 +07:00 [Debug] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2019-06-24 11:19:47.961 +07:00 [Debug] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '""' in request data ...
+2019-06-24 11:19:47.966 +07:00 [Debug] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2019-06-24 11:19:47.966 +07:00 [Debug] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2019-06-24 11:19:47.966 +07:00 [Debug] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2019-06-24 11:19:47.980 +07:00 [Debug] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2019-06-24 11:19:47.990 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)" with arguments (["Microsoft.AspNetCore.Http.Internal.FormFile"]) - Validation state: Valid
+2019-06-24 11:19:48.495 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 11:19:48.529 +07:00 [Debug] '"BookingFormContext"' generated a temporary value for the '"Id"' property of new '"Catalog"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.537 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.538 +07:00 [Debug] '"BookingFormContext"' generated a temporary value for the '"Id"' property of new '"Catalog"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.539 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.539 +07:00 [Debug] '"BookingFormContext"' generated a temporary value for the '"Id"' property of new '"Catalog"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.539 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.539 +07:00 [Debug] SaveChanges starting for '"BookingFormContext"'.
+2019-06-24 11:19:48.540 +07:00 [Debug] DetectChanges starting for '"BookingFormContext"'.
+2019-06-24 11:19:48.554 +07:00 [Debug] DetectChanges completed for '"BookingFormContext"'.
+2019-06-24 11:19:48.558 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:48.558 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:48.564 +07:00 [Debug] Beginning transaction with isolation level '"ReadCommitted"'.
+2019-06-24 11:19:48.589 +07:00 [Debug] Executing update commands individually as the number of batchable commands (3) is smaller than the minimum batch size (4).
+2019-06-24 11:19:48.596 +07:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Area], [Block], [Code], [Direction], [Floor], [NOBedroom], [NOWC], [Name], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 11:19:48.605 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Area], [Block], [Code], [Direction], [Floor], [NOBedroom], [NOWC], [Name], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 11:19:48.608 +07:00 [Debug] Foreign key property '"Catalog"."Id"' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2019-06-24 11:19:48.612 +07:00 [Debug] A data reader was disposed.
+2019-06-24 11:19:48.613 +07:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Area], [Block], [Code], [Direction], [Floor], [NOBedroom], [NOWC], [Name], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 11:19:48.621 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Area], [Block], [Code], [Direction], [Floor], [NOBedroom], [NOWC], [Name], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 11:19:48.622 +07:00 [Debug] Foreign key property '"Catalog"."Id"' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2019-06-24 11:19:48.623 +07:00 [Debug] A data reader was disposed.
+2019-06-24 11:19:48.623 +07:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Area], [Block], [Code], [Direction], [Floor], [NOBedroom], [NOWC], [Name], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 11:19:48.629 +07:00 [Information] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Double), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Catalog] ([Area], [Block], [Code], [Direction], [Floor], [NOBedroom], [NOWC], [Name], [View])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Catalog]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2019-06-24 11:19:48.629 +07:00 [Debug] Foreign key property '"Catalog"."Id"' detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+2019-06-24 11:19:48.629 +07:00 [Debug] A data reader was disposed.
+2019-06-24 11:19:48.649 +07:00 [Debug] Committing transaction.
+2019-06-24 11:19:48.649 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:48.649 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:48.649 +07:00 [Debug] Disposing transaction.
+2019-06-24 11:19:48.654 +07:00 [Debug] An '"Catalog"' entity tracked by '"BookingFormContext"' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.655 +07:00 [Debug] An '"Catalog"' entity tracked by '"BookingFormContext"' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.655 +07:00 [Debug] An '"Catalog"' entity tracked by '"BookingFormContext"' changed from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:48.655 +07:00 [Debug] SaveChanges completed for '"BookingFormContext"' with 3 entities written to the database.
+2019-06-24 11:19:48.685 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Import (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 695.0913ms.
+2019-06-24 11:19:48.685 +07:00 [Debug] View lookup cache hit for view '"Import"' in controller '"Catalogs"'.
+2019-06-24 11:19:48.685 +07:00 [Information] Executing ViewResult, running view "Import".
+2019-06-24 11:19:48.686 +07:00 [Debug] The view path '"/Views/Catalogs/Import.cshtml"' was found in 0.2232ms.
+2019-06-24 11:19:48.686 +07:00 [Debug] An antiforgery cookie token was reused.
+2019-06-24 11:19:48.686 +07:00 [Debug] View lookup cache hit for view '"_StatusMessage"' in controller '"Catalogs"'.
+2019-06-24 11:19:48.687 +07:00 [Debug] View lookup cache hit for view '"_Layout"' in controller '"Catalogs"'.
+2019-06-24 11:19:48.687 +07:00 [Debug] View lookup cache hit for view '"_LoginPartial"' in controller '"Catalogs"'.
+2019-06-24 11:19:48.687 +07:00 [Debug] View lookup cache hit for view '"_CookieConsentPartial"' in controller '"Catalogs"'.
+2019-06-24 11:19:48.688 +07:00 [Information] Executed ViewResult - view "Import" executed in 2.6816ms.
+2019-06-24 11:19:48.688 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Import (BookingForm)" in 798.0524ms
+2019-06-24 11:19:48.688 +07:00 [Debug] Connection id ""0HLNOBATK95GH"" completed keep alive response.
+2019-06-24 11:19:48.689 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 11:19:48.689 +07:00 [Information] Request finished in 822.3743ms 200 text/html; charset=utf-8
+2019-06-24 11:19:50.516 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:44357/catalogs/Export  
+2019-06-24 11:19:50.516 +07:00 [Debug] The request path "/catalogs/Export" does not match a supported file type
+2019-06-24 11:19:50.517 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-06-24 11:19:50.518 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-06-24 11:19:50.518 +07:00 [Information] Route matched with "{action = \"Export\", controller = \"Catalogs\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.CatalogsController.Export (BookingForm)"
+2019-06-24 11:19:50.518 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-06-24 11:19:50.518 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:50.519 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-06-24 11:19:50.519 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-06-24 11:19:50.519 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-06-24 11:19:50.519 +07:00 [Information] Executing action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)" - Validation state: Valid
+2019-06-24 11:19:50.522 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-06-24 11:19:50.522 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:50.523 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:50.523 +07:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 11:19:50.527 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Area], [c].[Block], [c].[Code], [c].[Direction], [c].[Floor], [c].[NOBedroom], [c].[NOWC], [c].[Name], [c].[View]
+FROM [Catalog] AS [c]"
+2019-06-24 11:19:50.528 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:50.528 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:50.528 +07:00 [Debug] Context '"Catalog"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-06-24 11:19:50.529 +07:00 [Debug] A data reader was disposed.
+2019-06-24 11:19:50.529 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:50.529 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-06-24 11:19:50.536 +07:00 [Information] Executed action method "BookingForm.Controllers.CatalogsController.Export (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.FileStreamResult" in 15.9711ms.
+2019-06-24 11:19:50.536 +07:00 [Information] Executing "Microsoft.AspNetCore.Mvc.FileStreamResult", sending file with download name '"C:\Users\trinh\AppData\Local\Temp\catalog.xlsx"' ...
+2019-06-24 11:19:50.536 +07:00 [Debug] The file result has not been enabled for processing range requests. To enable it, set the property 'EnableRangeProcessing' on the result to 'true'.
+2019-06-24 11:19:50.536 +07:00 [Information] Executed action "BookingForm.Controllers.CatalogsController.Export (BookingForm)" in 17.1939ms
+2019-06-24 11:19:50.536 +07:00 [Debug] Connection id ""0HLNOBATK95GC"" completed keep alive response.
+2019-06-24 11:19:50.537 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-06-24 11:19:50.537 +07:00 [Information] Request finished in 20.5309ms 200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet

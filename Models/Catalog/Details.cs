@@ -13,6 +13,10 @@ namespace BookingForm.Models
         public string AreaWithoutWall { get; set; }
         [DisplayName("Hình minh họa")]
         public string ImagePath { get; set; }
+        [DisplayName("Mặt bằng khối")]
+        public string ImagePath1 { get; set; }
+        [DisplayName("Mặt bằng dự án")]
+        public string ImagePath2 { get; set; }
 
     }
 }

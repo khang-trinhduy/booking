@@ -66,18 +66,32 @@ namespace BookingForm.Controllers
                 for (int i = 2; i <= totalRows; i++)
                 {
                     Catalog c = new Catalog();
+                    try
+                    {
+                        c.LocalCode = workSheet.Cells[i, 1].Value.ToString();
+                        c.GlobalCode = workSheet.Cells[i, 2].Value.ToString();
+                        c.Name = workSheet.Cells[i, 3].Value.ToString();
+                        c.NOBedroom = workSheet.Cells[i, 4].Value.ToString();
+                        c.NOWC = workSheet.Cells[i, 5].Value.ToString();
+                        c.Direction = workSheet.Cells[i, 6].Value.ToString();
+                        c.View = workSheet.Cells[i, 7].Value.ToString();
+                        c.Area = workSheet.Cells[i, 8].Value.ToString();
+                        c.Floor = workSheet.Cells[i, 9].Value.ToString();
+                        c.Block = workSheet.Cells[i, 10].Value.ToString();
+                        var code = workSheet.Cells[i, 11].Value.ToString();
 
-                    c.LocalCode = workSheet.Cells[i, 1].Value.ToString();
-                    c.GlobalCode = workSheet.Cells[i, 2].Value.ToString();
-                    c.Name = workSheet.Cells[i, 3].Value.ToString();
-                    c.NOBedroom = workSheet.Cells[i, 4].Value.ToString();
-                    c.NOWC = workSheet.Cells[i, 5].Value.ToString();
-                    c.Direction = workSheet.Cells[i, 6].Value.ToString();
-                    c.View = workSheet.Cells[i, 7].Value.ToString();
-                    c.Area = workSheet.Cells[i, 8].Value.ToString();
-                    c.Floor = workSheet.Cells[i, 9].Value.ToString();
-                    c.Block = workSheet.Cells[i, 10].Value.ToString();
-
+                        var detail = await _context.Details.FirstOrDefaultAsync(e => e.DepartmentType == code);
+                        if (detail != null)
+                        {
+                            c.DepartmentDetails = detail;
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+                        ViewBag.msg = "Lỗi! các ô không được để trống";
+                        return View(nameof(Import));
+                    }
+                    
                     try
                     {
                         Catalogs.Add(c
@@ -130,7 +144,8 @@ namespace BookingForm.Controllers
                 row.CreateCell(7).SetCellValue("Diện tích");
                 row.CreateCell(8).SetCellValue("Tầng");
                 row.CreateCell(9).SetCellValue("Khối");
-                var catalogs = await _context.Catalog.Where(c => true).ToListAsync();
+                row.CreateCell(10).SetCellValue("Mã loại căn");
+                var catalogs = await _context.Catalog.Include(c => c.DepartmentDetails).ToListAsync();
                 int count = 1;
                 foreach (var catalog in catalogs)
                 {
@@ -145,6 +160,13 @@ namespace BookingForm.Controllers
                     row.CreateCell(7).SetCellValue(catalog.Area);
                     row.CreateCell(8).SetCellValue(catalog.Floor);
                     row.CreateCell(9).SetCellValue(catalog.Block);
+                    if (catalog.DepartmentDetails != null)
+                    {
+                        row.CreateCell(10).SetCellValue(catalog.DepartmentDetails.DepartmentType);                        
+                    }
+                    else
+                        row.CreateCell(10).SetCellValue("");
+
                     count++;
                 }
 

@@ -2831,3 +2831,25 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624094948_add custom field')
+BEGIN
+    ALTER TABLE [Details] ADD [ImagePath1] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624094948_add custom field')
+BEGIN
+    ALTER TABLE [Details] ADD [ImagePath2] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190624094948_add custom field')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190624094948_add custom field', N'2.1.8-servicing-32085');
+END;
+
+GO
+

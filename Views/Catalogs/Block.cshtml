@@ -1,0 +1,48 @@
+@model IEnumerable<BookingForm.Models.Block>
+@{
+    ViewData["title"] = "Block";
+}
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Floors)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="Sample" asp-route-str="@item.ImagePath">Xem</a>
+            </td>
+            <td>
+                <a asp-action="Sample" asp-route-str="@item.Location">Xem</a>
+            </td>
+            <td>
+                @if (item.Floors != null && item.Floors.Count > 0)
+                {
+                    <a asp-action="GetFloors" asp-route-id="@item.Id">Danh sách tầng</a>                
+                    
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

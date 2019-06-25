@@ -9,7 +9,7 @@ namespace BookingForm.Models
     public class Catalog
     {
         [DisplayName("Chi tiết căn hộ")]
-        public Details DepartmentDetails { get; set; }
+        public Details ApartmentDetails { get; set; }
         [DisplayName("Tầng")]
         public string Floor { get; set; }
         [DisplayName("Hướng")]

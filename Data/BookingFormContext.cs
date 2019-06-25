@@ -80,6 +80,10 @@ namespace BookingForm.Models
         public DbSet<Answer> Answer { get; set; }
         public DbSet<BookingForm.Models.Catalog> Catalog { get; set; }
         public DbSet<BookingForm.Models.Details> Details { get; set; }
+        public DbSet<BookingForm.Models.Section> Section { get; set; }
+        public DbSet<BookingForm.Models.Block> Block { get; set; }
+        public DbSet<BookingForm.Models.Floor> Floor { get; set; }
+        public DbSet<BookingForm.Models.Apartment> Apartment { get; set; }
     }
 
     public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>

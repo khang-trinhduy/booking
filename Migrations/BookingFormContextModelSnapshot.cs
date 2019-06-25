@@ -42,6 +42,49 @@ namespace BookingForm.Migrations
                     b.ToTable("Answer");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Apartment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ApartmentDetailsId");
+
+                    b.Property<string>("Area");
+
+                    b.Property<string>("Block");
+
+                    b.Property<string>("Direction");
+
+                    b.Property<string>("Floor");
+
+                    b.Property<int?>("FloorId");
+
+                    b.Property<string>("GlobalCode");
+
+                    b.Property<string>("LocalCode");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("NOBedroom");
+
+                    b.Property<string>("NOWC");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Price");
+
+                    b.Property<string>("View");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApartmentDetailsId");
+
+                    b.HasIndex("FloorId");
+
+                    b.ToTable("Apartment");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Appoinment", b =>
                 {
                     b.Property<Guid>("Id")
@@ -213,17 +256,42 @@ namespace BookingForm.Migrations
                     b.ToTable("Bait");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Block", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CustomField1");
+
+                    b.Property<string>("CustomField2");
+
+                    b.Property<string>("ImagePath");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("SectionId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SectionId");
+
+                    b.ToTable("Block");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Catalog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ApartmentDetailsId");
+
                     b.Property<string>("Area");
 
                     b.Property<string>("Block");
-
-                    b.Property<int?>("DepartmentDetailsId");
 
                     b.Property<string>("Direction");
 
@@ -243,7 +311,7 @@ namespace BookingForm.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentDetailsId");
+                    b.HasIndex("ApartmentDetailsId");
 
                     b.ToTable("Catalog");
                 });
@@ -348,11 +416,11 @@ namespace BookingForm.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ApartmentType");
+
                     b.Property<string>("AreaIncludeWall");
 
                     b.Property<string>("AreaWithoutWall");
-
-                    b.Property<string>("DepartmentType");
 
                     b.Property<string>("ImagePath");
 
@@ -397,6 +465,29 @@ namespace BookingForm.Migrations
                     b.HasIndex("SaleId");
 
                     b.ToTable("Feedbacks");
+                });
+
+            modelBuilder.Entity("BookingForm.Models.Floor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BlockId");
+
+                    b.Property<string>("CustomField1");
+
+                    b.Property<string>("CustomField2");
+
+                    b.Property<string>("ImagePath");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlockId");
+
+                    b.ToTable("Floor");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Grant", b =>
@@ -730,6 +821,29 @@ namespace BookingForm.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Section", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("CustomField1");
+
+                    b.Property<string>("CustomField2");
+
+                    b.Property<string>("ImagePath");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Section");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Test", b =>
                 {
                     b.Property<int>("Id")
@@ -860,6 +974,17 @@ namespace BookingForm.Migrations
                         .HasForeignKey("ResultId");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Apartment", b =>
+                {
+                    b.HasOne("BookingForm.Models.Details", "ApartmentDetails")
+                        .WithMany()
+                        .HasForeignKey("ApartmentDetailsId");
+
+                    b.HasOne("BookingForm.Models.Floor")
+                        .WithMany("Apartments")
+                        .HasForeignKey("FloorId");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Appoinment", b =>
                 {
                     b.HasOne("BookingForm.Models.Plan", "Plan")
@@ -878,11 +1003,18 @@ namespace BookingForm.Migrations
                         .HasForeignKey("QuestionId");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Block", b =>
+                {
+                    b.HasOne("BookingForm.Models.Section")
+                        .WithMany("Blocks")
+                        .HasForeignKey("SectionId");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Catalog", b =>
                 {
-                    b.HasOne("BookingForm.Models.Details", "DepartmentDetails")
+                    b.HasOne("BookingForm.Models.Details", "ApartmentDetails")
                         .WithMany()
-                        .HasForeignKey("DepartmentDetailsId");
+                        .HasForeignKey("ApartmentDetailsId");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Contact", b =>
@@ -906,6 +1038,13 @@ namespace BookingForm.Migrations
                         .WithMany("Feedbacks")
                         .HasForeignKey("SaleId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BookingForm.Models.Floor", b =>
+                {
+                    b.HasOne("BookingForm.Models.Block")
+                        .WithMany("Floors")
+                        .HasForeignKey("BlockId");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Grant", b =>

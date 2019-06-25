@@ -1,0 +1,23 @@
+@model BookingForm.Models.Details
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group">
+                <label asp-for="@Model.ApartmentType">Loại căn hộ</label>
+                <input type="text" name="ApartmentType" asp-for="@Model.ApartmentType" class="form-control" placeholder="Loại căn hộ" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.AreaIncludeWall">Diện tích tim tường</label>
+                <input type="text" name="AreaIncludeWall" asp-for="@Model.AreaIncludeWall" class="form-control" placeholder="Loại căn hộ" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.AreaWithoutWall">Diện tích thông thủy</label>
+                <input type="text" name="AreaWithoutWall" asp-for="@Model.AreaWithoutWall" class="form-control" placeholder="Loại căn hộ" aria-describedby="helpId">
+            </div>
+        </div>
+        <div class="col-8">
+            <img src="~/images/catalog/@Model.ImagePath" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="Hình minh họa">
+        </div>
+    </div>
+</div>
+<a asp-action="Index">Quay lại</a>

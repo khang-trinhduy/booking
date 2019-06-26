@@ -1,0 +1,90 @@
+@model BookingForm.Models.Apartment
+<partial name="StatusMessage" model="@ViewBag.msg" />
+</hr>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.LocalCode)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.LocalCode" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.GlobalCode)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.GlobalCode" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.Floor)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.Floor" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.Direction)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.Direction" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.Area)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.Area" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.NOBedroom)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.NOBedroom" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.NOWC)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.NOWC" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.Name)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.Name" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.Block)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.Block" disable>
+</div>
+<div class="form-group">
+  <label for="">
+      @Html.DisplayNameFor(model => model.Price)
+  </label>
+  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.Price" disable>
+</div>
+<div class="hideable">
+  <form asp-action="Reserve">
+      <div class="form-group" hidden>
+        <label for="">
+            @Html.DisplayNameFor(model => model.LocalCode)
+        </label>
+        <input type="text" name="ApartmentCode" id="ApartmentCode" class="form-control" placeholder="" aria-describedby="helpId" value="@Model.LocalCode" required>
+      </div>
+      <div class="form-group">
+        <label>Nhập số cmnd</label>
+        <input type="text" id="Cmnd" name="Cmnd" class="form-control" placeholder="cmnd" aria-describedby="helpId" required>
+      </div>
+      <div class="form-group">
+        <label>Nhập SĐT</label>
+        <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="sđt" aria-describedby="helpId" required>
+      </div>
+      <div class="form-group">
+        <label>Nhập mã</label>
+        <input type="text" id="RCode" name="RCode" class="form-control" placeholder="code" aria-describedby="helpId" required>
+      </div>
+      <p style="color: red; font-style: italic">Lưu ý: Mỗi mã chỉ được sử dụng một lần. Quý khách sẽ không được thay đổi căn sau khi đã chọn</p>
+      <button type="submit" class="btn btn-success">Xác nhận</button>
+  </form>
+</div>
+<script>
+  
+</script>

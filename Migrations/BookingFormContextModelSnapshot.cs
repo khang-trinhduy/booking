@@ -70,9 +70,13 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("NOWC");
 
+                    b.Property<int>("NOfReserved");
+
                     b.Property<string>("Name");
 
                     b.Property<string>("Price");
+
+                    b.Property<bool>("Reserved");
 
                     b.Property<string>("View");
 
@@ -325,6 +329,8 @@ namespace BookingForm.Migrations
                     b.Property<string>("Cmnd");
 
                     b.Property<string>("FullName");
+
+                    b.Property<bool>("IsValid");
 
                     b.Property<int>("NOProduct");
 
@@ -648,6 +654,25 @@ namespace BookingForm.Migrations
                     b.ToTable("Question");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.RCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ClientId");
+
+                    b.Property<string>("Code");
+
+                    b.Property<bool>("IsUsed");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("RCode");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Request", b =>
                 {
                     b.Property<Guid>("Id")
@@ -698,6 +723,25 @@ namespace BookingForm.Migrations
                     b.HasIndex("OwnerId");
 
                     b.ToTable("Requests");
+                });
+
+            modelBuilder.Entity("BookingForm.Models.Reserved", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ApartmentCode");
+
+                    b.Property<string>("Cmnd");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("RCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reserve");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Result", b =>
@@ -1094,6 +1138,13 @@ namespace BookingForm.Migrations
                         .WithMany("Questions")
                         .HasForeignKey("TestId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("BookingForm.Models.RCode", b =>
+                {
+                    b.HasOne("BookingForm.Models.Client")
+                        .WithMany("Codes")
+                        .HasForeignKey("ClientId");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Request", b =>

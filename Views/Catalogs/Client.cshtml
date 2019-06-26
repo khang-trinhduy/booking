@@ -1,0 +1,37 @@
+@model IEnumerable<BookingForm.Models.Client>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Số thứ tự</th>
+            <th>Họ và tên</th>
+            <th>Số điện thoại</th>
+            <th>Số cmnd</th>
+            <th>Số sản phẩm đặt mua</th>
+            <th>Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td scope="row">@item.FullName</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Cmnd</td>
+                <td>@item.NOProduct</td>
+                @if (item.Codes != null)
+                {
+                    <td><a asp-action="Code" asp-route-id="@item.Id">Xem</a></td>
+
+                }
+            </tr>
+            count++;
+        }
+        
+    </tbody>
+</table>

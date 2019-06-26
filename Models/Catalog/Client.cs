@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BookingForm.Models
 {
@@ -9,5 +10,8 @@ namespace BookingForm.Models
         public String PhoneNumber { get; set; }
         public String Cmnd { get; set; }
         public int NOProduct { get; set; }
+        public bool IsValid { get; set; }
+        public List<RCode> Codes {get; set; } = new List<RCode>();
+        
     }
 }

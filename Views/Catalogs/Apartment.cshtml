@@ -43,6 +43,7 @@
             <th>Ảnh</th>
             <th>@Html.DisplayNameFor(model => model.Location)
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -91,6 +92,9 @@
             </td>
             <td>
                 <a asp-action="Sample" asp-route-str="@item.Location">Xem</a>
+            </td>
+            <td>
+                <a asp-action="Detail" asp-route-id="@item.Id">Chi tiết</a>
             </td>
         </tr>
 }

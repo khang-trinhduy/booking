@@ -16,10 +16,144 @@ namespace BookingForm.Controllers
 {
     public class CatalogsController : Controller
     {
+        private readonly bool Available = false;
         private readonly BookingFormContext _context;
+        private static Random random = new Random();
+        public static string GenerateCode()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, 12)
+            .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+        public IActionResult Reserved(Reserved r)
+        {
+            return View(r);
+        }
+        public IActionResult Detail(int id)
+        {
+            var apartment = _context.Apartment.FirstOrDefault(e => e.Id == id);
+            return View(apartment);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> Reserve([Bind("ApartmentCode, Cmnd, PhoneNumber, RCode")] Reserved r)
+        {
+            //TODO test code has already used
+            //TODO test invalid cmnd or phone number
+            //TODO test if client has already bought an apartment
+            //TODO test if client used a code that they not owned
+            if (ModelState.IsValid)
+            {
+                var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode && e.Reserved == false);
+                if (apartment == null)
+                {
+                    ViewBag.msg = "Căn hộ đã có người mua!";
+                    return View(nameof(Section));
+                }
+                var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
+                if (code == null)
+                {
+                    ViewBag.msg = "Mã mua không chính xác!";
+                    return View(nameof(Detail), apartment.Id);
+                }
+                else if (code.IsUsed)
+                {
+                    ViewBag.msg = "Mã này đã được sử dụng!";
+                    return View(nameof(Detail), apartment.Id);
+                }
+                var clients = await _context.Client.Include(e => e.Codes).ToListAsync();
+                var client = clients.FirstOrDefault(e => e.Cmnd == r.Cmnd && e.PhoneNumber == r.PhoneNumber);
+                if (client == null)
+                {
+                    ViewBag.msg = "Số cmnd hoặc số điện thoại không chính xác! Vui lòng kiểm tra lại.";
+                    return View(nameof(Detail), apartment.Id);
+                }
+                else if (!client.IsValid)
+                {
+                    ViewBag.msg = "Mỗi khách chỉ được mua một căn hộ!";
+                    return View(nameof(Detail), apartment.Id);
+                }
+                var isValidCode = client.Codes.FirstOrDefault(e => e.Code == code.Code && e.Id == code.Id);
+                if (isValidCode == null)
+                {
+                    ViewBag.msg = "Mã đặt mua không chính xác, vui lòng kiểm tra lại!";
+                    return View(nameof(Detail), apartment.Id);
+                }
+                r.CC = apartment.NOfReserved + 1;
+                apartment.NOfReserved++;
+                _context.Reserve.Add(r);
+                code.IsUsed = true;
+                _context.Entry(code).State = EntityState.Modified;
+                _context.Entry(apartment).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+            }
+            return View("Success");
+        }
+        public async Task<IActionResult> Code(int id)
+        {
+            var clients = await _context.Client.Include(e => e.Codes).ToListAsync();
+            var client = clients.FirstOrDefault(e => e.Id == id);
+            if (client == null)
+            {
+                return NotFound();
+            }
+            return View(client.Codes);
+        }
+        public List<RCode> Generate(int nOfCode)
+        {
+            if (nOfCode <= 0)
+            {
+                throw new Exception(nameof(nOfCode));
+            }
+            var codex = new List<RCode>();
+            var codes = _context.RCode.Where(c => true).ToList();
+            for (int i = 0; i < nOfCode; i++)
+            {
+                var uniqueSerial = GenerateCode();
+                var existed = _context.RCode.FirstOrDefault(e => e.Code == uniqueSerial);
+                while (existed != null)
+                {
+                    uniqueSerial = GenerateCode();
+                    existed = _context.RCode.FirstOrDefault(e => e.Code == uniqueSerial);
+                }
+                codex.Add(new RCode
+                {
+                    Code = uniqueSerial,
+                    IsUsed = false
+                });
+            }
+            return codex;
+        }
+        [Route("client/code/generate")]
+        public async Task<IActionResult> Assign()
+        {
+            if (!Available)
+            {
+                throw new Exception("reservation codes aren't available!");
+            }
+            var clients = await _context.Client.Where(e => e.IsValid).ToListAsync();
+            foreach (var item in clients)
+            {
+                var codes = Generate(item.NOProduct);
+                _context.RCode.AddRange(codes);
+                foreach (var code in codes)
+                {
+                    item.Codes.Add(code);
+                }
+                _context.Entry(item).State = EntityState.Modified;
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Client));
+        }
 
         [Route("khachhang")]
         public async Task<IActionResult> Client()
+        {
+            var clients = await _context.Client.Include(e => e.Codes).Where(e => true).ToListAsync();
+            return View(clients);
+        }
+        public async Task<IActionResult> GetClient()
         {
             var appointment = await _context.appoinment.Where(e => e.IsActive == true && e.Confirm == true && (e.NCH1 + e.NCH2 + e.NCH21 + e.NCH3) > 0).ToListAsync();
             foreach (var item in appointment)
@@ -32,19 +166,20 @@ namespace BookingForm.Controllers
                 }
                 else
                 {
-                    _context.Client.Add(new Client {
+                    _context.Client.Add(new Client
+                    {
                         Cmnd = item.Cmnd,
                         FullName = item.Customer,
                         NOProduct = item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3,
                         PhoneNumber = item.Phone
 
                     });
-                    
+
                 }
 
             }
             await _context.SaveChangesAsync();
-            return View(nameof(Index));
+            return RedirectToAction(nameof(Client));
         }
         public CatalogsController(BookingFormContext context)
         {
@@ -81,7 +216,7 @@ namespace BookingForm.Controllers
                 return RedirectToAction(nameof(Product));
             }
             var floors = s.Floors;
-            
+
             return View("Floor", floors);
         }
         [Route("tang/{id:int}")]
@@ -102,34 +237,34 @@ namespace BookingForm.Controllers
             {
                 case "local_desc":
                     apartments = apartments.OrderByDescending(e => e.LocalCode);
-                    break;               
+                    break;
                 case "global_desc":
                     apartments = apartments.OrderByDescending(e => e.GlobalCode);
-                    break;                
+                    break;
                 case "floor_desc":
                     apartments = apartments.OrderByDescending(e => e.Floor);
-                    break;                
+                    break;
                 case "acreage_desc":
                     apartments = apartments.OrderByDescending(e => e.Area);
-                    break;                             
+                    break;
                 case "price_desc":
                     apartments = apartments.OrderByDescending(e => e.Price);
-                    break;                
+                    break;
                 case "local":
                     apartments = apartments.OrderBy(e => e.LocalCode);
-                    break;                
+                    break;
                 case "global":
                     apartments = apartments.OrderBy(e => e.GlobalCode);
-                    break;                
+                    break;
                 case "floor":
                     apartments = apartments.OrderBy(e => e.Floor);
-                    break;                
+                    break;
                 case "acreage":
                     apartments = apartments.OrderBy(e => e.Area);
-                    break;                             
+                    break;
                 case "price":
                     apartments = apartments.OrderBy(e => e.Price);
-                    break;                
+                    break;
             }
             return View("Apartment", apartments);
         }
@@ -236,7 +371,7 @@ namespace BookingForm.Controllers
                             return View();
 
                         }
-                        
+
                         if (section.Blocks == null)
                         {
                             section.Blocks = new List<Block>();
@@ -251,7 +386,7 @@ namespace BookingForm.Controllers
                         if (block.Floors == null)
                         {
                             block.Floors = new List<Floor>();
-                             block.Floors.Add(floor);
+                            block.Floors.Add(floor);
                             _context.Entry(block).State = EntityState.Modified;
                         }
                         else if (block.Floors.FirstOrDefault(e => e.Name == floor.Name) == null)
@@ -285,7 +420,7 @@ namespace BookingForm.Controllers
                         var code = workSheet.Cells[i, 13].Value.ToString();
 
                         var detail = await _context.Details.FirstOrDefaultAsync(e => e.ApartmentType == code);
-                        
+
                         if (detail == null)
                         {
                             ViewBag.msg = $"Invalid code for apartment details on line {i}! Cannot find any apartment's details with code {code}.";
@@ -299,7 +434,7 @@ namespace BookingForm.Controllers
                         ViewBag.msg = $"Error! Cells must not be empty on row {i}";
                         return View(nameof(Import));
                     }
-                    
+
                     try
                     {
                         var existed = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode.ToLower() == c.LocalCode.ToLower());
@@ -324,7 +459,7 @@ namespace BookingForm.Controllers
                         {
                             add++;
                             apartments.Add(c);
-                            
+
                         }
                     }
                     catch (Exception e)
@@ -409,6 +544,6 @@ namespace BookingForm.Controllers
         // GET: Catalogs/Details/5
 
         // GET: Catalogs/Create
-        
+
     }
 }

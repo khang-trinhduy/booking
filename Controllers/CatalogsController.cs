@@ -57,11 +57,6 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Mã mua không chính xác!";
                     return View(nameof(Detail), apartment.Id);
                 }
-                else if (code.IsUsed)
-                {
-                    ViewBag.msg = "Mã này đã được sử dụng!";
-                    return View(nameof(Detail), apartment.Id);
-                }
                 var clients = await _context.Client.Include(e => e.Codes).ToListAsync();
                 var client = clients.FirstOrDefault(e => e.Cmnd == r.Cmnd && e.PhoneNumber == r.PhoneNumber);
                 if (client == null)
@@ -80,6 +75,21 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Mã đặt mua không chính xác, vui lòng kiểm tra lại!";
                     return View(nameof(Detail), apartment.Id);
                 }
+                if (code.IsUsed)
+                {
+                    var re = _context.Reserve.FirstOrDefault(e => e.RCode == code.Code);
+                    if (re != null)
+                    {
+                        var apart = _context.Apartment.FirstOrDefault(e => e.LocalCode == re.ApartmentCode);
+                        if (apart != null)
+                        {
+                            ViewBag.cc = re.CC;
+                            return View("Confirm", apart);
+                        }
+                    }
+                    ViewBag.msg = "Mã này đã được sử dụng!";
+                    return View(nameof(Detail), apartment.Id);
+                }
                 r.CC = apartment.NOfReserved + 1;
                 apartment.NOfReserved++;
                 _context.Reserve.Add(r);
@@ -87,8 +97,10 @@ namespace BookingForm.Controllers
                 _context.Entry(code).State = EntityState.Modified;
                 _context.Entry(apartment).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
+                ViewBag.cc = r.CC;
+                return View("Success", apartment);
             }
-            return View("Success");
+            return View("Error");
         }
         public async Task<IActionResult> Code(int id)
         {

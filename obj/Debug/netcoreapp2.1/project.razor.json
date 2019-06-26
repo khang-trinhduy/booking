@@ -3199,6 +3199,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Catalogs\\Confirm.cshtml",
+      "TargetPath": "Views\\Catalogs\\Confirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
       "FileKind": "mvc"
@@ -3416,6 +3421,11 @@
     {
       "FilePath": "Views\\Appoinments\\Plan.cshtml",
       "TargetPath": "Views\\Appoinments\\Plan.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Catalogs\\Error.cshtml",
+      "TargetPath": "Views\\Catalogs\\Error.cshtml",
       "FileKind": "mvc"
     },
     {

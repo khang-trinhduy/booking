@@ -733,6 +733,8 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("ApartmentCode");
 
+                    b.Property<int>("CC");
+
                     b.Property<string>("Cmnd");
 
                     b.Property<string>("PhoneNumber");

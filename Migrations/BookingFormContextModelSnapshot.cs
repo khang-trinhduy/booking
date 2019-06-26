@@ -316,6 +316,25 @@ namespace BookingForm.Migrations
                     b.ToTable("Catalog");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Cmnd");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<int>("NOProduct");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Client");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Contact", b =>
                 {
                     b.Property<Guid>("Id")

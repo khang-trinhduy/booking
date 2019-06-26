@@ -18,6 +18,34 @@ namespace BookingForm.Controllers
     {
         private readonly BookingFormContext _context;
 
+        [Route("khachhang")]
+        public async Task<IActionResult> Client()
+        {
+            var appointment = await _context.appoinment.Where(e => e.IsActive == true && e.Confirm == true && (e.NCH1 + e.NCH2 + e.NCH21 + e.NCH3) > 0).ToListAsync();
+            foreach (var item in appointment)
+            {
+                var existed = _context.Client.FirstOrDefault(e => e.FullName == item.Customer);
+                if (existed != null)
+                {
+                    existed.NOProduct += item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3;
+                    _context.Entry(existed).State = EntityState.Modified;
+                }
+                else
+                {
+                    _context.Client.Add(new Client {
+                        Cmnd = item.Cmnd,
+                        FullName = item.Customer,
+                        NOProduct = item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3,
+                        PhoneNumber = item.Phone
+
+                    });
+                    
+                }
+
+            }
+            await _context.SaveChangesAsync();
+            return View(nameof(Index));
+        }
         public CatalogsController(BookingFormContext context)
         {
             _context = context;

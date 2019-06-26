@@ -56,7 +56,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n<p>\r\n    ");
             EndContext();
             BeginContext(61, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "931385f0597945c09dd5f7b5007a874c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da82c98e7a18483c9dc675f8b9b9a8ca", async() => {
                 BeginContext(84, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -325,7 +325,7 @@ using BookingForm.Models;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(2615, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf666c00fc8d480494005de9d909c176", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "696ab7e13f804724a5982e0588bcf60f", async() => {
                 BeginContext(2680, 12, true);
                 WriteLiteral("Ảnh minh họa");
                 EndContext();
@@ -369,7 +369,7 @@ using BookingForm.Models;
             WriteLiteral("            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(2792, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb51fd6b362946a2a8898301fa705d9e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91abcbc218c94f71a615c19feeea31bf", async() => {
                 BeginContext(2846, 3, true);
                 WriteLiteral("Xem");
                 EndContext();

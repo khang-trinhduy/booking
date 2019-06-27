@@ -1,0 +1,55 @@
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@{
+    Layout = "~/Views/Catalogs/DumbLayout.cshtml";
+    ViewData["title"] = "Đặt mua";
+}
+<div class="container">
+<form id="form" asp-action="Confirm">
+      <div class="form-group">
+        <partial name="StatusMessage" model="@ViewBag.msg" />
+        <label for="">
+            Mã căn hộ
+        </label>
+            <input type="text" name="ApartmentCode" id="ApartmentCode" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
+        </div>
+        <div class="form-group">
+            <label>Nhập số cmnd</label>
+            <input type="text" id="Cmnd" name="Cmnd" class="form-control" placeholder="cmnd" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group">
+            <label>Nhập SĐT</label>
+            <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="sđt" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group">
+            <label>Nhập mã</label>
+            <input type="text" id="RCode" name="RCode" class="form-control" placeholder="code" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group">
+            @Html.Recaptcha(RecaptchaSettings?.Value)
+        </div>
+        <button class="btn btn-success" id="btn">Xác nhận</button>
+</form>
+</div>
+<style>
+    .container {
+        padding-top: 40px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

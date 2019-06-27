@@ -1,4 +1,4 @@
-@model BookingForm.Models.Apartment
+@model BookingForm.Models.Reservation
 @{
   Layout = null;
 }
@@ -87,43 +87,40 @@
 <div id="order">
     <hr />
     <p>Mã sản phẩm:</p>
-    <h4>@Model.LocalCode</h4>
-    <hr />
-    <p>Số lượng:</p>
-    <h4>1</h4>
+    <h4>@Model.Apartment.LocalCode</h4>
     <hr />
     <p>Ngày đặt mua:</p>
     <h4>@ViewBag.date</h4>
-    <hr />
+    <!-- <hr />
     <p>Số tiền:</p>
-    <h4>@Model.Price</h4>
+    <h4>@Model.Apartment.Price</h4> -->
     <hr />
     <p>Mã xác nhận</p>
-    <h4>@ViewBag.cc</h4>
+    <h4>@Model.Reserved.RCC</h4>
 </div>
 <h3>Thông tin sản phẩm</h3>
 <div id="product">
     <hr />
     <p>Tên sản phẩm:</p>
-    <h4>@Model.Name</h4>
+    <h4>@Model.Apartment.Name</h4>
     <hr />
     <p>Số phòng ngủ:</p>
-    <h4>@Model.NOBedroom</h4>
+    <h4>@Model.Apartment.NOBedroom</h4>
     <hr />
     <p>Số phòng vệ sinh:</p>
-    <h4>@Model.NOWC</h4>
+    <h4>@Model.Apartment.NOWC</h4>
     <hr />
     <p>Hướng:</p>
-    <h4>@Model.Direction</h4>
+    <h4>@Model.Apartment.Direction</h4>
     <hr />
     <p>View:</p>
-    <h4>@Model.View</h4>
+    <h4>@Model.Apartment.View</h4>
     <hr />
     <p>Tầng:</p>
-    <h4>@Model.Floor</h4>
+    <h4>@Model.Apartment.Floor</h4>
     <hr />
     <p>Diện tích</p>
-    <h4>@Model.Area</h4>
+    <h4>@Model.Apartment.Area</h4>
     <hr />
 </div>
 <h5>Lưu ý: Khách hàng cần lưu lại mã xác nhận để bốc thăm trong trường hợp có nhiều đơn hàng cùng đặt vào một sản phẩm</h5>

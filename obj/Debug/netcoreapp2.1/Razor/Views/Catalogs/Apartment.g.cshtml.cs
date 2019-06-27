@@ -310,7 +310,7 @@ using BookingForm.Models;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(2678, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3711387a3ea431584599adb50ecdbbb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "974e04db3a1a44558618ba3b9186f6fb", async() => {
                 BeginContext(2743, 12, true);
                 WriteLiteral("Ảnh minh họa");
                 EndContext();
@@ -354,7 +354,7 @@ using BookingForm.Models;
             WriteLiteral("            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(2855, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0bfafbb1b5e24af7b7ccfff6679fe072", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7188138189284beaae9fe40908f6b2f3", async() => {
                 BeginContext(2909, 3, true);
                 WriteLiteral("Xem");
                 EndContext();
@@ -389,7 +389,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(2971, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "393b3bee652c45b999f24198f802bd7f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "464a3818955b42ecb772108ea67c8b96", async() => {
                 BeginContext(3018, 8, true);
                 WriteLiteral("Chi tiết");
                 EndContext();

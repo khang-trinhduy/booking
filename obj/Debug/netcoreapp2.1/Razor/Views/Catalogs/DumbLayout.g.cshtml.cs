@@ -54,7 +54,7 @@ using BookingForm.Models;
             WriteLiteral("<!DOCTYPE html>\r\n");
             EndContext();
             BeginContext(17, 182, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26831029f30346de9f9bff9d8e5d5afc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc903cfdb0e147b5b8ab3334acdb471d", async() => {
                 BeginContext(23, 121, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>");
                 EndContext();
@@ -84,7 +84,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(201, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dacef9d601104ad7ad87125d19c9fc7e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd9e0ed32419429da225a0f8f19acebe", async() => {
                 BeginContext(207, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();

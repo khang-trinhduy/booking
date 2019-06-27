@@ -1,4 +1,4 @@
-@model BookingForm.Models.Apartment
+@model BookingForm.Models.Reservation
 @inject IOptions<RecaptchaSettings> RecaptchaSettings
 @using Microsoft.Extensions.Options
 @using reCAPTCHA.AspNetCore
@@ -8,6 +8,9 @@
 <head>
   <title>Xác nhận đặt mua</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <style>
     h1 {
       margin-top: 65px;
@@ -85,52 +88,60 @@
 <hr />
 <!-- <h1 style="font-family:sans-serif; ">Chúc mừng bạn đã đặt mua thành công!</h1>
 <p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p> -->
-
+<h3>Thông tin khách hàng</h3>
+    <p style="padding-top: 18;">Tên Khách hàng:</p>
+    <h4>@Model.Reserved.Customer</h4>
+    <hr />
+    <p>Số điện thoại:</p>
+    <h4>@Model.Reserved.PhoneNumber</h4>
+    <hr />
+    <p>Số cmnd:</p>
+    <h4 style="padding-bottom: 18;">@Model.Reserved.Cmnd</h4>
 <h3>Thông tin sản phẩm</h3>
 <div id="product">
     <p style="padding-top: 18;">Tên sản phẩm:</p>
-    <h4>@Model.Name</h4>
+    <h4>@Model.Apartment.Name</h4>
     <hr />
     <p>Số phòng ngủ:</p>
-    <h4>@Model.NOBedroom</h4>
+    <h4>@Model.Apartment.NOBedroom</h4>
     <hr />
     <p>Số phòng vệ sinh:</p>
-    <h4>@Model.NOWC</h4>
+    <h4>@Model.Apartment.NOWC</h4>
     <hr />
     <p>Hướng:</p>
-    <h4>@Model.Direction</h4>
+    <h4>@Model.Apartment.Direction</h4>
     <hr />
     <p>View:</p>
-    <h4>@Model.View</h4>
+    <h4>@Model.Apartment.View</h4>
     <hr />
     <p>Tầng:</p>
-    <h4>@Model.Floor</h4>
+    <h4>@Model.Apartment.Floor</h4>
     <hr />
     <p>Diện tích</p>
-    <h4>@Model.Area</h4>
+    <h4>@Model.Apartment.Area</h4>
     <hr />
     <p>Số tiền:</p>
-    <h4 style="padding-bottom: 18;">@Model.Price</h4>
+    <h4 style="padding-bottom: 18;">@Model.Apartment.Price</h4>
 </div>
-<h5>Lưu ý: Khách hàng cần lưu lại mã xác nhận để bốc thăm trong trường hợp có nhiều đơn hàng cùng đặt vào một sản phẩm</h5>
-<form id="form" asp-action="Reserve">
+<form id="form" asp-action="Create" method="POST">
       <div class="form-group" hidden>
+        <input type="text" value="@Model.Reserved.Customer" name="Customer" id="Customer" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
       <label for="">
           Mã căn hộ
       </label>
-          <input type="text" name="ApartmentCode" id="ApartmentCode" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
+          <input type="text" value="@Model.Apartment.LocalCode" name="ApartmentCode" id="ApartmentCode" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
       </div>
       <div class="form-group" hidden>
           <label>Nhập số cmnd</label>
-          <input type="text" id="Cmnd" name="Cmnd" class="form-control" placeholder="cmnd" aria-describedby="helpId" required>
+          <input type="text" value="@Model.Reserved.Cmnd" id="Cmnd" name="Cmnd" class="form-control" placeholder="cmnd" aria-describedby="helpId" required>
       </div>
       <div class="form-group" hidden>
           <label>Nhập SĐT</label>
-          <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="sđt" aria-describedby="helpId" required>
+          <input type="text" value="@Model.Reserved.PhoneNumber" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="sđt" aria-describedby="helpId" required>
       </div>
       <div class="form-group" hidden>
           <label>Nhập mã</label>
-          <input type="text" id="RCode" name="RCode" class="form-control" placeholder="code" aria-describedby="helpId" required>
+          <input type="text" value="@Model.Reserved.RCode" id="RCode" name="RCode" class="form-control" placeholder="code" aria-describedby="helpId" required>
       </div>
       <div class="form-group">
           @Html.Recaptcha(RecaptchaSettings?.Value)

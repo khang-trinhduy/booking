@@ -102,7 +102,7 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("    ");
             EndContext();
             BeginContext(632, 4311, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "06c708b5f5944f2e9549a6cdf288cd40", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0004da0ae1d470a8b7ec3cb4cdcbee5", async() => {
                 BeginContext(797, 81, true);
                 WriteLiteral("\r\n         \r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n");
                 EndContext();
@@ -126,7 +126,7 @@ WriteAttributeValue("", 1275, src, 1275, 4, false);
                         ");
                 EndContext();
                 BeginContext(1551, 160, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78d9ba27c5984643a6aa3690127056c7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74a039cfd65542f6bcb4af305db0752d", async() => {
                     BeginContext(1644, 63, true);
                     WriteLiteral("\r\n                            Profile\r\n                        ");
                     EndContext();
@@ -294,7 +294,7 @@ else
             WriteLiteral("    <ul class=\"nav navbar-nav navbar-right\">\r\n        <li style=\"margin-right: 30px\">");
             EndContext();
             BeginContext(5042, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6675d14035c04b59b0438c2da5381cae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f5f7d3d77c494f44b9441e59179da4da", async() => {
                 BeginContext(5094, 7, true);
                 WriteLiteral("Đăng ký");
                 EndContext();
@@ -318,7 +318,7 @@ else
             WriteLiteral("</li>\r\n        <li style=\"margin-right: 30px\">");
             EndContext();
             BeginContext(5151, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14edd0ec4ee2419bb4c1fa12f502d290", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97b11f2908244b32a93097a96729f4e9", async() => {
                 BeginContext(5200, 9, true);
                 WriteLiteral("Đăng nhập");
                 EndContext();

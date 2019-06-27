@@ -2884,6 +2884,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Reservations\\Create.cshtml",
+      "TargetPath": "Views\\Reservations\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\StatusMessage.cshtml",
       "TargetPath": "Views\\Home\\StatusMessage.cshtml",
       "FileKind": "mvc"

@@ -2853,3 +2853,443 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    ALTER TABLE [Catalog] DROP CONSTRAINT [FK_Catalog_Details_DepartmentDetailsId];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    EXEC sp_rename N'[Details].[DepartmentType]', N'ApartmentType', N'COLUMN';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    EXEC sp_rename N'[Catalog].[DepartmentDetailsId]', N'ApartmentDetailsId', N'COLUMN';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    EXEC sp_rename N'[Catalog].[IX_Catalog_DepartmentDetailsId]', N'IX_Catalog_ApartmentDetailsId', N'INDEX';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE TABLE [Section] (
+        [Id] int NOT NULL IDENTITY,
+        [Name] nvarchar(max) NULL,
+        [CustomField1] nvarchar(max) NULL,
+        [CustomField2] nvarchar(max) NULL,
+        CONSTRAINT [PK_Section] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE TABLE [Block] (
+        [Id] int NOT NULL IDENTITY,
+        [Name] nvarchar(max) NULL,
+        [CustomField1] nvarchar(max) NULL,
+        [CustomField2] nvarchar(max) NULL,
+        [SectionId] int NULL,
+        CONSTRAINT [PK_Block] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_Block_Section_SectionId] FOREIGN KEY ([SectionId]) REFERENCES [Section] ([Id]) ON DELETE NO ACTION
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE TABLE [Floor] (
+        [Id] int NOT NULL IDENTITY,
+        [Name] nvarchar(max) NULL,
+        [CustomField1] nvarchar(max) NULL,
+        [CustomField2] nvarchar(max) NULL,
+        [BlockId] int NULL,
+        CONSTRAINT [PK_Floor] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_Floor_Block_BlockId] FOREIGN KEY ([BlockId]) REFERENCES [Block] ([Id]) ON DELETE NO ACTION
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE TABLE [Apartment] (
+        [ApartmentDetailsId] int NULL,
+        [Floor] nvarchar(max) NULL,
+        [Direction] nvarchar(max) NULL,
+        [Area] nvarchar(max) NULL,
+        [NOBedroom] nvarchar(max) NULL,
+        [NOWC] nvarchar(max) NULL,
+        [Name] nvarchar(max) NULL,
+        [Block] nvarchar(max) NULL,
+        [View] nvarchar(max) NULL,
+        [LocalCode] nvarchar(max) NULL,
+        [GlobalCode] nvarchar(max) NULL,
+        [Id] int NOT NULL IDENTITY,
+        [FloorId] int NULL,
+        CONSTRAINT [PK_Apartment] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_Apartment_Details_ApartmentDetailsId] FOREIGN KEY ([ApartmentDetailsId]) REFERENCES [Details] ([Id]) ON DELETE NO ACTION,
+        CONSTRAINT [FK_Apartment_Floor_FloorId] FOREIGN KEY ([FloorId]) REFERENCES [Floor] ([Id]) ON DELETE NO ACTION
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE INDEX [IX_Apartment_ApartmentDetailsId] ON [Apartment] ([ApartmentDetailsId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE INDEX [IX_Apartment_FloorId] ON [Apartment] ([FloorId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE INDEX [IX_Block_SectionId] ON [Block] ([SectionId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    CREATE INDEX [IX_Floor_BlockId] ON [Floor] ([BlockId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    ALTER TABLE [Catalog] ADD CONSTRAINT [FK_Catalog_Details_ApartmentDetailsId] FOREIGN KEY ([ApartmentDetailsId]) REFERENCES [Details] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625021956_add product list(including section, block, floor, apartment, detail)')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190625021956_add product list(including section, block, floor, apartment, detail)', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    ALTER TABLE [Section] ADD [ImagePath] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    ALTER TABLE [Section] ADD [Location] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    ALTER TABLE [Floor] ADD [ImagePath] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    ALTER TABLE [Block] ADD [ImagePath] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    ALTER TABLE [Block] ADD [Location] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    ALTER TABLE [Apartment] ADD [Location] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625024705_add image, location, etc... for catalog')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190625024705_add image, location, etc... for catalog', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625062056_add price for apartment')
+BEGIN
+    ALTER TABLE [Apartment] ADD [Price] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625062056_add price for apartment')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190625062056_add price for apartment', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625063952_add code for section')
+BEGIN
+    ALTER TABLE [Section] ADD [Code] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190625063952_add code for section')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190625063952_add code for section', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626022322_add client')
+BEGIN
+    CREATE TABLE [Client] (
+        [Id] int NOT NULL IDENTITY,
+        [FullName] nvarchar(max) NULL,
+        [PhoneNumber] nvarchar(max) NULL,
+        [Cmnd] nvarchar(max) NULL,
+        [NOProduct] int NOT NULL,
+        CONSTRAINT [PK_Client] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626022322_add client')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190626022322_add client', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626032051_add rcode')
+BEGIN
+    CREATE TABLE [RCode] (
+        [Id] int NOT NULL IDENTITY,
+        [Code] nvarchar(max) NULL,
+        [IsUsed] bit NOT NULL,
+        CONSTRAINT [PK_RCode] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626032051_add rcode')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190626032051_add rcode', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626035900_add invalid on client')
+BEGIN
+    ALTER TABLE [RCode] ADD [ClientId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626035900_add invalid on client')
+BEGIN
+    ALTER TABLE [Client] ADD [IsValid] bit NOT NULL DEFAULT 1;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626035900_add invalid on client')
+BEGIN
+    CREATE INDEX [IX_RCode_ClientId] ON [RCode] ([ClientId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626035900_add invalid on client')
+BEGIN
+    ALTER TABLE [RCode] ADD CONSTRAINT [FK_RCode_Client_ClientId] FOREIGN KEY ([ClientId]) REFERENCES [Client] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626035900_add invalid on client')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190626035900_add invalid on client', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626083454_add reserved')
+BEGIN
+    ALTER TABLE [Apartment] ADD [Reserved] bit NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626083454_add reserved')
+BEGIN
+    CREATE TABLE [Reserve] (
+        [Id] int NOT NULL IDENTITY,
+        [Cmnd] nvarchar(max) NULL,
+        [PhoneNumber] nvarchar(max) NULL,
+        [ApartmentCode] nvarchar(max) NULL,
+        [RCode] nvarchar(max) NULL,
+        CONSTRAINT [PK_Reserve] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626083454_add reserved')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190626083454_add reserved', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626085348_add nofreserved')
+BEGIN
+    ALTER TABLE [Apartment] ADD [NOfReserved] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626085348_add nofreserved')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190626085348_add nofreserved', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626101506_add cc')
+BEGIN
+    ALTER TABLE [Reserve] ADD [CC] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190626101506_add cc')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190626101506_add cc', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627062914_add reserve date')
+BEGIN
+    ALTER TABLE [Reserve] ADD [Date] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627062914_add reserve date')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190627062914_add reserve date', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627085638_add stage for rcode, apartment')
+BEGIN
+    ALTER TABLE [RCode] ADD [Stage] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627085638_add stage for rcode, apartment')
+BEGIN
+    ALTER TABLE [Apartment] ADD [Stage] int NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627085638_add stage for rcode, apartment')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190627085638_add stage for rcode, apartment', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627101945_remove stage on rcode & apartment, add customer on reserved.cs')
+BEGIN
+    DECLARE @var40 sysname;
+    SELECT @var40 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[RCode]') AND [c].[name] = N'Stage');
+    IF @var40 IS NOT NULL EXEC(N'ALTER TABLE [RCode] DROP CONSTRAINT [' + @var40 + '];');
+    ALTER TABLE [RCode] DROP COLUMN [Stage];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627101945_remove stage on rcode & apartment, add customer on reserved.cs')
+BEGIN
+    DECLARE @var41 sysname;
+    SELECT @var41 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Apartment]') AND [c].[name] = N'Stage');
+    IF @var41 IS NOT NULL EXEC(N'ALTER TABLE [Apartment] DROP CONSTRAINT [' + @var41 + '];');
+    ALTER TABLE [Apartment] DROP COLUMN [Stage];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627101945_remove stage on rcode & apartment, add customer on reserved.cs')
+BEGIN
+    ALTER TABLE [Reserve] ADD [Customer] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627101945_remove stage on rcode & apartment, add customer on reserved.cs')
+BEGIN
+    ALTER TABLE [Reserve] ADD [RCC] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190627101945_remove stage on rcode & apartment, add customer on reserved.cs')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190627101945_remove stage on rcode & apartment, add customer on reserved.cs', N'2.1.8-servicing-32085');
+END;
+
+GO
+

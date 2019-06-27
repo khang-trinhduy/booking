@@ -11,6 +11,7 @@ using System.IO;
 using OfficeOpenXml;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using reCAPTCHA.AspNetCore;
 
 namespace BookingForm.Controllers
 {
@@ -19,6 +20,7 @@ namespace BookingForm.Controllers
         private readonly bool Available = false;
         private readonly BookingFormContext _context;
         private static Random random = new Random();
+        private IRecaptchaService _recaptcha;
         public static string GenerateCode()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -28,6 +30,11 @@ namespace BookingForm.Controllers
         public IActionResult Reserved(Reserved r)
         {
             return View(r);
+        }
+        public IActionResult Proceed(string code)
+        {
+            ViewBag.code = code;
+            return View();
         }
         public IActionResult Detail(int id)
         {
@@ -39,41 +46,44 @@ namespace BookingForm.Controllers
         [HttpPost]
         public async Task<IActionResult> Reserve([Bind("ApartmentCode, Cmnd, PhoneNumber, RCode")] Reserved r)
         {
-            //TODO test code has already used
-            //TODO test invalid cmnd or phone number
-            //TODO test if client has already bought an apartment
-            //TODO test if client used a code that they not owned
             if (ModelState.IsValid)
             {
+                ViewBag.code = r.ApartmentCode;
+                // var recaptcha = await _recaptcha.Validate(Request);
+                // if (!recaptcha.success)
+                // {
+                //     ViewBag.msg = "Sai mã captcha!";
+                //     return View("Proceed");
+                // }
                 var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode && e.Reserved == false);
                 if (apartment == null)
                 {
                     ViewBag.msg = "Căn hộ đã có người mua!";
-                    return View(nameof(Section));
+                    return View("Proceed");
                 }
                 var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
                 if (code == null)
                 {
                     ViewBag.msg = "Mã mua không chính xác!";
-                    return View(nameof(Detail), apartment.Id);
+                    return View("Proceed");
                 }
                 var clients = await _context.Client.Include(e => e.Codes).ToListAsync();
                 var client = clients.FirstOrDefault(e => e.Cmnd == r.Cmnd && e.PhoneNumber == r.PhoneNumber);
                 if (client == null)
                 {
                     ViewBag.msg = "Số cmnd hoặc số điện thoại không chính xác! Vui lòng kiểm tra lại.";
-                    return View(nameof(Detail), apartment.Id);
+                    return View("Proceed");
                 }
                 else if (!client.IsValid)
                 {
                     ViewBag.msg = "Mỗi khách chỉ được mua một căn hộ!";
-                    return View(nameof(Detail), apartment.Id);
+                    return View("Proceed");
                 }
                 var isValidCode = client.Codes.FirstOrDefault(e => e.Code == code.Code && e.Id == code.Id);
                 if (isValidCode == null)
                 {
                     ViewBag.msg = "Mã đặt mua không chính xác, vui lòng kiểm tra lại!";
-                    return View(nameof(Detail), apartment.Id);
+                    return View("Proceed");
                 }
                 if (code.IsUsed)
                 {
@@ -84,12 +94,14 @@ namespace BookingForm.Controllers
                         if (apart != null)
                         {
                             ViewBag.cc = re.CC;
+                            ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
                             return View("Confirm", apart);
                         }
                     }
                     ViewBag.msg = "Mã này đã được sử dụng!";
-                    return View(nameof(Detail), apartment.Id);
+                    return View("Proceed");
                 }
+                r.Date = DateTime.Now.Date;
                 r.CC = apartment.NOfReserved + 1;
                 apartment.NOfReserved++;
                 _context.Reserve.Add(r);
@@ -98,6 +110,7 @@ namespace BookingForm.Controllers
                 _context.Entry(apartment).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 ViewBag.cc = r.CC;
+                ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
                 return View("Success", apartment);
             }
             return View("Error");
@@ -193,9 +206,10 @@ namespace BookingForm.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Client));
         }
-        public CatalogsController(BookingFormContext context)
+        public CatalogsController(BookingFormContext context, IRecaptchaService recaptcha)
         {
             _context = context;
+            _recaptcha = recaptcha;
         }
         [Route("giohang/index")]
         [Route("giohang")]

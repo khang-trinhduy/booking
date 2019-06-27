@@ -329,7 +329,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": "asp-route-",
             "IndexerTypeName": "System.String",
-            "Documentation": "\n            <summary>\n            Additional parameters for the route.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "RouteValues"
@@ -2768,7 +2768,7 @@
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.SpaServices.Prerendering.PrerenderTagHelper",
         "AssemblyName": "Microsoft.AspNetCore.SpaServices",
-        "Documentation": "\n            <summary>\n            A tag helper for prerendering JavaScript applications on the server.\n            </summary>\n        ",
+        "Documentation": null,
         "TagOutputHint": null,
         "TagMatchingRules": [
           {
@@ -2796,7 +2796,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            Specifies the path to the JavaScript module containing prerendering code.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "ModuleName"
@@ -2810,7 +2810,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            If set, specifies the name of the CommonJS export that is the prerendering function to execute.\n            If not set, the JavaScript module's default CommonJS export must itself be the prerendering function.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "ExportName"
@@ -2824,7 +2824,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            An optional JSON-serializable parameter to be supplied to the prerendering code.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "CustomDataParameter"
@@ -2838,7 +2838,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The maximum duration to wait for prerendering to complete.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "TimeoutMillisecondsParameter"
@@ -2894,6 +2894,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Reservations\\Reservation.cshtml",
+      "TargetPath": "Views\\Reservations\\Reservation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Catalogs\\Client.cshtml",
       "TargetPath": "Views\\Catalogs\\Client.cshtml",
       "FileKind": "mvc"
@@ -2936,11 +2941,6 @@
     {
       "FilePath": "Views\\Admin\\Passport.cshtml",
       "TargetPath": "Views\\Admin\\Passport.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Catalogs\\Success.cshtml",
-      "TargetPath": "Views\\Catalogs\\Success.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3124,6 +3124,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Catalogs\\Proceed.cshtml",
+      "TargetPath": "Views\\Catalogs\\Proceed.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
       "FileKind": "mvc"
@@ -3141,6 +3146,11 @@
     {
       "FilePath": "Views\\Home\\WithdrawForm.cshtml",
       "TargetPath": "Views\\Home\\WithdrawForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Models\\Reservation\\Error.cshtml",
+      "TargetPath": "Models\\Reservation\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3196,11 +3206,6 @@
     {
       "FilePath": "Views\\Appoinments\\Index.cshtml",
       "TargetPath": "Views\\Appoinments\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Catalogs\\Confirm.cshtml",
-      "TargetPath": "Views\\Catalogs\\Confirm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3324,6 +3329,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Reservations\\Index.cshtml",
+      "TargetPath": "Views\\Reservations\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -3361,6 +3371,11 @@
     {
       "FilePath": "Views\\Appoinments\\_StatusMessage.cshtml",
       "TargetPath": "Views\\Appoinments\\_StatusMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Reservations\\StatusMessage.cshtml",
+      "TargetPath": "Views\\Reservations\\StatusMessage.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3469,8 +3484,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Reservations\\Success.cshtml",
+      "TargetPath": "Views\\Reservations\\Success.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Reservations\\Confirm.cshtml",
+      "TargetPath": "Views\\Reservations\\Confirm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3549,6 +3574,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Catalogs\\DumbLayout.cshtml",
+      "TargetPath": "Views\\Catalogs\\DumbLayout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Catalogs\\Floor.cshtml",
       "TargetPath": "Views\\Catalogs\\Floor.cshtml",
       "FileKind": "mvc"
@@ -3596,6 +3626,11 @@
     {
       "FilePath": "Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Reservations\\DumbLayout.cshtml",
+      "TargetPath": "Views\\Reservations\\DumbLayout.cshtml",
       "FileKind": "mvc"
     }
   ]

@@ -737,7 +737,13 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("Cmnd");
 
+                    b.Property<string>("Customer");
+
+                    b.Property<DateTime>("Date");
+
                     b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("RCC");
 
                     b.Property<string>("RCode");
 

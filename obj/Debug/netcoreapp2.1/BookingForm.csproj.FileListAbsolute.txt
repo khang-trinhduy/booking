@@ -164,8 +164,15 @@ C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcore
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Section.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Client.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Code.g.cshtml.cs
-C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Success.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Detail.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\StatusMessage.g.cshtml.cs
-C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Confirm.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Error.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\Proceed.g.cshtml.cs
+c:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Catalogs\DumbLayout.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Models\Reservation\Error.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Confirm.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\DumbLayout.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Index.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Reservation.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\StatusMessage.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Success.g.cshtml.cs

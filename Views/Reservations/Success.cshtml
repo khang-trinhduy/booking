@@ -1,0 +1,205 @@
+@model BookingForm.Models.Apartment
+@{
+  Layout = null;
+}
+<head>
+  <title>Đặt hàng thành công</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {
+      margin-top: 65px;
+      font-family: sans-serif;
+      font-size: 40;
+      color: #595f65;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 0 14 0 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 0 400;
+      }
+
+      h5 {
+        font-family: sans-serif;
+        font-size: 15px;
+        color: red;
+        font-style: italic;
+        margin-left: 14px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+<hr />
+<hr />
+<h1 style="font-family:sans-serif; ">Chúc mừng bạn đã đặt mua thành công!</h1>
+<p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p>
+
+<h3>Thông tin đơn hàng</h3>
+<div id="order">
+    <hr />
+    <p>Mã sản phẩm:</p>
+    <h4>@Model.LocalCode</h4>
+    <hr />
+    <p>Số lượng:</p>
+    <h4>1</h4>
+    <hr />
+    <p>Ngày đặt mua:</p>
+    <h4>@ViewBag.date</h4>
+    <hr />
+    <p>Số tiền:</p>
+    <h4>@Model.Price</h4>
+    <hr />
+    <p>Mã xác nhận</p>
+    <h4>@ViewBag.cc</h4>
+</div>
+<h3>Thông tin sản phẩm</h3>
+<div id="product">
+    <hr />
+    <p>Tên sản phẩm:</p>
+    <h4>@Model.Name</h4>
+    <hr />
+    <p>Số phòng ngủ:</p>
+    <h4>@Model.NOBedroom</h4>
+    <hr />
+    <p>Số phòng vệ sinh:</p>
+    <h4>@Model.NOWC</h4>
+    <hr />
+    <p>Hướng:</p>
+    <h4>@Model.Direction</h4>
+    <hr />
+    <p>View:</p>
+    <h4>@Model.View</h4>
+    <hr />
+    <p>Tầng:</p>
+    <h4>@Model.Floor</h4>
+    <hr />
+    <p>Diện tích</p>
+    <h4>@Model.Area</h4>
+    <hr />
+</div>
+<h5>Lưu ý: Khách hàng cần lưu lại mã xác nhận để bốc thăm trong trường hợp có nhiều đơn hàng cùng đặt vào một sản phẩm</h5>
+<p>Bấm vào <a asp-action="Section">đây</a> để tiếp tục chọn mua.</p>
+</body>
+<style>
+    h1 {
+      margin-top: 65px;
+      font-family: sans-serif;
+      font-size: 40;
+      color: #595f65;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 0 14 0 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 0 400;
+      }
+
+    }
+    h5 {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: red;
+    font-style: italic;
+    margin-left: 14px;
+
+    }
+    body {
+        margin-bottom: 20;
+    }
+  </style>

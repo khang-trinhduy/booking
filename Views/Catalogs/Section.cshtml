@@ -1,12 +1,10 @@
 @model IEnumerable<BookingForm.Models.Section>
 @{
-    ViewData["title"] = "Product";
+    Layout = "~/Views/Catalogs/DumbLayout.cshtml";
+    ViewData["title"] = "Sản phẩm";
     string path = "~images/catalog/section/";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>

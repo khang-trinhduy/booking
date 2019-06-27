@@ -1,0 +1,212 @@
+@model BookingForm.Models.Apartment
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@{
+  Layout = null;
+}
+<head>
+  <title>Xác nhận đặt mua</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {
+      margin-top: 65px;
+      font-family: sans-serif;
+      font-size: 40;
+      color: #595f65;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 0 14 0 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 20 400;
+      }
+
+      h5 {
+        font-family: sans-serif;
+        font-size: 15px;
+        color: red;
+        font-style: italic;
+        margin-left: 14px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+<hr />
+<hr />
+<!-- <h1 style="font-family:sans-serif; ">Chúc mừng bạn đã đặt mua thành công!</h1>
+<p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p> -->
+
+<h3>Thông tin sản phẩm</h3>
+<div id="product">
+    <p style="padding-top: 18;">Tên sản phẩm:</p>
+    <h4>@Model.Name</h4>
+    <hr />
+    <p>Số phòng ngủ:</p>
+    <h4>@Model.NOBedroom</h4>
+    <hr />
+    <p>Số phòng vệ sinh:</p>
+    <h4>@Model.NOWC</h4>
+    <hr />
+    <p>Hướng:</p>
+    <h4>@Model.Direction</h4>
+    <hr />
+    <p>View:</p>
+    <h4>@Model.View</h4>
+    <hr />
+    <p>Tầng:</p>
+    <h4>@Model.Floor</h4>
+    <hr />
+    <p>Diện tích</p>
+    <h4>@Model.Area</h4>
+    <hr />
+    <p>Số tiền:</p>
+    <h4 style="padding-bottom: 18;">@Model.Price</h4>
+</div>
+<h5>Lưu ý: Khách hàng cần lưu lại mã xác nhận để bốc thăm trong trường hợp có nhiều đơn hàng cùng đặt vào một sản phẩm</h5>
+<form id="form" asp-action="Reserve">
+      <div class="form-group" hidden>
+      <label for="">
+          Mã căn hộ
+      </label>
+          <input type="text" name="ApartmentCode" id="ApartmentCode" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
+      </div>
+      <div class="form-group" hidden>
+          <label>Nhập số cmnd</label>
+          <input type="text" id="Cmnd" name="Cmnd" class="form-control" placeholder="cmnd" aria-describedby="helpId" required>
+      </div>
+      <div class="form-group" hidden>
+          <label>Nhập SĐT</label>
+          <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="sđt" aria-describedby="helpId" required>
+      </div>
+      <div class="form-group" hidden>
+          <label>Nhập mã</label>
+          <input type="text" id="RCode" name="RCode" class="form-control" placeholder="code" aria-describedby="helpId" required>
+      </div>
+      <div class="form-group">
+          @Html.Recaptcha(RecaptchaSettings?.Value)
+      </div>
+      <p style="color: red; font-style: italic">Lưu ý: Mỗi mã chỉ được sử dụng một lần. Quý khách sẽ không được thay đổi căn sau khi đã chọn</p>
+      <button class="btn btn-success" id="btn">Đặt mua</button>
+  </form>
+
+<a asp-action="Create">Hủy</a>
+</body>
+<style>
+    
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    <!-- #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 0 14 0 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    } -->
+
+    body {
+      margin-bottom: 20;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 0 400;
+      }
+
+    }
+    h5 {
+      font-family: sans-serif;
+      font-size: 15px;
+      color: red;
+      font-style: italic;
+      margin-left: 14px;
+
+    }
+  </style>

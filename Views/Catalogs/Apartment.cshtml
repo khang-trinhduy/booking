@@ -1,8 +1,8 @@
 @model IEnumerable<BookingForm.Models.Apartment>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@{
+    ViewData["title"] = "Sản phẩm";
+    Layout = "~/Views/Catalogs/DumbLayout.cshtml";
+}
 <table class="table">
     <thead>
         <tr>

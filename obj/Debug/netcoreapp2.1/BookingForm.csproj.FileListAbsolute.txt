@@ -177,3 +177,10 @@ C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcore
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\StatusMessage.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Success.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Create.g.cshtml.cs
+c:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Code.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\Confirm.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\Create.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\Index.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\Success.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\DumbLayout.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\StatusMessage.g.cshtml.cs

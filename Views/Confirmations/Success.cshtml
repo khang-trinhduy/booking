@@ -1,0 +1,168 @@
+@model BookingForm.Models.Invoice
+
+@{
+  Layout = null;
+}
+<head>
+  <title>Đặt mua thành công</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    h1 {
+      margin-top: 65px;
+      font-family: sans-serif;
+      font-size: 40;
+      color: #595f65;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 0 14 0 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 0 400;
+      }
+
+      h5 {
+        font-family: sans-serif;
+        font-size: 15px;
+        color: red;
+        font-style: italic;
+        margin-left: 14px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+<hr />
+<hr />
+<h1 style="font-family:sans-serif; ">Chúc mừng khách hàng @Model.Client.FullName đã đặt mua thành công căn hộ số @Model.Apartment.LocalCode!</h1>
+
+<h3>Thông tin căn hộ</h3>
+<div id="order">
+    <p>@Model.Apartment.LocalCode - @Model.Apartment.Name</p>
+    <p>Số phòng ngủ: @Model.Apartment.NOBedroom / Số phòng vệ sinh: @Model.Apartment.NOWC</p>
+    <p>Hướng: @Model.Apartment.Direction / View: @Model.Apartment.View / Tầng: @Model.Apartment.Floor / Diện tích: @Model.Apartment.Area</p>
+</div>
+
+<p>Bấm vào <a asp-action="Create">đây</a> để tiếp tục xác nhận.</p>
+</body>
+<style>
+    h1 {
+      margin-top: 65px;
+      font-family: sans-serif;
+      font-size: 40;
+      color: #595f65;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 7 14 7 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 0 400;
+      }
+
+    }
+    h5 {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: red;
+    font-style: italic;
+    margin-left: 14px;
+
+    }
+    body {
+        margin-bottom: 20;
+    }
+  </style>

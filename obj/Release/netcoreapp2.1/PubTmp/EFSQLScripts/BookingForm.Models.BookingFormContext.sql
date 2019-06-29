@@ -3293,3 +3293,18 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190628063209_add corner')
+BEGIN
+    ALTER TABLE [Apartment] ADD [IsCorner] bit NOT NULL DEFAULT 0;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190628063209_add corner')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190628063209_add corner', N'2.1.8-servicing-32085');
+END;
+
+GO
+

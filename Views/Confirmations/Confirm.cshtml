@@ -1,0 +1,199 @@
+@model BookingForm.Models.ConfirmationViewModel
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@{
+  Layout = null;
+}
+<head>
+  <title>Xác nhận thông tin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+    h1 {
+      margin-top: 65px;
+      font-family: sans-serif;
+      font-size: 40;
+      color: #595f65;
+    }
+
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 0 14 0 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 20 400;
+      }
+
+      h5 {
+        font-family: sans-serif;
+        font-size: 15px;
+        color: red;
+        font-style: italic;
+        margin-left: 14px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+<hr />
+<hr />
+<!-- <h1 style="font-family:sans-serif; ">Chúc mừng bạn đã đặt mua thành công!</h1>
+<p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p> -->
+<h3>Thông tin khách hàng</h3>
+<div id="product">
+    <p>Họ & tên: @Model.Client.FullName / Số điện thoại: @Model.Client.PhoneNumber / Số cmnd: @Model.Client.Cmnd</p>
+</div>
+<h3>Thông tin sản phẩm</h3>
+<div id="product">
+    <p>@Model.Apartment.LocalCode - @Model.Apartment.Name</p>
+    <p>Số phòng ngủ: @Model.Apartment.NOBedroom / Số phòng vệ sinh: @Model.Apartment.NOWC</p>
+    <p>Hướng: @Model.Apartment.Direction / View: @Model.Apartment.View / Tầng: @Model.Apartment.Floor / Diện tích: @Model.Apartment.Area</p>
+</div>
+<h3>Thông tin đặt chỗ</h3>
+<div id="product">
+    <p>Mã xác nhận: @Model.Reserve.RCC</p>
+</div>
+
+<form id="form" asp-action="Confirm">
+        <div class="form-group" hidden>
+        <partial name="StatusMessage" model="@ViewBag.msg" />
+        <label for="">
+            Mã căn hộ
+        </label>
+            <input type="text" value="@Model.Confirm.LocalCode" name="LocalCode" id="LocalCode" class="form-control" placeholder="" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group" hidden>
+            <label>Mã xác nhận</label>
+            <input type="text" value="@Model.Confirm.RCC" id="RCC" name="RCC" class="form-control" placeholder="" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group" hidden>
+            <label>Mã đặt chỗ</label>
+            <input type="text" value="@Model.Confirm.RCode" id="RCode" name="RCode" class="form-control" placeholder="" aria-describedby="helpId" required>
+        </div>
+        <input type="text" value="@Model.Confirm.ClientId" id="ClientId" name="ClientId" class="form-control" placeholder="" aria-describedby="helpId" required hidden>
+        <div class="form-group">
+            @Html.Recaptcha(RecaptchaSettings?.Value)
+        </div>
+        <button class="btn btn-success" id="btn">Xác nhận</button>
+</form>
+
+<a asp-action="Create">Hủy</a>
+</body>
+<style>
+    
+    p {
+      font-family: sans-serif;
+      font-size: 18;
+      color: #828486;
+    }
+
+    h3 {
+      font-size: 28;
+      font-family: sans-serif;
+      color: #6f767d;
+      margin-top: 35px;
+    }
+
+    h4 {
+      font-family: sans-serif;
+      font-size: 21;
+      color: #46494c;
+    }
+
+    h1,
+    h3,
+    h4,
+    p {
+      margin-left: 11px;
+    }
+
+    a {
+      color: #595f65;
+    }
+
+    <!-- #product,
+    #order {
+      background-color: #f7f7f7;
+      margin-left: 11px;
+      margin-right: 11px;
+      padding: 6 14 6 14;
+    }
+
+    #product>p,
+    #order>p {
+      margin: 18 0 18 0;
+    }
+
+    #product>h4,
+    #order>h4 {
+      margin: 0 0 18 0;
+    } -->
+
+    body {
+      margin-bottom: 20;
+    }
+
+    @@media only screen and (min-width: 1280px) {
+      body {
+        margin: 0 400 0 400;
+      }
+
+    }
+    h5 {
+      font-family: sans-serif;
+      font-size: 15px;
+      color: red;
+      font-style: italic;
+      margin-left: 14px;
+
+    }
+  </style>

@@ -87,8 +87,8 @@ namespace BookingForm.Models
         public DbSet<BookingForm.Models.Client> Client { get; set; }
         public DbSet<BookingForm.Models.RCode> RCode { get; set; }
         public DbSet<BookingForm.Models.Reserved> Reserve { get; set; }
-
-        
+        public DbSet<BookingForm.Models.Confirmation> Confirmation { get; set; }
+        public DbSet<BookingForm.Models.Invoice> Invoice { get; set; }
     }
 
     public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>

@@ -88,41 +88,13 @@
 <hr />
 <!-- <h1 style="font-family:sans-serif; ">Chúc mừng bạn đã đặt mua thành công!</h1>
 <p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p> -->
-<h3>Thông tin khách hàng</h3>
-    <p style="padding-top: 18;">Tên Khách hàng:</p>
-    <h4>@Model.Reserved.Customer</h4>
-    <hr />
-    <p>Số điện thoại:</p>
-    <h4>@Model.Reserved.PhoneNumber</h4>
-    <hr />
-    <p>Số cmnd:</p>
-    <h4 style="padding-bottom: 18;">@Model.Reserved.Cmnd</h4>
 <h3>Thông tin sản phẩm</h3>
 <div id="product">
-    <p style="padding-top: 18;">Tên sản phẩm:</p>
-    <h4>@Model.Apartment.Name</h4>
-    <hr />
-    <p>Số phòng ngủ:</p>
-    <h4>@Model.Apartment.NOBedroom</h4>
-    <hr />
-    <p>Số phòng vệ sinh:</p>
-    <h4>@Model.Apartment.NOWC</h4>
-    <hr />
-    <p>Hướng:</p>
-    <h4>@Model.Apartment.Direction</h4>
-    <hr />
-    <p>View:</p>
-    <h4>@Model.Apartment.View</h4>
-    <hr />
-    <p>Tầng:</p>
-    <h4>@Model.Apartment.Floor</h4>
-    <hr />
-    <p>Diện tích</p>
-    <h4>@Model.Apartment.Area</h4>
-    <hr />
-    <p>Số tiền:</p>
-    <h4 style="padding-bottom: 18;">@Model.Apartment.Price</h4>
+    <p>@Model.Apartment.LocalCode - @Model.Apartment.Name</p>
+    <p>Số phòng ngủ: @Model.Apartment.NOBedroom / Số phòng vệ sinh: @Model.Apartment.NOWC</p>
+    <p>Hướng: @Model.Apartment.Direction / View: @Model.Apartment.View / Tầng: @Model.Apartment.Floor / Diện tích: @Model.Apartment.Area</p>
 </div>
+
 <form id="form" asp-action="Create" method="POST">
       <div class="form-group" hidden>
         <input type="text" value="@Model.Reserved.Customer" name="Customer" id="Customer" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
@@ -189,7 +161,7 @@
       background-color: #f7f7f7;
       margin-left: 11px;
       margin-right: 11px;
-      padding: 0 14 0 14;
+      padding: 6 14 6 14;
     }
 
     #product>p,

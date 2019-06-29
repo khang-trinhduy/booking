@@ -1,0 +1,248 @@
+@model BookingForm.Models.ReservationR
+@{
+    Layout = "~/Views/Reservations/DumbLayout.cshtml";
+}
+<div class="container1">
+
+    <table class="table table-inverse table-responsive">
+    <thead class="thead-inverse">
+
+    </thead>
+        <tbody>
+            @if(@Model.BR3 != null){
+                <tr>
+                    <td>
+                        <h3>BR3</h3></td>
+                    <td>
+                        <div class="flat-container">
+                            @foreach (var item in Model.BR3)
+                            {
+                                <div class="flat-block"> 
+                                    <h5>@item.Apartment.LocalCode</h5>
+                                        @if (item.Apartment.IsCorner){
+                                            <h5>(căn góc)</h5>
+                                        }
+                                    
+                                    <ul>
+                                    @foreach (var r in item.Reserveds)
+                                    {
+                                        
+                                        <li id="content">                                    
+                                            <p>@r.Customer (@r.PhoneNumber) - @r.RCC</p>
+                                        </li>
+                                    }
+                                    </ul>
+                                </div>
+                                    
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+            else {
+                <tr>
+                    <td scope="row">
+                        <div id="content">
+                        </div>
+                    </td>
+                </tr>
+            }
+            @if(@Model.BR2P != null){
+                <tr>
+                    <td>
+                        <h3>2BR+</h3></td>
+                    <td>
+                        <div class="flat-container">
+                            @foreach (var item in Model.BR2P)
+                            {
+                                <div class="flat-block"> 
+                                    <h5>@item.Apartment.LocalCode</h5>
+                                    @if (item.Apartment.IsCorner){
+                                            <h5>(căn góc)</h5>
+                                        }
+                                    <ul>
+                                    @foreach (var r in item.Reserveds)
+                                    {
+                                        
+                                        <li id="content">                                    
+                                            <p>@r.Customer (@r.PhoneNumber) - @r.RCC</p>
+                                        </li>
+                                    }
+                                    </ul>
+                                </div>
+                                    
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+            else {
+                <tr>
+                    <td scope="row">
+                        <div id="content">
+                        </div>
+                    </td>
+                </tr>
+            }
+            @if(@Model.BR2 != null){
+                <tr>
+                    <td>
+                        <h3>2BR</h3></td>
+                    <td>
+                        <div class="flat-container">
+                            @foreach (var item in Model.BR2)
+                            {
+                                <div class="flat-block"> 
+                                    <h5>@item.Apartment.LocalCode</h5>
+                                    @if (item.Apartment.IsCorner){
+                                            <h5>(căn góc)</h5>
+                                        }
+                                    <ul>
+                                    @foreach (var r in item.Reserveds)
+                                    {
+                                        
+                                        <li id="content">                                    
+                                            <p>@r.Customer (@r.PhoneNumber) - @r.RCC</p>
+                                        </li>
+                                    }
+                                    </ul>
+                                </div>
+                                    
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+            else {
+                <tr>
+                    <td scope="row">
+                        <div id="content">
+                        </div>
+                    </td>
+                </tr>
+            }
+            @if(@Model.BR1P != null){
+                <tr>
+                    <td>
+                        <h3>1BR+</h3></td>
+                    <td>
+                        <div class="flat-container one-br">
+                            @foreach (var item in Model.BR1P)
+                            {
+                                <div class="flat-block"> 
+                                    <h5>@item.Apartment.LocalCode</h5>
+                                    @if (item.Apartment.IsCorner){
+                                            <h5>(căn góc)</h5>
+                                        }
+                                    <ul>
+                                    @foreach (var r in item.Reserveds)
+                                    {
+                                        
+                                        <li id="content">                                    
+                                            <p>@r.Customer (@r.PhoneNumber) - @r.RCC</p>
+                                        </li>
+                                    }
+                                    </ul>
+                                </div>
+                                    
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+            else {
+                <tr>
+                    <td scope="row">
+                        <div id="content">
+                        </div>
+                    </td>
+                </tr>
+            }
+            @if(@Model.STU != null){
+                <tr>
+                    <td>
+                        <h3>Studio</h3></td>
+                    <td>
+                        <div class="flat-container">
+                            @foreach (var item in Model.STU)
+                            {
+                                <div class="flat-block"> 
+                                    <h5>@item.Apartment.LocalCode</h5>
+                                    @if (item.Apartment.IsCorner){
+                                            <h5>(căn góc)</h5>
+                                        }
+                                    <ul>
+                                    @foreach (var r in item.Reserveds)
+                                    {
+                                        
+                                        <li id="content">                                    
+                                            <p>@r.Customer (@r.PhoneNumber) - @r.RCC</p>
+                                        </li>
+                                    }
+                                    </ul>
+                                </div>
+                                    
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+            else {
+                <tr>
+                    <td scope="row">
+                        <div id="content">
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<style>
+    table.table tbody tr td,
+    table.table thead tr th,
+    table.table thead {
+   
+    }
+    td, tr {
+        white-space: nowrap;
+    }
+    table 
+    {
+        border: 1px solid black;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .container1 {
+        
+        margin-top: 20px;
+    }
+    .flat-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: space-around;
+        flex-wrap: wrap;
+    }
+
+    .flat-block{
+        flex: 1;
+        display: block;
+        <!-- width: 20%;-->
+        min-width: 200px;
+        margin-right: 10px;
+        padding: 10px;
+        background-color: cyan;
+    }
+    .flat-container ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .flat-container ul li{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<script>
+        window.setInterval(() => location.reload(), 30000);
+</script>

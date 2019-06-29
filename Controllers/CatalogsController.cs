@@ -36,10 +36,9 @@ namespace BookingForm.Controllers
             ViewBag.code = code;
             return View();
         }
-        public IActionResult Detail(int id)
+        public IActionResult Detail(string code)
         {
-            var apartment = _context.Apartment.FirstOrDefault(e => e.Id == id);
-            return View(apartment);
+            return RedirectToAction("Create", "Reservations", new {apartmentCode = code});
         }
 
         [ValidateAntiForgeryToken]
@@ -160,7 +159,7 @@ namespace BookingForm.Controllers
             var clients = await _context.Client.Where(e => e.IsValid).ToListAsync();
             foreach (var item in clients)
             {
-                var codes = Generate(item.NOProduct);
+                var codes = Generate(item.NOProduct * 2);
                 _context.RCode.AddRange(codes);
                 foreach (var code in codes)
                 {
@@ -183,7 +182,7 @@ namespace BookingForm.Controllers
             var appointment = await _context.appoinment.Where(e => e.IsActive == true && e.Confirm == true && (e.NCH1 + e.NCH2 + e.NCH21 + e.NCH3) > 0).ToListAsync();
             foreach (var item in appointment)
             {
-                var existed = _context.Client.FirstOrDefault(e => e.FullName == item.Customer);
+                var existed = _context.Client.FirstOrDefault(e => e.FullName.ToLower() == item.Customer.ToLower() && e.Cmnd == item.Cmnd && e.PhoneNumber == item.Phone);
                 if (existed != null)
                 {
                     existed.NOProduct += item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3;
@@ -211,17 +210,24 @@ namespace BookingForm.Controllers
             _context = context;
             _recaptcha = recaptcha;
         }
-        [Route("giohang/index")]
-        [Route("giohang")]
+        // [Route("giohang/index")]
+        // [Route("giohang")]
         public async Task<IActionResult> Section()
         {
             var products = await _context.Section.Include(c => c.Blocks).ToListAsync();
             return View(products);
         }
-        [Route("phankhu/{id:int}")]
+        [Route("giohang/{id:int}")]
+        [Route("giohang")]
         public async Task<IActionResult> GetBlocks(int id)
         {
             var sections = await _context.Section.Include(c => c.Blocks).ThenInclude(c => c.Floors).ToListAsync();
+            if (id <= 0)
+            {
+                var tmp = sections.LastOrDefault();
+                var blks = tmp.Blocks;
+                return View("Block", blks);
+            }
             var s = sections.FirstOrDefault(e => e.Id == id);
             if (s == null)
             {

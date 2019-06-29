@@ -1,0 +1,35 @@
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@{
+    Layout = "~/Views/Confirmations/DumbLayout.cshtml";
+    ViewData["title"] = "Đặt mua";
+}
+<div class="container">
+<form id="form" asp-action="Create">
+      <div class="form-group">
+        <partial name="StatusMessage" model="@ViewBag.msg" />
+        <label for="">
+            Mã căn hộ
+        </label>
+            <input type="text" name="LocalCode" id="LocalCode" class="form-control" placeholder="" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group">
+            <label>Mã xác nhận</label>
+            <input type="text" id="RCC" name="RCC" class="form-control" placeholder="" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group">
+            <label>Mã đặt chỗ</label>
+            <input type="text" id="RCode" name="RCode" class="form-control" placeholder="" aria-describedby="helpId" required>
+        </div>
+        <div class="form-group">
+            @Html.Recaptcha(RecaptchaSettings?.Value)
+        </div>
+        <button class="btn btn-success" id="btn">Xác nhận</button>
+</form>
+</div>
+<style>
+    .container {
+        padding-top: 40px;
+    }
+</style>

@@ -33,5 +33,6 @@ namespace BookingForm.Models
         public bool Reserved { get; set; }
         public int NOfReserved { get; set; }
         public int Id { get; set; }
+        public bool IsCorner { get; set; }
     }
 }

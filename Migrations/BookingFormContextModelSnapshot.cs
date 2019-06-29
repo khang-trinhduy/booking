@@ -62,6 +62,8 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("GlobalCode");
 
+                    b.Property<bool>("IsCorner");
+
                     b.Property<string>("LocalCode");
 
                     b.Property<string>("Location");
@@ -341,6 +343,25 @@ namespace BookingForm.Migrations
                     b.ToTable("Client");
                 });
 
+            modelBuilder.Entity("BookingForm.Models.Confirmation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClientId");
+
+                    b.Property<string>("LocalCode");
+
+                    b.Property<string>("RCC");
+
+                    b.Property<string>("RCode");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Confirmation");
+                });
+
             modelBuilder.Entity("BookingForm.Models.Contact", b =>
                 {
                     b.Property<Guid>("Id")
@@ -539,6 +560,29 @@ namespace BookingForm.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Grants");
+                });
+
+            modelBuilder.Entity("BookingForm.Models.Invoice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ApartmentId");
+
+                    b.Property<int?>("ClientId");
+
+                    b.Property<int?>("ConfirmationId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApartmentId");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("ConfirmationId");
+
+                    b.ToTable("Invoice");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Logger", b =>
@@ -1127,6 +1171,21 @@ namespace BookingForm.Migrations
                     b.HasOne("BookingForm.Models.Sale", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("BookingForm.Models.Invoice", b =>
+                {
+                    b.HasOne("BookingForm.Models.Apartment", "Apartment")
+                        .WithMany()
+                        .HasForeignKey("ApartmentId");
+
+                    b.HasOne("BookingForm.Models.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId");
+
+                    b.HasOne("BookingForm.Models.Confirmation", "Confirmation")
+                        .WithMany()
+                        .HasForeignKey("ConfirmationId");
                 });
 
             modelBuilder.Entity("BookingForm.Models.ProductPlan", b =>

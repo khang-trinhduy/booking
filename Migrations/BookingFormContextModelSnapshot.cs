@@ -355,8 +355,6 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("RCC");
 
-                    b.Property<string>("RCode");
-
                     b.HasKey("Id");
 
                     b.ToTable("Confirmation");

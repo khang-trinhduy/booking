@@ -23,6 +23,12 @@ namespace BookingForm.Controllers
         {
             return View("Code");
         }
+        [Route("catalog")]
+        public async Task<IActionResult> Catalog()
+        {
+            var block = await _context.Block.Include(e => e.Floors).ThenInclude(e => e.Apartments).ThenInclude(e => e.ApartmentDetails).ToListAsync();
+            return View(block);
+        }
         [Route("Reservations/")]
         public async Task<IActionResult> Index()
         {
@@ -37,7 +43,7 @@ namespace BookingForm.Controllers
                     {
                         revs.BR3.Add(new Room
                         {
-                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o=> Transform(o)).ToList(),
+                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o => Transform(o)).ToList(),
                             Apartment = Transform(item)
                         });
                     }
@@ -45,7 +51,7 @@ namespace BookingForm.Controllers
                     {
                         revs.BR2P.Add(new Room
                         {
-                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o=> Transform(o)).ToList(),
+                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o => Transform(o)).ToList(),
                             Apartment = Transform(item)
                         });
                     }
@@ -53,7 +59,7 @@ namespace BookingForm.Controllers
                     {
                         revs.BR2.Add(new Room
                         {
-                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o=> Transform(o)).ToList(),
+                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o => Transform(o)).ToList(),
                             Apartment = Transform(item)
                         });
                     }
@@ -61,7 +67,7 @@ namespace BookingForm.Controllers
                     {
                         revs.BR1P.Add(new Room
                         {
-                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o=> Transform(o)).ToList(),
+                            Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3).Select(o => Transform(o)).ToList(),
                             Apartment = Transform(item)
                         });
                     }
@@ -70,7 +76,7 @@ namespace BookingForm.Controllers
                         revs.STU.Add(new Room
                         {
                             Reserveds = reserveds.Where(e => e.ApartmentCode == item.LocalCode).OrderBy(e => e.Id).TakeLast(3)
-                            .Select(o=> Transform(o)).ToList(),
+                            .Select(o => Transform(o)).ToList(),
                             Apartment = Transform(item)
                         });
                     }
@@ -78,38 +84,40 @@ namespace BookingForm.Controllers
             }
             return View(revs);
         }
-        
+
         private Reserved Transform(Reserved item)
         {
-          
+
             item.Customer = GetCustomerName(item);
             item.PhoneNumber = GetPhoneNumber(item);
             return item;
         }
         private Apartment Transform(Apartment item)
         {
-          
+
             item.LocalCode = GetCode(item);
             return item;
         }
 
         private string GetCode(Apartment item)
         {
-            
+
             var count = _context.Reserve.Where(e => e.ApartmentCode == item.LocalCode).DefaultIfEmpty().Max(e => e == null ? 0 : e.CC);
             return item.LocalCode + " (" + count.ToString() + ")";
-        
+
         }
 
-        private string GetCustomerName(Reserved item){
+        private string GetCustomerName(Reserved item)
+        {
             if (string.IsNullOrWhiteSpace(item.Customer)) return string.Empty;
 
-            var sp =  item.Customer.Split(" ");
+            var sp = item.Customer.Split(" ");
             return sp[sp.Length - 1];
         }
-        private string GetPhoneNumber(Reserved item){
+        private string GetPhoneNumber(Reserved item)
+        {
             if (string.IsNullOrWhiteSpace(item.PhoneNumber)) return string.Empty;
-            var newPhoneNumber = "XXXXX" + item.PhoneNumber.Substring(item.PhoneNumber.Length - 4);            
+            var newPhoneNumber = "XXXXX" + item.PhoneNumber.Substring(item.PhoneNumber.Length - 4);
             return newPhoneNumber;
         }
         public IActionResult Continue()
@@ -161,9 +169,7 @@ namespace BookingForm.Controllers
                         var apart = _context.Apartment.FirstOrDefault(e => e.LocalCode == re.ApartmentCode);
                         if (apart != null)
                         {
-                            ViewBag.cc = re.CC;
-                            ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
-                            return RedirectToAction("Get", re.RCode);
+                            return RedirectToAction(nameof(Create));
                         }
                     }
                     ViewBag.msg = "Mã đặt chỗ đã được sử dụng!";
@@ -186,7 +192,8 @@ namespace BookingForm.Controllers
         }
         public IActionResult Create(string apartmentCode = null)
         {
-            ViewBag.code = apartmentCode != null ? apartmentCode : "";
+            ViewBag.code = apartmentCode != null ? apartmentCode : "";  
+            ViewBag.ApartmentCode = _context.Apartment.Where(e => !e.Reserved).Select(e => e.LocalCode).ToList();
             return View();
         }
         private static Random random = new Random();

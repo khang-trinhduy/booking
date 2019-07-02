@@ -1,0 +1,74 @@
+@model IEnumerable<BookingForm.Models.Block>
+@{
+    Layout = "/Views/Reservations/DumbLayout.cshtml";
+}
+<table class="table">
+    <thead>
+        
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <div class="block @item.Name">
+                <h3 class="block-name">@item.Name</h3>
+                @foreach (var floor in item.Floors)
+                {
+                    <div class="floor-container"><h4 class="floor-name">floor.Name</h4>
+                        @foreach (var room in floor.Apartments)
+                        {
+                            var type = room.ApartmentDetails.ApartmentType.Replace("+", "P");
+                            type = type.Replace("1", "O");
+                            type = type.Replace("2", "W");
+                            type = type.Replace("3", "H");
+                            <div class="room-container">
+                                <div class="room @type">
+                                    <a asp-action="Create" asp-route-apartmentCode="@room.LocalCode">@room.LocalCode</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </tbody>
+</table>
+<style>
+    .room-container {
+        display: inline-block;
+        float: left;
+        border: 1px solid red;
+    }
+    .floor-container {
+        overflow: auto; 
+        border: 1px solid red;
+    }
+    ul, li {
+        list-style: none;
+        margin: 0 0 0 0 !important;
+        padding: 0 0 0 0 !important;
+    }
+    .room {
+        margin: 3px 3px 3px 3px;
+    }
+    .room > a:hover {
+        text-decoration: none;
+    }
+    .OBRP {
+        background-color: aqua;
+    }
+    .STU {
+        background-color: #ffffff;
+    }
+    .WBR {
+        background-color: yellow;
+    }
+    .WBRP {
+        background-color: orange;
+    }
+    .HBR {
+        background-color: red;
+    }
+    .block {
+        padding: 0 15px 15px 15px;
+    }
+</style>

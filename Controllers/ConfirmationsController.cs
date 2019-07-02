@@ -15,7 +15,22 @@ namespace BookingForm.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var invoices = await _context.Invoice.Include(e => e.Client).Include(e => e.Apartment)
+                            .Include(e => e.Confirmation).ToListAsync();
+                var item = invoices.FirstOrDefault(e => e.Client.Id == id);
+                return View("Success", item);
 
+            }
+            catch (System.NullReferenceException e)
+            {
+                return View("Error", $"Mã hóa đơn không tồn tại, vui lòng kiểm tra lại. [Error code {e.Message}]");
+            }
+
+        }
         public async Task<IActionResult> Index()
         {
             try
@@ -36,7 +51,7 @@ namespace BookingForm.Controllers
                     });
                 }
                 return View(confirmView);
-                
+
             }
             catch (System.NullReferenceException e)
             {
@@ -62,6 +77,15 @@ namespace BookingForm.Controllers
             if (item == null)
             {
                 throw new NullReferenceException(nameof(Client));
+            }
+            return item;
+        }
+        private async Task<Invoice> GetInvoice(int id)
+        {
+            var item = await _context.Invoice.FirstOrDefaultAsync(e => e.Id == id);
+            if (item == null)
+            {
+                throw new NullReferenceException(nameof(Invoice));
             }
             return item;
         }
@@ -94,30 +118,28 @@ namespace BookingForm.Controllers
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("RCode, RCC, LocalCode")] Confirmation item)
+        public async Task<IActionResult> Create([Bind("RCC, LocalCode")] Confirmation item)
         {
             try
             {
-                var code = await _context.RCode.FirstOrDefaultAsync(e => e.Code == item.RCode);
-                
+
                 var reserved = await GetReservation(item.RCC);
-               
+
                 var apartment = await GetApartment(item.LocalCode);
+                if (reserved.ApartmentCode != apartment.LocalCode)
+                {
+                    return View("Error", "Mã căn không khớp, vui lòng kiểm tra lại");
+                }
                 if (apartment.Reserved)
                 {
                     return View("Error", "Căn này đã được đặt mua");
                 }
-                if (reserved.ApartmentCode != apartment.LocalCode)
-                {
-                    return View("Error", "Mã căn không khớp, vui lòng kiểm tra lại");                    
-                }
-                if (reserved.RCode != code.Code)
-                {
-                    return View("Error", "Mã đặt chỗ không khớp, vui lòng kiểm tra lại");                    
-                }
+
                 var client = await GetClientByReserved(reserved);
+                
                 item.ClientId = client.Id;
-                return View("Confirm", new ConfirmationViewModel {
+                return View("Confirm", new ConfirmationViewModel
+                {
                     Apartment = apartment,
                     Client = client,
                     Confirm = item,
@@ -145,10 +167,14 @@ namespace BookingForm.Controllers
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public async Task<IActionResult> Confirm([Bind("RCode, RCC, LocalCode, ClientId")] Confirmation item)
+        public async Task<IActionResult> Confirm([Bind("RCC, LocalCode, ClientId")] Confirmation item)
         {
             try
             {
+                // if (Duplicate(item))
+                // {
+                //     return View("Create");
+                // }
                 _context.Confirmation.Add(item);
                 await _context.SaveChangesAsync();
                 try
@@ -159,15 +185,15 @@ namespace BookingForm.Controllers
                     Invoice invoice = await CreateInvoice(item);
                     _context.Invoice.Add(invoice);
                     await _context.SaveChangesAsync();
-                    return View("Success", invoice);
-                    
+                    return RedirectToAction(nameof(Get), new { id = invoice.Client.Id });
+
                 }
                 catch (NullReferenceException e)
                 {
                     return View("Error", $"Vui lòng xác nhận trước khi tạo hóa đơn. [Error on: {e.Message}]");
 
                 }
-            
+
 
 
             }
@@ -176,6 +202,16 @@ namespace BookingForm.Controllers
                 return View("Error", e.Message);
             }
 
+        }
+
+        private bool Duplicate(Confirmation item)
+        {
+            var duplicated = _context.Confirmation.FirstOrDefault(e => e.LocalCode == item.LocalCode || e.RCC == item.RCC);
+            if (duplicated != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void Close(Apartment item)
@@ -200,11 +236,11 @@ namespace BookingForm.Controllers
             }
             catch (NullReferenceException e)
             {
-                
+
                 throw new NullReferenceException(e.Message);
             }
-            
-            
+
+
         }
     }
 }

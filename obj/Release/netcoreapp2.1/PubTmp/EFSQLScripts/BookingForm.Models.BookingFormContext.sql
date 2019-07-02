@@ -3308,3 +3308,83 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190629090028_add confirmation')
+BEGIN
+    CREATE TABLE [Confirmation] (
+        [Id] int NOT NULL IDENTITY,
+        [RCode] nvarchar(max) NULL,
+        [RCC] nvarchar(max) NULL,
+        [LocalCode] nvarchar(max) NULL,
+        [ClientId] int NOT NULL,
+        CONSTRAINT [PK_Confirmation] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190629090028_add confirmation')
+BEGIN
+    CREATE TABLE [Invoice] (
+        [Id] int NOT NULL IDENTITY,
+        [ClientId] int NULL,
+        [ApartmentId] int NULL,
+        [ConfirmationId] int NULL,
+        CONSTRAINT [PK_Invoice] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_Invoice_Apartment_ApartmentId] FOREIGN KEY ([ApartmentId]) REFERENCES [Apartment] ([Id]) ON DELETE NO ACTION,
+        CONSTRAINT [FK_Invoice_Client_ClientId] FOREIGN KEY ([ClientId]) REFERENCES [Client] ([Id]) ON DELETE NO ACTION,
+        CONSTRAINT [FK_Invoice_Confirmation_ConfirmationId] FOREIGN KEY ([ConfirmationId]) REFERENCES [Confirmation] ([Id]) ON DELETE NO ACTION
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190629090028_add confirmation')
+BEGIN
+    CREATE INDEX [IX_Invoice_ApartmentId] ON [Invoice] ([ApartmentId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190629090028_add confirmation')
+BEGIN
+    CREATE INDEX [IX_Invoice_ClientId] ON [Invoice] ([ClientId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190629090028_add confirmation')
+BEGIN
+    CREATE INDEX [IX_Invoice_ConfirmationId] ON [Invoice] ([ConfirmationId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190629090028_add confirmation')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190629090028_add confirmation', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190701020402_remove rcode')
+BEGIN
+    DECLARE @var42 sysname;
+    SELECT @var42 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Confirmation]') AND [c].[name] = N'RCode');
+    IF @var42 IS NOT NULL EXEC(N'ALTER TABLE [Confirmation] DROP CONSTRAINT [' + @var42 + '];');
+    ALTER TABLE [Confirmation] DROP COLUMN [RCode];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190701020402_remove rcode')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190701020402_remove rcode', N'2.1.8-servicing-32085');
+END;
+
+GO
+

@@ -2,41 +2,97 @@
 @using Microsoft.Extensions.Options
 @using reCAPTCHA.AspNetCore
 @{
-    Layout = "~/Views/Catalogs/DumbLayout.cshtml";
+    Layout = "/Views/Catalogs/DumbLayout.cshtml";
     ViewData["title"] = "Đặt mua";
 }
-<div class="container">
-<form id="form" asp-action="Confirm">
-      <div class="form-group">
-        <partial name="StatusMessage" model="@ViewBag.msg" />
-        <label for="">
-            Mã căn hộ
-        </label>
-            <input type="text" name="ApartmentCode" id="ApartmentCode" class="form-control" placeholder="" aria-describedby="helpId" value="@ViewBag.code" required>
-        </div>
-        <div class="form-group">
-            <label>Nhập số cmnd</label>
-            <input type="text" id="Cmnd" name="Cmnd" class="form-control" placeholder="" aria-describedby="helpId" required>
-        </div>
-        <div class="form-group">
-            <label>Nhập SĐT</label>
-            <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="" aria-describedby="helpId" required>
-        </div>
-        <div class="form-group">
-            <label>Nhập mã</label>
-            <input type="text" id="RCode" name="RCode" class="form-control" placeholder="" aria-describedby="helpId" required>
-        </div>
-        <div class="form-group">
-            @Html.Recaptcha(RecaptchaSettings?.Value)
-        </div>
-        <button class="btn btn-success" id="btn">Xác nhận</button>
-</form>
-</div>
+    <div class="container">
+        <form id="form" asp-action="Confirm" autocomplete="off">
+            <partial name="StatusMessage" model="@ViewBag.msg" />
+           
+            <div class="autocomplete">
+                <label for="">
+                    Mã căn hộ
+                </label>
+                <input type="text" name="ApartmentCode" id="ApartmentCode" placeholder="" value="@ViewBag.code" required>
+            </div>
+            <div>
+                <label>Nhập số cmnd</label>
+                <input type="text" id="Cmnd" name="Cmnd" placeholder="" required>
+            </div>
+            <div>
+                <label>Nhập SĐT</label>
+                <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="" required>
+            </div>
+            <div>
+                <label>Nhập mã</label>
+                <input type="text" id="RCode" name="RCode" placeholder="" required>
+            </div>
+            <div>
+                @Html.Recaptcha(RecaptchaSettings?.Value)
+            </div>
+            <button class="btn btn-success" id="btn">Xác nhận</button>
+        </form>
+    </div>
 <style>
     .container {
         padding-top: 40px;
     }
+    * { box-sizing: border-box; }
+body {
+  font: 16px Arial; 
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
 </style>
+<script type="text/javascript">
+    
+    var apartments = @Html.Raw(Json.Serialize(@ViewBag.ApartmentCode));
+    autocomplete(document.getElementById("ApartmentCode"), apartments);
+    console.log(apartments);
+ 
+</script>
 
 
 

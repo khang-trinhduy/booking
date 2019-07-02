@@ -115,10 +115,7 @@
             <label>Mã xác nhận</label>
             <input type="text" value="@Model.Confirm.RCC" id="RCC" name="RCC" class="form-control" placeholder="" aria-describedby="helpId" required>
         </div>
-        <div class="form-group" hidden>
-            <label>Mã đặt chỗ</label>
-            <input type="text" value="@Model.Confirm.RCode" id="RCode" name="RCode" class="form-control" placeholder="" aria-describedby="helpId" required>
-        </div>
+        
         <input type="text" value="@Model.Confirm.ClientId" id="ClientId" name="ClientId" class="form-control" placeholder="" aria-describedby="helpId" required hidden>
         <div class="form-group">
             @Html.Recaptcha(RecaptchaSettings?.Value)

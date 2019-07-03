@@ -1,76 +1,32 @@
-@model IEnumerable<BookingForm.Models.ConfirmationViewModel>
+@model IEnumerable<BookingForm.Models.ConfirmationList>
 @{
     Layout = "/Views/Confirmations/DumbLayout.cshtml";
 }
-<div class="container-fluid">
-    <h2>3BR</h2>
-    <ul>
-
-    @foreach (var item in Model)
-    {
-        if (item.Apartment.ApartmentDetails.ApartmentType == "3BR")
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã căn hộ</th>
+            <th>Tên khách hàng</th>
+            <th>Tình trạng căn hộ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
         {
-            <li>
-                <a asp-action="Get" value="" asp-route-id="@item.Client.Id" >@item.Client.FullName</a> / <a asp-action="Apartment" asp-route-code="@item.Apartment.LocalCode" value=""> @item.Apartment.LocalCode</a> / <a asp-action="Reservation" value="">@item.Confirm.RCC</a>
-            </li>
+            <tr>
+                <td>@item.ApartmentCode</td>
+                <td>@item.Client</td>
+                @if (item.IsReserved)
+                {
+                    <td>Đã được đặt mua</td>
+                }
+                else if (item.NOReserved <= 0) {
+                    <td>Còn trống</td>
+                }
+                else {
+                    <td>Đang đặt giữ chỗ (@item.NOReserved)</td>
+                }
+            </tr>
         }
-    }
-    
-    </ul>
-    <h2>2BR+</h2>
-    <ul>
-
-    @foreach (var item in Model)
-    {
-        if (item.Apartment.ApartmentDetails.ApartmentType == "2BR+")
-        {
-            <li>
-                <a asp-action="Get" value="" asp-route-id="@item.Client.Id" >@item.Client.FullName</a> / <a asp-action="Apartment" asp-route-code="@item.Apartment.LocalCode" value=""> @item.Apartment.LocalCode</a> / <a asp-action="Reservation" value="">@item.Confirm.RCC</a>
-            </li>
-        }
-    }
-    
-    </ul>
-    <h2>2BR</h2>
-    <ul>
-
-    @foreach (var item in Model)
-    {
-        if (item.Apartment.ApartmentDetails.ApartmentType == "2BR")
-        {
-            <li>
-                <a asp-action="Get" value="" asp-route-id="@item.Client.Id" >@item.Client.FullName</a> / <a asp-action="Apartment" asp-route-code="@item.Apartment.LocalCode" value=""> @item.Apartment.LocalCode</a> / <a asp-action="Reservation" value="">@item.Confirm.RCC</a>
-            </li>
-        }
-    }
-    
-    </ul>
-    <h2>1BR+</h2>
-    <ul>
-
-    @foreach (var item in Model)
-    {
-        if (item.Apartment.ApartmentDetails.ApartmentType == "1BR+")
-        {
-            <li>
-                <a asp-action="Get" value="" asp-route-id="@item.Client.Id" >@item.Client.FullName</a> / <a asp-action="Apartment" asp-route-code="@item.Apartment.LocalCode" value=""> @item.Apartment.LocalCode</a> / <a asp-action="Reservation" value="">@item.Confirm.RCC</a>
-            </li>
-        }
-    }
-    
-    </ul>
-    <h2>Studio</h2>
-    <ul>
-
-    @foreach (var item in Model)
-    {
-        if (item.Apartment.ApartmentDetails.ApartmentType == "STU")
-        {
-            <li>
-                <a asp-action="Get" value="" asp-route-id="@item.Client.Id" >@item.Client.FullName</a> / <a asp-action="Apartment" asp-route-code="@item.Apartment.LocalCode" value=""> @item.Apartment.LocalCode</a> / <a asp-action="Reservation" value="">@item.Confirm.RCC</a>
-            </li>
-        }
-    }
-    
-    </ul>
-</div>
+    </tbody>
+</table>

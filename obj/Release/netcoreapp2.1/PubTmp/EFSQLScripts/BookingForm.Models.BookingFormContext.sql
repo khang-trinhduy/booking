@@ -3388,3 +3388,37 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190703032428_refactoring')
+BEGIN
+    DECLARE @var43 sysname;
+    SELECT @var43 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Apartment]') AND [c].[name] = N'NOfReserved');
+    IF @var43 IS NOT NULL EXEC(N'ALTER TABLE [Apartment] DROP CONSTRAINT [' + @var43 + '];');
+    ALTER TABLE [Apartment] DROP COLUMN [NOfReserved];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190703032428_refactoring')
+BEGIN
+    DECLARE @var44 sysname;
+    SELECT @var44 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Apartment]') AND [c].[name] = N'Reserved');
+    IF @var44 IS NOT NULL EXEC(N'ALTER TABLE [Apartment] DROP CONSTRAINT [' + @var44 + '];');
+    ALTER TABLE [Apartment] DROP COLUMN [Reserved];
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190703032428_refactoring')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190703032428_refactoring', N'2.1.8-servicing-32085');
+END;
+
+GO
+

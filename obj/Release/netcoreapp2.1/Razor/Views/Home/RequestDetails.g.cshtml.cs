@@ -218,7 +218,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(2650, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f28e04525b404606aa1a7e7992e2ffb3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de5267d7b5c446d59a52c6ee357f9382", async() => {
                 BeginContext(2706, 8, true);
                 WriteLiteral("Xác nhận");
                 EndContext();
@@ -253,7 +253,7 @@ using BookingForm.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(2726, 43, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e744080c4044d70b914bbe55cfc598c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34418fd6ccac47f7a4d801e4069b077d", async() => {
                 BeginContext(2758, 7, true);
                 WriteLiteral("Trở lại");
                 EndContext();

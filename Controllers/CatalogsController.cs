@@ -40,6 +40,11 @@ namespace BookingForm.Controllers
         {
             return RedirectToAction("Create", "Reservations", new {apartmentCode = code});
         }
+        private bool IsAvailable(string apartmentCode)
+        {
+            var confirm = _context.Confirmation.FirstOrDefault(e => e.LocalCode == apartmentCode);
+            return confirm == null;
+        }
 
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -54,7 +59,7 @@ namespace BookingForm.Controllers
                 //     ViewBag.msg = "Sai mã captcha!";
                 //     return View("Proceed");
                 // }
-                var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode && e.Reserved == false);
+                var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode && IsAvailable(e.LocalCode));
                 if (apartment == null)
                 {
                     ViewBag.msg = "Căn hộ đã có người mua!";
@@ -100,20 +105,29 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Mã này đã được sử dụng!";
                     return View("Proceed");
                 }
+                var numberOfReserved = ReadNumberOfReserved(r.RCode);
+
                 r.Date = DateTime.Now.Date;
-                r.CC = apartment.NOfReserved + 1;
-                apartment.NOfReserved++;
+                r.CC = numberOfReserved++;
                 _context.Reserve.Add(r);
                 code.IsUsed = true;
                 _context.Entry(code).State = EntityState.Modified;
                 _context.Entry(apartment).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
+
                 ViewBag.cc = r.CC;
                 ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
+
                 return View("Success", apartment);
             }
             return View("Error");
         }
+
+        private int ReadNumberOfReserved(string rCode)
+        {
+            return _context.Reserve.Where(e => e.RCode == rCode).ToList().Count;
+        }
+
         public async Task<IActionResult> Code(int id)
         {
             var clients = await _context.Client.Include(e => e.Codes).ToListAsync();
@@ -375,69 +389,6 @@ namespace BookingForm.Controllers
                     try
                     {
                         c.LocalCode = workSheet.Cells[i, 1].Value.ToString();
-                        var codex = c.LocalCode.Split(".");
-                        if (codex == null || codex.Length != 4)
-                        {
-                            ViewBag.msg = $"Invalid local code on line {i}";
-                            return View();
-                        }
-                        var section = await _context.Section.Include(e => e.Blocks).ThenInclude(e => e.Floors).ThenInclude(e => e.Apartments).FirstOrDefaultAsync(e => e.Code.ToLower() == codex[0].ToLower());
-
-                        if (section == null)
-                        {
-                            ViewBag.msg = $"Invalid code for section on line {i}! Cannot find any section with code {codex[0]}.";
-                            return View();
-
-                        }
-                        var block = section.Blocks.FirstOrDefault(e => e.Name.ToLower() == codex[1].Replace("-", ".").ToLower());
-                        if (block == null)
-                        {
-                            ViewBag.msg = $"Invalid code for block on line {i}! Cannot find any block with code {codex[1]}.";
-                            return View();
-
-                        }
-                        var floor = block.Floors.FirstOrDefault(e => IsContain(e.Name, codex[2]));
-                        if (floor == null)
-                        {
-                            ViewBag.msg = $"Invalid code for floor on line {i}! Cannot find any floor with code {codex[2]}.";
-                            return View();
-
-                        }
-
-                        if (section.Blocks == null)
-                        {
-                            section.Blocks = new List<Block>();
-                            section.Blocks.Add(block);
-                            _context.Entry(section).State = EntityState.Modified;
-                        }
-                        else if (section.Blocks.FirstOrDefault(e => e.Name == block.Name) == null)
-                        {
-                            section.Blocks.Add(block);
-                            _context.Entry(section).State = EntityState.Modified;
-                        }
-                        if (block.Floors == null)
-                        {
-                            block.Floors = new List<Floor>();
-                            block.Floors.Add(floor);
-                            _context.Entry(block).State = EntityState.Modified;
-                        }
-                        else if (block.Floors.FirstOrDefault(e => e.Name == floor.Name) == null)
-                        {
-                            block.Floors.Add(floor);
-                            _context.Entry(block).State = EntityState.Modified;
-                        }
-
-                        if (floor.Apartments == null)
-                        {
-                            floor.Apartments = new List<Apartment>();
-                            floor.Apartments.Add(c);
-                            _context.Entry(floor).State = EntityState.Modified;
-                        }
-                        else if (floor.Apartments.FirstOrDefault(e => e.LocalCode == c.LocalCode) == null)
-                        {
-                            floor.Apartments.Add(c);
-                            _context.Entry(floor).State = EntityState.Modified;
-                        }
                         c.GlobalCode = workSheet.Cells[i, 2].Value.ToString();
                         c.Name = workSheet.Cells[i, 3].Value.ToString();
                         c.NOBedroom = workSheet.Cells[i, 4].Value.ToString();
@@ -449,17 +400,7 @@ namespace BookingForm.Controllers
                         c.Block = workSheet.Cells[i, 10].Value.ToString();
                         c.Price = workSheet.Cells[i, 11].Value.ToString();
                         c.Location = workSheet.Cells[i, 12].Value.ToString();
-                        var code = workSheet.Cells[i, 13].Value.ToString();
-
-                        var detail = await _context.Details.FirstOrDefaultAsync(e => e.ApartmentType == code);
-
-                        if (detail == null)
-                        {
-                            ViewBag.msg = $"Invalid code for apartment details on line {i}! Cannot find any apartment's details with code {code}.";
-                            return View();
-
-                        }
-                        c.ApartmentDetails = detail;
+                        
                     }
                     catch (System.Exception)
                     {
@@ -472,7 +413,6 @@ namespace BookingForm.Controllers
                         var existed = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode.ToLower() == c.LocalCode.ToLower());
                         if (existed != null)
                         {
-                            existed.ApartmentDetails = c.ApartmentDetails;
                             existed.Area = c.Area;
                             existed.Block = c.Block;
                             existed.Direction = c.Direction;

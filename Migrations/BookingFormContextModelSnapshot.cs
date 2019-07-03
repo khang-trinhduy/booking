@@ -72,13 +72,9 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("NOWC");
 
-                    b.Property<int>("NOfReserved");
-
                     b.Property<string>("Name");
 
                     b.Property<string>("Price");
-
-                    b.Property<bool>("Reserved");
 
                     b.Property<string>("View");
 

@@ -36,18 +36,17 @@ namespace BookingForm.Controllers
             try
             {
                 var confirmations = await _context.Confirmation.Where(e => true).ToListAsync();
-                var confirmView = new List<ConfirmationViewModel>();
+                var confirmView = new List<ConfirmationList>();
                 foreach (var item in confirmations)
                 {
                     var apartment = await GetApartment(item.LocalCode);
                     var client = await GetClient(item.ClientId);
                     var reserved = await GetReservation(item.RCC);
-                    confirmView.Add(new ConfirmationViewModel
+                    confirmView.Add(new ConfirmationList
                     {
-                        Apartment = apartment,
-                        Client = client,
-                        Confirm = item,
-                        Reserve = reserved
+                        ApartmentCode = apartment.LocalCode,
+                        Client = client.FullName,
+                        NOReserved = ReadNumberOfReserved(apartment.LocalCode)
                     });
                 }
                 return View(confirmView);
@@ -58,6 +57,12 @@ namespace BookingForm.Controllers
                 return View("Error", $"Hệ thống xảy ra lỗi [error code {e.Message}]");
             }
         }
+
+        private int ReadNumberOfReserved(string localCode)
+        {
+            return _context.Reserve.Where(e => e.RCode == localCode).ToList().Count;
+        }
+
         public IActionResult Create()
         {
             return View();
@@ -130,7 +135,7 @@ namespace BookingForm.Controllers
                 {
                     return View("Error", "Mã căn không khớp, vui lòng kiểm tra lại");
                 }
-                if (apartment.Reserved)
+                if (!IsAvailable(apartment.LocalCode))
                 {
                     return View("Error", "Căn này đã được đặt mua");
                 }
@@ -153,6 +158,12 @@ namespace BookingForm.Controllers
                 return View("Error", $"Thông tin nhập không chính xác, vui lòng kiểm tra lại {e.Message}");
             }
 
+        }
+
+        private bool IsAvailable(string localCode)
+        {
+            var confirm = _context.Confirmation.FirstOrDefault(e => e.LocalCode == localCode);
+            return confirm == null;
         }
 
         private async Task<Client> GetClientByReserved(Reserved rev)
@@ -179,9 +190,6 @@ namespace BookingForm.Controllers
                 await _context.SaveChangesAsync();
                 try
                 {
-                    var apartment = await GetApartment(item.LocalCode);
-                    Close(apartment);
-                    _context.Entry(apartment).State = EntityState.Modified;
                     Invoice invoice = await CreateInvoice(item);
                     _context.Invoice.Add(invoice);
                     await _context.SaveChangesAsync();
@@ -212,12 +220,6 @@ namespace BookingForm.Controllers
                 return true;
             }
             return false;
-        }
-
-        private void Close(Apartment item)
-        {
-            item.Reserved = true;
-            _context.Entry(item).State = EntityState.Modified;
         }
 
         private async Task<Invoice> CreateInvoice(Confirmation item)

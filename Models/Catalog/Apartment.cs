@@ -30,8 +30,6 @@ namespace BookingForm.Models
         public string Location { get; set; }
         [DisplayName("Giá dự kiến")]
         public string Price { get; set; }
-        public bool Reserved { get; set; }
-        public int NOfReserved { get; set; }
         public int Id { get; set; }
         public bool IsCorner { get; set; }
     }

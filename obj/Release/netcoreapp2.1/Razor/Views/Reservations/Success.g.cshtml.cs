@@ -59,7 +59,7 @@ using BookingForm.Models;
 #line default
 #line hidden
             BeginContext(64, 1258, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b180fe468acc4af6b8f3877528db0b3f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef50721741654a30978523b46e55ca26", async() => {
                 BeginContext(70, 963, true);
                 WriteLiteral(@"
   <title>Đặt hàng thành công</title>
@@ -156,7 +156,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1324, 768, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa967afc59d6487ea624e292fc60478e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d18b2d0c987489dbec4ec9d7d30ba6b", async() => {
                 BeginContext(1330, 206, true);
                 WriteLiteral("\r\n<hr />\r\n<hr />\r\n<h1 style=\"font-family:sans-serif; \">Chúc mừng bạn đã đặt chỗ thành công!</h1>\r\n<p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p>\r\n\r\n<h3>Thông tin sản phẩm</h3>\r\n<div id=\"order\">\r\n    <p>");
                 EndContext();
@@ -251,7 +251,7 @@ Write(Model.Reserved.RCC);
                 WriteLiteral("</h3>\r\n<h5>Lưu ý: Khách hàng cần lưu lại mã xác nhận để bốc thăm trong trường hợp có nhiều đơn hàng cùng đặt vào một sản phẩm</h5>\r\n<p>Bấm vào ");
                 EndContext();
                 BeginContext(2025, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abf21a517cc9464f947703dfb9493ce8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7922089c63f41c28dafd49af4fbaeb0", async() => {
                     BeginContext(2050, 3, true);
                     WriteLiteral("đây");
                     EndContext();

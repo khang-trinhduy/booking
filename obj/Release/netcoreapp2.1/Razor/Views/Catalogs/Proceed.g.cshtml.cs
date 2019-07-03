@@ -72,12 +72,12 @@ using reCAPTCHA.AspNetCore;
 #line default
 #line hidden
             BeginContext(216, 1378, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac3f2199214d438da5036a955549b984", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b66b35d967e9416494d290fc9f675464", async() => {
                 BeginContext(253, 42, true);
                 WriteLiteral("\r\n      <div class=\"form-group\">\r\n        ");
                 EndContext();
                 BeginContext(295, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "89e6572ee05645388934f1e038a8275a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7ab43c908a784f16820ccd087d6550ce", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

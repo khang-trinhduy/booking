@@ -120,7 +120,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(806, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68781706a3744a2a956c7dc7ad285cdf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eaf5e21555e14070ba41dd69c2687ccd", async() => {
                 BeginContext(861, 3, true);
                 WriteLiteral("Xem");
                 EndContext();
@@ -155,7 +155,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(923, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "682ac9cc84fe4d278c882cd18ee4f7cd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40ebbf3d409f4fa09e7d098f8a983bc0", async() => {
                 BeginContext(977, 3, true);
                 WriteLiteral("Xem");
                 EndContext();
@@ -199,7 +199,7 @@ using BookingForm.Models;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(1130, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9124d82449a4fa7aaa8ddbe3cb7238f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f182e1e4602f4f8b8371843bc102ce32", async() => {
                 BeginContext(1180, 14, true);
                 WriteLiteral("Danh sách tầng");
                 EndContext();

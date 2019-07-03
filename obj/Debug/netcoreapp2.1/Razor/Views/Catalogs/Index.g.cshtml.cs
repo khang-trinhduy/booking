@@ -55,7 +55,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n<p>\r\n    ");
             EndContext();
             BeginContext(59, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76b2f0fce64940c397a038815b17f22c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4effef41fa1a4c86aef498086bad074d", async() => {
                 BeginContext(82, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -294,7 +294,7 @@ using BookingForm.Models;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(2338, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af7a3e69371341c49c7dffdd09f21965", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4dde124a1e742ffa761ba7c20453a5f", async() => {
                 BeginContext(2403, 12, true);
                 WriteLiteral("Ảnh minh họa");
                 EndContext();

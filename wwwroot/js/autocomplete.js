@@ -21,7 +21,8 @@ function autocomplete(inp, arr) {
     for (i = 0; i < arr.length; i++) {
       var str = '';
       var matched = true;
-      var currentIndex = -1;
+      var matchIndex = -1;
+      var itemName = arr[i];
       //loop through arr to get each name
       //loop through each name to get each char
       //loop through val to get chars
@@ -29,20 +30,25 @@ function autocomplete(inp, arr) {
       //must be in order
       //return new name
       //append to element
+      //current index = length str 
       for (let j = 0; j < val.length; j++) {
-        const element = val[j].toUpperCase();
-        if (arr[i].substring(currentIndex + 1, arr[i].length).toUpperCase().indexOf(element) > currentIndex) {
-          str += arr[i].substring(currentIndex + 1, arr[i].toUpperCase().indexOf(element));
-          currentIndex = arr[i].toUpperCase().indexOf(element);
-          str += "<strong>" + arr[i][currentIndex] + "</strong>";
+        const char = val[j].toUpperCase();
+        var subName = itemName.substring(matchIndex + 1, itemName.length);
+        if (subName.indexOf(char) > -1) {
+          matchIndex = subName.indexOf(char);
+          var preMatch = subName.substring(0, subName.indexOf(matchIndex));
+          console.log(subName);
+          var matched = "<strong>" + itemName[matchIndex] + "</strong>";
+          str += preMatch + matched;
+          matchIndex += preMatch.length + 1;
         } else {
           matched = false;
           continue;
         }
       }
       if (matched) {
-        if (currentIndex < arr[i].length) {
-          str += arr[i].substring(currentIndex + 1, arr[i].length);
+        if (matchIndex < arr[i].length) {
+          str += arr[i].substring(matchIndex + 1, arr[i].length);
         }
         b = createItems(b, str, i);
         a.appendChild(b);
@@ -51,16 +57,17 @@ function autocomplete(inp, arr) {
         continue;
 
       }
-      ({ str, matched } = reinitialize(str, matched));
+      ({ str, matched, matchIndex } = reinitialize(str, matched, matchIndex));
     }
 
 
   });
 
-  function reinitialize(str, matched) {
+  function reinitialize(str, matched, matchIndex) {
     str = '';
     matched = true;
-    return { str, matched };
+    matchIndex = -1;
+    return { str, matched, matchIndex };
   }
 
   function createItems(b, str, i) {

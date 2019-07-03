@@ -124,6 +124,11 @@ namespace BookingForm.Controllers
         {
             return RedirectToAction("GetBlocks", "Catalogs", new { id = 0 });
         }
+        private bool IsAvailable(string apartmentCode)
+        {
+            var apartment = _context.Confirmation.FirstOrDefault(e => e.LocalCode == apartmentCode);
+            return apartment == null;
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Confirm([Bind("ApartmentCode, Cmnd, PhoneNumber, RCode")] Reserved r)
@@ -131,10 +136,15 @@ namespace BookingForm.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.code = r.ApartmentCode;
-                var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode && e.Reserved == false);
+                var apartment = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode == r.ApartmentCode);
                 if (apartment == null)
                 {
-                    ViewBag.msg = "Căn hộ đã có người mua!";
+                    ViewBag.msg = "Mã căn hộ không tồn tại!";
+                    return View("Create");
+                }
+                else if (!IsAvailable(r.ApartmentCode))
+                {
+                    ViewBag.msg = "Căn hộ đã được đặt mua!";
                     return View("Create");
                 }
                 var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
@@ -193,7 +203,7 @@ namespace BookingForm.Controllers
         public IActionResult Create(string apartmentCode = null)
         {
             ViewBag.code = apartmentCode != null ? apartmentCode : "";  
-            ViewBag.ApartmentCode = _context.Apartment.Where(e => !e.Reserved).Select(e => e.LocalCode).ToList();
+            ViewBag.ApartmentCode = _context.Apartment.Where(e => IsAvailable(e.LocalCode)).Select(e => e.LocalCode).ToList();
             return View();
         }
         private static Random random = new Random();
@@ -222,14 +232,17 @@ namespace BookingForm.Controllers
                 {
                     return View("Error", $"Mã căn hộ không hợp lệ {r.ApartmentCode}");
                 }
-                if (apartment.Reserved)
+                if (!IsAvailable(apartment.LocalCode))
                 {
                     return View("Error", "Căn hộ đã được đặt mua!");
                 }
+
                 var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
                 r.Date = DateTime.Now.Date;
-                r.CC = apartment.NOfReserved + 1;
+                var numberOfReserved = ReadNumberOfReserved(r.RCode);
+                r.CC = numberOfReserved++;
                 r.RCC = apartment.GlobalCode + "-" + GenerateCode() + "-" + r.CC.ToString();
+
                 var unique = _context.Reserve.FirstOrDefault(e => e.RCC == r.RCC);
                 do
                 {
@@ -237,17 +250,24 @@ namespace BookingForm.Controllers
                     unique = _context.Reserve.FirstOrDefault(e => e.RCC == r.RCC);
 
                 } while (unique != null);
-                apartment.NOfReserved++;
+
                 _context.Reserve.Add(r);
+
                 code.IsUsed = true;
                 _context.Entry(code).State = EntityState.Modified;
                 _context.Entry(apartment).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
+
                 ViewBag.cc = r.CC;
                 ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
                 return RedirectToAction(nameof(Get), new { confirmCode = r.RCC });
             }
             return View("Error", "Hệ thống xảy ra lỗi, vui lòng thử lại!");
+        }
+
+        private int ReadNumberOfReserved(string rCode)
+        {
+            return _context.Reserve.Where(e => e.RCode == rCode).ToList().Count;
         }
     }
 }

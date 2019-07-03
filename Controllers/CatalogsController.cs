@@ -17,7 +17,7 @@ namespace BookingForm.Controllers
 {
     public class CatalogsController : Controller
     {
-        private readonly bool Available = false;
+        private readonly bool Available = true;
         private readonly BookingFormContext _context;
         private static Random random = new Random();
         private IRecaptchaService _recaptcha;
@@ -44,6 +44,48 @@ namespace BookingForm.Controllers
         {
             var confirm = _context.Confirmation.FirstOrDefault(e => e.LocalCode == apartmentCode);
             return confirm == null;
+        }
+        [Route("client/generate")]
+        public async Task<IActionResult> Copy()
+        {
+            if (_context.Client.FirstOrDefault(e => true) != null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                var booking = await _context.appoinment.Where(e => e.IsActive && e.Confirm && (e.NCH1 + e.NCH2 + e.NCH21 + e.NCH3) > 0).ToListAsync();
+                List<Client> clients = new List<Client>();
+                foreach (var item in booking)
+                {
+                    var exist = clients.FirstOrDefault(e => e.Cmnd.ToLower() == item.Cmnd.ToLower() || e.FullName.ToLower() == item.Customer.ToLower() || e.PhoneNumber.ToLower() == item.Phone.ToLower());
+                    if (exist == null)
+                    {
+                        clients.Add(new Client{
+                            Cmnd = item.Cmnd,
+                            PhoneNumber = item.Phone,
+                            FullName = item.Customer,
+                            IsValid = true,
+                            NOProduct = item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3
+                        });
+                    }
+                    else
+                    {
+                        exist.NOProduct += item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3;
+                    }
+                }
+                foreach (var item in clients)
+                {
+                    _context.Client.Add(item);
+                }
+                await _context.SaveChangesAsync();
+                return Ok($"Successfully added {clients.Count} client");
+                
+            }
+            catch (System.Exception e)
+            {
+                return NotFound(e.Message);
+            }
         }
 
         [ValidateAntiForgeryToken]
@@ -174,7 +216,10 @@ namespace BookingForm.Controllers
             foreach (var item in clients)
             {
                 var codes = Generate(item.NOProduct * 2);
-                _context.RCode.AddRange(codes);
+                foreach (var code in codes)
+                {
+                    _context.RCode.Add(code);
+                }
                 foreach (var code in codes)
                 {
                     item.Codes.Add(code);

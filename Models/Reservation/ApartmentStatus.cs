@@ -15,16 +15,12 @@ namespace BookingForm.Models
                 Status = "Closed";
                 return;
             }
-            if (reserved)
-            {
-                Status = "Opening";
-                return;
-            }
             if (holding)
             {
                 Status = "Holding";
                 return;
             }
+            Status = "Opening";
         }
         public string GetStatus()
         {

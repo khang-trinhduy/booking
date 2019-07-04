@@ -1,0 +1,24 @@
+@model IEnumerable<BookingForm.Models.ReservationManagerView>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã căn hộ</th>
+            <th>Số lượng giữ chỗ</th>
+            <th>Tình trạng</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td scope="row">@item.ApartmentCode</td>
+                <td>@item.NOfReserved</td>
+                <td>@item.Status</td>
+                <td><a asp-action="ManagerDetails" asp-route-data="@item.ApartmentCode">Chi tiết</a></td>
+            </tr>
+
+        }
+       
+    </tbody>
+</table>

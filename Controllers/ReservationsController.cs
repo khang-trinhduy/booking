@@ -29,6 +29,27 @@ namespace BookingForm.Controllers
             var block = await _context.Block.Include(e => e.Floors).ThenInclude(e => e.Apartments).ThenInclude(e => e.ApartmentDetails).ToListAsync();
             return View(block);
         }
+        public async Task<IActionResult> ManagerDetails(string data)
+        {
+            var apartment = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode == data);
+            if (apartment == null)
+            {
+                return View("Error", $"Mã căn không tồn tại {data}");
+            }
+            var reservations = await _context.Reserve.Where(e => e.ApartmentCode == apartment.LocalCode).ToListAsync();
+            var confirmed = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == apartment.LocalCode) != null;
+            var reserved = reservations.Count > 0;
+            var status = new ApartmentStatus(apartment);
+            status.SetStatus(confirmed, reserved, false);
+            var manager = new ReservationManager {
+                Apartment = apartment,
+                Reservations = reservations,
+                Status = status
+            };
+            var managerDetailsView = new ReservationManagerView(manager);
+            managerDetailsView.SetReservations(reservations);
+            return View(managerDetailsView);
+        }
         public async Task<IActionResult> Manager()
         {
             var apartments = await _context.Apartment.Where(e => true).ToListAsync();
@@ -36,7 +57,7 @@ namespace BookingForm.Controllers
             foreach (var item in apartments)
             {
                 var reservations = await _context.Reserve.Where(e => e.ApartmentCode == item.LocalCode).ToListAsync();
-                var confirmed = _context.Confirmation.Where(e => e.LocalCode == item.LocalCode) != null;
+                var confirmed = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == item.LocalCode) != null;
                 var status = new ApartmentStatus(item);
                 var reserved = reservations.Count > 0;
                 status.SetStatus(confirmed, reserved, false);

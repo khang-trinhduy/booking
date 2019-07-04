@@ -1,0 +1,13 @@
+@model BookingForm.Models.ReservationManagerView
+<div class="container">
+    <h3>Thông tin chi tiết</h3>
+    <label>Danh sách đặt chỗ</label>
+    <ul>
+    @foreach(var item in Model.Reservations) {
+        <li>@item</li>
+    }
+    </ul>
+    <label>Tình trạng</lable>
+    <p>@Model.Status</p>
+    <a asp-action="Manager">Quay lại</a>
+</div>

@@ -2924,6 +2924,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Reservations\\ManagerDetails.cshtml",
+      "TargetPath": "Views\\Reservations\\ManagerDetails.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Managers\\Monthly.cshtml",
       "TargetPath": "Views\\Managers\\Monthly.cshtml",
       "FileKind": "mvc"

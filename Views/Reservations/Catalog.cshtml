@@ -13,7 +13,7 @@
                 <h3 class="block-name">@item.Name</h3>
                 @foreach (var floor in item.Floors)
                 {
-                    <div class="floor-container"><h4 class="floor-name">floor.Name</h4>
+                    <div class="floor-container"><h4 class="floor-name">@floor.Name</h4>
                         @foreach (var room in floor.Apartments)
                         {
                             var type = room.ApartmentDetails.ApartmentType.Replace("+", "P");

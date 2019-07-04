@@ -146,7 +146,7 @@ using BookingForm.Models;
             WriteLiteral("                    <td>");
             EndContext();
             BeginContext(754, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1eb10c63a64dcdbbb4c7138f232e17", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2d5a7e4b31e411b870cc796901a7dd2", async() => {
                 BeginContext(799, 3, true);
                 WriteLiteral("Xem");
                 EndContext();

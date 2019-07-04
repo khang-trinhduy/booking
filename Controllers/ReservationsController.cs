@@ -29,6 +29,31 @@ namespace BookingForm.Controllers
             var block = await _context.Block.Include(e => e.Floors).ThenInclude(e => e.Apartments).ThenInclude(e => e.ApartmentDetails).ToListAsync();
             return View(block);
         }
+        public async Task<IActionResult> Manager()
+        {
+            var apartments = await _context.Apartment.Where(e => true).ToListAsync();
+            List<ReservationManager> manager = new List<ReservationManager>();
+            foreach (var item in apartments)
+            {
+                var reservations = await _context.Reserve.Where(e => e.ApartmentCode == item.LocalCode).ToListAsync();
+                var confirmed = _context.Confirmation.Where(e => e.LocalCode == item.LocalCode) != null;
+                var status = new ApartmentStatus(item);
+                var reserved = reservations.Count > 0;
+                status.SetStatus(confirmed, reserved, false);
+                manager.Add(new ReservationManager{
+                    Apartment = item,
+                    Reservations = reservations,
+                    Status = status
+    
+                });
+            }      
+            List<ReservationManagerView> managerViewItems = new List<ReservationManagerView>();
+            foreach (var item in manager)
+            {
+                managerViewItems.Add(new ReservationManagerView(item));
+            } 
+            return View(managerViewItems);
+        }
         [Route("Reservations/")]
         public async Task<IActionResult> Index()
         {

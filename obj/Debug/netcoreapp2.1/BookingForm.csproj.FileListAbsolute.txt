@@ -185,3 +185,4 @@ C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcore
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\DumbLayout.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Confirmations\StatusMessage.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Catalog.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Debug\netcoreapp2.1\Razor\Views\Reservations\Manager.g.cshtml.cs

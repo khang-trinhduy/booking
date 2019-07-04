@@ -46,7 +46,8 @@ namespace BookingForm.Controllers
                     {
                         ApartmentCode = apartment.LocalCode,
                         Client = client.FullName,
-                        NOReserved = ReadNumberOfReserved(apartment.LocalCode)
+                        NOReserved = ReadNumberOfReserved(apartment.LocalCode),
+                        IsReserved = true
                     });
                 }
                 return View(confirmView);
@@ -60,7 +61,7 @@ namespace BookingForm.Controllers
 
         private int ReadNumberOfReserved(string localCode)
         {
-            return _context.Reserve.Where(e => e.RCode == localCode).ToList().Count;
+            return _context.Reserve.Where(e => e.ApartmentCode == localCode).ToList().Count;
         }
 
         public IActionResult Create()

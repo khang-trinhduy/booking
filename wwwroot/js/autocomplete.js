@@ -31,7 +31,6 @@ function autocomplete(inp, arr) {
         if (Contains(subName, char)) {
           matchIndex = subName.indexOf(char);
           currentIndex += matchIndex + 1;
-          console.log(currentIndex);
           var preMatch = subName.substring(0, matchIndex);
           var matched = "<strong>" + subName[matchIndex] + "</strong>";
           str += preMatch + matched;

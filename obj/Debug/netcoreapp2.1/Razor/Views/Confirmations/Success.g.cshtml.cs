@@ -62,7 +62,7 @@ using BookingForm.Models;
 #line default
 #line hidden
             BeginContext(62, 1257, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf9d4c62c8e144a2b8072bdadb994182", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c89a222035ae49aabdbdbc3cd8388823", async() => {
                 BeginContext(68, 962, true);
                 WriteLiteral(@"
   <title>Đặt mua thành công</title>
@@ -159,7 +159,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1321, 604, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dc27ab48d984f99b6b839a079227403", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec8a6852c5d04fe18eb50f62e38b6dae", async() => {
                 BeginContext(1327, 76, true);
                 WriteLiteral("\r\n<hr />\r\n<hr />\r\n<h1 style=\"font-family:sans-serif; \">Chúc mừng khách hàng ");
                 EndContext();
@@ -264,7 +264,7 @@ using BookingForm.Models;
                 WriteLiteral("</p>\r\n</div>\r\n\r\n<p>Bấm vào ");
                 EndContext();
                 BeginContext(1860, 30, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a7fb0e8bdf344c293b5275a38cc9dca", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d835dbb1ecfc49ff9f833ec7d68a9e9e", async() => {
                     BeginContext(1883, 3, true);
                     WriteLiteral("đây");
                     EndContext();

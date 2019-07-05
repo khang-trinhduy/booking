@@ -2557,3 +2557,949 @@ WHERE [e].[LocalCode] = @__item_LocalCode_0"
 2019-07-05 09:30:35.150 +07:00 [Debug] Hosting started
 2019-07-05 09:30:35.153 +07:00 [Debug] Loaded hosting startup assembly "BookingForm"
 2019-07-05 09:34:00.263 +07:00 [Debug] Hosting shutdown
+2019-07-05 16:20:05.477 +07:00 [Debug] Hosting starting
+2019-07-05 16:20:05.611 +07:00 [Information] User profile is available. Using '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-07-05 16:20:05.633 +07:00 [Debug] Reading data from file '"C:\Users\trinh\AppData\Local\ASP.NET\DataProtection-Keys\key-6de63f81-dbcb-47f9-afed-bf9bd50c2766.xml"'.
+2019-07-05 16:20:05.674 +07:00 [Debug] Found key {6de63f81-dbcb-47f9-afed-bf9bd50c2766}.
+2019-07-05 16:20:05.696 +07:00 [Debug] Considering key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} with expiration date 2019-08-03 18:43:52Z as default key.
+2019-07-05 16:20:05.713 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-07-05 16:20:05.718 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2019-07-05 16:20:05.724 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2019-07-05 16:20:05.730 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2019-07-05 16:20:05.737 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2019-07-05 16:20:05.754 +07:00 [Debug] Using key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} as the default key.
+2019-07-05 16:20:05.759 +07:00 [Debug] Key ring with default key {6de63f81-dbcb-47f9-afed-bf9bd50c2766} was loaded during application startup.
+2019-07-05 16:20:05.784 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.801 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.807 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.812 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.816 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2019-07-05 16:20:05.821 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.841 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.846 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.882 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2019-07-05 16:20:05.912 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2019-07-05 16:20:06.049 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2019-07-05 16:20:06.211 +07:00 [Debug] Using development certificate: "CN=localhost" (Thumbprint: "2DDC41EC459AA90620A888EEE4C45F221EF8CAC3")
+2019-07-05 16:20:06.306 +07:00 [Debug] Hosting started
+2019-07-05 16:20:06.314 +07:00 [Debug] Loaded hosting startup assembly "BookingForm"
+2019-07-05 17:14:14.295 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" started.
+2019-07-05 17:14:14.564 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-07-05 17:14:14.571 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2019-07-05 17:14:14.588 +07:00 [Debug] The request path "/" does not match a supported file type
+2019-07-05 17:14:14.677 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-07-05 17:14:15.059 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-07-05 17:14:15.099 +07:00 [Information] Route matched with "{action = \"Index\", controller = \"Home\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.HomeController.Index (BookingForm)"
+2019-07-05 17:14:15.106 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-07-05 17:14:15.116 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:15.128 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-07-05 17:14:15.138 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-07-05 17:14:15.149 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:15.264 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2019-07-05 17:14:15.358 +07:00 [Information] Executing action method "BookingForm.Controllers.HomeController.Index (BookingForm)" - Validation state: Valid
+2019-07-05 17:14:15.851 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-07-05 17:14:15.862 +07:00 [Debug] The foreign key properties haven't been configured by convention because the best match "{'Id' : int}" are incompatible with the current principal key "{'Id' : Guid}". This message can be disregarded if explicit configuration has been specified.
+2019-07-05 17:14:15.912 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'LoginProvider', 'Name'}".
+2019-07-05 17:14:15.942 +07:00 [Debug] The index "{'UserId'}" was not created as the properties are already covered by the index "{'UserId', 'RoleId'}".
+2019-07-05 17:14:16.027 +07:00 [Debug] The property '"ResultId"' on entity type '"Answer"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.031 +07:00 [Debug] The property '"ApartmentDetailsId"' on entity type '"Apartment"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.034 +07:00 [Debug] The property '"FloorId"' on entity type '"Apartment"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.038 +07:00 [Debug] The property '"SaleId"' on entity type '"Appoinment"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.044 +07:00 [Debug] The property '"QuestionId"' on entity type '"Bait"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.049 +07:00 [Debug] The property '"SectionId"' on entity type '"Block"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.053 +07:00 [Debug] The property '"ApartmentDetailsId"' on entity type '"Catalog"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.059 +07:00 [Debug] The property '"ProviderId"' on entity type '"Contact"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.062 +07:00 [Debug] The property '"BlockId"' on entity type '"Floor"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.067 +07:00 [Debug] The property '"RoleId"' on entity type '"Grant"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.080 +07:00 [Debug] The property '"ApartmentId"' on entity type '"Invoice"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.091 +07:00 [Debug] The property '"ClientId"' on entity type '"Invoice"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.099 +07:00 [Debug] The property '"ConfirmationId"' on entity type '"Invoice"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.118 +07:00 [Debug] The property '"PlanId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.127 +07:00 [Debug] The property '"ProductId"' on entity type '"ProductPlan"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.133 +07:00 [Debug] The property '"ClientId"' on entity type '"RCode"' was created in shadow state because there are no eligible CLR members with a matching name.
+2019-07-05 17:14:16.275 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-07-05 17:14:16.284 +07:00 [Debug] SaveChanges starting for '"BookingFormContext"'.
+2019-07-05 17:14:16.291 +07:00 [Debug] DetectChanges starting for '"BookingFormContext"'.
+2019-07-05 17:14:16.295 +07:00 [Debug] DetectChanges completed for '"BookingFormContext"'.
+2019-07-05 17:14:16.311 +07:00 [Debug] SaveChanges completed for '"BookingFormContext"' with 0 entities written to the database.
+2019-07-05 17:14:16.329 +07:00 [Information] Executed action method "BookingForm.Controllers.HomeController.Index (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 944.1163ms.
+2019-07-05 17:14:16.356 +07:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2019-07-05 17:14:16.364 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-07-05 17:14:16.368 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-07-05 17:14:16.372 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-07-05 17:14:16.376 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-07-05 17:14:16.380 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-07-05 17:14:16.383 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-07-05 17:14:16.390 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-07-05 17:14:16.395 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-07-05 17:14:16.398 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-07-05 17:14:16.412 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-07-05 17:14:16.416 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-07-05 17:14:16.424 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-07-05 17:14:16.429 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-07-05 17:14:16.432 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-07-05 17:14:16.434 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-07-05 17:14:16.439 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-07-05 17:14:16.443 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-07-05 17:14:16.457 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-07-05 17:14:16.459 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-07-05 17:14:16.464 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-07-05 17:14:16.467 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-07-05 17:14:16.474 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-07-05 17:14:16.478 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ChangePassword.cshtml"'.
+2019-07-05 17:14:16.481 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-07-05 17:14:16.485 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-07-05 17:14:16.492 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-07-05 17:14:16.508 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-07-05 17:14:16.513 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-07-05 17:14:16.517 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-07-05 17:14:16.523 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-07-05 17:14:16.526 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-07-05 17:14:16.531 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-07-05 17:14:16.536 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-07-05 17:14:16.540 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-07-05 17:14:16.547 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-07-05 17:14:16.552 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Models/Reservation/Error.cshtml"'.
+2019-07-05 17:14:16.557 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Additional.cshtml"'.
+2019-07-05 17:14:16.561 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Approve.cshtml"'.
+2019-07-05 17:14:16.564 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Cancelled.cshtml"'.
+2019-07-05 17:14:16.567 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Choose.cshtml"'.
+2019-07-05 17:14:16.573 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Confirm.cshtml"'.
+2019-07-05 17:14:16.577 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Dashboard.cshtml"'.
+2019-07-05 17:14:16.580 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Date.cshtml"'.
+2019-07-05 17:14:16.594 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Index.cshtml"'.
+2019-07-05 17:14:16.597 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/List.cshtml"'.
+2019-07-05 17:14:16.600 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Multi.cshtml"'.
+2019-07-05 17:14:16.605 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Passport.cshtml"'.
+2019-07-05 17:14:16.610 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Performance.cshtml"'.
+2019-07-05 17:14:16.612 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/PrintDocument.cshtml"'.
+2019-07-05 17:14:16.628 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Product.cshtml"'.
+2019-07-05 17:14:16.631 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Request.cshtml"'.
+2019-07-05 17:14:16.638 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Text.cshtml"'.
+2019-07-05 17:14:16.642 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Tutor.cshtml"'.
+2019-07-05 17:14:16.645 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/Withdraw.cshtml"'.
+2019-07-05 17:14:16.648 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Dashboard.cshtml"'.
+2019-07-05 17:14:16.650 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_Request.cshtml"'.
+2019-07-05 17:14:16.653 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Admin/_StatusMessage.cshtml"'.
+2019-07-05 17:14:16.657 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/AddDOB.cshtml"'.
+2019-07-05 17:14:16.661 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Confirm.cshtml"'.
+2019-07-05 17:14:16.675 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Create.cshtml"'.
+2019-07-05 17:14:16.678 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Delete.cshtml"'.
+2019-07-05 17:14:16.683 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Details.cshtml"'.
+2019-07-05 17:14:16.690 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Draft.cshtml"'.
+2019-07-05 17:14:16.694 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Edit.cshtml"'.
+2019-07-05 17:14:16.697 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Index.cshtml"'.
+2019-07-05 17:14:16.700 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Passport.cshtml"'.
+2019-07-05 17:14:16.705 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Plan.cshtml"'.
+2019-07-05 17:14:16.708 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Print.cshtml"'.
+2019-07-05 17:14:16.715 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/Views.cshtml"'.
+2019-07-05 17:14:16.718 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_Draft.cshtml"'.
+2019-07-05 17:14:16.725 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/_StatusMessage.cshtml"'.
+2019-07-05 17:14:16.728 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Appoinments/__Edit.cshtml"'.
+2019-07-05 17:14:16.731 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Apartment.cshtml"'.
+2019-07-05 17:14:16.734 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/ApartmentDetails.cshtml"'.
+2019-07-05 17:14:16.738 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Block.cshtml"'.
+2019-07-05 17:14:16.746 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Client.cshtml"'.
+2019-07-05 17:14:16.749 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Code.cshtml"'.
+2019-07-05 17:14:16.754 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Detail.cshtml"'.
+2019-07-05 17:14:16.758 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/DumbLayout.cshtml"'.
+2019-07-05 17:14:16.761 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Error.cshtml"'.
+2019-07-05 17:14:16.764 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Floor.cshtml"'.
+2019-07-05 17:14:16.767 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Import.cshtml"'.
+2019-07-05 17:14:16.773 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Index.cshtml"'.
+2019-07-05 17:14:16.779 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Proceed.cshtml"'.
+2019-07-05 17:14:16.783 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Sample.cshtml"'.
+2019-07-05 17:14:16.786 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/Section.cshtml"'.
+2019-07-05 17:14:16.790 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/StatusMessage.cshtml"'.
+2019-07-05 17:14:16.794 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Catalogs/_StatusMessage.cshtml"'.
+2019-07-05 17:14:16.797 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Confirmations/Confirm.cshtml"'.
+2019-07-05 17:14:16.801 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Confirmations/Create.cshtml"'.
+2019-07-05 17:14:16.806 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Confirmations/DumbLayout.cshtml"'.
+2019-07-05 17:14:16.809 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Confirmations/Index.cshtml"'.
+2019-07-05 17:14:16.812 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Confirmations/StatusMessage.cshtml"'.
+2019-07-05 17:14:16.814 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Confirmations/Success.cshtml"'.
+2019-07-05 17:14:16.817 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AddContact.cshtml"'.
+2019-07-05 17:14:16.821 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Answer.cshtml"'.
+2019-07-05 17:14:16.824 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/AttendTest.cshtml"'.
+2019-07-05 17:14:16.834 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Chart.cshtml"'.
+2019-07-05 17:14:16.848 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/ConfirmRequest.cshtml"'.
+2019-07-05 17:14:16.851 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Contacts.cshtml"'.
+2019-07-05 17:14:16.857 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Dashboard.cshtml"'.
+2019-07-05 17:14:16.860 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Error.cshtml"'.
+2019-07-05 17:14:16.862 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Feedback.cshtml"'.
+2019-07-05 17:14:16.864 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Front.cshtml"'.
+2019-07-05 17:14:16.867 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Help.cshtml"'.
+2019-07-05 17:14:16.870 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Index.cshtml"'.
+2019-07-05 17:14:16.873 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Loan.cshtml"'.
+2019-07-05 17:14:16.875 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Manager.cshtml"'.
+2019-07-05 17:14:16.878 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/PassportInfo.cshtml"'.
+2019-07-05 17:14:16.880 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Question.cshtml"'.
+2019-07-05 17:14:16.895 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Quiz.cshtml"'.
+2019-07-05 17:14:16.897 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Rear.cshtml"'.
+2019-07-05 17:14:16.899 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Request.cshtml"'.
+2019-07-05 17:14:16.905 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestDetails.cshtml"'.
+2019-07-05 17:14:16.908 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Requests.cshtml"'.
+2019-07-05 17:14:16.910 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/RequestsControl.cshtml"'.
+2019-07-05 17:14:16.913 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Reserve.cshtml"'.
+2019-07-05 17:14:16.915 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Result.cshtml"'.
+2019-07-05 17:14:16.918 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Secure.cshtml"'.
+2019-07-05 17:14:16.921 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/StatusMessage.cshtml"'.
+2019-07-05 17:14:16.924 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Template.cshtml"'.
+2019-07-05 17:14:16.927 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Test.cshtml"'.
+2019-07-05 17:14:16.930 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/Tutor.cshtml"'.
+2019-07-05 17:14:16.941 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/WithdrawForm.cshtml"'.
+2019-07-05 17:14:16.944 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Home/_StatusMessage.cshtml"'.
+2019-07-05 17:14:16.946 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Approve.cshtml"'.
+2019-07-05 17:14:16.949 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Chart.cshtml"'.
+2019-07-05 17:14:17.092 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Collapse.cshtml"'.
+2019-07-05 17:14:17.149 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/CollapseQ.cshtml"'.
+2019-07-05 17:14:17.181 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Crawler.cshtml"'.
+2019-07-05 17:14:17.244 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Dashboard.cshtml"'.
+2019-07-05 17:14:17.265 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Employee.cshtml"'.
+2019-07-05 17:14:17.274 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Home.cshtml"'.
+2019-07-05 17:14:17.281 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Index.cshtml"'.
+2019-07-05 17:14:17.382 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Login.cshtml"'.
+2019-07-05 17:14:17.414 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Monthly.cshtml"'.
+2019-07-05 17:14:17.430 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Profit.cshtml"'.
+2019-07-05 17:14:17.450 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Request.cshtml"'.
+2019-07-05 17:14:17.514 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/Target.cshtml"'.
+2019-07-05 17:14:17.547 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_Profit.cshtml"'.
+2019-07-05 17:14:17.590 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Managers/_StatusMessage.cshtml"'.
+2019-07-05 17:14:17.631 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Partial/TableContents.cshtml"'.
+2019-07-05 17:14:17.647 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Catalog.cshtml"'.
+2019-07-05 17:14:17.678 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Code.cshtml"'.
+2019-07-05 17:14:17.698 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Confirm.cshtml"'.
+2019-07-05 17:14:17.724 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Create.cshtml"'.
+2019-07-05 17:14:17.738 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/DumbLayout.cshtml"'.
+2019-07-05 17:14:17.749 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Index.cshtml"'.
+2019-07-05 17:14:17.779 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Manager.cshtml"'.
+2019-07-05 17:14:17.799 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/ManagerDetails.cshtml"'.
+2019-07-05 17:14:17.807 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Reservation.cshtml"'.
+2019-07-05 17:14:17.813 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/StatusMessage.cshtml"'.
+2019-07-05 17:14:17.827 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Reservations/Success.cshtml"'.
+2019-07-05 17:14:17.896 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Account.cshtml"'.
+2019-07-05 17:14:17.908 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Email.cshtml"'.
+2019-07-05 17:14:17.933 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Image.cshtml"'.
+2019-07-05 17:14:17.949 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Profile.cshtml"'.
+2019-07-05 17:14:17.964 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Sales/Setting.cshtml"'.
+2019-07-05 17:14:17.977 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/AccessDenied.cshtml"'.
+2019-07-05 17:14:18.003 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Error.cshtml"'.
+2019-07-05 17:14:18.012 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-07-05 17:14:18.033 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_Layout.cshtml"'.
+2019-07-05 17:14:18.063 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-07-05 17:14:18.100 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2019-07-05 17:14:18.111 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2019-07-05 17:14:18.133 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewStart.cshtml"'.
+2019-07-05 17:14:18.146 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/AccessDenied.cshtml"'.
+2019-07-05 17:14:18.149 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ConfirmEmail.cshtml"'.
+2019-07-05 17:14:18.160 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ExternalLogin.cshtml"'.
+2019-07-05 17:14:18.164 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPassword.cshtml"'.
+2019-07-05 17:14:18.183 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml"'.
+2019-07-05 17:14:18.196 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Lockout.cshtml"'.
+2019-07-05 17:14:18.200 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Login.cshtml"'.
+2019-07-05 17:14:18.226 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWith2fa.cshtml"'.
+2019-07-05 17:14:18.231 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml"'.
+2019-07-05 17:14:18.238 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Logout.cshtml"'.
+2019-07-05 17:14:18.242 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml"'.
+2019-07-05 17:14:18.245 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml"'.
+2019-07-05 17:14:18.248 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml"'.
+2019-07-05 17:14:18.262 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml"'.
+2019-07-05 17:14:18.265 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml"'.
+2019-07-05 17:14:18.271 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml"'.
+2019-07-05 17:14:18.275 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml"'.
+2019-07-05 17:14:18.278 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/Index.cshtml"'.
+2019-07-05 17:14:18.282 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml"'.
+2019-07-05 17:14:18.295 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml"'.
+2019-07-05 17:14:18.298 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml"'.
+2019-07-05 17:14:18.304 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml"'.
+2019-07-05 17:14:18.308 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml"'.
+2019-07-05 17:14:18.312 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_Layout.cshtml"'.
+2019-07-05 17:14:18.328 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml"'.
+2019-07-05 17:14:18.348 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml"'.
+2019-07-05 17:14:18.357 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml"'.
+2019-07-05 17:14:18.362 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Manage/_ViewStart.cshtml"'.
+2019-07-05 17:14:18.365 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/Register.cshtml"'.
+2019-07-05 17:14:18.373 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPassword.cshtml"'.
+2019-07-05 17:14:18.378 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml"'.
+2019-07-05 17:14:18.382 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Account/_ViewImports.cshtml"'.
+2019-07-05 17:14:18.408 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/Error.cshtml"'.
+2019-07-05 17:14:18.412 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_Layout.cshtml"'.
+2019-07-05 17:14:18.414 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml"'.
+2019-07-05 17:14:18.419 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewImports.cshtml"'.
+2019-07-05 17:14:18.443 +07:00 [Debug] Initializing Razor view compiler with compiled view: '"/Areas/Identity/Pages/_ViewStart.cshtml"'.
+2019-07-05 17:14:18.476 +07:00 [Debug] Using precompiled view for '"/Views/Home/Index.cshtml"'.
+2019-07-05 17:14:18.481 +07:00 [Information] Executing ViewResult, running view "Index".
+2019-07-05 17:14:18.494 +07:00 [Debug] The view path '"/Views/Home/Index.cshtml"' was found in 2134.4834ms.
+2019-07-05 17:14:18.563 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2019-07-05 17:14:18.577 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-07-05 17:14:18.679 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Home"'.
+2019-07-05 17:14:18.684 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-07-05 17:14:18.704 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Home"'.
+2019-07-05 17:14:18.711 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-07-05 17:14:18.779 +07:00 [Information] Executed ViewResult - view "Index" executed in 2427.814ms.
+2019-07-05 17:14:18.784 +07:00 [Information] Executed action "BookingForm.Controllers.HomeController.Index (BookingForm)" in 3629.2846ms
+2019-07-05 17:14:18.878 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" completed keep alive response.
+2019-07-05 17:14:18.904 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-07-05 17:14:18.909 +07:00 [Information] Request finished in 4344.8481ms 200 text/html; charset=utf-8
+2019-07-05 17:14:40.377 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/reservations/manager  
+2019-07-05 17:14:40.460 +07:00 [Debug] The request path "/reservations/manager" does not match a supported file type
+2019-07-05 17:14:40.480 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-07-05 17:14:40.592 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-07-05 17:14:40.860 +07:00 [Information] Route matched with "{action = \"Manager\", controller = \"Reservations\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.ReservationsController.Manager (BookingForm)"
+2019-07-05 17:14:41.010 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-07-05 17:14:41.061 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:41.127 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-07-05 17:14:41.138 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-07-05 17:14:41.144 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:41.159 +07:00 [Information] Executing action method "BookingForm.Controllers.ReservationsController.Manager (BookingForm)" - Validation state: Valid
+2019-07-05 17:14:41.186 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-07-05 17:14:41.256 +07:00 [Debug] Compiling query model: "
+"'"from Apartment e in DbSet<Apartment>
+where True
+select [e]"'
+2019-07-05 17:14:41.323 +07:00 [Debug] Optimized query model: "
+"'"from Apartment e in DbSet<Apartment>
+where True
+select [e]"'
+2019-07-05 17:14:41.388 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Apartment> _InterceptExceptions(
+    source: IAsyncEnumerable<Apartment> _TrackEntities(
+        results: IAsyncEnumerable<Apartment> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+                FROM [Apartment] AS [e], 
+            shaper: BufferedEntityShaper<Apartment>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Apartment }, 
+        entityAccessors: List<Func<Apartment, object>> 
+        { 
+            Func<Apartment, Apartment>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-07-05 17:14:41.450 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:41.557 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:41.648 +07:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+FROM [Apartment] AS [e]"
+2019-07-05 17:14:41.697 +07:00 [Information] Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+FROM [Apartment] AS [e]"
+2019-07-05 17:14:41.819 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:41.881 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:41.901 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:41.923 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:41.932 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:41.937 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:41.944 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:41.954 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:41.959 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:41.976 +07:00 [Debug] Compiling query model: "
+"'"from Reserved e in DbSet<Reserved>
+where [e].ApartmentCode == __item_LocalCode_0
+select [e]"'
+2019-07-05 17:14:41.989 +07:00 [Debug] Optimized query model: "
+"'"from Reserved e in DbSet<Reserved>
+where [e].ApartmentCode == __item_LocalCode_0
+select [e]"'
+2019-07-05 17:14:42.029 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Reserved> _InterceptExceptions(
+    source: IAsyncEnumerable<Reserved> _TrackEntities(
+        results: IAsyncEnumerable<Reserved> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+                FROM [Reserve] AS [e]
+                WHERE [e].[ApartmentCode] = @__item_LocalCode_0, 
+            shaper: UnbufferedEntityShaper<Reserved>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Reserved }, 
+        entityAccessors: List<Func<Reserved, object>> 
+        { 
+            Func<Reserved, Reserved>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-07-05 17:14:42.043 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.053 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.070 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.090 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.128 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:42.174 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:42.179 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:42.185 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.209 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.221 +07:00 [Debug] Compiling query model: "
+"'"(from Confirmation e in DbSet<Confirmation>
+where [e].LocalCode == __item_LocalCode_0
+select [e]).FirstOrDefault()"'
+2019-07-05 17:14:42.228 +07:00 [Debug] Optimized query model: "
+"'"(from Confirmation e in DbSet<Confirmation>
+where [e].LocalCode == __item_LocalCode_0
+select [e]).FirstOrDefault()"'
+2019-07-05 17:14:42.287 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Confirmation> _InterceptExceptions(
+    source: IAsyncEnumerable<Confirmation> _TrackEntities(
+        results: IAsyncEnumerable<Confirmation> _ToSequence(() => Task<Confirmation> FirstOrDefault(
+                source: IAsyncEnumerable<Confirmation> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+                        FROM [Confirmation] AS [e]
+                        WHERE [e].[LocalCode] = @__item_LocalCode_0, 
+                    shaper: UnbufferedEntityShaper<Confirmation>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Confirmation }, 
+        entityAccessors: List<Func<Confirmation, object>> 
+        { 
+            Func<Confirmation, Confirmation>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-07-05 17:14:42.394 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.426 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.431 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.460 +07:00 [Information] Executed DbCommand ("29"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.492 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:42.494 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.505 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.512 +07:00 [Debug] Context '"Confirmation"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:42.571 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.575 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.582 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.604 +07:00 [Information] Executed DbCommand ("22"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.611 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:42.620 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:42.627 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:42.657 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:42.665 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.670 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.675 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.683 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.688 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.702 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.749 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:42.759 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.762 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.772 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.777 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.808 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.829 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.874 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:42.877 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.889 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.893 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.919 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.924 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.948 +07:00 [Information] Executed DbCommand ("24"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:42.959 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:42.961 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.967 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:42.994 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.003 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.007 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.020 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.028 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:43.033 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.038 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.042 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.052 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.067 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.078 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.120 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:43.124 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.127 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.132 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.135 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.138 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.176 +07:00 [Information] Executed DbCommand ("37"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.187 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:43.214 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:43.219 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:43.223 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.226 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.230 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.233 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.237 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.271 +07:00 [Information] Executed DbCommand ("34"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.277 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:43.280 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.285 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.308 +07:00 [Debug] Context '"Confirmation"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:43.315 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.322 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.326 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.354 +07:00 [Information] Executed DbCommand ("27"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.389 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:43.394 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.404 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.409 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.431 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.434 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.453 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:43.483 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:43.490 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.494 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:43.507 +07:00 [Information] Executed action method "BookingForm.Controllers.ReservationsController.Manager (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2337.2994ms.
+2019-07-05 17:14:43.542 +07:00 [Debug] View lookup cache miss for view '"Manager"' in controller '"Reservations"'.
+2019-07-05 17:14:43.550 +07:00 [Debug] Using precompiled view for '"/Views/Reservations/Manager.cshtml"'.
+2019-07-05 17:14:43.554 +07:00 [Information] Executing ViewResult, running view "Manager".
+2019-07-05 17:14:43.583 +07:00 [Debug] The view path '"/Views/Reservations/Manager.cshtml"' was found in 41.2991ms.
+2019-07-05 17:14:43.599 +07:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Reservations"'.
+2019-07-05 17:14:43.603 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_Layout.cshtml"'.
+2019-07-05 17:14:43.608 +07:00 [Debug] View lookup cache miss for view '"_LoginPartial"' in controller '"Reservations"'.
+2019-07-05 17:14:43.612 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_LoginPartial.cshtml"'.
+2019-07-05 17:14:43.616 +07:00 [Debug] View lookup cache miss for view '"_CookieConsentPartial"' in controller '"Reservations"'.
+2019-07-05 17:14:43.645 +07:00 [Debug] Using precompiled view for '"/Views/Shared/_CookieConsentPartial.cshtml"'.
+2019-07-05 17:14:43.655 +07:00 [Information] Executed ViewResult - view "Manager" executed in 113.3695ms.
+2019-07-05 17:14:43.711 +07:00 [Information] Executed action "BookingForm.Controllers.ReservationsController.Manager (BookingForm)" in 2557.3951ms
+2019-07-05 17:14:43.759 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" completed keep alive response.
+2019-07-05 17:14:43.794 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-07-05 17:14:43.803 +07:00 [Information] Request finished in 3425.9933ms 200 text/html; charset=utf-8
+2019-07-05 17:14:50.772 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/reservations/ManagerDetails?data=S101.L3.R01  
+2019-07-05 17:14:50.774 +07:00 [Debug] The request path "/reservations/ManagerDetails" does not match a supported file type
+2019-07-05 17:14:50.779 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-07-05 17:14:50.784 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-07-05 17:14:50.810 +07:00 [Information] Route matched with "{action = \"ManagerDetails\", controller = \"Reservations\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.ReservationsController.ManagerDetails (BookingForm)"
+2019-07-05 17:14:50.814 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-07-05 17:14:50.818 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:50.822 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-07-05 17:14:50.829 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-07-05 17:14:50.834 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:50.870 +07:00 [Debug] Attempting to bind parameter '"data"' of type '"System.String"' ...
+2019-07-05 17:14:50.878 +07:00 [Debug] Attempting to bind parameter '"data"' of type '"System.String"' using the name '"data"' in request data ...
+2019-07-05 17:14:50.903 +07:00 [Debug] Done attempting to bind parameter '"data"' of type '"System.String"'.
+2019-07-05 17:14:50.908 +07:00 [Debug] Done attempting to bind parameter '"data"' of type '"System.String"'.
+2019-07-05 17:14:50.912 +07:00 [Debug] Attempting to validate the bound parameter '"data"' of type '"System.String"' ...
+2019-07-05 17:14:50.922 +07:00 [Debug] Done attempting to validate the bound parameter '"data"' of type '"System.String"'.
+2019-07-05 17:14:50.931 +07:00 [Information] Executing action method "BookingForm.Controllers.ReservationsController.ManagerDetails (BookingForm)" with arguments (["S101.L3.R01"]) - Validation state: Valid
+2019-07-05 17:14:50.939 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-07-05 17:14:50.946 +07:00 [Debug] Compiling query model: "
+"'"(from Apartment e in DbSet<Apartment>
+where [e].LocalCode == __data_0
+select [e]).FirstOrDefault()"'
+2019-07-05 17:14:50.950 +07:00 [Debug] Optimized query model: "
+"'"(from Apartment e in DbSet<Apartment>
+where [e].LocalCode == __data_0
+select [e]).FirstOrDefault()"'
+2019-07-05 17:14:50.964 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Apartment> _InterceptExceptions(
+    source: IAsyncEnumerable<Apartment> _TrackEntities(
+        results: IAsyncEnumerable<Apartment> _ToSequence(() => Task<Apartment> FirstOrDefault(
+                source: IAsyncEnumerable<Apartment> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+                        FROM [Apartment] AS [e]
+                        WHERE [e].[LocalCode] = @__data_0, 
+                    shaper: BufferedEntityShaper<Apartment>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Apartment }, 
+        entityAccessors: List<Func<Apartment, object>> 
+        { 
+            Func<Apartment, Apartment>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-07-05 17:14:50.984 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:50.988 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:50.993 +07:00 [Debug] Executing DbCommand [Parameters=["@__data_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+FROM [Apartment] AS [e]
+WHERE [e].[LocalCode] = @__data_0"
+2019-07-05 17:14:51.007 +07:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@__data_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+FROM [Apartment] AS [e]
+WHERE [e].[LocalCode] = @__data_0"
+2019-07-05 17:14:51.014 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:51.016 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.020 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.024 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:51.030 +07:00 [Debug] Compiling query model: "
+"'"from Reserved e in DbSet<Reserved>
+where [e].ApartmentCode == __apartment_LocalCode_0
+select [e]"'
+2019-07-05 17:14:51.033 +07:00 [Debug] Optimized query model: "
+"'"from Reserved e in DbSet<Reserved>
+where [e].ApartmentCode == __apartment_LocalCode_0
+select [e]"'
+2019-07-05 17:14:51.044 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Reserved> _InterceptExceptions(
+    source: IAsyncEnumerable<Reserved> _TrackEntities(
+        results: IAsyncEnumerable<Reserved> _ShapedQuery(
+            queryContext: queryContext, 
+            shaperCommandContext: SelectExpression: 
+                SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+                FROM [Reserve] AS [e]
+                WHERE [e].[ApartmentCode] = @__apartment_LocalCode_0, 
+            shaper: UnbufferedEntityShaper<Reserved>), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Reserved }, 
+        entityAccessors: List<Func<Reserved, object>> 
+        { 
+            Func<Reserved, Reserved>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-07-05 17:14:51.065 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.069 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.073 +07:00 [Debug] Executing DbCommand [Parameters=["@__apartment_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__apartment_LocalCode_0"
+2019-07-05 17:14:51.086 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__apartment_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__apartment_LocalCode_0"
+2019-07-05 17:14:51.094 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:51.098 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:51.101 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:51.103 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.107 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.112 +07:00 [Debug] Compiling query model: "
+"'"(from Confirmation e in DbSet<Confirmation>
+where [e].LocalCode == __apartment_LocalCode_0
+select [e]).FirstOrDefault()"'
+2019-07-05 17:14:51.137 +07:00 [Debug] Optimized query model: "
+"'"(from Confirmation e in DbSet<Confirmation>
+where [e].LocalCode == __apartment_LocalCode_0
+select [e]).FirstOrDefault()"'
+2019-07-05 17:14:51.149 +07:00 [Debug] "(QueryContext queryContext) => IAsyncEnumerable<Confirmation> _InterceptExceptions(
+    source: IAsyncEnumerable<Confirmation> _TrackEntities(
+        results: IAsyncEnumerable<Confirmation> _ToSequence(() => Task<Confirmation> FirstOrDefault(
+                source: IAsyncEnumerable<Confirmation> _ShapedQuery(
+                    queryContext: queryContext, 
+                    shaperCommandContext: SelectExpression: 
+                        SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+                        FROM [Confirmation] AS [e]
+                        WHERE [e].[LocalCode] = @__apartment_LocalCode_0, 
+                    shaper: UnbufferedEntityShaper<Confirmation>), 
+                cancellationToken: queryContext.CancellationToken)), 
+        queryContext: queryContext, 
+        entityTrackingInfos: { itemType: Confirmation }, 
+        entityAccessors: List<Func<Confirmation, object>> 
+        { 
+            Func<Confirmation, Confirmation>, 
+        }
+    ), 
+    contextType: BookingForm.Models.BookingFormContext, 
+    logger: DiagnosticsLogger<Query>, 
+    queryContext: queryContext)"
+2019-07-05 17:14:51.158 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.184 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.187 +07:00 [Debug] Executing DbCommand [Parameters=["@__apartment_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__apartment_LocalCode_0"
+2019-07-05 17:14:51.207 +07:00 [Information] Executed DbCommand ("19"ms) [Parameters=["@__apartment_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__apartment_LocalCode_0"
+2019-07-05 17:14:51.238 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:51.242 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.246 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:51.250 +07:00 [Debug] Context '"Confirmation"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:51.255 +07:00 [Information] Executed action method "BookingForm.Controllers.ReservationsController.ManagerDetails (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 318.8935ms.
+2019-07-05 17:14:51.282 +07:00 [Debug] View lookup cache miss for view '"ManagerDetails"' in controller '"Reservations"'.
+2019-07-05 17:14:51.288 +07:00 [Debug] Using precompiled view for '"/Views/Reservations/ManagerDetails.cshtml"'.
+2019-07-05 17:14:51.292 +07:00 [Information] Executing ViewResult, running view "ManagerDetails".
+2019-07-05 17:14:51.295 +07:00 [Debug] The view path '"/Views/Reservations/ManagerDetails.cshtml"' was found in 12.6924ms.
+2019-07-05 17:14:51.304 +07:00 [Debug] View lookup cache hit for view '"_Layout"' in controller '"Reservations"'.
+2019-07-05 17:14:51.309 +07:00 [Debug] View lookup cache hit for view '"_LoginPartial"' in controller '"Reservations"'.
+2019-07-05 17:14:51.312 +07:00 [Debug] View lookup cache hit for view '"_CookieConsentPartial"' in controller '"Reservations"'.
+2019-07-05 17:14:51.343 +07:00 [Information] Executed ViewResult - view "ManagerDetails" executed in 60.6304ms.
+2019-07-05 17:14:51.367 +07:00 [Information] Executed action "BookingForm.Controllers.ReservationsController.ManagerDetails (BookingForm)" in 506.8801ms
+2019-07-05 17:14:51.380 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" completed keep alive response.
+2019-07-05 17:14:51.384 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-07-05 17:14:51.390 +07:00 [Information] Request finished in 618.1876ms 200 text/html; charset=utf-8
+2019-07-05 17:14:52.854 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/reservations/manager  
+2019-07-05 17:14:52.860 +07:00 [Debug] The request path "/reservations/manager" does not match a supported file type
+2019-07-05 17:14:52.868 +07:00 [Debug] AuthenticationScheme: "Identity.Application" was not authenticated.
+2019-07-05 17:14:52.917 +07:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Home}/{action=Index}/{id?}"'.
+2019-07-05 17:14:52.931 +07:00 [Information] Route matched with "{action = \"Manager\", controller = \"Reservations\", page = \"\", area = \"\"}". Executing action "BookingForm.Controllers.ReservationsController.Manager (BookingForm)"
+2019-07-05 17:14:52.937 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2019-07-05 17:14:52.975 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:52.986 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Internal.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2019-07-05 17:14:52.999 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2019-07-05 17:14:53.009 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2019-07-05 17:14:53.025 +07:00 [Information] Executing action method "BookingForm.Controllers.ReservationsController.Manager (BookingForm)" - Validation state: Valid
+2019-07-05 17:14:53.032 +07:00 [Information] Entity Framework Core "2.1.8-servicing-32085" initialized '"BookingFormContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2019-07-05 17:14:53.080 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.084 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.092 +07:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+FROM [Apartment] AS [e]"
+2019-07-05 17:14:53.111 +07:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentDetailsId], [e].[Area], [e].[Block], [e].[Direction], [e].[Floor], [e].[FloorId], [e].[GlobalCode], [e].[IsCorner], [e].[LocalCode], [e].[Location], [e].[NOBedroom], [e].[NOWC], [e].[Name], [e].[Price], [e].[View]
+FROM [Apartment] AS [e]"
+2019-07-05 17:14:53.121 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.126 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.156 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.162 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.166 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.169 +07:00 [Debug] Context '"Apartment"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.174 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.176 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.206 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.210 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.214 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.219 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.231 +07:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.240 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.269 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.278 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.281 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.284 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.290 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.294 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.299 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.338 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.345 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.347 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.350 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.380 +07:00 [Debug] Context '"Confirmation"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.383 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.391 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.395 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.413 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.459 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.467 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.475 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.479 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.482 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.489 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.498 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.541 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.548 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.558 +07:00 [Information] Executed DbCommand ("10"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.565 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.566 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.570 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.601 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.609 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.612 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.625 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.633 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.634 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.639 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.641 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.644 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.648 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.660 +07:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.666 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.668 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.675 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.679 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.682 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.685 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.744 +07:00 [Information] Executed DbCommand ("58"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.787 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.790 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.792 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.799 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.802 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.806 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.838 +07:00 [Information] Executed DbCommand ("32"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.842 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.843 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.846 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.898 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.900 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.902 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.921 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.949 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.951 +07:00 [Debug] Context '"Reserved"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:53.956 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.958 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.961 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.963 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.966 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:53.969 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.982 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:53.990 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:53.996 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.048 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.167 +07:00 [Debug] Context '"Confirmation"' started tracking '"BookingFormContext"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2019-07-05 17:14:54.177 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.180 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.222 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:54.235 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [e].[Id], [e].[ApartmentCode], [e].[CC], [e].[Cmnd], [e].[Customer], [e].[Date], [e].[PhoneNumber], [e].[RCC], [e].[RCode]
+FROM [Reserve] AS [e]
+WHERE [e].[ApartmentCode] = @__item_LocalCode_0"
+2019-07-05 17:14:54.242 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:54.243 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.246 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.249 +07:00 [Debug] Opening connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.252 +07:00 [Debug] Opened connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.284 +07:00 [Debug] Executing DbCommand [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:54.295 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__item_LocalCode_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[ClientId], [e].[LocalCode], [e].[RCC]
+FROM [Confirmation] AS [e]
+WHERE [e].[LocalCode] = @__item_LocalCode_0"
+2019-07-05 17:14:54.299 +07:00 [Debug] A data reader was disposed.
+2019-07-05 17:14:54.301 +07:00 [Debug] Closing connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.305 +07:00 [Debug] Closed connection to database '"annhome.booking"' on server '"192.168.9.5"'.
+2019-07-05 17:14:54.308 +07:00 [Information] Executed action method "BookingForm.Controllers.ReservationsController.Manager (BookingForm)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1276.0416ms.
+2019-07-05 17:14:54.310 +07:00 [Debug] View lookup cache hit for view '"Manager"' in controller '"Reservations"'.
+2019-07-05 17:14:54.313 +07:00 [Information] Executing ViewResult, running view "Manager".
+2019-07-05 17:14:54.315 +07:00 [Debug] The view path '"/Views/Reservations/Manager.cshtml"' was found in 4.7371ms.
+2019-07-05 17:14:54.345 +07:00 [Debug] View lookup cache hit for view '"_Layout"' in controller '"Reservations"'.
+2019-07-05 17:14:54.348 +07:00 [Debug] View lookup cache hit for view '"_LoginPartial"' in controller '"Reservations"'.
+2019-07-05 17:14:54.352 +07:00 [Debug] View lookup cache hit for view '"_CookieConsentPartial"' in controller '"Reservations"'.
+2019-07-05 17:14:54.357 +07:00 [Information] Executed ViewResult - view "Manager" executed in 46.9211ms.
+2019-07-05 17:14:54.397 +07:00 [Information] Executed action "BookingForm.Controllers.ReservationsController.Manager (BookingForm)" in 1373.4494ms
+2019-07-05 17:14:54.404 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" completed keep alive response.
+2019-07-05 17:14:54.445 +07:00 [Debug] '"BookingFormContext"' disposed.
+2019-07-05 17:14:54.465 +07:00 [Information] Request finished in 1610.9026ms 200 text/html; charset=utf-8
+2019-07-05 17:16:04.172 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" received FIN.
+2019-07-05 17:16:04.182 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" disconnecting.
+2019-07-05 17:16:04.192 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" sending FIN.
+2019-07-05 17:16:04.289 +07:00 [Debug] Connection id ""0HLO1663VJP6D"" stopped.
+2019-07-05 17:27:05.327 +07:00 [Debug] Hosting shutdown

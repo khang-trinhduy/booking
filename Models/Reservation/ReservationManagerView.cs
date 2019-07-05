@@ -16,23 +16,24 @@ namespace BookingForm.Models
         public ReservationManagerView(ReservationManager item)
         {
             Reservations = new List<string>();
-            if (item.Apartment == null)
+            try
             {
-                throw new NullReferenceException(nameof(Apartment));
-            }
-            if (item.Reservations == null)
-            {
-                throw new NullReferenceException(nameof(ReservationManager));
+                this.ApartmentCode = item.Apartment.LocalCode;
+                this.NOfReserved = item.Reservations.Count;
+                this.Status = item.Status.GetStatus();
                 
             }
-            if (item.Status == null)
+            catch (System.Exception e) when (LogException(e))
             {
-                throw new NullReferenceException(nameof(Status));
                 
             }
-            this.ApartmentCode = item.Apartment.LocalCode;
-            this.NOfReserved = item.Reservations.Count;
-            this.Status = item.Status.GetStatus();
+            
+        }
+        private static bool LogException(Exception e)
+        {
+            Console.WriteLine($"\tIn the log routine. Caught {e.GetType()}");
+            Console.WriteLine($"\tMessage: {e.Message}");
+            return false;
         }
         public void SetReservations(List<Reserved> reserved)
         {
@@ -43,7 +44,7 @@ namespace BookingForm.Models
             foreach (var item in reserved)
             {
                 var reservedView = new ReservedViewModel(item);
-                Reservations.Add(reservedView.GetInlineDetails());
+                Reservations.Add(reservedView.ToString());
             }
         }
     }

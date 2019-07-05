@@ -9,13 +9,8 @@ namespace BookingForm.Models
         {
             Reserve = item;
         }
-        public string GetInlineDetails()
-        {
-            if (Reserve == null)
-            {
-                throw new NullReferenceException(nameof(Reserved));
-            }
-            return "-Tên khách hàng: " + Reserve.Customer + " -Mã căn: " + Reserve.ApartmentCode + " -Mã xác nhận: " + Reserve.RCC;
-        }
+        public override string ToString() => $"-Tên khách hàng: {Reserve.Customer} -Mã căn: {Reserve.ApartmentCode} -Mã xác nhận: {Reserve.RCC}";
+
+        
     }
 }

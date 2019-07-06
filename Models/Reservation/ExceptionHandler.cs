@@ -8,15 +8,9 @@ namespace BookingForm.Models
         //throw exception
         public ExceptionHandler(string message, Exception innerException) : base(message, innerException)
         {
-            
         }
 
-        private static bool ExceptionFilter(Exception e, bool IsDevEnv)
-        {
-            var expType = e.GetType();
-            
-            return IsDevEnv;
-        }
+        public override string ToString() => $"The system cannot continue because it met the following error {Message}, for more information please send this error to your administrator";
 
     }
 }

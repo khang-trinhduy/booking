@@ -15,6 +15,7 @@ namespace BookingForm.Models
         }
         public ReservationManagerView(ReservationManager item)
         {
+            item = null;
             Reservations = new List<string>();
             try
             {
@@ -23,16 +24,15 @@ namespace BookingForm.Models
                 this.Status = item.Status.GetStatus();
                 
             }
-            catch (System.Exception e) when (LogException(e))
+            catch (ExceptionHandler<ReservationManager> e) when (LogException(e))
             {
                 
             }
             
         }
-        private static bool LogException(Exception e)
+        private static bool LogException(ExceptionHandler<ReservationManager> e)
         {
-            Console.WriteLine($"\tIn the log routine. Caught {e.GetType()}");
-            Console.WriteLine($"\tMessage: {e.Message}");
+            System.Console.WriteLine(e.Message);
             return false;
         }
         public void SetReservations(List<Reserved> reserved)

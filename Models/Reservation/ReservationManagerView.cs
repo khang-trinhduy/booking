@@ -15,7 +15,6 @@ namespace BookingForm.Models
         }
         public ReservationManagerView(ReservationManager item)
         {
-            item = null;
             Reservations = new List<string>();
             try
             {

@@ -60,7 +60,6 @@ namespace BookingForm.Models
                     .HasForeignKey(rc => rc.RoleId)
                     .IsRequired();
             });
-
         }
         public DbSet<Manager> Manager { get; set; }
         public DbSet<Transaction> transactions { get; set; }
@@ -89,6 +88,7 @@ namespace BookingForm.Models
         public DbSet<BookingForm.Models.Reserved> Reserve { get; set; }
         public DbSet<BookingForm.Models.Confirmation> Confirmation { get; set; }
         public DbSet<BookingForm.Models.Invoice> Invoice { get; set; }
+        public DbSet<Stage> Stage { get; set; }
     }
 
     public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>

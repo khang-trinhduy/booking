@@ -437,14 +437,14 @@ namespace BookingForm.Controllers
                         c.GlobalCode = workSheet.Cells[i, 2].Value.ToString();
                         c.Name = workSheet.Cells[i, 3].Value.ToString();
                         c.NOBedroom = workSheet.Cells[i, 4].Value.ToString();
-                        c.NOWC = workSheet.Cells[i, 5].Value.ToString();
+                        // c.NOWC = workSheet.Cells[i, 5].Value.ToString();
                         c.Direction = workSheet.Cells[i, 6].Value.ToString();
                         c.View = workSheet.Cells[i, 7].Value.ToString();
-                        c.Area = workSheet.Cells[i, 8].Value.ToString();
+                        // c.Area = workSheet.Cells[i, 8].Value.ToString();
                         c.Floor = workSheet.Cells[i, 9].Value.ToString();
                         c.Block = workSheet.Cells[i, 10].Value.ToString();
                         c.Price = workSheet.Cells[i, 11].Value.ToString();
-                        c.Location = workSheet.Cells[i, 12].Value.ToString();
+                        // c.Location = workSheet.Cells[i, 12].Value.ToString();
                         
                     }
                     catch (System.Exception)

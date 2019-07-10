@@ -36,11 +36,13 @@
     .room-container {
         display: inline-block;
         float: left;
-        border: 1px solid red;
+        border: 1px solid black;
+        background-color: yellow;
     }
     .floor-container {
         overflow: auto; 
-        border: 1px solid red;
+        border: 1px solid black;
+        background-color: yellow;
     }
     ul, li {
         list-style: none;
@@ -50,23 +52,26 @@
     .room {
         margin: 3px 3px 3px 3px;
     }
-    .room > a:hover {
-        text-decoration: none;
+    .room>a {
+        color: black !important;
+    }
+    .room>a:hover {
+        <!-- text-decoration: none; -->
     }
     .OBRP {
-        background-color: aqua;
+        background-color: rgb(243, 135, 184);
     }
     .STU {
-        background-color: #ffffff;
+        background-color: rgb(224, 201, 227);
     }
     .WBR {
-        background-color: yellow;
+        background-color: rgb(175, 140, 136);
     }
     .WBRP {
-        background-color: orange;
+        background-color: rgb(109, 207, 246)
     }
     .HBR {
-        background-color: red;
+        background-color: rgb(254, 242, 0);
     }
     .block {
         padding: 0 15px 15px 15px;

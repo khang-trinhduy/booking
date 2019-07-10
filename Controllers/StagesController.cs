@@ -18,6 +18,34 @@ namespace BookingForm.Controllers
             var stages = _context.Stage.Where(e => true).ToList();
             return View(stages);
         }
+        public async Task<IActionResult> Create()
+        {
+            var apartments = await _context.Apartment.Where(e => _context.Confirmation.FirstOrDefault(c => c.LocalCode == e.LocalCode) == null).ToListAsync();
+            var codes = await _context.RCode.Where(e => !e.IsUsed).ToListAsync();
+            return View(new StageCreateModel {Apartment = apartments, Code = codes});
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Apartment, Code, IsRunning")]StageCreateModel item)
+        {
+            if (item == null)
+            {
+                return View("Error", $"cannot add a null stage");
+            }
+            try
+            {
+                var stage = new Stage(item.Apartment, item.Code);
+                stage.StageNumber = await _context.Stage.MaxAsync(e => e.StageNumber) + 1;
+                _context.Stage.Add(stage);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+                
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                return View("Error", e.Message);
+            }
+        }
         public async Task<IActionResult> Start(int Id)
         {
             var stage = await _context.Stage.FindAsync(Id);

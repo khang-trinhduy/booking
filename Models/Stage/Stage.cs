@@ -6,6 +6,7 @@ namespace BookingForm.Models
     public class Stage
     {
         public int Id { get; set; }
+        public string StageNumber { get; set; }
         public List<Apartment> Apartment { get; private set; } = new List<Apartment>();
         public List<RCode> RCode { get; private set; } = new List<RCode>();
         public bool IsRunning { get; private set; }
@@ -22,6 +23,10 @@ namespace BookingForm.Models
         }
         public void Stop()
         {
+            foreach (var item in RCode)
+            {
+                item.Dispose();
+            }
             IsRunning = false;
             //TODO make all reservation invalid
             //TODO make all successful purchased customer invalid

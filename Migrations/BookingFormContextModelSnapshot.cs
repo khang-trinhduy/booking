@@ -52,6 +52,8 @@ namespace BookingForm.Migrations
 
                     b.Property<string>("Area");
 
+                    b.Property<int?>("BatchId");
+
                     b.Property<string>("Block");
 
                     b.Property<string>("Direction");
@@ -81,6 +83,8 @@ namespace BookingForm.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ApartmentDetailsId");
+
+                    b.HasIndex("BatchId");
 
                     b.HasIndex("FloorId");
 
@@ -256,6 +260,21 @@ namespace BookingForm.Migrations
                     b.HasIndex("QuestionId");
 
                     b.ToTable("Bait");
+                });
+
+            modelBuilder.Entity("BookingForm.Models.Batch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BatchNumber");
+
+                    b.Property<bool>("IsRunning");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Batch");
                 });
 
             modelBuilder.Entity("BookingForm.Models.Block", b =>
@@ -698,6 +717,8 @@ namespace BookingForm.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BatchId");
+
                     b.Property<int?>("ClientId");
 
                     b.Property<string>("Code");
@@ -705,6 +726,8 @@ namespace BookingForm.Migrations
                     b.Property<bool>("IsUsed");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BatchId");
 
                     b.HasIndex("ClientId");
 
@@ -1089,6 +1112,10 @@ namespace BookingForm.Migrations
                         .WithMany()
                         .HasForeignKey("ApartmentDetailsId");
 
+                    b.HasOne("BookingForm.Models.Batch")
+                        .WithMany("Apartments")
+                        .HasForeignKey("BatchId");
+
                     b.HasOne("BookingForm.Models.Floor")
                         .WithMany("Apartments")
                         .HasForeignKey("FloorId");
@@ -1203,6 +1230,10 @@ namespace BookingForm.Migrations
 
             modelBuilder.Entity("BookingForm.Models.RCode", b =>
                 {
+                    b.HasOne("BookingForm.Models.Batch")
+                        .WithMany("RCodes")
+                        .HasForeignKey("BatchId");
+
                     b.HasOne("BookingForm.Models.Client")
                         .WithMany("Codes")
                         .HasForeignKey("ClientId");

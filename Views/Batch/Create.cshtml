@@ -1,0 +1,45 @@
+@model BookingForm.Models.BatchCreateModel
+@{
+    ViewData["title"] = "";
+    Layout = "/Views/Confirmations/DumbLayout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <label>The following apartments will be add to this batch</label>
+            <ul>
+                @foreach (var item in Model.Apartment)
+                {
+                    <li>
+                        <input type="checkbox" checked disabled/><span>@item.LocalCode</span>
+                    </li> 
+                }
+            </ul>
+        </div>
+        <div class="col-6">
+            <label>The following codes will be valid on this batch</label>
+            <ul>
+                @foreach (var item in Model.Code)
+                {
+                    <li>
+                        <input type="checkbox" checked disabled/><span>@item.Code</span>
+                    </li> 
+                }
+            </ul>
+        </div>
+    </div>
+    <form asp-action="Create">
+        <div class="form-check">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="" asp-for="IsRunning" value="checkedValue" checked>
+            This batch will be set to running
+        </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+<style>
+    .container {
+        padding: 25px 0 25px 0;
+    }
+</style>

@@ -3,17 +3,18 @@ using System.Linq;
 
 namespace BookingForm.Models
 {
-    public class Stage
+    public class Batch
     {
         public int Id { get; set; }
-        public string StageNumber { get; set; }
-        public List<Apartment> Apartment { get; private set; } = new List<Apartment>();
-        public List<RCode> RCode { get; private set; } = new List<RCode>();
+        public int BatchNumber { get; set; }
+        public List<Apartment> Apartments { get; set; }
+        public List<RCode> RCodes { get; set; }
         public bool IsRunning { get; private set; }
-        public Stage(List<Apartment> apartment, List<RCode> rcode)
+        public Batch(){}
+        public Batch(List<Apartment> apartment, List<RCode> rcode)
         {
-            Apartment = apartment;
-            RCode = rcode;
+            Apartments = apartment;
+            RCodes = rcode;
         }
         public void Start()
         {
@@ -23,7 +24,7 @@ namespace BookingForm.Models
         }
         public void Stop()
         {
-            foreach (var item in RCode)
+            foreach (var item in RCodes)
             {
                 item.Dispose();
             }
@@ -32,7 +33,7 @@ namespace BookingForm.Models
             //TODO make all successful purchased customer invalid
             //TODO make all code invalid
         }
-        public bool Contain(string code) => RCode.FirstOrDefault(e => e.Code == code) != null;
+        public bool Contain(string code) => RCodes.FirstOrDefault(e => e.Code == code) != null;
         
     }
 }

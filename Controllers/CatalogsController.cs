@@ -254,8 +254,8 @@ namespace BookingForm.Controllers
                         Cmnd = item.Cmnd,
                         FullName = item.Customer,
                         NOProduct = item.NCH1 + item.NCH2 + item.NCH21 + item.NCH3,
-                        PhoneNumber = item.Phone
-
+                        PhoneNumber = item.Phone,
+                        IsValid = true
                     });
 
                 }

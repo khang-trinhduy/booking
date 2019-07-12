@@ -32,5 +32,6 @@ namespace BookingForm.Models
         public string Price { get; set; }
         public int Id { get; set; }
         public bool IsCorner { get; set; }
+        public Batch Batch { get; set; }
     }
 }

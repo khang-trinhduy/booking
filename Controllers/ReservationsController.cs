@@ -229,8 +229,7 @@ namespace BookingForm.Controllers
                 }
                 //TODO resolve use code of other client
                 var code = _batch.GetCode(r.RCode);
-                var isValidCode = _batch.GetCode(code.Code);
-                if (isValidCode == null)
+                if (!client.Contain(code))
                 {
                     ViewBag.msg = "Mã đặt chỗ không chính xác, vui lòng kiểm tra lại!";
                     return View("Create");

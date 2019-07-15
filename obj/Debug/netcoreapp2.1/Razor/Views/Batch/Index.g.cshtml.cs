@@ -59,7 +59,7 @@ using BookingForm.Models;
 #line default
 #line hidden
             BeginContext(82, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46ea7b8087e342fd82f96dc082f33ac6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7c01ae763fc4a858339bf49cdff4b54", async() => {
                 BeginContext(105, 6, true);
                 WriteLiteral("Create");
                 EndContext();
@@ -126,7 +126,7 @@ using BookingForm.Models;
             WriteLiteral("                <td>\r\n                    ");
             EndContext();
             BeginContext(798, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c3012c4c58e4e5c83b16bb716b0e96f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99b39c3bce70437bbabfe5c5f2adeff6", async() => {
                 BeginContext(844, 5, true);
                 WriteLiteral("Start");
                 EndContext();
@@ -161,7 +161,7 @@ using BookingForm.Models;
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(877, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8064b7d4a18a4841a7884bb0df1984e5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fe6703ab00c418da599a8de4a3be4db", async() => {
                 BeginContext(922, 4, true);
                 WriteLiteral("Stop");
                 EndContext();

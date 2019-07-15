@@ -43,7 +43,8 @@ namespace BookingForm.Controllers
                 .ToListAsync();
             return View(block);
         }
-        public async Task<IActionResult> ManagerDetails(string data)
+        //TODO test status if confirmed == true
+        public IActionResult ManagerDetails(string data)
         {
             var apartment = _batch.GetApartment(data);
             if (apartment == null)
@@ -51,7 +52,7 @@ namespace BookingForm.Controllers
                 return View("Error", $"Mã căn không tồn tại {data}");
             }
             var reservations = _batch.GetReservations(apartment.LocalCode).ToList();
-            var confirmed = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == apartment.LocalCode) != null;
+            var confirmed = _batch.ContainConfirmation(apartment.LocalCode);
             var reserved = reservations.Count > 0;
             var status = new ApartmentStatus(apartment);
             status.SetStatus(confirmed, reserved, false);
@@ -64,14 +65,15 @@ namespace BookingForm.Controllers
             managerDetailsView.SetReservations(reservations);
             return View(managerDetailsView);
         }
-        public async Task<IActionResult> Manager()
+        //TODO test status if confirmed == true
+        public IActionResult Manager()
         {
             var apartments = _batch.Storage.Apartments;
             List<ReservationManager> manager = new List<ReservationManager>();
             foreach (var item in apartments)
             {
                 var reservations = _batch.GetReservations(item.LocalCode).ToList();
-                var confirmed = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == item.LocalCode) != null;
+                var confirmed = _batch.ContainConfirmation(item.LocalCode);
                 var status = new ApartmentStatus(item);
                 var reserved = reservations.Count > 0;
                 status.SetStatus(confirmed, reserved, false);
@@ -188,11 +190,11 @@ namespace BookingForm.Controllers
         {
             return RedirectToAction("Create", new { apartmentCode = "" });
         }
-        private async Task<bool> IsAvailable(string apartmentCode)
+        private bool IsAvailable(string apartmentCode)
         {
-            var apartment = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == apartmentCode);
-            return apartment == null;
+            return _batch.ContainConfirmation(apartmentCode);
         }
+        //TODO test if apartment is not available
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Confirm([Bind("ApartmentCode, Cmnd, PhoneNumber, RCode")] Reserved r)
@@ -205,7 +207,7 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Mã căn hộ không tồn tại!";
                     return View("Create");
                 }
-                else if (! await IsAvailable(r.ApartmentCode))
+                else if (!IsAvailable(r.ApartmentCode))
                 {
                     ViewBag.msg = "Căn hộ đã được đặt mua!";
                     return View("Create");
@@ -264,10 +266,11 @@ namespace BookingForm.Controllers
             var apartment = _batch.GetApartment(reservation.ApartmentCode);
             return View("Success", new Reservation { Reserved = reservation, Apartment = apartment });
         }
+        //TODO test if select only available apartment (autocomplete input)
         public IActionResult Create(string apartmentCode = null)
         {
             ViewBag.code = apartmentCode != null ? apartmentCode : "";
-            var confirmed = _context.Confirmation.Where(e => true).Select(e => e.LocalCode).ToList();
+            var confirmed = _batch.Confirmations.Select(e => e.LocalCode).ToList();
             ViewBag.ApartmentCode = _batch.Storage.Apartments.Where(e => !confirmed.Contains(e.LocalCode)).Select(e => e.LocalCode).ToList();
             return View();
         }
@@ -278,6 +281,7 @@ namespace BookingForm.Controllers
             return new string(Enumerable.Repeat(chars, 4)
             .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+        //TODO test if apartment is not available
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ApartmentCode, Cmnd, PhoneNumber, RCode, Customer")] Reserved r)
@@ -297,7 +301,7 @@ namespace BookingForm.Controllers
                 {
                     return View("Error", $"Mã căn hộ không hợp lệ {r.ApartmentCode}");
                 }
-                if (!await IsAvailable(apartment.LocalCode))
+                if (!IsAvailable(apartment.LocalCode))
                 {
                     return View("Error", "Căn hộ đã được đặt mua!");
                 }

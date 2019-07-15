@@ -41,10 +41,15 @@ namespace BookingForm.Models
             //TODO make all code invalid
         }
         public bool ContainCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) != null : false;
+        
         public bool ContainApartment(string apartmentCode) => Storage != null ? Storage.Contain(apartmentCode) : false;
+        
         public RCode GetCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) : null;
+        
         public Apartment GetApartment(string apartmentCode) => Storage != null ? Storage.Get(apartmentCode) : null;
+        
         public Reserved GetReservation(string rcc) => Reservations != null ? Reservations.FirstOrDefault(e => e.RCC == rcc) : null;
+        
         public IEnumerable<Reserved> GetReservations(string apartmentCode) => Reservations != null ? Reservations.Where(e => e.ApartmentCode == apartmentCode) : null;
     }
 }

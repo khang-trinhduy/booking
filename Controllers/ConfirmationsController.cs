@@ -11,9 +11,16 @@ namespace BookingForm.Controllers
     public class ConfirmationsController : Controller
     {
         private readonly BookingFormContext _context;
+        private Batch _batch;
         public ConfirmationsController(BookingFormContext context)
         {
             _context = context;
+            _batch = _context.Batch.Include(e => e.Confirmations)
+                        .Include(e => e.Storage)
+                        .ThenInclude(e => e.Apartments)
+                        .ThenInclude(e => e.ApartmentDetails)
+                        .Include(e => e.Reservations)
+                        .FirstOrDefault(e => e.IsRunning);
         }
         public async Task<IActionResult> Get(int id)
         {
@@ -35,13 +42,13 @@ namespace BookingForm.Controllers
         {
             try
             {
-                var confirmations = await _context.Confirmation.Where(e => true).ToListAsync();
+                var confirmations = _batch.GetConfirmations();
                 var confirmView = new List<ConfirmationList>();
                 foreach (var item in confirmations)
                 {
-                    var apartment = await GetApartment(item.LocalCode);
+                    var apartment = GetApartment(item.LocalCode);
                     var client = await GetClient(item.ClientId);
-                    var reserved = await GetReservation(item.RCC);
+                    var reserved = GetReservation(item.RCC);
                     confirmView.Add(new ConfirmationList
                     {
                         ApartmentCode = apartment.LocalCode,
@@ -61,16 +68,16 @@ namespace BookingForm.Controllers
 
         private int ReadNumberOfReserved(string localCode)
         {
-            return _context.Reserve.Where(e => e.ApartmentCode == localCode).ToList().Count;
+            return _batch.GetReservations(localCode).ToList().Count;
         }
 
         public IActionResult Create()
         {
             return View();
         }
-        private async Task<Apartment> GetApartment(string apartmentCode)
+        private Apartment GetApartment(string apartmentCode)
         {
-            var apartment = await _context.Apartment.Include(e => e.ApartmentDetails).FirstOrDefaultAsync(e => e.LocalCode == apartmentCode);
+            var apartment = _batch.GetApartment(apartmentCode);
             if (apartment == null)
             {
                 throw new NullReferenceException(nameof(Apartment));
@@ -95,27 +102,27 @@ namespace BookingForm.Controllers
             }
             return item;
         }
-        private async Task<Reserved> GetReservation(string rcc)
+        private Reserved GetReservation(string rcc)
         {
-            var item = await _context.Reserve.FirstOrDefaultAsync(e => e.RCC == rcc);
+            var item = _batch.GetReservation(rcc);
             if (item == null)
             {
                 throw new NullReferenceException(nameof(Reserved));
             }
             return item;
         }
-        private async Task<RCode> GetCode(string rCode)
+        private RCode GetCode(string rCode)
         {
-            var item = await _context.RCode.FirstOrDefaultAsync(e => e.Code == rCode);
+            var item = _batch.GetCode(rCode);
             if (item == null)
             {
                 throw new NullReferenceException(nameof(RCode));
             }
             return item;
         }
-        private async Task<Confirmation> GetConfirm(int id)
+        private Confirmation GetConfirm(int id)
         {
-            var item = await _context.Confirmation.FirstOrDefaultAsync(e => e.Id == id);
+            var item = _batch.GetConfirmations().FirstOrDefault(e => e.Id == id);
             if (item == null)
             {
                 throw new NullReferenceException(nameof(Confirmation));
@@ -129,9 +136,9 @@ namespace BookingForm.Controllers
             try
             {
 
-                var reserved = await GetReservation(item.RCC);
+                var reserved = GetReservation(item.RCC);
 
-                var apartment = await GetApartment(item.LocalCode);
+                var apartment = GetApartment(item.LocalCode);
                 if (reserved.ApartmentCode != apartment.LocalCode)
                 {
                     return View("Error", "Mã căn không khớp, vui lòng kiểm tra lại");
@@ -163,8 +170,7 @@ namespace BookingForm.Controllers
 
         private bool IsAvailable(string localCode)
         {
-            var confirm = _context.Confirmation.FirstOrDefault(e => e.LocalCode == localCode);
-            return confirm == null;
+            return !_batch.ContainConfirmation(localCode);
         }
 
         private async Task<Client> GetClientByReserved(Reserved rev)
@@ -183,11 +189,8 @@ namespace BookingForm.Controllers
         {
             try
             {
-                // if (Duplicate(item))
-                // {
-                //     return View("Create");
-                // }
-                _context.Confirmation.Add(item);
+                _batch.Confirmations.Add(item);
+                _context.Entry(_batch).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 try
                 {
@@ -203,8 +206,6 @@ namespace BookingForm.Controllers
 
                 }
 
-
-
             }
             catch (DbUpdateConcurrencyException e)
             {
@@ -213,22 +214,12 @@ namespace BookingForm.Controllers
 
         }
 
-        private bool Duplicate(Confirmation item)
-        {
-            var duplicated = _context.Confirmation.FirstOrDefault(e => e.LocalCode == item.LocalCode || e.RCC == item.RCC);
-            if (duplicated != null)
-            {
-                return true;
-            }
-            return false;
-        }
-
         private async Task<Invoice> CreateInvoice(Confirmation item)
         {
             try
             {
-                var apartment = await GetApartment(item.LocalCode);
-                var confirmation = await GetConfirm(item.Id);
+                var apartment = GetApartment(item.LocalCode);
+                var confirmation = GetConfirm(item.Id);
                 var client = await GetClient(confirmation.ClientId);
                 return new Invoice
                 {

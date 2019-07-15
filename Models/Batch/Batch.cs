@@ -56,7 +56,9 @@ namespace BookingForm.Models
         public Reserved GetReservation(string rcc) => Reservations != null ? Reservations.FirstOrDefault(e => e.RCC == rcc) : null;
         
         public IEnumerable<Reserved> GetReservations(string apartmentCode) => Reservations != null ? Reservations.Where(e => e.ApartmentCode == apartmentCode) : null;
-
+       
         public Confirmation GetConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
+        
+        public IEnumerable<Confirmation> GetConfirmations() => Confirmations;
     }
 }

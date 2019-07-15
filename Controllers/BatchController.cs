@@ -36,8 +36,9 @@ namespace BookingForm.Controllers
             try
             {
                 var apartments = await _context.Apartment.Where(e => _context.Confirmation.FirstOrDefault(c => c.LocalCode == e.LocalCode) == null).ToListAsync();
+                var storage = new Storage(apartments, true);
                 var codes = await _context.RCode.Include(e => e.Batch).Where(e => !e.IsUsed && e.Batch == null).ToListAsync();
-                var batch = new Batch(apartments, codes);
+                var batch = new Batch(storage, codes);
                 
                 batch.BatchNumber = GetBatchNumber() + 1;
                 if (item.IsRunning)
@@ -75,13 +76,17 @@ namespace BookingForm.Controllers
             var runningBatches = await _context.Batch.Where(e => e.Id != Id && e.IsRunning).Select(e => e.Id).ToListAsync();
             if (runningBatches != null)
             {
-                ViewBag.msg = $"cannot start other batch, only one batch is allowed to run at a time {string.Join(" ", runningBatches)}!";
-                return View(nameof(Index));
+                if (runningBatches.Count > 0)
+                {
+                    return NotFound($"cannot start other batch, only one batch is allowed to run at a time {string.Join(" ", runningBatches)}!");
+                    
+                }
+                
             }
             batch.Start();
             _context.Entry(batch).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return View(nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Stop(int Id)
         {
@@ -90,7 +95,7 @@ namespace BookingForm.Controllers
             {
                 return NotFound($"cannot find batch with id {Id}");
             }
-            // batch.Stop();
+            batch.Stop();
             _context.Entry(batch).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

@@ -2949,6 +2949,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Batch\\Create.cshtml",
+      "TargetPath": "Views\\Batch\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Admin\\_Dashboard.cshtml",
       "TargetPath": "Views\\Admin\\_Dashboard.cshtml",
       "FileKind": "mvc"
@@ -3031,6 +3036,11 @@
     {
       "FilePath": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Batch\\Index.cshtml",
+      "TargetPath": "Views\\Batch\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3474,11 +3484,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Stage\\Index.cshtml",
-      "TargetPath": "Views\\Stage\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "Views\\Partial\\TableContents.cshtml",
       "TargetPath": "Views\\Partial\\TableContents.cshtml",
       "FileKind": "mvc"
@@ -3631,11 +3636,6 @@
     {
       "FilePath": "Views\\Catalogs\\Block.cshtml",
       "TargetPath": "Views\\Catalogs\\Block.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Stage\\Create.cshtml",
-      "TargetPath": "Views\\Stage\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

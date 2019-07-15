@@ -7,13 +7,16 @@ namespace BookingForm.Models
     {
         public int Id { get; set; }
         public int BatchNumber { get; set; }
-        public List<Apartment> Apartments { get; set; }
+        public Storage Storage { get; set; }
         public List<RCode> RCodes { get; set; }
         public bool IsRunning { get; private set; }
-        public Batch(){}
-        public Batch(List<Apartment> apartment, List<RCode> rcode)
+        public Batch()
         {
-            Apartments = apartment;
+            
+        }
+        public Batch(Storage storage, List<RCode> rcode)
+        {
+            Storage = storage;
             RCodes = rcode;
         }
         public void Start()
@@ -24,6 +27,7 @@ namespace BookingForm.Models
         }
         public void Stop()
         {
+            Storage.Close();
             foreach (var item in RCodes)
             {
                 item.Dispose();

@@ -8,12 +8,14 @@ namespace BookingForm
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args)
+                .Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) => 
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                // .UseUrls("https://localhost:5009", "https://locahost:5008")
                 .UseSerilog();
     }
 }

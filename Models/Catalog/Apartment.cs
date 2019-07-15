@@ -1,8 +1,9 @@
+using System;
 using System.ComponentModel;
 
 namespace BookingForm.Models
 {
-    public class Apartment
+    public class Apartment : IEquatable<Apartment>
     {
         [DisplayName("Chi tiết căn hộ")]
         public Details ApartmentDetails { get; set; }
@@ -33,5 +34,16 @@ namespace BookingForm.Models
         public int Id { get; set; }
         public bool IsCorner { get; set; }
         public Batch Batch { get; set; }
+
+        public bool Equals(Apartment other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+            return this.Id == other.Id && this.LocalCode == other.LocalCode;
+        }
+
+        
     }
 }

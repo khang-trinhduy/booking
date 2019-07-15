@@ -22,6 +22,7 @@ namespace BookingForm.Models
         public void Start()
         {
             IsRunning = true;
+            Storage.Open();
             //TODO generate list of available apartment
             //TODO generate code for client
         }
@@ -37,7 +38,8 @@ namespace BookingForm.Models
             //TODO make all successful purchased customer invalid
             //TODO make all code invalid
         }
-        public bool Contain(string code) => RCodes.FirstOrDefault(e => e.Code == code) != null;
+        public bool ContainCode(string code) => RCodes.FirstOrDefault(e => e.Code == code) != null;
+        public bool ContainApartment(string apartmentCode) => Storage.Contain(apartmentCode);
         
     }
 }

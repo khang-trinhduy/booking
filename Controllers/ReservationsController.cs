@@ -273,7 +273,7 @@ namespace BookingForm.Controllers
                 //     ViewBag.msg = "Sai mã captcha!";
                 //     return View("Proceed");
                 // }
-
+                
                 var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode);
                 if (apartment == null)
                 {

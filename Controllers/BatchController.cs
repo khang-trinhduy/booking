@@ -27,24 +27,21 @@ namespace BookingForm.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IsRunning")]BatchCreateModel item)
+        public async Task<IActionResult> Create(bool IsRunning)
         {
-            if (item == null)
-            {
-                return View("Error", $"cannot add a null stage");
-            }
+            
             try
             {
                 var apartments = await _context.Apartment.Where(e => _context.Confirmation.FirstOrDefault(c => c.LocalCode == e.LocalCode) == null).ToListAsync();
-                var storage = new Storage(apartments, true);
+                var storage = new Storage(apartments);
                 var codes = await _context.RCode.Include(e => e.Batch).Where(e => !e.IsUsed && e.Batch == null).ToListAsync();
                 var batch = new Batch(storage, codes);
                 
                 batch.BatchNumber = GetBatchNumber() + 1;
-                if (item.IsRunning)
-                {
-                    batch.Start();
-                }
+                // if (IsRunning)
+                // {
+                //     batch.Start();
+                // }
                 _context.Batch.Add(batch);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -68,7 +65,8 @@ namespace BookingForm.Controllers
 
         public async Task<IActionResult> Start(int Id)
         {
-            var batch = await _context.Batch.FindAsync(Id);
+            var batches = await _context.Batch.Include(e => e.Storage).Where(e => true).ToListAsync();
+            var batch = batches.FirstOrDefault(e => e.Id == Id);
             if (batch == null)
             {
                 return NotFound($"cannot find batch with id {Id}");

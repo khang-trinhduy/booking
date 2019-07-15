@@ -27,10 +27,6 @@ namespace BookingForm.Controllers
             return new string(Enumerable.Repeat(chars, 12)
             .Select(s => s[random.Next(s.Length)]).ToArray());
         }
-        public IActionResult Reserved(Reserved r)
-        {
-            return View(r);
-        }
         public IActionResult Proceed(string code)
         {
             ViewBag.code = code;
@@ -86,88 +82,6 @@ namespace BookingForm.Controllers
             {
                 return NotFound(e.Message);
             }
-        }
-
-        [ValidateAntiForgeryToken]
-        [HttpPost]
-        public async Task<IActionResult> Reserve([Bind("ApartmentCode, Cmnd, PhoneNumber, RCode")] Reserved r)
-        {
-            if (ModelState.IsValid)
-            {
-                ViewBag.code = r.ApartmentCode;
-                // var recaptcha = await _recaptcha.Validate(Request);
-                // if (!recaptcha.success)
-                // {
-                //     ViewBag.msg = "Sai mã captcha!";
-                //     return View("Proceed");
-                // }
-                var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode && IsAvailable(e.LocalCode));
-                if (apartment == null)
-                {
-                    ViewBag.msg = "Căn hộ đã có người mua!";
-                    return View("Proceed");
-                }
-                var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
-                if (code == null)
-                {
-                    ViewBag.msg = "Mã mua không chính xác!";
-                    return View("Proceed");
-                }
-                var clients = await _context.Client.Include(e => e.Codes).ToListAsync();
-                var client = clients.FirstOrDefault(e => e.Cmnd == r.Cmnd && e.PhoneNumber == r.PhoneNumber);
-                if (client == null)
-                {
-                    ViewBag.msg = "Số cmnd hoặc số điện thoại không chính xác! Vui lòng kiểm tra lại.";
-                    return View("Proceed");
-                }
-                else if (!client.IsValid)
-                {
-                    ViewBag.msg = "Mỗi khách chỉ được mua một căn hộ!";
-                    return View("Proceed");
-                }
-                var isValidCode = client.Codes.FirstOrDefault(e => e.Code == code.Code && e.Id == code.Id);
-                if (isValidCode == null)
-                {
-                    ViewBag.msg = "Mã đặt mua không chính xác, vui lòng kiểm tra lại!";
-                    return View("Proceed");
-                }
-                if (code.IsUsed)
-                {
-                    var re = _context.Reserve.FirstOrDefault(e => e.RCode == code.Code);
-                    if (re != null)
-                    {
-                        var apart = _context.Apartment.FirstOrDefault(e => e.LocalCode == re.ApartmentCode);
-                        if (apart != null)
-                        {
-                            ViewBag.cc = re.CC;
-                            ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
-                            return View("Confirm", apart);
-                        }
-                    }
-                    ViewBag.msg = "Mã này đã được sử dụng!";
-                    return View("Proceed");
-                }
-                var numberOfReserved = ReadNumberOfReserved(r.RCode);
-
-                r.Date = DateTime.Now.Date;
-                r.CC = numberOfReserved++;
-                _context.Reserve.Add(r);
-                code.IsUsed = true;
-                _context.Entry(code).State = EntityState.Modified;
-                _context.Entry(apartment).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-
-                ViewBag.cc = r.CC;
-                ViewBag.date = r.Date.Day.ToString() + "-" + r.Date.Month.ToString() + "-" + r.Date.Year.ToString();
-
-                return View("Success", apartment);
-            }
-            return View("Error");
-        }
-
-        private int ReadNumberOfReserved(string rCode)
-        {
-            return _context.Reserve.Where(e => e.RCode == rCode).ToList().Count;
         }
 
         public async Task<IActionResult> Code(int id)
@@ -269,106 +183,20 @@ namespace BookingForm.Controllers
             _context = context;
             _recaptcha = recaptcha;
         }
-        // [Route("giohang/index")]
-        // [Route("giohang")]
-        public async Task<IActionResult> Section()
+       
+        [Route("giohang/dot/{id:int}")]
+        public async Task<IActionResult> GetApartments(int id)
         {
-            var products = await _context.Section.Include(c => c.Blocks).ToListAsync();
-            return View(products);
-        }
-        [Route("giohang/{id:int}")]
-        [Route("giohang")]
-        public async Task<IActionResult> GetBlocks(int id)
-        {
-            var sections = await _context.Section.Include(c => c.Blocks).ThenInclude(c => c.Floors).ToListAsync();
-            if (id <= 0)
+            var batch = await _context.Batch.Include(e => e.Storage).ThenInclude(e => e.Apartments).FirstOrDefaultAsync(e => e.IsRunning && e.Id == id);
+            if (batch == null)
             {
-                var tmp = sections.LastOrDefault();
-                var blks = tmp.Blocks;
-                return View("Block", blks);
+                return NotFound($"Cannot find any running batch with id {id}");
             }
-            var s = sections.FirstOrDefault(e => e.Id == id);
-            if (s == null)
-            {
-                ViewBag.msg = "Cannot find section with id = {id}";
-                return RedirectToAction(nameof(Product));
-            }
-            var blocks = s.Blocks;
-            return View("Block", blocks);
-        }
-        [Route("toa/{id:int}")]
-        public async Task<IActionResult> GetFloors(int id)
-        {
-            var blocks = await _context.Block.Include(c => c.Floors).ThenInclude(c => c.Apartments).ToListAsync();
-            var s = blocks.FirstOrDefault(e => e.Id == id);
-            if (s == null)
-            {
-                ViewBag.msg = "Cannot find block with id = {id}";
-                return RedirectToAction(nameof(Product));
-            }
-            var floors = s.Floors;
+            var apartments = batch.Storage.Apartments.OrderBy(e => e.GlobalCode);
 
-            return View("Floor", floors);
-        }
-        [Route("tang/{id:int}")]
-        public async Task<IActionResult> GetApartments(int id, string sortOrder)
-        {
-            var floors = await _context.Floor.Include(c => c.Apartments).ThenInclude(c => c.ApartmentDetails).ToListAsync();
-            var s = floors.FirstOrDefault(e => e.Id == id);
-            if (s == null)
-            {
-                ViewBag.msg = "Cannot find floor with id = {id}";
-                return RedirectToAction(nameof(Product));
-            }
-            var apartments = s.Apartments.OrderBy(e => e.GlobalCode);
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-
-            switch (sortOrder)
-            {
-                case "local_desc":
-                    apartments = apartments.OrderByDescending(e => e.LocalCode);
-                    break;
-                case "global_desc":
-                    apartments = apartments.OrderByDescending(e => e.GlobalCode);
-                    break;
-                case "floor_desc":
-                    apartments = apartments.OrderByDescending(e => e.Floor);
-                    break;
-                case "acreage_desc":
-                    apartments = apartments.OrderByDescending(e => e.Area);
-                    break;
-                case "price_desc":
-                    apartments = apartments.OrderByDescending(e => e.Price);
-                    break;
-                case "local":
-                    apartments = apartments.OrderBy(e => e.LocalCode);
-                    break;
-                case "global":
-                    apartments = apartments.OrderBy(e => e.GlobalCode);
-                    break;
-                case "floor":
-                    apartments = apartments.OrderBy(e => e.Floor);
-                    break;
-                case "acreage":
-                    apartments = apartments.OrderBy(e => e.Area);
-                    break;
-                case "price":
-                    apartments = apartments.OrderBy(e => e.Price);
-                    break;
-            }
             return View("Apartment", apartments);
         }
-        public ActionResult Sample(string str)
-        {
-            return View("Sample", str);
-        }
-
-        // GET: Catalogs
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Apartment.Include(c => c.ApartmentDetails).OrderBy(e => e.LocalCode).ToListAsync());
-        }
+        
         public async Task<IActionResult> Details(int id)
         {
             var detail = await _context.Details.FindAsync(id);
@@ -558,9 +386,6 @@ namespace BookingForm.Controllers
             memory.Position = 0;
             return File(memory, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", filePath);
         }
-        // GET: Catalogs/Details/5
-
-        // GET: Catalogs/Create
 
     }
 }

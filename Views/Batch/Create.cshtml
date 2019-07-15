@@ -29,9 +29,10 @@
         </div>
     </div>
     <form asp-action="Create">
-        <div class="form-check">
+        <div class="form-check" hidden>
         <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" asp-for="IsRunning" value="checkedValue" checked>
+            
+            <input type="checkbox" class="form-check-input" name="IsRunning" id="IsRunning" checked="true">
             This batch will be set to running
         </label>
         </div>

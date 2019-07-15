@@ -18,7 +18,12 @@ namespace BookingForm.Controllers
         {
             _recaptcha = recaptcha;
             _context = context;
-            _batch = _context.Batch.Include(e => e.Storage).ThenInclude(e => e.Apartments).ThenInclude(e => e.ApartmentDetails).Include(e => e.RCodes).FirstOrDefault(e => e.IsRunning);
+            _batch = _context.Batch.Include(e => e.Storage)
+                .ThenInclude(e => e.Apartments)
+                .ThenInclude(e => e.ApartmentDetails)
+                .Include(e => e.RCodes)
+                .Include(e => e.Reservations)
+                .FirstOrDefault(e => e.IsRunning);
             if (_batch == null)
             {
                 throw new NullReferenceException(nameof(Batch));
@@ -32,7 +37,10 @@ namespace BookingForm.Controllers
         [Route("catalog")]
         public async Task<IActionResult> Catalog()
         {
-            var block = await _context.Block.Include(e => e.Floors).ThenInclude(e => e.Apartments).ThenInclude(e => e.ApartmentDetails).ToListAsync();
+            var block = await _context.Block.Include(e => e.Floors)
+                .ThenInclude(e => e.Apartments)
+                .ThenInclude(e => e.ApartmentDetails)
+                .ToListAsync();
             return View(block);
         }
         public async Task<IActionResult> ManagerDetails(string data)
@@ -42,7 +50,7 @@ namespace BookingForm.Controllers
             {
                 return View("Error", $"Mã căn không tồn tại {data}");
             }
-            var reservations = await _context.Reserve.Where(e => e.ApartmentCode == apartment.LocalCode).ToListAsync();
+            var reservations = _batch.Reservations.Where(e => e.ApartmentCode == apartment.LocalCode).ToList();
             var confirmed = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == apartment.LocalCode) != null;
             var reserved = reservations.Count > 0;
             var status = new ApartmentStatus(apartment);
@@ -62,7 +70,7 @@ namespace BookingForm.Controllers
             List<ReservationManager> manager = new List<ReservationManager>();
             foreach (var item in apartments)
             {
-                var reservations = await _context.Reserve.Where(e => e.ApartmentCode == item.LocalCode).ToListAsync();
+                var reservations = _batch.Reservations.Where(e => e.ApartmentCode == item.LocalCode).ToList();
                 var confirmed = await _context.Confirmation.FirstOrDefaultAsync(e => e.LocalCode == item.LocalCode) != null;
                 var status = new ApartmentStatus(item);
                 var reserved = reservations.Count > 0;
@@ -84,7 +92,7 @@ namespace BookingForm.Controllers
         [Route("Reservations/")]
         public async Task<IActionResult> Index()
         {
-            var reserveds = await _context.Reserve.Where(e => true).ToListAsync();
+            var reserveds = _batch.Reservations.Where(e => true).ToList();
             ReservationR revs = new ReservationR();
             var apartments = _batch.Storage.Apartments;
             foreach (var item in apartments)
@@ -154,7 +162,7 @@ namespace BookingForm.Controllers
         private string GetCode(Apartment item)
         {
 
-            var count = _context.Reserve.Where(e => e.ApartmentCode == item.LocalCode).DefaultIfEmpty().Max(e => e == null ? 0 : e.CC);
+            var count = _batch.Reservations.Where(e => e.ApartmentCode == item.LocalCode).DefaultIfEmpty().Max(e => e == null ? 0 : e.CC);
             return item.LocalCode + " (" + count.ToString() + ")";
 
         }
@@ -225,7 +233,7 @@ namespace BookingForm.Controllers
                 }
                 if (code.IsUsed)
                 {
-                    var re = _context.Reserve.FirstOrDefault(e => e.RCode == code.Code);
+                    var re = _batch.Reservations.FirstOrDefault(e => e.RCode == code.Code);
                     if (re != null)
                     {
                         var apart = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == re.ApartmentCode);
@@ -244,7 +252,7 @@ namespace BookingForm.Controllers
         }
         public async Task<IActionResult> Get(string confirmCode)
         {
-            var reservation = await _context.Reserve.FirstOrDefaultAsync(e => e.RCC == confirmCode);
+            var reservation = _batch.Reservations.FirstOrDefault(e => e.RCC == confirmCode);
             if (reservation == null)
             {
                 return View("Error", "Sai mã xác nhận");
@@ -296,19 +304,20 @@ namespace BookingForm.Controllers
                 r.CC = numberOfReserved + 1;
                 r.RCC = apartment.GlobalCode + "-" + GenerateCode() + "-" + r.CC.ToString();
 
-                var unique = _context.Reserve.FirstOrDefault(e => e.RCC == r.RCC);
+                var unique = _batch.Reservations.FirstOrDefault(e => e.RCC == r.RCC);
                 do
                 {
                     r.RCC = apartment.GlobalCode + "-" + GenerateCode() + "-" + r.CC.ToString();
-                    unique = _context.Reserve.FirstOrDefault(e => e.RCC == r.RCC);
+                    unique = _batch.Reservations.FirstOrDefault(e => e.RCC == r.RCC);
 
                 } while (unique != null);
 
-                _context.Reserve.Add(r);
+                _batch.Reservations.Add(r);
 
                 code.IsUsed = true;
                 _context.Entry(code).State = EntityState.Modified;
                 _context.Entry(apartment).State = EntityState.Modified;
+                _context.Entry(_batch).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
 
                 ViewBag.cc = r.CC;
@@ -320,7 +329,7 @@ namespace BookingForm.Controllers
 
         private int ReadNumberOfReserved(string apartmentcode)
         {
-            return _context.Reserve.Where(e => e.ApartmentCode == apartmentcode).ToList().Count;
+            return _batch.Reservations.Where(e => e.ApartmentCode == apartmentcode).ToList().Count;
         }
     }
 }

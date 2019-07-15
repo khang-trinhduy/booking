@@ -9,6 +9,7 @@ namespace BookingForm.Models
         public int BatchNumber { get; set; }
         public Storage Storage { get; set; }
         public List<RCode> RCodes { get; set; }
+        public List<Reserved> Reservations { get; set; }
         public bool IsRunning { get; private set; }
         public Batch()
         {

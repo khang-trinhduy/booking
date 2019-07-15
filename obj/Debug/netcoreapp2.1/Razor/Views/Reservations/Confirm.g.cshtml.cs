@@ -73,7 +73,7 @@ using reCAPTCHA.AspNetCore;
 #line default
 #line hidden
             BeginContext(185, 1876, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d15d63d4a8046dfbb7f8c1864d87c9c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3d61a66b4e84e629239d249afeae0a2", async() => {
                 BeginContext(191, 1580, true);
                 WriteLiteral(@"
   <title>Xác nhận đặt mua</title>
@@ -174,7 +174,7 @@ using reCAPTCHA.AspNetCore;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(2063, 2195, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ca2a5bfd93149e88ce6b263e94a5787", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "159095eabef542069e2ba578cf2fd009", async() => {
                 BeginContext(2069, 215, true);
                 WriteLiteral("\r\n<hr />\r\n<hr />\r\n<!-- <h1 style=\"font-family:sans-serif; \">Chúc mừng bạn đã đặt mua thành công!</h1>\r\n<p>Đơn hàng của bạn đã được hệ thông tiếp nhận</p> -->\r\n<h3>Thông tin sản phẩm</h3>\r\n<div id=\"product\">\r\n    <p>");
                 EndContext();
@@ -259,7 +259,7 @@ using reCAPTCHA.AspNetCore;
                 WriteLiteral("</p>\r\n</div>\r\n\r\n");
                 EndContext();
                 BeginContext(2587, 1628, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f6511f92f2f4d9da5b34d1d52d7ccde", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da390c932b4341a19a97c4baff1c3ca7", async() => {
                     BeginContext(2637, 67, true);
                     WriteLiteral("\r\n      <div class=\"form-group\" hidden>\r\n        <input type=\"text\"");
                     EndContext();
@@ -366,7 +366,7 @@ WriteAttributeValue("", 3758, Model.Reserved.RCode, 3758, 21, false);
                 WriteLiteral("\r\n\r\n");
                 EndContext();
                 BeginContext(4219, 30, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "292c62fe36674cc692d7a84381c69127", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9805b61771d34acda8520bb7514eed70", async() => {
                     BeginContext(4242, 3, true);
                     WriteLiteral("Hủy");
                     EndContext();

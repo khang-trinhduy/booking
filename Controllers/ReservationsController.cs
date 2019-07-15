@@ -13,10 +13,16 @@ namespace BookingForm.Controllers
     {
         private readonly BookingFormContext _context;
         private IRecaptchaService _recaptcha;
+        private Batch _batch;
         public ReservationsController(BookingFormContext context, IRecaptchaService recaptcha)
         {
             _recaptcha = recaptcha;
             _context = context;
+            _batch = _context.Batch.Include(e => e.Storage).ThenInclude(e => e.Apartments).ThenInclude(e => e.ApartmentDetails).Include(e => e.RCodes).FirstOrDefault(e => e.IsRunning);
+            if (_batch == null)
+            {
+                throw new NullReferenceException(nameof(Batch));
+            }
         }
         [Route("freecode")]
         public IActionResult NotMyCode()
@@ -31,7 +37,7 @@ namespace BookingForm.Controllers
         }
         public async Task<IActionResult> ManagerDetails(string data)
         {
-            var apartment = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode == data);
+            var apartment = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == data);
             if (apartment == null)
             {
                 return View("Error", $"Mã căn không tồn tại {data}");
@@ -52,7 +58,7 @@ namespace BookingForm.Controllers
         }
         public async Task<IActionResult> Manager()
         {
-            var apartments = await _context.Apartment.Where(e => true).ToListAsync();
+            var apartments = _batch.Storage.Apartments;
             List<ReservationManager> manager = new List<ReservationManager>();
             foreach (var item in apartments)
             {
@@ -80,7 +86,7 @@ namespace BookingForm.Controllers
         {
             var reserveds = await _context.Reserve.Where(e => true).ToListAsync();
             ReservationR revs = new ReservationR();
-            var apartments = await _context.Apartment.Include(e => e.ApartmentDetails).Where(e => true).ToListAsync();
+            var apartments = _batch.Storage.Apartments;
             foreach (var item in apartments)
             {
                 if (item.ApartmentDetails != null)
@@ -168,7 +174,7 @@ namespace BookingForm.Controllers
         }
         public IActionResult Continue()
         {
-            return RedirectToAction("GetBlocks", "Catalogs", new { id = 0 });
+            return RedirectToAction("Create", new { apartmentCode = "" });
         }
         private async Task<bool> IsAvailable(string apartmentCode)
         {
@@ -182,7 +188,7 @@ namespace BookingForm.Controllers
             if (ModelState.IsValid)
             {
                 ViewBag.code = r.ApartmentCode;
-                var apartment = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode == r.ApartmentCode);
+                var apartment = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == r.ApartmentCode);
                 if (apartment == null)
                 {
                     ViewBag.msg = "Mã căn hộ không tồn tại!";
@@ -193,7 +199,7 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Căn hộ đã được đặt mua!";
                     return View("Create");
                 }
-                var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
+                var code = _batch.RCodes.FirstOrDefault(e => e.Code == r.RCode);
                 if (code == null)
                 {
                     ViewBag.msg = "Mã đặt chỗ không chính xác!";
@@ -211,7 +217,7 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Mỗi khách chỉ được mua một căn hộ!";
                     return View("Create");
                 }
-                var isValidCode = client.Codes.FirstOrDefault(e => e.Code == code.Code && e.Id == code.Id);
+                var isValidCode = _batch.RCodes.FirstOrDefault(e => e.Code == code.Code && e.Id == code.Id);
                 if (isValidCode == null)
                 {
                     ViewBag.msg = "Mã đặt chỗ không chính xác, vui lòng kiểm tra lại!";
@@ -222,7 +228,7 @@ namespace BookingForm.Controllers
                     var re = _context.Reserve.FirstOrDefault(e => e.RCode == code.Code);
                     if (re != null)
                     {
-                        var apart = _context.Apartment.FirstOrDefault(e => e.LocalCode == re.ApartmentCode);
+                        var apart = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == re.ApartmentCode);
                         if (apart != null)
                         {
                             return RedirectToAction(nameof(Create));
@@ -243,14 +249,14 @@ namespace BookingForm.Controllers
             {
                 return View("Error", "Sai mã xác nhận");
             }
-            var apartment = await _context.Apartment.FirstOrDefaultAsync(e => e.LocalCode == reservation.ApartmentCode);
+            var apartment = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == reservation.ApartmentCode);
             return View("Success", new Reservation { Reserved = reservation, Apartment = apartment });
         }
         public IActionResult Create(string apartmentCode = null)
         {
             ViewBag.code = apartmentCode != null ? apartmentCode : "";
             var confirmed = _context.Confirmation.Where(e => true).Select(e => e.LocalCode).ToList();
-            ViewBag.ApartmentCode = _context.Apartment.Where(e => !confirmed.Contains(e.LocalCode)).Select(e => e.LocalCode).ToList();
+            ViewBag.ApartmentCode = _batch.Storage.Apartments.Where(e => !confirmed.Contains(e.LocalCode)).Select(e => e.LocalCode).ToList();
             return View();
         }
         private static Random random = new Random();
@@ -274,7 +280,7 @@ namespace BookingForm.Controllers
                 //     return View("Proceed");
                 // }
                 
-                var apartment = _context.Apartment.FirstOrDefault(e => e.LocalCode == r.ApartmentCode);
+                var apartment = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == r.ApartmentCode);
                 if (apartment == null)
                 {
                     return View("Error", $"Mã căn hộ không hợp lệ {r.ApartmentCode}");
@@ -284,7 +290,7 @@ namespace BookingForm.Controllers
                     return View("Error", "Căn hộ đã được đặt mua!");
                 }
 
-                var code = _context.RCode.FirstOrDefault(e => e.Code == r.RCode);
+                var code = _batch.RCodes.FirstOrDefault(e => e.Code == r.RCode);
                 r.Date = DateTime.Now.Date;
                 var numberOfReserved = ReadNumberOfReserved(r.ApartmentCode);
                 r.CC = numberOfReserved + 1;

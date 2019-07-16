@@ -41,9 +41,30 @@ namespace BookingForm.Controllers
             var block = await _context.Block.Include(e => e.Floors)
                 .ThenInclude(e => e.Apartments)
                 .ThenInclude(e => e.ApartmentDetails)
+                .Where(e => true)
                 .ToListAsync();
+            foreach (var item in block)
+            {
+                foreach (var floors in item.Floors)
+                {
+                    foreach (var apartment in floors.Apartments)
+                    {
+                        apartment.GlobalCode = Assign(apartment);
+                    }
+                }
+            }
             return View(block);
         }
+
+        private string Assign(Apartment apartment)
+        {
+            if (_batch.ContainConfirmation(apartment.LocalCode))
+            {
+                return "Sold";
+            }
+            return "";
+        }
+
         public IActionResult ManagerDetails(string data)
         {
             var apartment = _batch.GetApartment(data);
@@ -227,7 +248,6 @@ namespace BookingForm.Controllers
                     ViewBag.msg = "Mỗi khách chỉ được mua một căn hộ!";
                     return View("Create");
                 }
-                //TODO resolve use code of other client
                 var code = _batch.GetCode(r.RCode);
                 if (!client.Contain(code))
                 {

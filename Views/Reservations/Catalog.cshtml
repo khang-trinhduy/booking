@@ -10,10 +10,10 @@
         @foreach (var item in Model)
         {
             <div class="block @item.Name">
-                <h3 class="block-name">@item.Name</h3>
+                <h3 class="block-name">Tòa: @item.Name</h3>
                 @foreach (var floor in item.Floors)
                 {
-                    <div class="floor-container"><h4 class="floor-name">@floor.Name</h4>
+                    <div class="floor-container"><h4 class="floor-name">Tầng: @floor.Name</h4>
                         @foreach (var room in floor.Apartments)
                         {
                             var type = room.ApartmentDetails.ApartmentType.Replace("+", "P");
@@ -22,7 +22,15 @@
                             type = type.Replace("3", "H");
                             <div class="room-container">
                                 <div class="room @type">
+                                    @if (room.IsCorner)
+                                    {
+                                        <p class="corner">Căn góc</p>
+                                    }
                                     <a asp-action="Create" asp-route-apartmentCode="@room.LocalCode">@room.LocalCode</a>
+                                    @if (room.GlobalCode == "Sold")
+                                    {
+                                        <p class="sold">(Đã bán)</p>
+                                    }
                                 </div>
                             </div>
                         }
@@ -33,6 +41,14 @@
     </tbody>
 </table>
 <style>
+    .corner {
+        color: Red;
+        margin: 0 0 0 0;
+    }
+    .sold {
+        margin: 0 0 0 0;
+        font-style: italic;
+    }
     .room-container {
         display: inline-block;
         float: left;
@@ -42,7 +58,7 @@
     .floor-container {
         overflow: auto; 
         border: 1px solid black;
-        background-color: yellow;
+        background-color: #f7f7f7;
     }
     ul, li {
         list-style: none;

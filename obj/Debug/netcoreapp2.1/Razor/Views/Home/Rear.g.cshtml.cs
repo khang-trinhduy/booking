@@ -88,7 +88,7 @@ using BookingForm.Models;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(665, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "06a95f7b5c2b485e85c746a04d89d740", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0c04b932c3664920ba627c1cb7b96cc6", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -133,7 +133,7 @@ AddHtmlAttributeValue("", 685, paths[1], 685, 9, false);
             WriteLiteral("    </div>\r\n    ");
             EndContext();
             BeginContext(958, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f3430a7093f442fb1e0fc6dd0ddc7a1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca5a27fa53c04ba0897f55a5e3f3020f", async() => {
                 BeginContext(984, 8, true);
                 WriteLiteral("Quay lại");
                 EndContext();

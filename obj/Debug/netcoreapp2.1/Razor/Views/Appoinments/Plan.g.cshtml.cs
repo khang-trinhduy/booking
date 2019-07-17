@@ -58,12 +58,12 @@ using BookingForm.Models;
             WriteLiteral("\r\n<div class=\"container\">\r\n    \r\n    ");
             EndContext();
             BeginContext(82, 764, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82812c97a55d4431add24b57938e05f2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a7274b1639764b9bbb5c1e331e2e2725", async() => {
                 BeginContext(121, 249, true);
                 WriteLiteral("\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <div class=\"form-group\">\r\n                    <label class=\"control-label\">Dự án</label>\r\n                    <select id=\"Id\" class=\"form-control\">\r\n                        ");
                 EndContext();
                 BeginContext(370, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6917deec9ca447bdac8f55282ecac179", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64a264d7c66640528e330ed7d7b6ad2b", async() => {
                     BeginContext(387, 14, true);
                     WriteLiteral("--Chọn dự án--");
                     EndContext();
@@ -94,7 +94,7 @@ using BookingForm.Models;
                 WriteLiteral("                            ");
                 EndContext();
                 BeginContext(522, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef3e09b4c87496787d92ff77fa12f98", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79207a263b524873b4415348e636ac51", async() => {
                     BeginContext(548, 9, false);
 #line 14 "C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\Views\Appoinments\Plan.cshtml"
                                                 Write(plan.Name);

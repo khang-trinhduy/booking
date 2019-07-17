@@ -35,7 +35,7 @@ namespace BookingForm.Controllers
         {
             return View("Code");
         }
-        [Route("excel")]
+        [Route("giohang")]
         public async Task<IActionResult> Catalog()
         {
             var block = await _context.Block.Include(e => e.Floors)

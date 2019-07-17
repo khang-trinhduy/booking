@@ -119,6 +119,19 @@ namespace BookingForm.Controllers
             }
             return codex;
         }
+        [Route("giohang/matbang")]
+        public IActionResult ImageMap(string floor = "")
+        {
+            try
+            {
+                return View($"{floor}");
+                
+            }
+            catch (System.Exception)
+            {
+                return View("Error", $"floor {floor} is invalid");
+            }
+        }
         [Route("client/code/generate")]
         public async Task<IActionResult> Assign()
         {

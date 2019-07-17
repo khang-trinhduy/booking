@@ -3422,3 +3422,184 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    ALTER TABLE [RCode] ADD [BatchId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    ALTER TABLE [Apartment] ADD [BatchId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    CREATE TABLE [Batch] (
+        [Id] int NOT NULL IDENTITY,
+        [BatchNumber] int NOT NULL,
+        [IsRunning] bit NOT NULL,
+        CONSTRAINT [PK_Batch] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    CREATE INDEX [IX_RCode_BatchId] ON [RCode] ([BatchId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    CREATE INDEX [IX_Apartment_BatchId] ON [Apartment] ([BatchId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    ALTER TABLE [Apartment] ADD CONSTRAINT [FK_Apartment_Batch_BatchId] FOREIGN KEY ([BatchId]) REFERENCES [Batch] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    ALTER TABLE [RCode] ADD CONSTRAINT [FK_RCode_Batch_BatchId] FOREIGN KEY ([BatchId]) REFERENCES [Batch] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190712081026_add batch')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190712081026_add batch', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    ALTER TABLE [Batch] ADD [StorageId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    ALTER TABLE [Apartment] ADD [StorageId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    CREATE TABLE [Storage] (
+        [Id] int NOT NULL IDENTITY,
+        [IsOpen] bit NOT NULL,
+        CONSTRAINT [PK_Storage] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    CREATE INDEX [IX_Batch_StorageId] ON [Batch] ([StorageId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    CREATE INDEX [IX_Apartment_StorageId] ON [Apartment] ([StorageId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    ALTER TABLE [Apartment] ADD CONSTRAINT [FK_Apartment_Storage_StorageId] FOREIGN KEY ([StorageId]) REFERENCES [Storage] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    ALTER TABLE [Batch] ADD CONSTRAINT [FK_Batch_Storage_StorageId] FOREIGN KEY ([StorageId]) REFERENCES [Storage] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715042122_add storage')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190715042122_add storage', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715080057_add reserved to batch')
+BEGIN
+    ALTER TABLE [Reserve] ADD [BatchId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715080057_add reserved to batch')
+BEGIN
+    CREATE INDEX [IX_Reserve_BatchId] ON [Reserve] ([BatchId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715080057_add reserved to batch')
+BEGIN
+    ALTER TABLE [Reserve] ADD CONSTRAINT [FK_Reserve_Batch_BatchId] FOREIGN KEY ([BatchId]) REFERENCES [Batch] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715080057_add reserved to batch')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190715080057_add reserved to batch', N'2.1.8-servicing-32085');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715101830_add confirmation to batch')
+BEGIN
+    ALTER TABLE [Confirmation] ADD [BatchId] int NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715101830_add confirmation to batch')
+BEGIN
+    CREATE INDEX [IX_Confirmation_BatchId] ON [Confirmation] ([BatchId]);
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715101830_add confirmation to batch')
+BEGIN
+    ALTER TABLE [Confirmation] ADD CONSTRAINT [FK_Confirmation_Batch_BatchId] FOREIGN KEY ([BatchId]) REFERENCES [Batch] ([Id]) ON DELETE NO ACTION;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190715101830_add confirmation to batch')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20190715101830_add confirmation to batch', N'2.1.8-servicing-32085');
+END;
+
+GO
+

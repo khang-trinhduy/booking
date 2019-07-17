@@ -71,7 +71,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n<h1>Import</h1>\r\n");
             EndContext();
             BeginContext(63, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "448723efa53b4f70b00b59806b687474", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d450dbecbb9049a785ccb7745b4a240d", async() => {
                 BeginContext(86, 15, true);
                 WriteLiteral("Xuất file excel");
                 EndContext();
@@ -93,12 +93,12 @@ using BookingForm.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(107, 850, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b489245257754b2b90a18b0e2769a8e7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11e7d8efe6a040029413679afdef0207", async() => {
                 BeginContext(163, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(169, 54, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ff6367d0b6d743d395101ce35449b210", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bc5591b501b2479ea15a227b901c783d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -123,7 +123,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.Model = ViewBag.msg;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(229, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed467aec993b4e58b903c6e071d46010", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cea70f9099c84617b135b5ed6f12abc0", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();

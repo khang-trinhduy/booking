@@ -93,7 +93,7 @@ using BookingForm.Models;
             WriteLiteral("</td>\r\n                <td>");
             EndContext();
             BeginContext(509, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bdc8f2aa22614c5eaadd7e15f7e22b00", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de48aa7ba1a841878b619e222591fce4", async() => {
                 BeginContext(577, 8, true);
                 WriteLiteral("Chi tiết");
                 EndContext();

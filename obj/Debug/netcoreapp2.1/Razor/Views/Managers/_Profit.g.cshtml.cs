@@ -54,7 +54,7 @@ using BookingForm.Models;
             WriteLiteral("<div id=\"chart\">\r\n    ");
             EndContext();
             BeginContext(22, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5fe656cabed44225ab7a81315e269703", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3bf5eabf5cf54dc5955ca6e73fa68130", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

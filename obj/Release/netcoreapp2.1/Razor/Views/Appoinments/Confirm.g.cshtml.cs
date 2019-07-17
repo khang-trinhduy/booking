@@ -63,7 +63,7 @@ using BookingForm.Models;
 #line default
 #line hidden
             BeginContext(84, 160, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9a964d641e7641b5b944f3115557c78f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "105254f2575045e9a4c9715e7d60ede9", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -223,7 +223,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n</ul>\r\n<p>Hợp đồng này sẽ thay đổi số thứ tự nếu Quý khách không nộp đủ tiền trong vòng 2 giờ làm việc.</p>\r\n");
             EndContext();
             BeginContext(4875, 62, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb712178747346549b9639001feeb1d6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e5a9dd0d7174ab58f7631cd3e5c298a", async() => {
                 BeginContext(4922, 11, true);
                 WriteLiteral("In hợp đồng");
                 EndContext();
@@ -258,7 +258,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(4939, 43, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "246f39013eeb4675b7c29c60844dfe66", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f51217a38a6244399e06944426ac7854", async() => {
                 BeginContext(4960, 18, true);
                 WriteLiteral("Trở về trang chính");
                 EndContext();

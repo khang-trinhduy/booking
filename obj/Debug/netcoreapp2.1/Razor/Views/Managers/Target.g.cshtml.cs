@@ -71,7 +71,7 @@ using BookingForm.Models;
 #line default
 #line hidden
             BeginContext(138, 160, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef5f6de39ce54e29a20c4b26575a70a7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d93c4e4b71bb485a86ae5d7679898df6", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -122,7 +122,7 @@ using BookingForm.Models;
             WriteLiteral("</h6>\r\n\r\n<h2 style=\"text-align:center; font-family:Calibri\">Chỉ tiêu</h2>\r\n");
             EndContext();
             BeginContext(514, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1711b60605a43cea6f884cb8e95aedc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0cb8370bb2f4c5b83cb0079ec00766c", async() => {
                 BeginContext(537, 9, true);
                 WriteLiteral("Doanh thu");
                 EndContext();

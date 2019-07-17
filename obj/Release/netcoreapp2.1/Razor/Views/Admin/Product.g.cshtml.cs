@@ -62,7 +62,7 @@ using BookingForm.Models;
             WriteLiteral("<div style=\"display:block\" ;>\r\n    <select id=\"context\">\r\n        ");
             EndContext();
             BeginContext(66, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "023a8c55a91b4ebca1e9f07a4a963513", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889636014f154385b9d20aaffd19d64c", async() => {
                 BeginContext(86, 3, true);
                 WriteLiteral("1PN");
                 EndContext();
@@ -84,7 +84,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(108, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f8eae0fb70b4f48aca7b5ea7a741682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89cd4702b3794913814cb36cc4bb29f9", async() => {
                 BeginContext(129, 6, true);
                 WriteLiteral("2PN1WC");
                 EndContext();
@@ -106,7 +106,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(154, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5305b72966f8499da7825fe6377a4cd4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94c252b2119d4814b4d3a9308e252154", async() => {
                 BeginContext(174, 3, true);
                 WriteLiteral("2PN");
                 EndContext();
@@ -128,7 +128,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(196, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c872bddf25d2467693715607444859d8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "21c74dd270404a35b17f3e1ac29efa90", async() => {
                 BeginContext(216, 3, true);
                 WriteLiteral("3PN");
                 EndContext();
@@ -150,7 +150,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(238, 31, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0756b387bf64d8282126a62673068f1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a11df8786ccf4377be8ed77cf15f4fc2", async() => {
                 BeginContext(258, 2, true);
                 WriteLiteral("DT");
                 EndContext();
@@ -172,7 +172,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(279, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80faee7f80af44bb92ae2629d23f2622", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7ef3e79fd354cd3a23a18640b30b0c8", async() => {
                 BeginContext(299, 4, true);
                 WriteLiteral("BTĐL");
                 EndContext();
@@ -194,7 +194,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(322, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8bf98828d5b14aa389f79910d01a912e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b2d2f25d9ef49bca97d33df42db8c52", async() => {
                 BeginContext(343, 4, true);
                 WriteLiteral("BTSL");
                 EndContext();
@@ -216,7 +216,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(366, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0914edd22c6345f0a989278746f2f592", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65eca58dea2c4d7eb498655400329183", async() => {
                 BeginContext(387, 4, true);
                 WriteLiteral("NPTM");
                 EndContext();
@@ -238,7 +238,7 @@ using BookingForm.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(410, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3627810f65a24dc9b589d40b4bbdbf0e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80102f5a38604ef09c0e745c717aae26", async() => {
                 BeginContext(430, 4, true);
                 WriteLiteral("KIOS");
                 EndContext();

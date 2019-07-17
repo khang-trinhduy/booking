@@ -25,126 +25,266 @@ Layout = null;
         $(function () {
             $('.map').maphilight();
         });
+
     </script>
     <style>
-        .block {
+        .map {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
+        .map:hover {
+            opacity: 0.7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @@-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @@keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @@media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        .square {
+            list-style: none;
+        }
+
+        * {
+            font-family: initial;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 30px 0;
+            text-align: center;
+            font-family: initial;
         }
     </style>
 </head>
 
 <body>
+    <ol class="breadcrumb">
+
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.masteri.com.vn"
+                class="itemcrumb" itemprop="url"><span itemprop="title">Trang chủ</span></a></li>
+
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a
+                href="https://www.masteri.com.vn/masteri-thao-dien" class="itemcrumb" itemprop="url"><span
+                    itemprop="title">Masteri Thảo Điền</span></a></li>
+
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a
+                href="https://www.masteri.com.vn/masteri-thao-dien/mat-bang" class="itemcrumb active"
+                itemprop="url"><span itemprop="title">Mặt bằng</span></a></li>
+
+
+    </ol>
+    <h1 class="title">Mặt bằng tầng Tòa nhà S2.01 - VINHOMES GRAND PARK</h1>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <div class="info-container">
-                    <table class="table1 info">
-                        <thead>
-            
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>TÒA</td>
-                                <td>: CH - DV - TM</td>
-                            </tr>
-                            <tr>
-                                <td>CĂN HỘ</td>
-                                <td>: 01B<br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>LOẠI CĂN HỘ</td>
-                                <td>: 1 Phòng ngủ</td>
-                            </tr>
-                            <tr>
-                                <td>DIỆN TÍCH THÔNG THỦY</td>
-                                <td>: 47,75 M²</td>
-                            </tr>
-                            <tr>
-                                <td>DIỆN TÍCH TIM TƯỜNG</td>
-                                <td>: 51,74 M²</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table2 info">
-                        <tbody>
-                            <tr>
-                                <td>Phòng</td>
-                                <td>Diện tích thông thủy</td>
-                            </tr>
-                            <tr>
-                                <td>Phòng khách và bếp<br>
-                                </td>
-                                <td>: 23,46 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Phòng tắm 01<br>
-                                </td>
-                                <td>: 4,71 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Phòng tắm 02<br>
-                                </td>
-                                <td>: 0 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Phòng ngủ 01<br>
-                                </td>
-                                <td>: 13,1 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Phòng ngủ 02<br>
-                                </td>
-                                <td>: 0 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Sân phơi</td>
-                                <td>: 3,48 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Ban công</td>
-                                <td>: 3 m²</td>
-                            </tr>
-                            <tr>
-                                <td>Tổng</td>
-                                <td>: 47,75 m²</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <img id="myImg" src="~/images/catalog/block/s2.01.png"
+                    class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|} map"
+                    alt="">
+
+            </div>
+            <div class="col-8">
+                <div class="img-container floor">
+                    <!-- Image Map Generated by http://www.image-map.net/ -->
+                    <img src="~/images/catalog/floor/s2.0110.png" usemap="#image-map" class="map">
+
+                    <map name="image-map">
+                        <area target="" alt="Căn số 01" title="Căn số 01" href="" coords="313,39,422,128" shape="rect">
+                        <area target="" alt="Căn số 02" title="Căn số 02" href="" coords="423,38,493,128" shape="rect">
+                        <area target="" alt="Căn số 03" title="Căn số 03" href="" coords="495,30,543,127" shape="rect">
+                        <area target="" alt="Căn số 04" title="Căn số 04" href="" coords="544,29,630,127" shape="rect">
+                        <area target="" alt="Căn số 05" title="Căn số 05" href="" coords="630,28,718,128" shape="rect">
+                        <area target="" alt="Căn số 06" title="Căn số 06" href="" coords="720,28,835,128" shape="rect">
+                        <area target="" alt="Căn số 07" title="Căn số 07" href="" coords="720,146,828,235" shape="rect">
+                        <area target="" alt="Căn số 08" title="Căn số 08" href="" coords="630,145,719,244" shape="rect">
+                        <area target="" alt="Căn số 09" title="Căn số 09" href="" coords="542,145,630,245" shape="rect">
+                        <area target="" alt="Căn số 10" title="Căn số 10" href="" coords="493,146,540,239" shape="rect">
+                        <area target="" alt="Căn số 11" title="Căn số 11" href="" coords="370,254,477,342" shape="rect">
+                        <area target="" alt="Căn số 12" title="Căn số 12" href="" coords="280,256,369,354" shape="rect">
+                        <area target="" alt="Căn số 13" title="Căn số 13" href="" coords="194,256,279,354" shape="rect">
+                        <area target="" alt="Căn số 14" title="Căn số 14" href="" coords="120,256,193,352" shape="rect">
+                        <area target="" alt="Căn số 15" title="Căn số 15" href="" coords="11,255,119,342" shape="rect">
+                        <area target="" alt="Căn số 16" title="Căn số 16" href="" coords="11,150,118,237" shape="rect">
+                        <area target="" alt="Căn số 17" title="Căn số 17" href="" coords="119,149,192,236" shape="rect">
+                        <area target="" alt="Căn số 18" title="Căn số 18" href="" coords="194,149,265,237" shape="rect">
+                        <area target="" alt="Căn số 19" title="Căn số 19" href="" coords="268,149,313,236" shape="rect">
+                    </map>
+                    </map>
+
                 </div>
             </div>
         </div>
-        <div class="col-8">
-            <div class="img-container floor">
-                <!-- Image Map Generated by http://www.image-map.net/ -->
-                <img src="~/images/catalog/floor/s2.0110.png" usemap="#image-map" class="map">
+        <div class="row">
+            <div class="col-4">
+                <table class="table1 info">
+                    <thead>
 
-                <map name="image-map">
-                    <area target="" alt="Căn số 01" title="Căn số 01" href="" coords="313,39,422,128" shape="rect">
-                    <area target="" alt="Căn số 02" title="Căn số 02" href="" coords="423,38,493,128" shape="rect">
-                    <area target="" alt="Căn số 03" title="Căn số 03" href="" coords="495,30,543,127" shape="rect">
-                    <area target="" alt="Căn số 04" title="Căn số 04" href="" coords="544,29,630,127" shape="rect">
-                    <area target="" alt="Căn số 05" title="Căn số 05" href="" coords="630,28,718,128" shape="rect">
-                    <area target="" alt="Căn số 06" title="Căn số 06" href="" coords="720,28,835,128" shape="rect">
-                    <area target="" alt="Căn số 07" title="Căn số 07" href="" coords="720,146,828,235" shape="rect">
-                    <area target="" alt="Căn số 08" title="Căn số 08" href="" coords="630,145,719,244" shape="rect">
-                    <area target="" alt="Căn số 09" title="Căn số 09" href="" coords="542,145,630,245" shape="rect">
-                    <area target="" alt="Căn số 10" title="Căn số 10" href="" coords="493,146,540,239" shape="rect">
-                    <area target="" alt="Căn số 11" title="Căn số 11" href="" coords="370,254,477,342" shape="rect">
-                    <area target="" alt="Căn số 12" title="Căn số 12" href="" coords="280,256,369,354" shape="rect">
-                    <area target="" alt="Căn số 13" title="Căn số 13" href="" coords="194,256,279,354" shape="rect">
-                    <area target="" alt="Căn số 14" title="Căn số 14" href="" coords="120,256,193,352" shape="rect">
-                    <area target="" alt="Căn số 15" title="Căn số 15" href="" coords="11,255,119,342" shape="rect">
-                    <area target="" alt="Căn số 16" title="Căn số 16" href="" coords="11,150,118,237" shape="rect">
-                    <area target="" alt="Căn số 17" title="Căn số 17" href="" coords="119,149,192,236" shape="rect">
-                    <area target="" alt="Căn số 18" title="Căn số 18" href="" coords="194,149,265,237" shape="rect">
-                    <area target="" alt="Căn số 19" title="Căn số 19" href="" coords="268,149,313,236" shape="rect">
-                </map>
-                </map>
-                
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TÒA</td>
+                            <td>: S2.01</td>
+                        </tr>
+                        <tr>
+                            <td>MẶT BẰNG TẦNG</td>
+                            <td>: 3-26<br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-4">
+                <table>
+                    <p>Mặt bằng căn hộ được thiết kế thông thoáng và hợp lý với 05 loại căn hộ diện tích khác
+                        nhau.</p>
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://i.imgur.com/ZLq4DV4.png" height="27px" width="27px"> </td>
+                            <td style="padding-left: 10px;">Căn hộ 3 phòng ngủ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://i.imgur.com/VBd2w77.png" height="27px" width="27px"> </td>
+                            <td style="padding-left: 10px;">Căn hộ 2 phòng ngủ +
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://i.imgur.com/4KIF99l.png" height="27px" width="27px"> </td>
+                            <td style="padding-left: 10px;">Căn hộ 2 phòng ngủ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://i.imgur.com/Rlbgzl9.png" height="27px" width="27px"> </td>
+                            <td style="padding-left: 10px;">Căn hộ 1 phòng ngủ +
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://i.imgur.com/6RNP0IJ.png" height="27px" width="27px"> </td>
+                            <td style="padding-left: 10px;">Căn hộ studio
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-4">
+                <p style="color: red; display: inline-block;">Chọn trên bản đồ để xem mặt bằng căn hộ tương ứng</p>
+                <img style="float: right" src="https://i.imgur.com/Uw1NU2P.png"
+                    class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                    alt="compass" title="compass">
             </div>
         </div>
     </div>
+    <script>
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        document.onkeyup = function () {onKeyPress(event)};
+        function onKeyPress(event) {
+            if (event.keyCode == 27 || event.keyCode == 13 || event.which == 13) {
+                modal.style.display = "none";
+            }
+
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>

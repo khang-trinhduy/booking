@@ -189,3 +189,4 @@ C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Release\netco
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Release\netcoreapp2.1\Razor\Views\Reservations\ManagerDetails.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Release\netcoreapp2.1\Razor\Views\Batch\Create.g.cshtml.cs
 C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Release\netcoreapp2.1\Razor\Views\Batch\Index.g.cshtml.cs
+C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\obj\Release\netcoreapp2.1\Razor\Views\Catalogs\S201.g.cshtml.cs

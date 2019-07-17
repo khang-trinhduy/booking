@@ -150,7 +150,7 @@ WriteAttributeValue(" ", 1002, type, 1003, 5, false);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(1254, 84, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6293453160d406b9e3a9076a5e9d9f6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78600d1f09594386ab4b35714e9ee418", async() => {
                 BeginContext(1320, 14, false);
 #line 29 "C:\Users\trinh\source\repos\annhome-booking-master\BookingForm\Views\Reservations\Catalog.cshtml"
                                                                                                 Write(room.LocalCode);

@@ -1,98 +1,145 @@
 @model BookingForm.Models.Apartment
 @{
-    ViewData["title"] = "Chi tiết sản phẩm";
-    Layout = "~/Views/Catalogs/DumbLayout.cshtml";
+ViewData["title"] = "";
+Layout = null;
 }
+<!doctype html>
+<html lang="en">
 
-<partial name="StatusMessage" model="@ViewBag.msg" />
-<h1>Thông tin sản phẩm</h1>
-</hr>
-<div class="form-group">
-  <label for="">
-      Tên sản phẩm :
-  </label>
-  <p>@Model.Name</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.NOBedroom) :
-  </label>
-  <p>@Model.NOBedroom</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.NOWC) :
-  </label>
-  <p>@Model.NOWC</p>
-</div>
+<head>
+  <title>Chi tiết căn hộ</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Floor) :
-  </label>
-  <p>@Model.Floor</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Direction) :
-  </label>
-  <p>@Model.Direction</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Area) :
-  </label>
-  <p>@Model.Area</p>
-</div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .title>h1 {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 700;
+      margin: 30px 0;
+    }
+    .table2>tr>td:last-child {
+      padding-right: 10px;
+    }
+    .table2 {
+      margin-top: 10px;
+    }
+    .table1 {
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
 
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Block) :
-  </label>
-  <p>@Model.Block</p>
-</div>
-<div class="form-group">
-  <label for="">
-      Giá :
-  </label>
-  <p>@Model.Price</p>
-</div>
+    * {
+      font-family: initial;
+    }
+  </style>
+</head>
 
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.LocalCode) :
-  </label>
-  <p>@Model.LocalCode</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.GlobalCode) :
-  </label>
-  <p>@Model.GlobalCode</p>
-</div>
-<div class="hideable">
-  <input type="button" class="btn btn-default" value="Đặt mua" onclick="location.href='@Url.Action("Proceed", "Catalogs", new {code = @Model.LocalCode})'" />
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-    $('#btn').on('click', function() {
-      swal({
-      title: "Bạn có chắc chắn chọn mua căn này?",
-      text: "Mỗi mã chỉ được sử dụng một lần. Quý khách sẽ không được thay đổi căn sau khi đã chọn!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willBuy) => {
-      if (willBuy) {
-        swal("Hệ thống đã nhận được yêu cầu của bạn, đang tiến hành xử lý!", {
-          icon: "success",
-        });
-        $('#form').submit();
-      } else {
-        
-      }
-    });
-    });
-</script>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="title col-md-12">
+        <h1>Tòa nhà Căn hộ - Dịch vụ - Thương mại Căn hộ 06B</h1>
+      </div>
+      <div class="col-md-12 tab-can-ho-chi-tiet hidden-xs">
+        <ul role="tablist" class="custom-tab clearfix">
+          <li role="presentation" class="come-back">
+            <a href='@Url.Action("ImageMap", new {floor = "s201"})'>Trở
+              lại</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-12">
+        <div class="panel-body">
+          <div class="row">
+            <div class="group1 col-md-5 col-sm-4 col-xs-12">
+              <table class="table1 info">
+                <tbody>
+                  <tr>
+                    <td>TÒA</td>
+                    <td>: @Model.Block</td>
+                  </tr>
+                  <tr>
+                    <td>TẦNG</td>
+                    <td>: @Model.Floor</td>
+                  </tr>
+                  <tr>
+                    <td>CĂN HỘ</td>
+                    <td>: @Model.Name<br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>LOẠI CĂN HỘ</td>
+                    <td>: @Model.ApartmentDetails.ApartmentType</td>
+                  </tr>
+                  <tr>
+                    <td>DIỆN TÍCH THÔNG THỦY</td>
+                    <td>: @Model.Area M²</td>
+                  </tr>
+                  <tr>
+                    <td>DIỆN TÍCH TIM TƯỜNG</td>
+                    <td>: @Model.Area1 M²</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table2 info">
+                <tbody>
+                  <tr>
+                    <td>Số phòng ngủ</td>
+                    <td>: @Model.NOBedroom</td>
+                  </tr>
+                  <tr>
+                    <td>Số phòng vệ sinh<br>
+                    </td>
+                    <td>: @Model.NOWC</td>
+                  </tr>
+                  <tr>
+                    <td>Hướng<br>
+                    </td>
+                    <td>: @Model.Direction</td>
+                  </tr>
+                  <tr>
+                    <td>View<br>
+                    </td>
+                    <td>: @Model.View</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="group2 col-md-2 col-sm-4 col-xs-12">
+              <div class="row">
+                <div class="small1 col-md-12 col-sm-12 col-xs-6">
+                  <img src="@Model.ApartmentDetails.ImagePath" alt="">
+                </div>
+                <div class="small2 col-md-12 col-sm-12 col-xs-6"><a target="_blank"
+                    href="https://www.masteri.com.vn/xem-anh-360-can-ho-mau"><img alt=""
+                      src="./Căn hộ 06B - Masteri_files/can-ho-mau.jpg"></a></div>
+              </div>
+            </div>
+            <div class="group3 col-md-5 col-sm-4 col-xs-12">
+              <img class="img-responsive" src="./Căn hộ 06B - Masteri_files/06bbb.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

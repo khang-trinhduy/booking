@@ -34,6 +34,7 @@ namespace BookingForm.Models
         public int Id { get; set; }
         public bool IsCorner { get; set; }
         public Batch Batch { get; set; }
+        public string Area1 { get; set; }
 
         public bool Equals(Apartment other)
         {

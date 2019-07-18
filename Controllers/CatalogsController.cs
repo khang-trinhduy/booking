@@ -32,9 +32,14 @@ namespace BookingForm.Controllers
             ViewBag.code = code;
             return View();
         }
-        public IActionResult Detail(string code)
+        public IActionResult Detail(string room)
         {
-            return RedirectToAction("Create", "Reservations", new {apartmentCode = code});
+            var apartment = _context.Apartment.Include(e => e.ApartmentDetails).FirstOrDefault(e => e.LocalCode == room);
+            if (apartment == null)
+            {
+                return View("Error", $"Căn hộ số {room} đã bán hoặc không tồn tại");
+            }
+            return View(apartment);
         }
         private bool IsAvailable(string apartmentCode)
         {
@@ -281,10 +286,11 @@ namespace BookingForm.Controllers
                         // c.NOWC = workSheet.Cells[i, 5].Value.ToString();
                         c.Direction = workSheet.Cells[i, 6].Value.ToString();
                         c.View = workSheet.Cells[i, 7].Value.ToString();
-                        // c.Area = workSheet.Cells[i, 8].Value.ToString();
+                        c.Area = workSheet.Cells[i, 8].Value.ToString();
                         c.Floor = workSheet.Cells[i, 9].Value.ToString();
                         c.Block = workSheet.Cells[i, 10].Value.ToString();
                         c.Price = workSheet.Cells[i, 11].Value.ToString();
+                        c.Area1 = workSheet.Cells[i, 12].Value.ToString();
                         // c.Location = workSheet.Cells[i, 12].Value.ToString();
                         
                     }
@@ -310,6 +316,7 @@ namespace BookingForm.Controllers
                             existed.Name = c.Name;
                             existed.Price = c.Price;
                             existed.View = c.View;
+                            existed.Area1 = c.Area1;
                             _context.Entry(existed).State = EntityState.Modified;
                             update++;
                         }

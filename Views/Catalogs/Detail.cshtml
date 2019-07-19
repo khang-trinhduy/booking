@@ -1,156 +1,85 @@
 @model BookingForm.Models.Apartment
 @{
-ViewData["title"] = "";
-Layout = null;
+ViewData["title"] = "Thông tin căn hộ";
+Layout = "~/Views/Catalogs/ProductLayout.cshtml";
 }
-<!doctype html>
-<html lang="en">
 
-<head>
-  <title>Chi tiết căn hộ</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<div class="container">
+  <div class="row">
+    <div class="title col-12">
+      <h1>MẶT BẰNG CĂN HỘ - VINHOMES GRAND PARK</h1>
+    </div>
+    <div class="col-md-12 tab-can-ho-chi-tiet hidden-xs">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-    .title>h1 {
-      text-align: center;
-      font-size: 25px;
-      font-weight: 700;
-      margin: 120px 0 120px 0;
-    }
+    </div>
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-5">
+            <table class="table1 info">
+              <tbody>
+                <tr>
+                  <td>TÒA</td>
+                  <td>: @Model.Block</td>
+                </tr>
+                <tr>
+                  <td>TẦNG</td>
+                  <td>: @Model.Floor</td>
+                </tr>
+                <tr>
+                  <td>CĂN HỘ</td>
+                  <td>: @Model.Name<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td>LOẠI CĂN HỘ</td>
+                  <td>: @Model.ApartmentDetails.ApartmentType</td>
+                </tr>
+                <tr>
+                  <td>DIỆN TÍCH THÔNG THỦY</td>
+                  <td>: @Model.Area M²</td>
+                </tr>
+                <tr>
+                  <td>DIỆN TÍCH TIM TƯỜNG</td>
+                  <td>: @Model.Area1 M²</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table2 info">
+              <tbody>
+                <tr>
+                  <td>Số phòng ngủ</td>
+                  <td>: @Model.NOBedroom</td>
+                </tr>
+                <tr>
+                  <td>Số phòng vệ sinh<br>
+                  </td>
+                  <td>: @Model.NOWC</td>
+                </tr>
+                <tr>
+                  <td>Hướng<br>
+                  </td>
+                  <td>: @Model.Direction</td>
+                </tr>
+                <tr>
+                  <td>View<br>
+                  </td>
+                  <td>: @Model.View</td>
+                </tr>
 
-    .table2>tbody>tr>td:last-child {
-      padding-left: 90px;
-    }
-
-    .table2 {
-      margin-top: 10px;
-    }
-
-    .table1 {
-      margin-top: 80px;
-      font-weight: bold;
-      padding-bottom: 10px;
-    }
-    #compass {
-      padding-top: 15px;
-      padding-right: 40px;
-      width: 50%;
-    }
-    #locate {
-      width: 115%;
-      margin-top: 130px;
-    }
-    #room {
-      margin-left: 40px;
-    }
-
-    * {
-      font-family: initial;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="title col-md-12">
-        <h1>MẶT BẰNG CĂN HỘ - VINHOMES GRAND PARK</h1>
-      </div>
-      <div class="col-md-12 tab-can-ho-chi-tiet hidden-xs">
-
-      </div>
-      <div class="col-md-12">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-4">
-              <table class="table1 info">
-                <tbody>
-                  <tr>
-                    <td>TÒA</td>
-                    <td>: @Model.Block</td>
-                  </tr>
-                  <tr>
-                    <td>TẦNG</td>
-                    <td>: @Model.Floor</td>
-                  </tr>
-                  <tr>
-                    <td>CĂN HỘ</td>
-                    <td>: @Model.Name<br>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>LOẠI CĂN HỘ</td>
-                    <td>: @Model.ApartmentDetails.ApartmentType</td>
-                  </tr>
-                  <tr>
-                    <td>DIỆN TÍCH THÔNG THỦY</td>
-                    <td>: @Model.Area M²</td>
-                  </tr>
-                  <tr>
-                    <td>DIỆN TÍCH TIM TƯỜNG</td>
-                    <td>: @Model.Area1 M²</td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table2 info">
-                <tbody>
-                  <tr>
-                    <td>Số phòng ngủ</td>
-                    <td>: @Model.NOBedroom</td>
-                  </tr>
-                  <tr>
-                    <td>Số phòng vệ sinh<br>
-                    </td>
-                    <td>: @Model.NOWC</td>
-                  </tr>
-                  <tr>
-                    <td>Hướng<br>
-                    </td>
-                    <td>: @Model.Direction</td>
-                  </tr>
-                  <tr>
-                    <td>View<br>
-                    </td>
-                    <td>: @Model.View</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <div class="col-2">
-              <img id="locate" src="@Model.Location">
-              <img id="compass" src="https://i.imgur.com/Uw1NU2P.png">
-            </div>
-            <div class="col-6">
-              <div class="row">
-                <div class="small1 col-md-12 col-sm-12 col-xs-6">
-                  <img id="room" src="@Model.ApartmentDetails.ImagePath" alt="">
-                </div>
-                <div class="small2 col-md-12 col-sm-12 col-xs-6"></div>
-              </div>
-            </div>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-2">
+            <img id="locate" src="@Model.Location">
+            <img id="compass" src="https://i.imgur.com/Uw1NU2P.png">
+          </div>
+          <div class="col-5">
+            <img id="room" src="@Model.ApartmentDetails.ImagePath" alt="">
           </div>
         </div>
       </div>
-      <br>
     </div>
+    <br>
   </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</body>
-
-</html>
+</div>

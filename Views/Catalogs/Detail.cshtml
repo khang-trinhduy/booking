@@ -20,17 +20,33 @@ Layout = null;
       text-align: center;
       font-size: 25px;
       font-weight: 700;
-      margin: 30px 0;
+      margin: 120px 0 120px 0;
     }
-    .table2>tr>td:last-child {
-      padding-right: 10px;
+
+    .table2>tbody>tr>td:last-child {
+      padding-left: 90px;
     }
+
     .table2 {
       margin-top: 10px;
     }
+
     .table1 {
+      margin-top: 80px;
       font-weight: bold;
       padding-bottom: 10px;
+    }
+    #compass {
+      padding-top: 15px;
+      padding-right: 40px;
+      width: 50%;
+    }
+    #locate {
+      width: 115%;
+      margin-top: 130px;
+    }
+    #room {
+      margin-left: 40px;
     }
 
     * {
@@ -43,20 +59,15 @@ Layout = null;
   <div class="container">
     <div class="row">
       <div class="title col-md-12">
-        <h1>Tòa nhà Căn hộ - Dịch vụ - Thương mại Căn hộ 06B</h1>
+        <h1>MẶT BẰNG CĂN HỘ - VINHOMES GRAND PARK</h1>
       </div>
       <div class="col-md-12 tab-can-ho-chi-tiet hidden-xs">
-        <ul role="tablist" class="custom-tab clearfix">
-          <li role="presentation" class="come-back">
-            <a href='@Url.Action("ImageMap", new {floor = "s201"})'>Trở
-              lại</a>
-          </li>
-        </ul>
+
       </div>
       <div class="col-md-12">
         <div class="panel-body">
           <div class="row">
-            <div class="group1 col-md-5 col-sm-4 col-xs-12">
+            <div class="col-4">
               <table class="table1 info">
                 <tbody>
                   <tr>
@@ -107,26 +118,26 @@ Layout = null;
                     </td>
                     <td>: @Model.View</td>
                   </tr>
-                  
+
                 </tbody>
               </table>
             </div>
-            <div class="group2 col-md-2 col-sm-4 col-xs-12">
+            <div class="col-2">
+              <img id="locate" src="@Model.Location">
+              <img id="compass" src="https://i.imgur.com/Uw1NU2P.png">
+            </div>
+            <div class="col-6">
               <div class="row">
                 <div class="small1 col-md-12 col-sm-12 col-xs-6">
-                  <img src="@Model.ApartmentDetails.ImagePath" alt="">
+                  <img id="room" src="@Model.ApartmentDetails.ImagePath" alt="">
                 </div>
-                <div class="small2 col-md-12 col-sm-12 col-xs-6"><a target="_blank"
-                    href="https://www.masteri.com.vn/xem-anh-360-can-ho-mau"><img alt=""
-                      src="./Căn hộ 06B - Masteri_files/can-ho-mau.jpg"></a></div>
+                <div class="small2 col-md-12 col-sm-12 col-xs-6"></div>
               </div>
-            </div>
-            <div class="group3 col-md-5 col-sm-4 col-xs-12">
-              <img class="img-responsive" src="./Căn hộ 06B - Masteri_files/06bbb.jpg" alt="">
             </div>
           </div>
         </div>
       </div>
+      <br>
     </div>
   </div>
   <!-- Optional JavaScript -->

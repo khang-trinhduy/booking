@@ -19,6 +19,22 @@ namespace BookingForm.Controllers
     {
         private readonly bool Available = true;
         private readonly BookingFormContext _context;
+        private Batch _batch;
+        public CatalogsController(BookingFormContext context)
+        {
+            _context = context;
+            _batch = _context.Batch.Include(e => e.Storage)
+                .ThenInclude(e => e.Apartments)
+                .ThenInclude(e => e.ApartmentDetails)
+                .Include(e => e.RCodes)
+                .Include(e => e.Reservations)
+                .Include(e => e.Confirmations)
+                .FirstOrDefault(e => e.IsRunning);
+            if (_batch == null)
+            {
+                throw new NullReferenceException(nameof(Batch));
+            }
+        }
         private static Random random = new Random();
         private IRecaptchaService _recaptcha;
         public static string GenerateCode()
@@ -62,7 +78,8 @@ namespace BookingForm.Controllers
                     var exist = clients.FirstOrDefault(e => e.Cmnd.ToLower() == item.Cmnd.ToLower() || e.FullName.ToLower() == item.Customer.ToLower() || e.PhoneNumber.ToLower() == item.Phone.ToLower());
                     if (exist == null)
                     {
-                        clients.Add(new Client{
+                        clients.Add(new Client
+                        {
                             Cmnd = item.Cmnd,
                             PhoneNumber = item.Phone,
                             FullName = item.Customer,
@@ -81,7 +98,7 @@ namespace BookingForm.Controllers
                 }
                 await _context.SaveChangesAsync();
                 return Ok($"Successfully added {clients.Count} client");
-                
+
             }
             catch (System.Exception e)
             {
@@ -125,16 +142,17 @@ namespace BookingForm.Controllers
             return codex;
         }
         [Route("giohang/matbang")]
-        public IActionResult ImageMap(string floor = "")
+        public IActionResult ImageMap(string block = "")
         {
             try
             {
-                return View($"{floor}");
-                
+                var confirmed = _batch.Confirmations.Select(e => e.LocalCode).ToList();
+                ViewBag.ApartmentCode = _batch.Storage.Apartments.Where(e => !confirmed.Contains(e.LocalCode)).Select(e => e.LocalCode).ToList();
+                return View($"{block}");
             }
             catch (System.Exception)
             {
-                return View("Error", $"floor {floor} is invalid");
+                return View("Error", $"block {block} is invalid");
             }
         }
         [Route("client/code/generate")]
@@ -196,12 +214,12 @@ namespace BookingForm.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Client));
         }
-        public CatalogsController(BookingFormContext context, IRecaptchaService recaptcha)
-        {
-            _context = context;
-            _recaptcha = recaptcha;
-        }
-       
+        // public CatalogsController(BookingFormContext context, IRecaptchaService recaptcha)
+        // {
+        //     _context = context;
+        //     _recaptcha = recaptcha;
+        // }
+
         [Route("giohang/dot/{id:int}")]
         public async Task<IActionResult> GetApartments(int id)
         {
@@ -214,7 +232,7 @@ namespace BookingForm.Controllers
 
             return View("Apartment", apartments);
         }
-        
+
         public async Task<IActionResult> Details(int id)
         {
             var detail = await _context.Details.FindAsync(id);
@@ -292,7 +310,7 @@ namespace BookingForm.Controllers
                         c.Price = workSheet.Cells[i, 11].Value.ToString();
                         c.Area1 = workSheet.Cells[i, 12].Value.ToString();
                         // c.Location = workSheet.Cells[i, 12].Value.ToString();
-                        
+
                     }
                     catch (System.Exception)
                     {

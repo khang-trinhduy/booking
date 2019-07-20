@@ -132,3 +132,18 @@ Layout = "~/Views/Catalogs/ProductLayout.cshtml";
         </div>
     </div>
 </div>
+<script>
+    var anchors = $('.navbar-nav .dropdown .dropdown-menu a');
+    for (let i = 0; i < anchors.length; i++) {
+        const e = anchors[i];
+        if (e.text() == "S2.01") {
+            e.addClass('active-item');
+        }
+        if (e.classList.contains('active-item')) {
+            e.removeClass('active-item');
+        }
+    }
+    var apartments = @Html.Raw(Json.Serialize(@ViewBag.ApartmentCode));
+    console.log(apartments);
+    autocomplete(document.getElementById("search"), apartments);
+</script>

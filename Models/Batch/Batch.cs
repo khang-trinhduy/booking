@@ -12,6 +12,7 @@ namespace BookingForm.Models
         public List<RCode> RCodes { get; set; }
         public List<Reserved> Reservations { get; set; }
         public List<Confirmation> Confirmations { get; set; }
+        public List<Invoice> Invoices { get; set; }
         public bool IsRunning { get; private set; }
         public Batch()
         {
@@ -60,5 +61,7 @@ namespace BookingForm.Models
         public Confirmation GetConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
         
         public IEnumerable<Confirmation> GetConfirmations() => Confirmations;
+
+        public IEnumerable<Invoice> GetInvoices() => Invoices;
     }
 }

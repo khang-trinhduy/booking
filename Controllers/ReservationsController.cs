@@ -18,13 +18,8 @@ namespace BookingForm.Controllers
         {
             _recaptcha = recaptcha;
             _context = context;
-            _batch = _context.Batch.Include(e => e.Storage)
-                .ThenInclude(e => e.Apartments)
-                .ThenInclude(e => e.ApartmentDetails)
-                .Include(e => e.RCodes)
-                .Include(e => e.Reservations)
-                .Include(e => e.Confirmations)
-                .FirstOrDefault(e => e.IsRunning);
+            _batch = _context.GetRunningBatch();
+            
             if (_batch == null)
             {
                 throw new NullReferenceException(nameof(Batch));

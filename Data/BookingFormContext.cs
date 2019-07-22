@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using BookingForm.Models;
+using System.Linq;
 
 namespace BookingForm.Models
 {
@@ -90,6 +91,18 @@ namespace BookingForm.Models
         public DbSet<BookingForm.Models.Invoice> Invoice { get; set; }
         // public DbSet<Stage> Stage { get; set; }
         public DbSet<BookingForm.Models.Batch> Batch { get; set; }
+        public Batch GetRunningBatch() => Batch.Include(e => e.Confirmations)
+                        .Include(e => e.Storage)
+                        .ThenInclude(e => e.Apartments)
+                        .ThenInclude(e => e.ApartmentDetails)
+                        .Include(e => e.Reservations)
+                        .Include(e => e.Invoices)
+                        .ThenInclude(e => e.Confirmation)
+                        .Include(e => e.Invoices)
+                        .ThenInclude(e => e.Client)
+                        .Include(e => e.Invoices)
+                        .ThenInclude(e => e.Apartment)
+                        .FirstOrDefault(e => e.IsRunning);
     }
 
     public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>
@@ -97,7 +110,7 @@ namespace BookingForm.Models
         BookingFormContext IDesignTimeDbContextFactory<BookingFormContext>.CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<BookingFormContext>();
-            optionsBuilder.UseSqlServer<BookingFormContext>("Server=192.168.9.5;Database=annhome.booking;user id=khang; password=password");
+            optionsBuilder.UseSqlServer<BookingFormContext>("server=khang-pc\\sqlexpress;database=annhome.booking;trusted_connection=true");
             //192.168.9.5;Database=annhome.booking;user id=khang; password=password
             //khang-pc\\sqlexpress;database=annhome.booking;trusted_connection=true
             return new BookingFormContext(optionsBuilder.Options);

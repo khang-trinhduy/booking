@@ -4,14 +4,16 @@ using BookingForm.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookingForm.Migrations
 {
     [DbContext(typeof(BookingFormContext))]
-    partial class BookingFormContextModelSnapshot : ModelSnapshot
+    [Migration("20190722071425_add invoice to batch")]
+    partial class addinvoicetobatch
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

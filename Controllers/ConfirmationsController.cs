@@ -15,12 +15,11 @@ namespace BookingForm.Controllers
         public ConfirmationsController(BookingFormContext context)
         {
             _context = context;
-            _batch = _context.Batch.Include(e => e.Confirmations)
-                        .Include(e => e.Storage)
-                        .ThenInclude(e => e.Apartments)
-                        .ThenInclude(e => e.ApartmentDetails)
-                        .Include(e => e.Reservations)
-                        .FirstOrDefault(e => e.IsRunning);
+            _batch = _context.GetRunningBatch();
+            if (_batch == null)
+            {
+                throw new NullReferenceException(nameof(Batch));
+            }
         }
         public async Task<IActionResult> Get(int id)
         {

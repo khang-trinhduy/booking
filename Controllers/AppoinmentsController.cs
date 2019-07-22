@@ -264,7 +264,7 @@ namespace BookingForm.Controllers
             return View(appoinment);
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }

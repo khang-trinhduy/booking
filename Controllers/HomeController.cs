@@ -25,7 +25,6 @@ namespace BookingForm.Controllers
     {
         private readonly UserManager<Sale> _userManager;
         private readonly BookingFormContext _context;
-        private static Sale cur_sale;
         public IConfiguration Configuration { get; }
         //SaleAPI _api = new SaleAPI();
         //private IdentityApiController identityApiController;
@@ -587,13 +586,8 @@ namespace BookingForm.Controllers
             //}
         }
 
-        public IActionResult ViewProfile()
-        {
-            return RedirectToAction("ViewProfile", "Sales", new { cur_sale.Id });
-        }
-
         [HttpGet]
-        public async Task<IActionResult> Request()
+        public new async Task<IActionResult> Request()
         {
             var curUser = await _userManager.GetUserAsync(User);
             var authorized = await IsAuthorized(curUser, "Requests", "Create");
@@ -985,10 +979,7 @@ namespace BookingForm.Controllers
             {
 
                 sale.Meetings = await _context.appoinment.Where(m => m.Sale == sale).Where(ap => ap.IsActive == true).OrderBy(a => a.Contract).ToListAsync();
-                //await _userManager.UpdateAsync(sale);
-                int count = 0;
-                //var meetings = _context.appoinment.Where(b => b.sale.Contains(sale.Email)).OrderBy(m => m.Contract).ToList();
-                //count = meetings.Count;
+               
                 var meeting = _context.appoinment.First();
                 sale.Email = sale.Email.Trim();
                 ViewBag.sale = sale.Email;
@@ -998,7 +989,6 @@ namespace BookingForm.Controllers
                 return View(modal);
             }
             return RedirectToAction("Index");
-            //modal.appoinments = meetings;
 
         }
 

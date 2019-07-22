@@ -61,7 +61,7 @@ namespace BookingForm.Controllers
             return View(modal);
         }
 
-        public async Task<IActionResult> Request()
+        public new async Task<IActionResult> Request()
         {
             var curUser = await _userManager.GetUserAsync(User);
             var authorized = await IsAuthorized(curUser, "Requests", "List");
@@ -94,7 +94,7 @@ namespace BookingForm.Controllers
             return View(sale);
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }
@@ -172,7 +172,7 @@ namespace BookingForm.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save(string text, int page)
+        public IActionResult Save(string text, int page)
         {
            using (System.IO.StreamWriter file =
            new System.IO.StreamWriter(@"E:\Work\Customers-Rever\Customer.txt", true))

@@ -13,7 +13,6 @@ namespace BookingForm
     {
         private readonly UserManager<Sale> _userManager;
         private readonly BookingFormContext _context;
-        private static Sale sale;
         private readonly IHostingEnvironment _environment;
 
         public SalesController(BookingFormContext context, IHostingEnvironment environment, UserManager<Sale> userManager)
@@ -42,7 +41,7 @@ namespace BookingForm
         // GET: Sales
         public async Task<IActionResult> ViewProfile(int id)
         {
-            if (id == null)
+            if (id <= 0)
             {
                 return NotFound();
             }

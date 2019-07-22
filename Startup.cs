@@ -67,14 +67,12 @@ namespace BookingForm
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
             .AddSessionStateTempDataProvider();
 
-
             services.Configure<IdentityOptions>(options =>
             {
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.AllowedForNewUsers = true;
             });
-
             services.AddDbContext<BookingFormContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BookingFormContext")));
 

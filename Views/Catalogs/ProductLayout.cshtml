@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -23,12 +23,15 @@
             $('.navbar-nav li').find('li.active').removeClass('active');
             $(this).parent('div').parent('li').addClass('active');
         });
-        $('.navbar-brand').onclick(function () {
-            window.location.href = 'annhome.vn';
+        $('.navbar-brand').click(function () {
+            location.replace('www.annhome.vn');
         })
         
     </script>
     <style>
+        .navbar-brand:hover {
+            cursor: pointer;
+        }
         .autocomplete-items {
             position: absolute;
             border: 1px solid #d4d4d4;
@@ -233,7 +236,7 @@
     </style>
 
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="annhome.vn">Trang chủ</a>
+        <a class="navbar-brand">Trang chủ</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -281,6 +284,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="~/js/autocomplete.js"></script>
     <script>
         $(function () {
             $('.map').maphilight();

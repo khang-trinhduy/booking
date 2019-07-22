@@ -26,21 +26,13 @@ namespace BookingForm.Controllers
         private readonly UserManager<Sale> _userManager;
         private readonly BookingFormContext _context;
         public IConfiguration Configuration { get; }
-        //SaleAPI _api = new SaleAPI();
-        //private IdentityApiController identityApiController;
 
         public HomeController(BookingFormContext context, UserManager<Sale> userManager, IConfiguration configuration)
         {
-            //HttpClient client = new HttpClient();
-            //client.BaseAddress = new Uri("http://id.annhome.vn/");
-            //identityApiController = new IdentityApiController(client); 
+
             _context = context;
             _userManager = userManager;
             Configuration = configuration;
-
-            //StreamReader r = new StreamReader("sales.json");
-            //string json = r.ReadToEnd();
-            //sales = JsonConvert.DeserializeObject<List<Sale>>(json);
         }
 
         public async Task<bool> IsAuthorized(Sale sale, string resource, string operation)
@@ -132,13 +124,6 @@ namespace BookingForm.Controllers
 
         public async Task<IActionResult> RequestsControl()
         {
-            //var curUser = await _userManager.GetUserAsync(User);
-            //var authorized = await IsAuthorized(curUser, "Contracts", "Create");
-            //TempData["StatusMessage"] = TempData["StatusMessage"];
-            //if (!authorized)
-            //{
-            //    return View("AccessDenied");
-            //}
             var requests = await _context.Requests.Where(r => r.Subject == "Loan").ToListAsync();
             if (requests == null)
             {
@@ -571,19 +556,6 @@ namespace BookingForm.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("AddContact");
             }
-            //if (contact.note != null)
-            //{
-            //    contact.charges = 1.0;
-            //}
-            //if (contact.q6a == true || contact.q6b == true || contact.q6c == true || contact.q6d == true || contact.q6e == true ||
-            //    contact.q6f == true || contact.q6g == true || contact.q6h == true || contact.q6i == true || contact.q6j == true ||
-            //    contact.q6k == true || contact.q6l == true || contact.q6m == true)
-            //{
-            //    contact.charges = 1.0;
-            //}
-            //await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Home));
-            //}
         }
 
         [HttpGet]

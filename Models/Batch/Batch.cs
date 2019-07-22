@@ -63,5 +63,9 @@ namespace BookingForm.Models
         public IEnumerable<Confirmation> GetConfirmations() => Confirmations;
 
         public IEnumerable<Invoice> GetInvoices() => Invoices;
+        
+        public Invoice GetInvoice(int clientId) => Invoices != null ? Invoices.FirstOrDefault(e => e.Client.Id == Id) : null;
+
+        public Invoice GetInvoiceById(int id) => Invoices != null ? Invoices.FirstOrDefault(e => e.Id == id) : null;
     }
 }

@@ -21,15 +21,12 @@ namespace BookingForm.Controllers
                 throw new NullReferenceException(nameof(Batch));
             }
         }
-        public async Task<IActionResult> Get(int id)
+        public IActionResult Get(int id)
         {
             try
             {
-                var invoices = await _context.Invoice.Include(e => e.Client).Include(e => e.Apartment)
-                            .Include(e => e.Confirmation).ToListAsync();
-                var item = invoices.FirstOrDefault(e => e.Client.Id == id);
-                return View("Success", item);
-
+                var invoice = _batch.GetInvoice(id);
+                return View("Success", invoice);
             }
             catch (System.NullReferenceException e)
             {
@@ -89,15 +86,6 @@ namespace BookingForm.Controllers
             if (item == null)
             {
                 throw new NullReferenceException(nameof(Client));
-            }
-            return item;
-        }
-        private async Task<Invoice> GetInvoice(int id)
-        {
-            var item = await _context.Invoice.FirstOrDefaultAsync(e => e.Id == id);
-            if (item == null)
-            {
-                throw new NullReferenceException(nameof(Invoice));
             }
             return item;
         }
@@ -194,7 +182,7 @@ namespace BookingForm.Controllers
                 try
                 {
                     Invoice invoice = await CreateInvoice(item);
-                    _context.Invoice.Add(invoice);
+                    _batch.Invoices.Add(invoice);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Get), new { id = invoice.Client.Id });
 

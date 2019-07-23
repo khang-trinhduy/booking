@@ -13,6 +13,8 @@ namespace BookingForm.Models
         public string Direction { get; set; }
         [DisplayName("Diện tích")]
         public string Area { get; set; }
+
+
         [DisplayName("Số phòng ngủ")]
         public string NOBedroom { get; set; }
         [DisplayName("Số phòng vệ sinh")]
@@ -43,6 +45,20 @@ namespace BookingForm.Models
                 return false;
             }
             return this.Id == other.Id && this.LocalCode == other.LocalCode;
+        }
+        internal string GetName()
+        {
+            return $"{LocalCode} - {Name}";
+        }
+
+        internal string GetDetails()
+        {
+            return $"Hướng: {Direction} / View: {View} / Tầng: {Floor} / Diện tích: {Area}";
+        }
+
+        internal string GetRoom()
+        {
+            return $"Số phòng ngủ: {NOBedroom} / Số phòng vệ sinh: {NOWC}";
         }
 
         

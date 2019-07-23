@@ -1,4 +1,4 @@
-@model BookingForm.Models.Invoice
+@model BookingForm.Models.InvoiceViewModel
 
 @{
   Layout = null;
@@ -81,13 +81,13 @@
 <body>
 <hr />
 <hr />
-<h1 style="font-family:sans-serif; ">Chúc mừng khách hàng @Model.Client.FullName đã đặt mua thành công căn hộ số @Model.Apartment.LocalCode!</h1>
+<h1 style="font-family:sans-serif; ">@Model.Greeting</h1>
 
 <h3>Thông tin căn hộ</h3>
 <div id="order">
-    <p>@Model.Apartment.LocalCode - @Model.Apartment.Name</p>
-    <p>Số phòng ngủ: @Model.Apartment.NOBedroom / Số phòng vệ sinh: @Model.Apartment.NOWC</p>
-    <p>Hướng: @Model.Apartment.Direction / View: @Model.Apartment.View / Tầng: @Model.Apartment.Floor / Diện tích: @Model.Apartment.Area</p>
+    <p>@Model.Apartment</p>
+    <p>@Model.NORoom</p>
+    <p>@Model.RoomDetails</p>
 </div>
 
 <p>Bấm vào <a asp-action="Create">đây</a> để tiếp tục xác nhận.</p>

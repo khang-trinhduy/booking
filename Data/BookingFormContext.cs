@@ -92,6 +92,7 @@ namespace BookingForm.Models
         // public DbSet<Stage> Stage { get; set; }
         public DbSet<BookingForm.Models.Batch> Batch { get; set; }
         public Batch GetRunningBatch() => Batch.Include(e => e.Confirmations)
+                        .Include(e => e.RCodes)
                         .Include(e => e.Storage)
                         .ThenInclude(e => e.Apartments)
                         .ThenInclude(e => e.ApartmentDetails)

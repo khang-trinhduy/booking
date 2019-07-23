@@ -21,12 +21,18 @@ namespace BookingForm.Controllers
                 throw new NullReferenceException(nameof(Batch));
             }
         }
+        [Route("Confirmations/{id:int?}")]
         public IActionResult Get(int id)
         {
             try
             {
-                var invoice = _batch.GetInvoice(id);
-                return View("Success", invoice);
+                var invoice = _batch.GetInvoiceById(id);
+                if (invoice == null)
+                {
+                    return View("Error", $"Mã hóa đơn không tồn tại, vui lòng kiểm tra lại.");
+                }
+                var invoiceViewModel = new InvoiceViewModel(invoice);
+                return View("Success", invoiceViewModel);
             }
             catch (System.NullReferenceException e)
             {
@@ -34,6 +40,7 @@ namespace BookingForm.Controllers
             }
 
         }
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             try
@@ -183,8 +190,9 @@ namespace BookingForm.Controllers
                 {
                     Invoice invoice = await CreateInvoice(item);
                     _batch.Invoices.Add(invoice);
+                    _context.Entry(_batch).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Get), new { id = invoice.Client.Id });
+                    return RedirectToAction(nameof(Get), new { id = invoice.Id });
 
                 }
                 catch (NullReferenceException e)

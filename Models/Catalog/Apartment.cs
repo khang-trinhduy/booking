@@ -46,21 +46,11 @@ namespace BookingForm.Models
             }
             return this.Id == other.Id && this.LocalCode == other.LocalCode;
         }
-        internal string GetName()
-        {
-            return $"{LocalCode} - {Name}";
-        }
+        internal string GetName() => $"{LocalCode} - {Name}";
 
-        internal string GetDetails()
-        {
-            return $"Hướng: {Direction} / View: {View} / Tầng: {Floor} / Diện tích: {Area}";
-        }
+        internal string GetDetails() => $"Hướng: {Direction} / View: {View} / Tầng: {Floor} / Diện tích: {Area}";
 
-        internal string GetRoom()
-        {
-            return $"Số phòng ngủ: {NOBedroom} / Số phòng vệ sinh: {NOWC}";
-        }
-
+        internal string GetRoom() => $"Số phòng ngủ: {NOBedroom} / Số phòng vệ sinh: {NOWC}";
         
     }
 }

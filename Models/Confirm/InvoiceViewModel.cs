@@ -21,10 +21,7 @@ namespace BookingForm.Models
             RoomDetails = invoice.Apartment.GetDetails();
         }
 
-        private string CreateGreeting(Client client, Apartment apartment)
-        {
-            return $"Chúc mừng khách hàng {client.FullName} đã đặt mua thành công căn hộ số {apartment.LocalCode}!";
-        }
+        private string CreateGreeting(Client client, Apartment apartment) => $"Chúc mừng khách hàng {client.FullName} đã đặt mua thành công căn hộ số {apartment.LocalCode}!";
 
     }
 }

@@ -69,5 +69,6 @@ namespace BookingForm.Models
         public Invoice GetInvoice(int clientId) => Invoices != null ? Invoices.FirstOrDefault(e => e.Client.Id == clientId) : null;
 
         public Invoice GetInvoiceById(int id) => Invoices != null ? Invoices.FirstOrDefault(e => e.Id == id) : null;
+
     }
 }

@@ -44,23 +44,23 @@ namespace BookingForm.Models
             //TODO make all successful purchased customer invalid
             //TODO make all code invalid
         }
-        public bool ContainCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) != null : false;
+        public bool ContainCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code.ToUpper() == code.ToUpper()) != null : false;
         
         public bool ContainApartment(string apartmentCode) => Storage != null ? Storage.Contain(apartmentCode) : false;
 
-        public bool ContainConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode == apartmentCode) != null : false;
+        public bool ContainConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode.ToUpper() == apartmentCode.ToUpper()) != null : false;
         
-        public RCode GetCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) : null;
+        public RCode GetCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code.ToUpper() == code.ToUpper()) : null;
         
         public Apartment GetApartment(string apartmentCode) => Storage != null ? Storage.Get(apartmentCode) : null;
 
         public List<Apartment> GetApartments() => Storage != null ? Storage.Get() : null;
         
-        public Reserved GetReservation(string rcc) => Reservations != null ? Reservations.FirstOrDefault(e => e.RCC == rcc) : null;
+        public Reserved GetReservation(string rcc) => Reservations != null ? Reservations.FirstOrDefault(e => e.RCC.ToUpper() == rcc.ToUpper()) : null;
         
-        public IEnumerable<Reserved> GetReservations(string apartmentCode) => Reservations != null ? Reservations.Where(e => e.ApartmentCode == apartmentCode) : null;
+        public IEnumerable<Reserved> GetReservations(string apartmentCode) => Reservations != null ? Reservations.Where(e => e.ApartmentCode.ToUpper() == apartmentCode.ToUpper()) : null;
        
-        public Confirmation GetConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
+        public Confirmation GetConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode.ToUpper() == apartmentCode.ToUpper()) : null;
         
         public IEnumerable<Confirmation> GetConfirmations() => Confirmations;
 

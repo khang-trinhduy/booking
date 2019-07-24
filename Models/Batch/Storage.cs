@@ -37,7 +37,7 @@ namespace BookingForm.Models
             }
             return false;
         }
-        public bool Contain(string apartmentCode) => Apartments.FirstOrDefault(e => e.LocalCode == apartmentCode) != null;
+        public bool Contain(string apartmentCode) => Apartments.FirstOrDefault(e => e.LocalCode.ToUpper() == apartmentCode.ToUpper()) != null;
         public void Add(Apartment apartment)
         {
             if (Apartments == null)
@@ -51,7 +51,7 @@ namespace BookingForm.Models
             Apartments.Add(apartment);
 
         }
-        public Apartment Get(string apartmentCode) => Apartments != null ? Apartments.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
+        public Apartment Get(string apartmentCode) => Apartments != null ? Apartments.FirstOrDefault(e => e.LocalCode.ToUpper() == apartmentCode.ToUpper()) : null;
         
         public List<Apartment> Get() => Apartments != null ? Apartments : null;
         

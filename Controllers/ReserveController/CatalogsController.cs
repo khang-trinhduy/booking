@@ -37,6 +37,10 @@ namespace BookingForm.Controllers
             return new string(Enumerable.Repeat(chars, 12)
             .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+        public IActionResult Reserve(string apartmentCode)
+        {
+            return RedirectToAction("Create", "Reservations", new { apartmentCode = apartmentCode });
+        }
         public IActionResult Proceed(string code)
         {
             ViewBag.code = code;
@@ -49,6 +53,7 @@ namespace BookingForm.Controllers
             {
                 return View("Error", $"Căn hộ số {room} đã bán hoặc không tồn tại");
             }
+            ViewData["block"] = apartment.Block != null ? apartment.Block.Replace(".", "") : "S201"; 
             return View(apartment);
         }
         private bool IsAvailable(string apartmentCode)

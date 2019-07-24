@@ -44,13 +44,22 @@ namespace BookingForm.Models
             {
                 return false;
             }
-            return this.Id == other.Id && this.LocalCode.ToUpper() == other.LocalCode.ToUpper();
+            return this.Id == other.Id && this.LocalCode == other.LocalCode;
         }
-        internal string GetName() => $"{LocalCode} - {Name}";
+        internal string GetName()
+        {
+            return $"{LocalCode} - {Name}";
+        }
 
-        internal string GetDetails() =>$"Hướng: {Direction} / View: {View} / Tầng: {Floor} / Diện tích: {Area}";
+        internal string GetDetails()
+        {
+            return $"Hướng: {Direction} / View: {View} / Tầng: {Floor} / Diện tích: {Area}";
+        }
 
-        internal string GetRoom() => $"Số phòng ngủ: {NOBedroom} / Số phòng vệ sinh: {NOWC}";
+        internal string GetRoom()
+        {
+            return $"Số phòng ngủ: {NOBedroom} / Số phòng vệ sinh: {NOWC}";
+        }
 
         
     }

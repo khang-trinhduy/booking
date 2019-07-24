@@ -48,7 +48,7 @@ namespace BookingForm.Controllers
         }
         public IActionResult Detail(string room)
         {
-            var apartment = _batch.GetApartment(room);
+            var apartment = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == room.ToUpper());
             if (apartment == null)
             {
                 return View("Error", $"Căn hộ số {room} đã bán hoặc không tồn tại");

@@ -282,6 +282,7 @@ namespace BookingForm.Controllers
         public IActionResult Create(string apartmentCode = null)
         {
             ViewBag.code = apartmentCode != null ? apartmentCode : "";
+            ViewBag.block = apartmentCode != null ? apartmentCode.Substring(0, 5).Replace(".", "") : null;
             var confirmed = _batch.Confirmations.Select(e => e.LocalCode).ToList();
             ViewBag.ApartmentCode = _batch.Storage.Apartments.Where(e => !confirmed.Contains(e.LocalCode)).Select(e => e.LocalCode).ToList();
             return View();

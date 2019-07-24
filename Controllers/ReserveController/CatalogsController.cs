@@ -23,13 +23,7 @@ namespace BookingForm.Controllers
         public CatalogsController(BookingFormContext context)
         {
             _context = context;
-            _batch = _context.Batch.Include(e => e.Storage)
-                .ThenInclude(e => e.Apartments)
-                .ThenInclude(e => e.ApartmentDetails)
-                .Include(e => e.RCodes)
-                .Include(e => e.Reservations)
-                .Include(e => e.Confirmations)
-                .FirstOrDefault(e => e.IsRunning);
+            _batch = _context.GetRunningBatch();
             if (_batch == null)
             {
                 throw new NullReferenceException(nameof(Batch));
@@ -50,7 +44,7 @@ namespace BookingForm.Controllers
         }
         public IActionResult Detail(string room)
         {
-            var apartment = _context.Apartment.Include(e => e.ApartmentDetails).FirstOrDefault(e => e.LocalCode == room);
+            var apartment = _batch.Storage.Apartments.FirstOrDefault(e => e.LocalCode == room.ToUpper());
             if (apartment == null)
             {
                 return View("Error", $"Căn hộ số {room} đã bán hoặc không tồn tại");
@@ -59,7 +53,7 @@ namespace BookingForm.Controllers
         }
         private bool IsAvailable(string apartmentCode)
         {
-            var confirm = _context.Confirmation.FirstOrDefault(e => e.LocalCode == apartmentCode);
+            var confirm = _batch.GetConfirmation(apartmentCode);
             return confirm == null;
         }
         [Route("client/generate")]
@@ -221,14 +215,13 @@ namespace BookingForm.Controllers
         // }
 
         [Route("giohang/dot/{id:int}")]
-        public async Task<IActionResult> GetApartments(int id)
+        public IActionResult GetApartments(int id)
         {
-            var batch = await _context.Batch.Include(e => e.Storage).ThenInclude(e => e.Apartments).FirstOrDefaultAsync(e => e.IsRunning && e.Id == id);
-            if (batch == null)
+            if (_batch == null)
             {
                 return NotFound($"Cannot find any running batch with id {id}");
             }
-            var apartments = batch.Storage.Apartments.OrderBy(e => e.GlobalCode);
+            var apartments = _batch.GetApartments().OrderBy(e => e.GlobalCode);
 
             return View("Apartment", apartments);
         }

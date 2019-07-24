@@ -9,77 +9,80 @@ Layout = "~/Views/Catalogs/ProductLayout.cshtml";
     <div class="title col-12">
       <h1>MẶT BẰNG CĂN HỘ - VINHOMES GRAND PARK</h1>
     </div>
-    <div class="col-md-12 tab-can-ho-chi-tiet hidden-xs">
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <table class="table1 info">
+        <tbody>
+          <tr>
+            <td>TÒA</td>
+            <td>: @Model.Block</td>
+          </tr>
+          <tr>
+            <td>TẦNG</td>
+            <td>: @Model.Floor</td>
+          </tr>
+          <tr>
+            <td>CĂN HỘ</td>
+            <td>: @Model.Name<br>
+            </td>
+          </tr>
+          <tr>
+            <td>LOẠI CĂN HỘ</td>
+            <td>: @Model.ApartmentDetails.ApartmentType</td>
+          </tr>
+          <tr>
+            <td>DIỆN TÍCH THÔNG THỦY</td>
+            <td>: @Model.Area M²</td>
+          </tr>
+          <tr>
+            <td>DIỆN TÍCH TIM TƯỜNG</td>
+            <td>: @Model.Area1 M²</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table2 info">
+        <tbody>
+          <tr>
+            <td>Số phòng ngủ</td>
+            <td>: @Model.NOBedroom</td>
+          </tr>
+          <tr>
+            <td>Số phòng vệ sinh<br>
+            </td>
+            <td>: @Model.NOWC</td>
+          </tr>
+          <tr>
+            <td>Hướng<br>
+            </td>
+            <td>: @Model.Direction</td>
+          </tr>
+          <tr>
+            <td>View<br>
+            </td>
+            <td>: @Model.View</td>
+          </tr>
 
+        </tbody>
+      </table>
     </div>
-    <div class="col-md-12">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-4">
-            <table class="table1 info">
-              <tbody>
-                <tr>
-                  <td>TÒA</td>
-                  <td>: @Model.Block</td>
-                </tr>
-                <tr>
-                  <td>TẦNG</td>
-                  <td>: @Model.Floor</td>
-                </tr>
-                <tr>
-                  <td>CĂN HỘ</td>
-                  <td>: @Model.Name<br>
-                  </td>
-                </tr>
-                <tr>
-                  <td>LOẠI CĂN HỘ</td>
-                  <td>: @Model.ApartmentDetails.ApartmentType</td>
-                </tr>
-                <tr>
-                  <td>DIỆN TÍCH THÔNG THỦY</td>
-                  <td>: @Model.Area M²</td>
-                </tr>
-                <tr>
-                  <td>DIỆN TÍCH TIM TƯỜNG</td>
-                  <td>: @Model.Area1 M²</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table2 info">
-              <tbody>
-                <tr>
-                  <td>Số phòng ngủ</td>
-                  <td>: @Model.NOBedroom</td>
-                </tr>
-                <tr>
-                  <td>Số phòng vệ sinh<br>
-                  </td>
-                  <td>: @Model.NOWC</td>
-                </tr>
-                <tr>
-                  <td>Hướng<br>
-                  </td>
-                  <td>: @Model.Direction</td>
-                </tr>
-                <tr>
-                  <td>View<br>
-                  </td>
-                  <td>: @Model.View</td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-          <div class="col-3">
-            <img id="locate" src="@Model.Location">
-            <img id="compass" src="https://i.imgur.com/Uw1NU2P.png">
-          </div>
-          <div class="col-5">
-            <img id="room" src="@Model.ApartmentDetails.ImagePath" alt="">
-          </div>
-        </div>
-      </div>
+    <div class="col-3">
+      <img id="locate" src="@Model.Location">
+      <img id="compass" src="https://i.imgur.com/Uw1NU2P.png">
     </div>
-    <br>
+    <div class="col-5">
+      <img id="room" src="@Model.ApartmentDetails.ImagePath" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12-auto">
+      <button type="button" class="btn btn-primary">Chọn mua</button>
+    </div>
   </div>
 </div>
+</div>
+<script>
+  $('.btn.btn-primary').on("click", function () {
+    window.location = '@Url.Action("Reserve", new {apartmentCode = @Model.LocalCode})';
+  });
+</script>

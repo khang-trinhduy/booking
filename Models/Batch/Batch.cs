@@ -53,6 +53,8 @@ namespace BookingForm.Models
         public RCode GetCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) : null;
         
         public Apartment GetApartment(string apartmentCode) => Storage != null ? Storage.Get(apartmentCode) : null;
+
+        public List<Apartment> GetApartments() => Storage != null ? Storage.Get() : null;
         
         public Reserved GetReservation(string rcc) => Reservations != null ? Reservations.FirstOrDefault(e => e.RCC == rcc) : null;
         

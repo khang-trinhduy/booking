@@ -51,10 +51,9 @@ namespace BookingForm.Models
             Apartments.Add(apartment);
 
         }
-        public Apartment Get(string apartmentCode)
-        {
-            return Apartments.FirstOrDefault(e => e.LocalCode == apartmentCode);
-        }
+        public Apartment Get(string apartmentCode) => Apartments != null ? Apartments.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
+        
+        public List<Apartment> Get() => Apartments != null ? Apartments : null;
         
     }
 }

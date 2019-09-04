@@ -1,0 +1,140 @@
+#Quantity {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#Quantity:hover {
+    opacity: 1;
+}
+
+#Quantity::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+#Quantity::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.helper {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+
+@media all {
+    .page-break {
+        display: none;
+    }
+}
+
+@media print {
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+
+    .header {
+        display: block;
+        width: 100%;
+        height: 14px;
+    }
+
+    body {
+        font-size: 12.5pt !important;
+        font-family: 'Times New Roman', Times, serif !important;
+    }
+}
+
+
+#qrcode {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12%;
+    float: right;
+}
+
+.table-product-detail>tbody>tr>td:first-child {
+    padding-right: 0px !important;
+}
+
+.product-list,
+first {
+    list-style: lower-alpha;
+}
+
+.text-holder,
+first {
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+}
+
+.text-holder {
+    text-decoration-style: dotted;
+    width: 150px;
+    display: inline-block;
+}
+
+.text-note {
+    font-style: italic;
+}
+
+.text-holder-custom {
+    text-decoration-style: dotted;
+    width: 6px;
+    display: inline-block;
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+}
+
+table>tbody>tr>td:first-child {
+    padding-right: 50px;
+}
+
+.customer-table-info>tbody>tr>td:last-child {
+    /* border-style: dotted; */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border-bottom-width: 1px; */
+}
+
+.colon-helper {
+    display: inline-block;
+    width: 15px;
+}
+
+i {
+    padding-right: 23px;
+}
+
+ul {
+    margin: 0;
+}
+
+ul.dashed {
+    list-style-type: none;
+}
+
+ul.dashed>li {
+    text-indent: -5px;
+}
+
+ul.dashed>li:before {
+    content: "-";
+    text-indent: -5px;
+}

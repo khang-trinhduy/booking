@@ -16,7 +16,6 @@ using NPOI.XSSF.UserModel;
 using OfficeOpenXml;
 using Serilog;
 using System.Text.RegularExpressions;
-using System.Drawing.Printing;
 
 namespace BookingForm.Controllers
 {

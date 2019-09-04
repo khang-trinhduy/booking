@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using BookingForm.Models;
 using System.Linq;
 
 namespace BookingForm.Models
@@ -105,16 +103,5 @@ namespace BookingForm.Models
                         .ThenInclude(e => e.Apartment)
                         .FirstOrDefault(e => e.IsRunning);
     }
-
-    public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>
-    {
-        BookingFormContext IDesignTimeDbContextFactory<BookingFormContext>.CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<BookingFormContext>();
-            optionsBuilder.UseSqlServer<BookingFormContext>("server=khang-pc\\sqlexpress;database=annhome.booking;trusted_connection=true");
-            //192.168.9.5;Database=annhome.booking;user id=khang; password=password
-            //khang-pc\\sqlexpress;database=annhome.booking;trusted_connection=true
-            return new BookingFormContext(optionsBuilder.Options);
-        }
-    }
+    
 }

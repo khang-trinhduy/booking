@@ -1,0 +1,96 @@
+@model IEnumerable<BookingForm.Models.Download>
+    @{
+    Layout = null;
+    }
+
+    <!doctype html>
+    <html lang="en">
+
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="~/js/download.js" defer></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h3>Danh sách files: </h3>
+            <hr>
+            <ul style="list-style: decimal-leading-zero">
+
+                @foreach (var item in Model)
+                {
+
+                <li>
+                    @item.QRCode - <a target="_blank" asp-action="DownloadPdf"
+                        asp-route-code="@item.QRCode">Download</a><span class="helper"></span>
+                    -
+                    <a target="_blank" asp-action="ViewPdf" asp-route-code="@item.QRCode">View on new tab</a>
+                </li>
+                }
+            </ul>
+
+            <h3>Tải nhiều file</h3>
+            <p>Số lượng</p>
+            <div class="rad">
+                <input type="radio" id="three" name="drone" value="3" checked>
+                <label for="three">3</label>
+            </div>
+
+            <div class="rad">
+                <input type="radio" id="five" name="drone" value="5">
+                <label for="five">5</label>
+            </div>
+
+            <div class="rad">
+                <input type="radio" id="ten" name="drone" value="10">
+                <label for="ten">10</label>
+            </div>
+            <p>Từ file:</p>
+            <input type="text" id="firstFile" name="firstFile" value="1">
+            <p>Đến file:</p>
+            <input disabled type="text" id="lastFile" name="lastFile" value="3">
+            <br>
+            
+            <a id="multiple" asp-action="ViewMultiplePdfs" asp-route-from="fromFile" asp-route-code="dlwc" asp-route-to="toFile"><i class="fa fa-download" aria-hidden="true"></i>Tải xuống</a>
+            <br>
+            <a asp-action="Index">Trở lại</a>
+            <br>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <style>
+            p,
+            label {
+                font: 1rem 'Fira Sans', sans-serif;
+            }
+
+            input {
+                margin: .4rem;
+            }
+
+            .rad {
+                display: inline-block;
+                width: auto;
+            }
+            #multiple:hover {
+                text-decoration: none;
+            }
+        </style>
+    </body>
+
+    </html>

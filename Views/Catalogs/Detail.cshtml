@@ -1,98 +1,95 @@
 @model BookingForm.Models.Apartment
 @{
-    ViewData["title"] = "Chi tiết sản phẩm";
-    Layout = "~/Views/Catalogs/DumbLayout.cshtml";
+ViewData["title"] = "Thông tin căn hộ";
+Layout = "~/Views/Catalogs/ProductLayout.cshtml";
 }
 
-<partial name="StatusMessage" model="@ViewBag.msg" />
-<h1>Thông tin sản phẩm</h1>
-</hr>
-<div class="form-group">
-  <label for="">
-      Tên sản phẩm :
-  </label>
-  <p>@Model.Name</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.NOBedroom) :
-  </label>
-  <p>@Model.NOBedroom</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.NOWC) :
-  </label>
-  <p>@Model.NOWC</p>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="title col-12">
+      <h1>MẶT BẰNG CĂN HỘ - VINHOMES GRAND PARK</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-auto col-12">
+      <table class="table1 info">
+        <tbody>
+          <tr>
+            <td>TÒA</td>
+            <td>: @Model.Block</td>
+          </tr>
+          <tr>
+            <td>TẦNG</td>
+            <td>: @Model.Floor</td>
+          </tr>
+          <tr>
+            <td>CĂN HỘ</td>
+            <td>: @Model.Name<br>
+            </td>
+          </tr>
+          <tr>
+            <td>LOẠI CĂN HỘ</td>
+            <td>: @Model.ApartmentDetails.ApartmentType</td>
+          </tr>
+          <tr>
+            <td>DIỆN TÍCH THÔNG THỦY</td>
+            <td>: @Model.Area M²</td>
+          </tr>
+          <tr>
+            <td>DIỆN TÍCH TIM TƯỜNG</td>
+            <td>: @Model.Area1 M²</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table2 info">
+        <tbody>
+          <tr>
+            <td>Số phòng ngủ</td>
+            <td>: @Model.NOBedroom</td>
+          </tr>
+          <tr>
+            <td>Số phòng vệ sinh<br>
+            </td>
+            <td>: @Model.NOWC</td>
+          </tr>
+          <tr>
+            <td>Hướng<br>
+            </td>
+            <td>: @Model.Direction</td>
+          </tr>
+          <tr>
+            <td>View<br>
+            </td>
+            <td>: @Model.View</td>
+          </tr>
 
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Floor) :
-  </label>
-  <p>@Model.Floor</p>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2 col-12">
+      <img id="locate" src="@Model.Location">
+      <img id="compass" src="https://i.imgur.com/Uw1NU2P.png">
+    </div>
+    <div class="col-md-auto col-12">
+      <img id="room" src="@Model.ApartmentDetails.ImagePath" alt="">
+    </div>
+  </div>
+  <div class="row justify-content-start">
+    <div class="col-auto">
+      <button type="button" class="btn btn-primary">Chọn mua</button>
+    </div>
+    <div class="col-auto">
+      <button type="button" class="btn btn-link">Quay lại</button>
+    </div>
+  </div>
 </div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Direction) :
-  </label>
-  <p>@Model.Direction</p>
 </div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Area) :
-  </label>
-  <p>@Model.Area</p>
-</div>
-
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.Block) :
-  </label>
-  <p>@Model.Block</p>
-</div>
-<div class="form-group">
-  <label for="">
-      Giá :
-  </label>
-  <p>@Model.Price</p>
-</div>
-
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.LocalCode) :
-  </label>
-  <p>@Model.LocalCode</p>
-</div>
-<div class="form-group">
-  <label for="">
-      @Html.DisplayNameFor(model => model.GlobalCode) :
-  </label>
-  <p>@Model.GlobalCode</p>
-</div>
-<div class="hideable">
-  <input type="button" class="btn btn-default" value="Đặt mua" onclick="location.href='@Url.Action("Proceed", "Catalogs", new {code = @Model.LocalCode})'" />
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $('#btn').on('click', function() {
-      swal({
-      title: "Bạn có chắc chắn chọn mua căn này?",
-      text: "Mỗi mã chỉ được sử dụng một lần. Quý khách sẽ không được thay đổi căn sau khi đã chọn!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willBuy) => {
-      if (willBuy) {
-        swal("Hệ thống đã nhận được yêu cầu của bạn, đang tiến hành xử lý!", {
-          icon: "success",
-        });
-        $('#form').submit();
-      } else {
-        
-      }
-    });
-    });
+  $('.btn.btn-primary').on("click", function () {
+    window.location = '@Url.Action("Reserve", new {apartmentCode = @Model.LocalCode})';
+  });
+  $('.btn.btn-link').on('click', function () {
+    var block = '@Model.Block'.replace('.', '');
+    window.location = '@Url.Action("ImageMap", new {block = @ViewData["block"]})';
+  });
 </script>

@@ -1,0 +1,491 @@
+﻿@model Byte[]
+@{
+ViewData["Title"] = "HĐ bản nháp -";
+Layout=null;
+}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>PHIẾU ĐĂNG KÝ GIỮ CHỖ - DỰ ÁN VINHOMES GRAND PARK</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/print.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="header"></div> -->
+        <img style="display:block;margin-left:auto;margin-right:auto;" src="~/images/logo.png"
+            asp-append-version="true" />
+        <div>
+            <h4 style="font-weight:bold;text-align:center">PHIẾU ĐĂNG KÝ GIỮ CHỖ - DỰ ÁN VINHOMES GRAND PARK</h4>
+            <p style="font-style:italic; font-weight:bold; text-align:center">( Số: ......./2019/DKGC-VHGP )</p>
+            <h6 style="font-style:italic; text-align:right">TP. Hồ Chí Minh, ngày........tháng........năm........</h6>
+            <h5 style="font-weight:bold; text-align:left">BÊN A: CÔNG TY CỔ PHẦN NHÀ ANN HOME</h5>
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>Trụ sở</td>
+                        <td>: <span class="colon-helper"></span> 311 K25 đường số 8, khu phố 1, phường An Phú, Quận 2,
+                            TP. Hồ
+                            Chí Minh</td>
+                    </tr>
+                    <tr>
+                        <td>Đ/c giao dịch</td>
+                        <td>: <span class="colon-helper"></span>Khu nhà mẫu Vinhomes Grand Park, tầng 3 Vincom Mega
+                            Mall, Quận
+                            2, TP.HCM</td>
+                    </tr>
+                    <tr>
+                        <td>Mã số thuế</td>
+                        <td>: <span class="colon-helper"></span>0314251205</td>
+                    </tr>
+                    <tr>
+                        <td>Đại diện bởi</td>
+                        <td>: <span class="colon-helper"></span>Bà Lê Thị Thu Hằng <span
+                                style="display:inline-block; width: 100px;"></span>
+                            Chức vụ: Tổng Giám Đốc
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Điện thoại</td>
+                        <td>: <span class="colon-helper"></span>0867.3014.666<span
+                                style="display:inline-block; width: 142px;"></span>
+                            Hotline: 0902 969 169
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>: <span class="colon-helper"></span>hello@annhome.vn<span
+                                style="display:inline-block; width: 112px;"></span>
+                            Website: https://www.annhome.vn
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top:3pt; margin-bottom:3pt; text-align:justify; line-height:115%; font-size:12.5pt;">
+                <p style="font-style:italic">(Sau đây gọi là Bên A)</p>
+                <h5 style="font-weight:bold; text-align:left">BÊN B: THÔNG TIN KHÁCH HÀNG</h5>
+                <table cellpadding="0" cellspacing="0" style="width:504.35pt; border-collapse:collapse;">
+                    <tbody>
+                        <tr>
+                            <td style="width:107.1pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Ông/bà*</span>
+                                </p>
+                            </td>
+                            <td style="width:3.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>:</span></p>
+                            </td>
+                            <td colspan="5"
+                                style="width:355.5pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;">
+                                    <span>……………………………………………………………………………</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:107.1pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Số
+                                        CMND/CC/HC*</span></p>
+                            </td>
+                            <td style="width:3.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>:</span></p>
+                            </td>
+                            <td style="width:84pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>…………………</span>
+                                </p>
+                            </td>
+                            <td style="width:49.9pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Ngày cấp:</span>
+                                </p>
+                            </td>
+                            <td style="width:50.6pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>…………</span></p>
+                            </td>
+                            <td style="width:45.45pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Nơi cấp:</span>
+                                </p>
+                            </td>
+                            <td style="width:74.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>……………..</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:107.1pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Hộ khẩu thường
+                                        trú*</span>
+                                </p>
+                            </td>
+                            <td style="width:3.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>:</span></p>
+                            </td>
+                            <td colspan="5"
+                                style="width:355.5pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;">
+                                    <span>……………………………………………………………………………</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:107.1pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Địa chỉ liên
+                                        hệ*</span>
+                                </p>
+                            </td>
+                            <td style="width:3.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>:</span></p>
+                            </td>
+                            <td colspan="5"
+                                style="width:355.5pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;">
+                                    <span>……………………………………………………………………………</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:107.1pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Điện
+                                        thoại*</span></p>
+                            </td>
+                            <td style="width:3.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>:</span></p>
+                            </td>
+                            <td colspan="5"
+                                style="width:355.5pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;">
+                                    <span>………………………………</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Email:
+                                        ………………………………</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:107.1pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>Nhu cầu vay
+                                        NH</span></p>
+                            </td>
+                            <td style="width:3.35pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span>:</span></p>
+                            </td>
+                            <td colspan="5"
+                                style="width:355.5pt; padding-right:5.4pt; padding-left:7.4pt; vertical-align:top;">
+                                <p style="margin-bottom:0pt; text-align:justify;"><span
+                                        style="font-family:'Wingdings 2'; color:#00000a;"></span><span>&nbsp;Có</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                        style="font-family:'Wingdings 2'; color:#00000a;"></span><span>&nbsp;Không</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-style:italic">(Sau đây gọi là Bên B)</p>
+                <p style="margin-top:6pt; margin-bottom:6pt; text-align:justify; line-height:115%; font-size:12pt;">
+                    <span style="font-family:'Times New Roman'; color:#00000a;">Các Bên thống nhất lập và ký kết Phiếu
+                        đăng ký giữ chỗ này sau khi có xác nhận bên B thanh toán<br>đầy đủ số tiền giữ chỗ cho bên A thông
+                        qua chuyển khoản hoặc tiền mặt để đảm bảo việc tham gia<br>đăng ký mua sản phẩm bất động sản tại Dự
+                        Án Vinhomes Grand Park với các nội dung sau đây:</span></p>
+                <h5 style="font-weight:bold">Điều 1. Nội dung thỏa thuận</h5>
+                <p
+                    style="margin-top:0pt; margin-left:36pt; margin-bottom:0pt; text-indent:-36pt; text-align:justify; line-height:115%;">
+                    <strong><span>1.1.</span></strong><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span>Thông
+                            tin loại sản phẩm bất động sản
+                            đăng
+                            ký tham gia chọn mua:</span></strong></p>
+                <p style="margin-left:39pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <strong><em><span>a)</span></em></strong><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><em><span>Căn
+                                hộ:&nbsp;</span></em></strong>
+                </p>
+                <p style="margin-left:57pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <span>-</span><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Số
+                        lượng căn:
+                        ………..</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Số
+                        PN: …………………………………………………..</span></p>
+                <p style="margin-left:57pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <span>-</span><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Hướng:…………………...</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>View:
+                        ……………………………………………………</span></p>
+                <p style="margin-left:57pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <span>-</span><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Loại
+                        căn hộ:
+                        …………………………………………………………………………….</span></p>
+                <p style="margin-left:39pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <strong><em><span>b)</span></em></strong><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><em><span>Shophouse/shop
+                                chân
+                                đế:</span></em></strong></p>
+                <p style="margin-left:57pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <span>-</span><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Số
+                        lượng căn:
+                        ………</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Hướng:……………</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span>View:
+                        ……………………</span></p>
+                <p style="margin-left:39pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <strong><em><span>c)</span></em></strong><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><em><span>Thấp
+                                tầng:&nbsp;</span></em></strong>
+                </p>
+                <p style="margin-left:57pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify;">
+                    <span>-</span><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Số
+                        lượng căn:
+                        ………</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>Loại:&nbsp;</span><span
+                        style="font-family:'Wingdings 2'; color:#00000a;"></span><span>&nbsp;Nhà
+                        Phố</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                        style="font-family:'Wingdings 2'; color:#00000a;"></span><span>&nbsp;NPTM</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                        style="font-family:'Wingdings 2'; color:#00000a;"></span><span>&nbsp;Biệt
+                        Thự</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                        style="font-family:'Wingdings 2'; color:#00000a;"></span><span>&nbsp;Dinh thự</span></p>
+                <p style="margin-left:36pt; margin-bottom:0pt; text-indent:-36pt; text-align:justify;">
+                    <strong><span>1.2.</span></strong><span
+                        style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span
+                            style="font-family:'Times New Roman'; color:#0f0c0c;">Số tiền giữ chỗ đặt mua:
+                            ………………………………………………………………..….</span></strong></p>
+                <p style="margin-left:36pt; margin-bottom:0pt; text-align:justify;">
+                    <span style="font-family:'Times New Roman'; color:#0f0c0c;">(</span><span
+                        style="font-family:'Times New Roman'; color:#0f0c0c;">Bằng chữ:</span><span
+                        style="font-family:'Times New Roman'; color:#0f0c0c;">&nbsp;&nbsp;</span><span
+                        style="font-family:'Times New Roman'; color:#0f0c0c;">………………………………………………………………………………&nbsp;</span><span
+                        style="font-family:'Times New Roman'; color:#0f0c0c;">)&nbsp;</span></p>
+                <div class="page-break"></div>
+                <div class="header"></div>
+                <p style="margin-left:36pt; margin-bottom:0pt; text-align:justify;">
+                    <span style="font-family:'Times New Roman'; color:#0f0c0c;">Thời gian tính quyền ưu tiên của khách
+                        hàng sẽ
+                        căn cứ vào thời gian đăng ký và ký phiếu thu tiền mặt hoặc thời gian nhận chuyển khoản.</span>
+                </p>
+
+                <h5 style="font-weight:bold">Điều 2. Phương thức thanh toán</h5>
+                <ul style="list-style: none">
+                    <li>Bên B thanh toán tiền mặt hoặc chuyển khoản vào tài khoản Ngân hàng sau đây:
+                        <ul style="list-style: none">
+                            <li>
+                                <p style="display:inline">- Tên tài khoản:</p>
+                                <p style="display:inline; font-weight:bold;"> Công ty Cổ Phần
+                                    Nhà ANN HOME</p>
+                            </li>
+                            <li>
+                                <p style="font-weight:bold; text-decoration:underline;">
+                                    Tại Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)
+                                </p>
+                                <ul style="list-style:none;">
+                                    <li>
+                                        <p style="display:inline"><span style="font-family:Wingdings">&#x00d8;</span> Số
+                                            tài
+                                            khoản<span style="display:inline-block; width: 60px;"></span>:</p>
+                                        <p style="display:inline; font-weight:bold"> 19134476313020</p>
+                                    </li>
+                                    <li>
+                                        <p style="display:inline"><span style="font-family:Wingdings">&#x00d8;</span>
+                                            Tên
+                                            Ngân
+                                            hàng<span style="display:inline-block; width: 41px;"></span>:</p>
+                                        <p style="display:inline; font-weight:bold"> Techcombank - CN Sài Gòn</p>
+                                    </li>
+                                </ul>
+                                <p style="font-weight:bold; text-decoration:underline;">Tại NH TMCP Ngoại Thương Việt
+                                    Nam
+                                    (Vietcombank)</p>
+                                <ul style="list-style:none">
+                                    <li>
+                                        <p style="display:inline"><span style="font-family:Wingdings">&#x00d8;</span> Số
+                                            tài
+                                            khoản<span style="display:inline-block; width: 60px;"></span>:</p>
+                                        <p style="display:inline; font-weight:bold"> 0071001314633</p>
+                                    </li>
+                                    <li>
+                                        <p style="display:inline"><span style="font-family:Wingdings">&#x00d8;</span>
+                                            Tên
+                                            Ngân
+                                            hàng<span style="display:inline-block; width: 41px;"></span>:</p>
+                                        <p style="display:inline; font-weight:bold"> Vietcombank - CN TP. HCM</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p style="display:inline">- Nội dung: </p>
+                                <p style="display:inline; font-weight:bold;">[Tên khách hàng] [Số CMND/CC/HC] giữ chỗ
+                                    VHGP
+                                </p>
+                            </li>
+                        </ul>
+                    <li>
+                        <p class="text-note">*Lưu ý: trao đổi kỹ với NVKD về quy cách chuyển tiền trước khi thực hiện.
+                        </p>
+                    </li>
+                </ul>
+
+                <h5 style="font-weight:bold">Điều 3. Điều khoản chung</h5>
+                <ul class="dashed">
+                    <li>
+                        Phiếu đăng ký giữ chỗ này không phải là phiếu đặt cọc, không có giá trị pháp lý thay thế<br>phiếu
+                        đặt
+                        cọc.
+                    </li>
+                    <li>
+                        Với Phiếu đăng ký giữ chỗ này, Bên A nhận lời đặt giữ chỗ sản phẩm/căn hộ nêu trên cho<br>Bên B khi
+                        Chủ đầu tư mở bán chính thức. Bên A sẽ thông báo giá bán chính thức tới Bên B<br>khi thỏa mãn các
+                        điều
+                        khoản của Chủ đầu tư và giá trị giữ chỗ sẽ trở thành tiền đặt cọc.
+                    </li>
+                    <li>
+                        Phiếu đăng ký giữ chỗ này sẽ hết hiệu lực ngay khi Bên B chọn được căn hộ và số tiền giữ<br>chỗ
+                        được
+                        chuyển thành số tiền đặt cọc hoặc khi bên B đã chính thức chuyển sang ký hợp<br>đồng/VBTT với chủ
+                        đầu
+                        tư.
+                    </li>
+                    <li>
+                        Nếu bên B không đồng ý với giá bán căn hộ Chủ đầu đưa ra thì Bên A sẽ trả lại toàn bộ giá<br>trị
+                        giữ
+                        chỗ cho Bên B trong vòng 07 ngày làm việc kể từ ngày Bên A nhận được đầy đủ hồ<br>sơ đề nghị hoàn
+                        tiền
+                        của Bên B.
+                    </li>
+                    <li>
+                        Phiếu giữ chỗ được lập trên cơ sở tự nguyện, không bị lừa dối hoặc ép buộc giữa các Bên.
+                    </li>
+                    <li>
+                        Phiếu này được lập thành 02 (hai) bản và có giá trị như nhau. Bên A giữ 01 bản, Bên B giữ<br>01 bản
+                        để làm cơ sở thực hiện.
+                    </li>
+                </ul>
+
+                <span style="display:inline-block; width:13.6%"></span>
+                <h5 style="text-align: left; width:35%; display: inline-block;font-weight:bold;">ĐẠI DIỆN BÊN A</h5>
+                <h5 style="text-align: right; width:35%;  display: inline-block;font-weight:bold;">ĐẠI DIỆN BÊN B</h5>
+                <br />
+                <span style="display:inline-block; width:12.5%"></span>
+                <p style="text-align: left;font-style:italic; width:35%; display: inline-block;">(ký và ghi rõ họ tên)
+                </p>
+                <span style="display:inline-block; width:2%"></span>
+                <p style="text-align: right;font-style:italic; width:35%;  display: inline-block;">(ký và ghi rõ họ tên)
+                </p>
+                <span style="display:block; height: 100px;"></span>
+                <span style="display:inline-block; width:12.5%"></span>
+                <h5 style="text-align: left; width:35%; display: inline-block;font-weight:bold;">LÊ THỊ THU HẰNG</h5>
+                <span style="display:inline-block; width:2%"></span>
+                <h5 style="text-align: right; width:35%;  display: inline-block;font-weight:bold;"></h5>
+                <span style="display:inline-block; height: 15px;"></span>
+                <h5 style="font-weight:bold; text-align:center">Nhân viên kinh doanh</h5>
+                <p style="font-style:italic; text-align:center">(ký và ghi rõ họ tên)</p>
+                @{
+                if(Model != null)
+                {
+                <img id="qrcode" src="@String.Format(" data:image/png;base64,{0} ", Convert.ToBase64String(Model))"
+                    alt="QRCode" />
+                }
+                }
+                <!-- <span style="display:inline-block; height: 80px;"></span>
+            <h5 style="font-weight: bold;  text-align:center"></h5> -->
+        </div>
+
+        <div id="log"></div>
+        <style>
+            .table-product-detail>tbody>tr>td:first-child {
+                padding-right: 0px !important;
+            }
+
+            .product-list,
+            first {
+                list-style: lower-alpha;
+            }
+
+            .text-holder,
+            first {
+                border-bottom: 1px dotted #000;
+                text-decoration: none;
+            }
+
+            .text-holder {
+                text-decoration-style: dotted;
+                width: 150px;
+                display: inline-block;
+            }
+
+            .text-note {
+                font-style: italic;
+            }
+
+            .text-holder-custom {
+                text-decoration-style: dotted;
+                width: 6px;
+                display: inline-block;
+                border-bottom: 1px dotted #000;
+                text-decoration: none;
+            }
+
+            body {
+                < !-- font-family: initial !important;
+                -->
+            }
+
+            table>tbody>tr>td:first-child {
+                padding-right: 50px;
+            }
+
+            .customer-table-info>tbody>tr>td:last-child {
+                /* border-style: dotted;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom-width: 1px; */
+                /* text-decoration-style: dotted; */
+            }
+
+            .colon-helper {
+                display: inline-block;
+                width: 15px;
+            }
+
+            i {
+                padding-right: 23px;
+            }
+
+            ul {
+                margin: 0;
+            }
+
+            ul.dashed {
+                list-style-type: none;
+            }
+
+            ul.dashed>li {
+                text-indent: -5px;
+            }
+
+            ul.dashed>li:before {
+                content: "-";
+                text-indent: -5px;
+            }
+        </style>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+
+</html>

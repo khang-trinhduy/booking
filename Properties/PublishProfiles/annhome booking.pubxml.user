@@ -12,10 +12,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <DestinationConnectionStrings Include="BookingFormContext">
       <Value>Data Source=192.168.9.5%3bInitial Catalog=annhome.booking%3bPersist Security Info=True%3bUser ID=khang%3bPassword=khang</Value>
     </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="BookingForm.Models.BookingFormContext">
-      <Value>Data Source=192.168.9.5%3bInitial Catalog=annhome.booking%3bPersist Security Info=True%3bUser ID=khang%3bPassword=khang</Value>
-    </EFMigrations>
+    <DestinationConnectionStrings Include="PrintContext">
+      <Value>Server=192.168.9.5%3bDatabase=annhome.booking%3bUser Id=khang%3b Password=khang</Value>
+    </DestinationConnectionStrings>
   </ItemGroup>
 </Project>

@@ -14,6 +14,9 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
 using Microsoft.Extensions.Logging;
+using jsreport.Binary;
+using jsreport.Local;
+using jsreport.AspNetCore;
 
 namespace BookingForm
 {
@@ -30,12 +33,6 @@ namespace BookingForm
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => true;
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
 
             services.Configure<RecaptchaSettings>(Configuration.GetSection("RecaptchaSettings"));
             services.AddTransient<IRecaptchaService, RecaptchaService>();
@@ -67,17 +64,21 @@ namespace BookingForm
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
             .AddSessionStateTempDataProvider();
 
-
+            services.AddJsReport(new LocalReporting()
+                .UseBinary(JsReportBinary.GetBinary())
+                .AsUtility()
+                .Create());
+            
             services.Configure<IdentityOptions>(options =>
             {
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.AllowedForNewUsers = true;
             });
-
             services.AddDbContext<BookingFormContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BookingFormContext")));
-
+            services.AddDbContext<PrintContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PrintContext")));
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             services.AddAuthentication(options =>
@@ -104,6 +105,8 @@ namespace BookingForm
                     options.Scope.Add("booking");
                     //options.Scope.Add("offline_access");
                 });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

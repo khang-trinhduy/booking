@@ -1,65 +1,93 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<Sale> SignInManager
-@inject UserManager<Sale> UserManager
-@{ 
-    
-}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] Hệ thống AnnSmart</title>
-    <environment include="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-        <link rel="stylesheet" href="~/css/site.css" />
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
-</environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        @*<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>*@
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </environment>
-    <environment include="Production">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
-</environment>
-    <environment exclude="Production">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
-</head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" asp-action="Index"><img src="~/images/Ann_Logo.png" alt="AnnHome" style="width:80px; margin-right:20px; height:35px" />AnnSmart</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <li class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    @if (SignInManager.IsSignedIn(User))
-                    {
-                        var curUser = await UserManager.GetUserAsync(User);
-                        if (User.IsInRole("Manager"))
-                        {
+    @inject UserManager<Sale> UserManager
+        @{
+
+        }
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>@ViewData["Title"] Hệ thống AnnSmart</title>
+            <environment include="Development">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+                <link rel="stylesheet" href="~/css/site.css" />
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+                    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+                    crossorigin="anonymous">
+            </environment>
+            <environment exclude="Development">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+                @*
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>*@
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+            </environment>
+            <environment include="Production">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+                    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+                    crossorigin="anonymous">
+            </environment>
+            <environment exclude="Production">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+            </environment>
+        </head>
+
+        <body>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" asp-action="Index"><img src="~/images/Ann_Logo.png" alt="AnnHome"
+                            style="width:80px; margin-right:20px; height:35px" />AnnSmart</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <li class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                            var curUser = await UserManager.GetUserAsync(User);
+                            if (User.IsInRole("Manager"))
+                            {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navba" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navba" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Quản lý
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navba">
                                     <a class="dropdown-item" href="/Managers/Employee">Nhân sự</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Managers/Request">Yêu cầu<span class="badge badge-pill badge-light">@curUser.NOfRequests</span></a>
+                                    <a class="dropdown-item" href="/Managers/Request">Yêu cầu<span
+                                            class="badge badge-pill badge-light">@curUser.NOfRequests</span></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/Managers/Chart">Biểu đồ</a>
                                     <div class="dropdown-divider"></div>
@@ -68,96 +96,68 @@
                                     <a class="dropdown-item" href="/Home/RequestsControl">Tư vấn vay</a>
                                 </div>
                             </li>
-                            @*<li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navb" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Hợp đồng giữ chỗ
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navb">
-                                    <a class="dropdown-item" href="/Appoinments/Create">Tạo mới</a>
-                                    <div class="dropdown-divider"></div>
-                                    @*<a class="dropdown-item" href="#">Follow</a>
-                        <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Home/Dashboard">Hợp đồng của bạn<span class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Home/Requests">Yêu cầu của bạn</a>
-                                </div>
+                            <li>
+                                <a class="nav-link" href="prints">In file</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Trợ giúp
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/Home/Tutor">Tạo hợp đồng giữ chỗ</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Home/Request">Tạo yêu cầu</a>
-                                </div>
-                            </li>*@
 
 
-                        }
-                        else if (User.IsInRole("Administrator"))
-                        {
+                            }
+                            else if (User.IsInRole("Administrator"))
+                            {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="Admin/Dashboard" id="navba" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="Admin/Dashboard" id="navba" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Quản lý
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navba">
-                                    <a class="dropdown-item" href="/Admin/Dashboard">Hợp đồng giữ chỗ<span class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
+                                    <a class="dropdown-item" href="/Admin/Dashboard">Hợp đồng giữ chỗ<span
+                                            class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Admin/GetRequest">Yêu cầu<span class="badge badge-pill badge-light">@curUser.NOfRequests</span></a>
+                                    <a class="dropdown-item" href="/Admin/GetRequest">Yêu cầu<span
+                                            class="badge badge-pill badge-light">@curUser.NOfRequests</span></a>
                                     <div class="dropdown-divider"></div>
                                     <label class="dropdown-header">Excel</label>
                                     <a class="dropdown-item" href="/Admin/Export">Lưu file</a>
-                                    @*<a class="dropdown-item" href="/Admin/_loans">Save all contracts of customers wishing to borrow</a>*@
+
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/Admin/Summary">Kết sổ</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/Admin/RequestPrint">In hợp đồng giữ chỗ(bản mẫu)</a>
                                 </div>
                             </li>
+                            <li>
+                                <a class="nav-link" href="prints">In file</a>
+                            </li>
                             <li class="divider-vertical"></li>
 
-                            @*<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navba" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Appointment
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navba">
-                        <a class="dropdown-item" href="/Home/Dashboard">Contracts</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/Appoinments/Create">Book</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/Home/Dashboard">Review</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/Home/Requests">Requests</a>
-                    </div>
-                </li>*@
+
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Trợ giúp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/Admin/Tutor">Dành cho Admin</a>
                                     <div class="dropdown-divider"></div>
-                                    @*<a class="dropdown-item" href="/Home/Tutor">Sale</a>*@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/Home/Request">Quản lý yêu cầu</a>
                                 </div>
                             </li>
 
-                        }
-                        else if (User.IsInRole("Leader") || User.IsInRole("TeamLeader"))
-                        {
+                            }
+                            else if (User.IsInRole("Leader") || User.IsInRole("TeamLeader"))
+                            {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navbarDropdown1"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Trang chủ
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                                     <a class="dropdown-item" href="/Appoinments/Create">Tạo hợp đồng giữ chỗ</a>
 
-                                    @*<div class="dropdown-divider"></div>*@
-                                    @* <a class="dropdown-item" href="#">Follow</a>*@
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Home/Dashboard">Hợp đồng của bạn<span class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
+                                    <a class="dropdown-item" href="/Home/Dashboard">Hợp đồng của bạn<span
+                                            class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/Home/Manager">Nhóm của bạn</a>
                                     <div class="dropdown-divider"></div>
@@ -165,7 +165,8 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Trợ giúp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -174,25 +175,28 @@
                                     <a class="dropdown-item" href="/Home/Request">Tạo yêu cầu</a>
                                 </div>
                             </li>
-                        }
-                        else if (User.IsInRole("Sale"))
-                        {
+                            }
+                            else if (User.IsInRole("Sale"))
+                            {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navb" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navb" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Trang chủ
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navb">
                                     <a class="dropdown-item" href="/Appoinments/Create">Tạo hợp đồng giữ chỗ</a>
                                     <div class="dropdown-divider"></div>
                                     @*<a class="dropdown-item" href="#">Follow</a>
-                        <div class="dropdown-divider"></div>*@
-                                    <a class="dropdown-item" href="/Home/Dashboard">Hợp đồng của bạn<span class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
+                                    <div class="dropdown-divider"></div>*@
+                                    <a class="dropdown-item" href="/Home/Dashboard">Hợp đồng của bạn<span
+                                            class="badge badge-pill badge-light">@curUser.NOfMeetings</span></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/Home/Requests">Yêu cầu của bạn</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Trợ giúp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -201,40 +205,46 @@
                                     <a class="dropdown-item" href="/Home/Request">Cách tạo yêu cầu</a>
                                 </div>
                             </li>
-                        }
-                        else if (User.IsInRole("Collaborator"))
-                        {
+                            }
+                            else if (User.IsInRole("Collaborator"))
+                            {
                             <li>
-                                <a class="nav-link" href="/Home/AddContact" id="navb" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="/Home/AddContact" id="navb" role="button" aria-haspopup="true"
+                                    aria-expanded="false">
                                     Thêm KH
                                 </a>
 
                             </li>
                             <li>
-                                <a class="nav-link" href="/Home/Contacts" id="navb" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="/Home/Contacts" id="navb" role="button" aria-haspopup="true"
+                                    aria-expanded="false">
                                     Khách của bạn
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="/Home/Dashboard" id="navb" role="button" aria-haspopup="true" aria-expanded="false">
-                                   Hợp đồng của bạn
+                                <a class="nav-link" href="/Home/Dashboard" id="navb" role="button" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Hợp đồng của bạn
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Trợ giúp
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    @*<a class="dropdown-item" href="/Home/Tutor">How to book a new appointment with AnnSmart</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/Home/Request">Request</a>*@
+                                    @*<a class="dropdown-item" href="/Home/Tutor">How to book a new appointment with
+                                        AnnSmart</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/Home/Request">Request</a>*@
                                 </div>
                             </li>
-                        }
-                        else if (User.IsInRole("TelSale"))
-                        {
+                            }
+                            else if (User.IsInRole("TelSale"))
+                            {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="/Home/Dashboard" id="navbarDropdown1"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Contact
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="nav">
@@ -242,187 +252,227 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Manage</a>
                                     @*<div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Follow</a>*@
+                                    <a class="dropdown-item" href="#">Follow</a>*@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="nav" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="nav" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Help
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/Home/Tutor">How to make a call in AnnSmart</a>
                                 </div>
                             </li>
-                        }
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Test"><i class="fas fa-question-circle"></i> Kiểm tra </a>
-                        </li>
-                    <li class="nav-item">
-                            <a class="nav-link" href="/Home/Feedback">Góp ý</a>
-                        </li>
-                    }
-                </ul>
-                @*<form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" style="margin-right: 10px" type="submit">Search</button>
-                    </form>*@
-                <partial name="_LoginPartial" />
-        </nav>
-    </div>
-    <partial name="_CookieConsentPartial" />
-    <div class="container body-content">
-        @RenderBody()
-        @if ((Context.Request.Path == "/" || Context.Request.Path == "/Admin" || Context.Request.Path == "/Appoinments" || Context.Request.Path == "/Managers"))
-        {
-            <div class="card-group">
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/Test"><i class="fas fa-question-circle"></i> Kiểm tra
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Home/Feedback">Góp ý</a>
+                            </li>
+                            }
+                        </ul>
+                        @*<form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" style="margin-right: 10px"
+                                type="submit">Search</button>
+                        </form>*@
+                        <partial name="_LoginPartial" />
+                </nav>
+            </div>
+            <partial name="_CookieConsentPartial" />
+            <div class="container body-content">
+                @RenderBody()
+                @if ((Context.Request.Path == "/" || Context.Request.Path == "/Admin" || Context.Request.Path ==
+                "/Appoinments" || Context.Request.Path == "/Managers"))
+                {
+                <div class="card-group">
 
-                <a id="booking" asp-action="Dashboard">
-                    <div class="card">
-                        @*<img class="card-img-top" src="~/images/v5.jpg" alt="Card image cap">*@
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                    <a id="booking" asp-action="Dashboard">
+                        <div class="card">
+                            @*<img class="card-img-top" src="~/images/v5.jpg" alt="Card image cap">*@
+                            <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                                    <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="~/images/v2.jpg" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="~/images/v1.jpg" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="~/images/v3.jpg" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="~/images/v5.jpg" alt="First slide">
+                                    </div>
+
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Booking online</h5>
+                                <p class="card-text">Smart - Convenient - Secure (Current project: Vincity district 9.)
+                                </p>
+                                <p class="card-text"><small class="text-muted">Beta</small></p>
+                            </div>
+                        </div>
+                    </a>
+                    @*<div class="card">
+                        @*<img class="card-img-top" src="~/images/c2.jpg" alt="Card image cap">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" src="~/images/v2.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="~/images/c2.jpg" alt="First slide">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/images/v1.jpg" alt="Second slide">
+                                    <img class="d-block w-100" src="~/images/c1.jpg" alt="Second slide">
                                 </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/images/v3.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/images/v5.jpg" alt="First slide">
-                                </div>
-
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Booking online</h5>
-                            <p class="card-text">Smart - Convenient - Secure (Current project: Vincity district 9.)</p>
+                            <h5 class="card-title">Partner</h5>
+                            <p class="card-text">Dedicated system for AnnHome's collaborator.</p>
                             <p class="card-text"><small class="text-muted">Beta</small></p>
                         </div>
-                    </div>
-                </a>
-                @*<div class="card">
-                    @*<img class="card-img-top" src="~/images/c2.jpg" alt="Card image cap">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="~/images/c2.jpg" alt="First slide">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="~/images/c1.jpg" alt="Second slide">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Partner</h5>
-                        <p class="card-text">Dedicated system for AnnHome's collaborator.</p>
-                        <p class="card-text"><small class="text-muted">Beta</small></p>
-                    </div>
-                </div>*@
+                    </div>*@
+                </div>
+                }
             </div>
-        }
-    </div>
-    <environment include="Production">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Production">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-    @RenderSection("Scripts", required: false)
-    @{ 
-        Random rnd = new Random();
-        int rd = rnd.Next(10001, 100001);
-        int x = 1;
-    }
-    <footer>
-        AnnHome - @DateTime.UtcNow.Date.ToString("dd/MM/yyyy")
-    </footer>
-</body>
-</html>
-<style>
-    .card-group{
-        background: none !important;
-    }
-    body{
-        /*background-color: #79d3c0;*/
-    }
-</style>
+            <environment include="Production">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <script src="~/lib/jquery/dist/jquery.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+            </environment>
+            <environment include="Development">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="~/lib/jquery/dist/jquery.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+            </environment>
+            <environment exclude="Development">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js" asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+                    </script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="~/js/site.min.js" asp-append-version="true"></script>
+            </environment>
+            <environment exclude="Production">
+                <link rel="stylesheet" href="~/css/site.css" />
+                <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js" asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+                    </script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+                <script src="~/js/site.min.js" asp-append-version="true"></script>
+            </environment>
+            @RenderSection("Scripts", required: false)
+            @{
+            Random rnd = new Random();
+            int rd = rnd.Next(10001, 100001);
+            }
+            <footer>
+                AnnHome - @DateTime.UtcNow.Date.ToString("dd/MM/yyyy")
+            </footer>
+        </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-    $(function () {
-        var tmp = '<% signed %>';
-        if (!tmp) {
-            $('body').css('background-image', 'url(~\images\christmas.jpg)');
-        }
+        </html>
+        <style>
+            .card-group {
+                background: none !important;
+            }
 
-    })
-</script>
+            body {
+                /*background-color: #79d3c0;*/
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                var tmp = '<% signed %>';
+                if (!tmp) {
+                    $('body').css('background-image', 'url(~\images\christmas.jpg)');
+                }
+
+            })
+        </script>

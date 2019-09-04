@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BookingForm.Models
 {
@@ -8,10 +9,9 @@ namespace BookingForm.Models
         public int Id { get; set; }
         public List<Apartment> Apartments { get; private set; }
         public bool IsOpen { get; private set; }
-        public Storage(List<Apartment> apartments, bool isOpen)
+        public Storage(List<Apartment> apartments)
         {
             Apartments = apartments;
-            IsOpen = isOpen;
         }
         public Storage(){}
         public void Open()
@@ -37,6 +37,7 @@ namespace BookingForm.Models
             }
             return false;
         }
+        public bool Contain(string apartmentCode) => Apartments.FirstOrDefault(e => e.LocalCode == apartmentCode) != null;
         public void Add(Apartment apartment)
         {
             if (Apartments == null)
@@ -50,6 +51,9 @@ namespace BookingForm.Models
             Apartments.Add(apartment);
 
         }
+        public Apartment Get(string apartmentCode) => Apartments != null ? Apartments.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
+        
+        public List<Apartment> Get() => Apartments != null ? Apartments : null;
         
     }
 }

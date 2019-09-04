@@ -1,8 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using BookingForm.Models;
+using System.Linq;
 
 namespace BookingForm.Models
 {
@@ -90,16 +89,19 @@ namespace BookingForm.Models
         public DbSet<BookingForm.Models.Invoice> Invoice { get; set; }
         // public DbSet<Stage> Stage { get; set; }
         public DbSet<BookingForm.Models.Batch> Batch { get; set; }
+        public Batch GetRunningBatch() => Batch.Include(e => e.Confirmations)
+                        .Include(e => e.RCodes)
+                        .Include(e => e.Storage)
+                        .ThenInclude(e => e.Apartments)
+                        .ThenInclude(e => e.ApartmentDetails)
+                        .Include(e => e.Reservations)
+                        .Include(e => e.Invoices)
+                        .ThenInclude(e => e.Confirmation)
+                        .Include(e => e.Invoices)
+                        .ThenInclude(e => e.Client)
+                        .Include(e => e.Invoices)
+                        .ThenInclude(e => e.Apartment)
+                        .FirstOrDefault(e => e.IsRunning);
     }
-
-    public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<BookingFormContext>
-    {
-        BookingFormContext IDesignTimeDbContextFactory<BookingFormContext>.CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<BookingFormContext>();
-            optionsBuilder.UseSqlServer<BookingFormContext>("Server=khang-pc\\sqlexpress;Database=annhome.booking; trusted_connection=true");
-            //Trusted_Connection = True; MultipleActiveResultSets = true
-            return new BookingFormContext(optionsBuilder.Options);
-        }
-    }
+    
 }

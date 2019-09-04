@@ -91,7 +91,13 @@ namespace BookingForm.Areas.Identity.Pages.Account
                     //}
                     TempData["login"] = "true";
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    if (Url.IsLocalUrl(returnUrl))
+                    {
+                        return LocalRedirect(returnUrl);
+
+                    }
+                    else
+                        return RedirectToAction("Index", "Home");
                 }
                 if (result.RequiresTwoFactor)
                 {

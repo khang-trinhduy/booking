@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,10 +10,15 @@ namespace BookingForm.Models
         public int BatchNumber { get; set; }
         public Storage Storage { get; set; }
         public List<RCode> RCodes { get; set; }
+        public List<Reserved> Reservations { get; set; }
+        public List<Confirmation> Confirmations { get; set; }
+        public List<Invoice> Invoices { get; set; }
         public bool IsRunning { get; private set; }
         public Batch()
         {
-            
+            RCodes = new List<RCode>();
+            Reservations = new List<Reserved>();
+            Confirmations = new List<Confirmation>();
         }
         public Batch(Storage storage, List<RCode> rcode)
         {
@@ -22,6 +28,7 @@ namespace BookingForm.Models
         public void Start()
         {
             IsRunning = true;
+            Storage.Open();
             //TODO generate list of available apartment
             //TODO generate code for client
         }
@@ -37,7 +44,31 @@ namespace BookingForm.Models
             //TODO make all successful purchased customer invalid
             //TODO make all code invalid
         }
-        public bool Contain(string code) => RCodes.FirstOrDefault(e => e.Code == code) != null;
+        public bool ContainCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) != null : false;
         
+        public bool ContainApartment(string apartmentCode) => Storage != null ? Storage.Contain(apartmentCode) : false;
+
+        public bool ContainConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode == apartmentCode) != null : false;
+        
+        public RCode GetCode(string code) => RCodes != null ? RCodes.FirstOrDefault(e => e.Code == code) : null;
+        
+        public Apartment GetApartment(string apartmentCode) => Storage != null ? Storage.Get(apartmentCode) : null;
+
+        public List<Apartment> GetApartments() => Storage != null ? Storage.Get() : null;
+        
+        public Reserved GetReservation(string rcc) => Reservations != null ? Reservations.FirstOrDefault(e => e.RCC == rcc) : null;
+        
+        public IEnumerable<Reserved> GetReservations(string apartmentCode) => Reservations != null ? Reservations.Where(e => e.ApartmentCode == apartmentCode) : null;
+       
+        public Confirmation GetConfirmation(string apartmentCode) => Confirmations != null ? Confirmations.FirstOrDefault(e => e.LocalCode == apartmentCode) : null;
+        
+        public IEnumerable<Confirmation> GetConfirmations() => Confirmations;
+
+        public IEnumerable<Invoice> GetInvoices() => Invoices;
+        
+        public Invoice GetInvoice(int clientId) => Invoices != null ? Invoices.FirstOrDefault(e => e.Client.Id == clientId) : null;
+
+        public Invoice GetInvoiceById(int id) => Invoices != null ? Invoices.FirstOrDefault(e => e.Id == id) : null;
+
     }
 }

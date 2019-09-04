@@ -1,0 +1,25 @@
+@model string
+@{
+ViewData["title"] = "Thiệp mời ...";
+var letter = "/images/" + Model + ".jpg";
+Layout = null;
+}
+
+<div>
+    <img src="@letter" alt="Thiệp mời">
+</div>
+
+<style>
+
+    div {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+</style>

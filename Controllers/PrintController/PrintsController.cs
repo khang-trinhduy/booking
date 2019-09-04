@@ -297,7 +297,7 @@ namespace BookingForm.Controllers.PrintController
                 throw new Exception("Files doesn't exist!");
             }
 
-            var downloadFiles = files.Skip(from - 1).Take(to - from).ToList();
+            var downloadFiles = files.Skip(from - 1).Take(to - from + 1).ToList();
 
 
             List<Byte[]> images = new List<Byte[]>();

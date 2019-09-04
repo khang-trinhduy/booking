@@ -6,3 +6,4 @@ wwwroot/images
 wwwroot/help
 wwwroot/profile
 obj/
+.vscode

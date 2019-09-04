@@ -15,7 +15,7 @@ namespace BookingForm
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) => 
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("https://localhost:5003", "http://locahost:5002")
+                .UseUrls("https://localhost:5001", "http://locahost:5000")
                 .UseSerilog();
     }
 }

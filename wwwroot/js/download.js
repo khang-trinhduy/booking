@@ -14,7 +14,7 @@ function radChangeValue(e) {
 
     let lastFile = document.querySelector('#lastFile');
 
-    lastFile.value = firstFileIndex + numberOfFiles;
+    lastFile.value = firstFileIndex + numberOfFiles - 1;
     return;
 }
 
@@ -25,7 +25,7 @@ function onChange(e) {
 
     let lastFile = document.querySelector('#lastFile');
 
-    lastFile.value = firstIndex + numberOfFiles;
+    lastFile.value = firstIndex + numberOfFiles - 1;
     return;
 }
 
